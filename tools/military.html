@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전역일 계산기 - 군대 전역일 조회, 복무 진행률</title>
+<meta name="description" content="입대일과 군종만 선택하면 전역(소집해제) 예정일과 남은 복무일 D-day, 복무 진행률을 바로 계산합니다. 2026년 기준 육군·해병대 18개월, 해군 20개월, 공군·사회복무요원 21개월 반영.">
+<link rel="canonical" href="https://calcmoa.site/tools/military">
+<meta property="og:type" content="website">
+<meta property="og:title" content="전역일 계산기 - 군대 전역일 조회, 복무 진행률">
+<meta property="og:description" content="입대일과 군종만 선택하면 전역(소집해제) 예정일과 남은 복무일 D-day, 복무 진행률을 바로 계산합니다. 2026년 기준 육군·해병대 18개월, 해군 20개월, 공군·사회복무요원 21개월 반영.">
+<meta property="og:url" content="https://calcmoa.site/tools/military">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"전역일 계산기","url":"https://calcmoa.site/tools/military","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"전역일은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"민법의 역월 계산 방식에 따라 입대일에 복무기간(개월 수)을 더한 날의 전날이 전역(소집해제) 예정일입니다. 예를 들어 2026년 2월 1일에 육군(18개월)으로 입대하면 2027년 8월 1일의 전날인 2027년 7월 31일이 전역 예정일입니다."}},
+  {"@type":"Question","name":"2026년 기준 복무기간은 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"육군·해병대·상근예비역은 18개월, 해군은 20개월, 공군과 사회복무요원은 21개월입니다. 복무기간은 국방부 정책에 따라 변동될 수 있으므로 최신 기준은 병무청 공지를 확인하세요."}},
+  {"@type":"Question","name":"계산된 전역일이 실제와 다를 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네, 이 계산기는 표준 복무기간을 기준으로 한 참고용 근사치입니다. 국방부 정책 변경, 복무 단축·연장, 휴가 미사용에 따른 조기 전역 여부 등 개인 사정에 따라 실제 전역일은 달라질 수 있습니다."}},
+  {"@type":"Question","name":"1월 31일에 입대하면 전역일 계산이 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"개월 수를 더한 달에 같은 날짜가 없으면 그 달의 마지막 날로 보정합니다. 예를 들어 1월 31일에서 1개월 뒤는 2월 28일(윤년은 29일)로 계산하고, 전역 예정일은 거기서 전날을 적용합니다."}},
+  {"@type":"Question","name":"입력한 정보가 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 계산은 브라우저 안에서만 처리되며, 입력한 입대일이나 군종 정보는 서버로 전송되거나 저장되지 않습니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-date">날짜·디데이</a><span class="sep">›</span>
+    <span>전역일 계산기</span>
+  </nav>
+
+  <h1>전역일 계산기</h1>
+  <p class="lead">입대일과 군종만 선택하면 전역(소집해제) 예정일과 남은 복무일, 복무 진행률을 바로 확인할 수 있습니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field-row">
+      <div class="field" id="fEnlist">
+        <label for="enlist">입대일</label>
+        <input type="date" id="enlist">
+        <div class="field-error" id="eEnlist">입대일을 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fBranch">
+        <label for="branch">군종</label>
+        <select id="branch">
+          <option value="18">육군 (18개월)</option>
+          <option value="18">해병대 (18개월)</option>
+          <option value="20">해군 (20개월)</option>
+          <option value="21">공군 (21개월)</option>
+          <option value="21">사회복무요원 (21개월)</option>
+          <option value="18">상근예비역 (18개월)</option>
+        </select>
+        <div class="hint">2026년 기준 복무기간이며, 국방부 정책에 따라 변동될 수 있습니다.</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">오늘 기준</div>
+      <div class="big" id="rMain"></div>
+      <div style="margin-top:14px;height:10px;border-radius:6px;background:color-mix(in srgb, var(--accent) 15%, transparent);overflow:hidden">
+        <div id="pbar" style="height:100%;width:0%;background:var(--accent);border-radius:6px;transition:width .8s cubic-bezier(.2,.7,.2,1)"></div>
+      </div>
+      <div class="rows">
+        <div class="row"><span>전역(소집해제) 예정일</span><b id="rDate"></b></div>
+        <div class="row"><span>복무 진행률</span><b id="rPct"></b></div>
+        <div class="row"><span>복무 경과일</span><b id="rElapsed"></b></div>
+        <div class="row"><span>남은 일수</span><b id="rLeft"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>입대일(또는 소집일)을 달력에서 선택합니다. 입대 예정자라면 미래 날짜를 넣어 전역일을 미리 확인할 수도 있습니다.</li>
+      <li>군종을 선택합니다. 육군·해병대·상근예비역 18개월, 해군 20개월, 공군·사회복무요원 21개월이 자동 적용됩니다.</li>
+      <li>계산하기 버튼을 누르면 전역까지 남은 D-day가 크게 표시되고, 전역 예정일과 요일, 복무 진행률, 경과일·남은 일수가 함께 나옵니다.</li>
+      <li>결과 복사 버튼으로 계산 결과를 복사해 친구나 가족과 공유해 보세요.</li>
+    </ol>
+
+    <h2>전역일 계산 원리</h2>
+    <p>전역(소집해제) 예정일은 민법의 <b>역월(曆月) 계산</b> 방식을 따릅니다. 기간을 개월 단위로 정한 경우 입대일에 복무 개월 수를 더해 <b>n개월째가 되는 날의 전날</b>에 기간이 만료되는 방식입니다. 예를 들어 2026년 2월 1일에 육군으로 입대하면 18개월을 더한 2027년 8월 1일의 전날, 즉 <b>2027년 7월 31일</b>이 전역 예정일이 됩니다.</p>
+    <p>2026년 기준 군별 의무복무 기간과 예시 전역일은 다음과 같습니다.</p>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>복무기간</th><th>2026년 2월 1일 입대 시 전역(소집해제) 예정일</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>육군</td><td>18개월</td><td>2027년 7월 31일</td></tr>
+        <tr><td>해병대</td><td>18개월</td><td>2027년 7월 31일</td></tr>
+        <tr><td>상근예비역</td><td>18개월</td><td>2027년 7월 31일</td></tr>
+        <tr><td>해군</td><td>20개월</td><td>2027년 9월 30일</td></tr>
+        <tr><td>공군</td><td>21개월</td><td>2027년 10월 31일</td></tr>
+        <tr><td>사회복무요원</td><td>21개월</td><td>2027년 10월 31일</td></tr>
+      </tbody>
+    </table>
+    <p>더한 달에 같은 날짜가 없는 경우에는 그 달의 마지막 날로 보정합니다. 예를 들어 1월 31일 입대자의 1개월째는 2월 31일이 존재하지 않으므로 2월 말일(평년 28일, 윤년 29일)로 계산하고, 전역 예정일은 거기서 전날을 적용합니다. 복무 진행률은 입대일부터 전역 예정일까지의 전체 일수 중 오늘까지 지난 일수의 비율(경과일 ÷ 전체일 × 100)로 계산하며 0~100% 범위로 표시합니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>이 계산기가 보여주는 전역 예정일은 표준 복무기간을 기준으로 한 <b>참고용 근사치</b>입니다. 복무기간은 병역법과 국방부 정책에 따라 변동될 수 있으므로, 정확한 전역일은 병무청이나 소속 부대를 통해 확인하는 것이 가장 정확합니다. 또한 실제 전역 처리는 개인별 상황(복무 단축·연장, 휴가 사용 여부, 전역일이 주말·공휴일과 겹치는 경우의 행정 처리 등)에 따라 하루 이틀 달라질 수 있습니다.</p>
+    <p>복무 진행률 바가 절반을 넘었다면 이른바 "꺾였다"고 부르는 시점을 지난 것입니다. 전역 예정일을 미리 알아두면 전역 후 복학 시기, 자격증 시험 일정, 취업 준비 계획을 세우는 데 도움이 됩니다. 특히 복학은 학교마다 신청 기간이 정해져 있으므로 전역 예정일과 학기 시작일을 함께 계산해 두는 것을 추천합니다.</p>
+    <p class="note">본 결과는 참고용이며 법적 효력이 없습니다. 복무기간과 전역일은 국방부·병무청 정책에 따라 변동될 수 있으므로 반드시 공식 기관에서 최종 확인하세요.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>전역일은 어떻게 계산하나요?</summary>
+        <p>민법의 역월 계산 방식에 따라 입대일에 복무기간(개월 수)을 더한 날의 전날이 전역(소집해제) 예정일입니다. 예를 들어 2026년 2월 1일에 육군(18개월)으로 입대하면 2027년 8월 1일의 전날인 2027년 7월 31일이 전역 예정일입니다.</p>
+      </details>
+      <details>
+        <summary>2026년 기준 복무기간은 어떻게 되나요?</summary>
+        <p>육군·해병대·상근예비역은 18개월, 해군은 20개월, 공군과 사회복무요원은 21개월입니다. 복무기간은 국방부 정책에 따라 변동될 수 있으므로 최신 기준은 병무청 공지를 확인하세요.</p>
+      </details>
+      <details>
+        <summary>계산된 전역일이 실제와 다를 수 있나요?</summary>
+        <p>네, 이 계산기는 표준 복무기간을 기준으로 한 참고용 근사치입니다. 국방부 정책 변경, 복무 단축·연장, 휴가 미사용에 따른 조기 전역 여부 등 개인 사정에 따라 실제 전역일은 달라질 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>1월 31일에 입대하면 전역일 계산이 어떻게 되나요?</summary>
+        <p>개월 수를 더한 달에 같은 날짜가 없으면 그 달의 마지막 날로 보정합니다. 예를 들어 1월 31일에서 1개월 뒤는 2월 28일(윤년은 29일)로 계산하고, 전역 예정일은 거기서 전날을 적용합니다.</p>
+      </details>
+      <details>
+        <summary>입력한 정보가 저장되나요?</summary>
+        <p>아니요. 모든 계산은 브라우저 안에서만 처리되며, 입력한 입대일이나 군종 정보는 서버로 전송되거나 저장되지 않습니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/dday"><div class="ico">📅</div><b>디데이 계산기</b><span>D-day와 날짜 사이 일수 계산</span></a>
+      <a class="tool-card" href="/tools/age"><div class="ico">🎂</div><b>만 나이 계산기</b><span>만 나이 통일법 기준 정확한 나이</span></a>
+      <a class="tool-card" href="/tools/salary"><div class="ico">💰</div><b>연봉 실수령액 계산기</b><span>4대보험·세금 공제 후 월 실수령액</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var enlistEl = $("enlist"), branchEl = $("branch");
+  var fEnlist = $("fEnlist");
+  var result = $("result");
+  var DAY = 86400000;
+  var WEEK = ["일", "월", "화", "수", "목", "금", "토"];
+
+  function parseDate(v) {
+    var p = v.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function fmtK(d) { return d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDate() + "일"; }
+
+  /* n개월 더하기 — 일 오버플로 시 해당 월 말일로 보정 (예: 1/31 +1개월 → 2월 말일) */
+  function addMonths(date, n) {
+    var first = new Date(date.getFullYear(), date.getMonth() + n, 1);
+    var lastDay = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
+    return new Date(first.getFullYear(), first.getMonth(), Math.min(date.getDate(), lastDay));
+  }
+  function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+
+  $("calcBtn").addEventListener("click", calc);
+  enlistEl.addEventListener("keydown", function (e) { if (e.key === "Enter") calc(); });
+
+  var lastText = "";
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  function calc() {
+    if (!enlistEl.value) {
+      CM.invalid(fEnlist, true);
+      result.hidden = true;
+      return;
+    }
+    CM.invalid(fEnlist, false);
+
+    var months = parseInt(branchEl.value, 10);
+    var branchName = branchEl.options[branchEl.selectedIndex].text;
+    var enlist = parseDate(enlistEl.value);
+
+    /* 전역(소집해제) 예정일 = 입대일 + n개월의 전날 */
+    var discharge = addMonths(enlist, months);
+    discharge = new Date(discharge.getFullYear(), discharge.getMonth(), discharge.getDate() - 1);
+
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    var total = Math.round((discharge.getTime() - enlist.getTime()) / DAY);
+    var elapsed = Math.round((today.getTime() - enlist.getTime()) / DAY);
+    var remaining = Math.round((discharge.getTime() - today.getTime()) / DAY);
+    var pct = clamp(elapsed / total * 100, 0, 100);
+    var elapsedDisp = clamp(elapsed, 0, total);
+
+    result.hidden = false;
+    var rMain = $("rMain");
+    var done = today.getTime() >= discharge.getTime();
+    if (done) {
+      rMain.textContent = "전역 완료!";
+    } else {
+      CM.countUp(rMain, remaining, { prefix: "전역까지 D-" });
+    }
+
+    $("rDate").textContent = fmtK(discharge) + " (" + WEEK[discharge.getDay()] + ")";
+    $("rPct").textContent = CM.fmt(pct, 1) + "%";
+    $("rElapsed").textContent = CM.fmt(elapsedDisp) + "일";
+    $("rLeft").textContent = CM.fmt(Math.max(remaining, 0)) + "일";
+
+    var pbar = $("pbar");
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { pbar.style.width = pct + "%"; });
+    });
+
+    lastText = "[전역일 계산기] " + branchName + " / 입대일 " + fmtK(enlist) +
+      " → 전역 예정일 " + fmtK(discharge) + " (" + WEEK[discharge.getDay()] + ")" +
+      (done ? ", 전역 완료" : ", 전역까지 D-" + remaining) +
+      ", 진행률 " + CM.fmt(pct, 1) + "% (calcmoa.site)";
+  }
+});
+</script>
+</body>
+</html>
