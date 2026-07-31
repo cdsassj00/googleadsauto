@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>글자수 세기 - 공백 포함·제외, 자소서 글자수 계산기</title>
+<meta name="description" content="공백 포함·제외 글자수, 단어 수, 줄 수, UTF-8·한글 2바이트 기준 바이트까지 실시간 계산. 자기소개서·리포트 글자수 제한 확인에 딱 맞는 무료 글자수 세기 도구입니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/charcount">
+<meta property="og:type" content="website">
+<meta property="og:title" content="글자수 세기 - 공백 포함·제외, 자소서 글자수 계산기">
+<meta property="og:description" content="공백 포함·제외 글자수, 단어 수, 줄 수, UTF-8·한글 2바이트 기준 바이트까지 실시간 계산. 자기소개서·리포트 글자수 제한 확인에 딱 맞는 무료 글자수 세기 도구입니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/charcount">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"글자수 세기","url":"https://calcmoa.site/tools/charcount","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"자기소개서 글자수는 공백 포함인가요, 제외인가요?","acceptedAnswer":{"@type":"Answer","text":"대부분의 채용 시스템(잡코리아, 사람인, 각 기업 자체 채용 페이지 등)은 공백 포함 기준으로 글자수를 셉니다. 다만 일부 공공기관이나 대학 입학 서류는 공백 제외 기준을 쓰기도 하므로, 모집 요강에 별도 표기가 없다면 공백 포함으로 보고 준비하되 제출 전 해당 시스템에서 반드시 다시 확인하는 것이 안전합니다."}},
+  {"@type":"Question","name":"바이트(byte) 기준 제한은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"과거 자기소개서 시스템에서 널리 쓰인 관행은 한글·전각 문자를 2바이트, 영문·숫자·공백을 1바이트로 세는 방식입니다. 반면 최신 웹 시스템은 UTF-8 인코딩 기준(한글 1자당 3바이트)을 쓰는 경우가 많습니다. 이 도구는 두 기준을 모두 표시하므로, 지원하는 시스템이 어느 기준인지 확인한 뒤 해당 값을 참고하면 됩니다."}},
+  {"@type":"Question","name":"입력한 글이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 집계는 브라우저 안의 자바스크립트로만 처리되며, 입력한 글은 서버로 전송되거나 저장되지 않습니다. 자기소개서처럼 민감한 글도 안심하고 붙여넣어 확인할 수 있습니다."}},
+  {"@type":"Question","name":"원고지 매수는 어떻게 환산하나요?","acceptedAnswer":{"@type":"Answer","text":"일반적으로 200자 원고지 1매는 공백 포함 200자로 환산합니다. 예를 들어 공백 포함 1,000자라면 원고지 약 5매 분량입니다. 실제 원고지에 옮겨 쓰면 문단 시작 들여쓰기와 줄바꿈 때문에 매수가 조금 더 늘어날 수 있으므로 근사치로 참고하세요."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-life">생활·건강</a><span class="sep">›</span>
+    <span>글자수 세기</span>
+  </nav>
+
+  <h1>글자수 세기</h1>
+  <p class="lead">글을 붙여넣는 즉시 공백 포함·제외 글자수, 단어 수, 줄 수, 바이트까지 실시간으로 집계합니다. 자기소개서 글자수 제한 확인에 활용하세요.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label for="txt">내용 입력</label>
+      <textarea id="txt" rows="10" placeholder="이곳에 글을 붙여넣으세요"></textarea>
+      <div class="hint">입력과 동시에 아래 결과가 실시간으로 갱신됩니다. 입력한 글은 어디에도 전송·저장되지 않습니다.</div>
+    </div>
+    <button type="button" class="btn btn-ghost" id="clearBtn">지우기</button>
+
+    <div class="result" id="result">
+      <div class="label">공백 포함 글자수</div>
+      <div class="big" id="rMain">0자</div>
+      <div class="rows">
+        <div class="row"><span>공백 제외 글자수</span><b id="rNoSpace">0자</b></div>
+        <div class="row"><span>단어 수</span><b id="rWords">0개</b></div>
+        <div class="row"><span>줄 수</span><b id="rLines">0줄</b></div>
+        <div class="row"><span>바이트 (UTF-8 기준)</span><b id="rBytesUtf8">0byte</b></div>
+        <div class="row"><span>바이트 (한글 2byte 기준)</span><b id="rBytes2">0byte</b></div>
+        <div class="row"><span>원고지 환산 (공백 포함 200자 = 1매)</span><b id="rPages">0매</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>위 입력창에 글자수를 확인할 글을 직접 입력하거나 붙여넣습니다.</li>
+      <li>버튼을 누를 필요 없이 입력과 동시에 공백 포함·제외 글자수, 단어 수, 줄 수, 바이트가 실시간으로 갱신됩니다.</li>
+      <li>지원하는 시스템의 기준(공백 포함/제외, 글자수/바이트)에 맞는 항목을 확인합니다.</li>
+      <li>새 글을 확인하려면 <b>지우기</b> 버튼으로 입력창을 비우고 다시 붙여넣으면 됩니다.</li>
+    </ol>
+
+    <h2>글자수 계산 원리</h2>
+    <p>같은 글이라도 어떤 기준으로 세느냐에 따라 숫자가 달라집니다. 이 도구가 표시하는 각 항목의 기준은 다음과 같습니다.</p>
+    <table>
+      <thead>
+        <tr><th>항목</th><th>기준</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>공백 포함 글자수</td><td>띄어쓰기·줄바꿈을 포함한 모든 문자 수</td><td>대부분의 채용 시스템 기준</td></tr>
+        <tr><td>공백 제외 글자수</td><td>띄어쓰기·줄바꿈·탭을 뺀 문자 수</td><td>일부 기관·대학에서 사용</td></tr>
+        <tr><td>단어 수</td><td>공백·줄바꿈으로 구분된 덩어리 수</td><td>영문 word count에 해당</td></tr>
+        <tr><td>줄 수</td><td>줄바꿈 기준 행의 개수</td><td>빈 입력은 0줄</td></tr>
+        <tr><td>바이트 (UTF-8)</td><td>UTF-8 인코딩 실제 용량 — 한글 1자 = 3byte</td><td>최신 웹 시스템 기준</td></tr>
+        <tr><td>바이트 (한글 2byte)</td><td>한글·전각 = 2byte, 영문·숫자·공백 = 1byte</td><td>옛 자기소개서 시스템 관행</td></tr>
+      </tbody>
+    </table>
+    <p>공백 포함 글자수는 자바스크립트 문자열 길이를 그대로 사용하고, 공백 제외 글자수는 모든 공백 문자(띄어쓰기·탭·줄바꿈)를 제거한 뒤의 길이입니다. 단어 수는 연속된 공백과 줄바꿈을 하나의 구분자로 보아 나눈 덩어리의 개수를 셉니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <h3>공백 포함? 공백 제외? 어느 쪽이 기준일까</h3>
+    <p>결론부터 말하면, <b>대부분의 채용 시스템은 공백 포함 기준</b>입니다. 잡코리아·사람인 같은 취업 포털과 대다수 기업 자체 채용 페이지는 띄어쓰기를 포함해 글자수를 셉니다. 반면 일부 공공기관 서류나 대학 과제는 공백 제외 기준을 명시하기도 하므로, 모집 요강이나 안내문에 기준 표기가 있는지 먼저 확인하는 습관이 필요합니다. 표기가 없다면 공백 포함 기준으로 준비하는 편이 안전합니다.</p>
+    <h3>자기소개서 글자수 실전 팁</h3>
+    <p>글자수 제한이 1,000자라면 <b>제한의 90% 이상(900자 이상)</b>은 채우는 것이 좋습니다. 지나치게 짧은 답변은 성의가 부족해 보일 수 있고, 반대로 제한을 초과하면 시스템에서 잘리거나 아예 제출이 막힙니다. 워드·한글 프로그램에서 작성한 뒤 채용 시스템에 붙여넣으면 줄바꿈·특수문자 처리 방식 차이로 글자수가 달라질 수 있으니, 제출 직전에 해당 시스템의 카운터로 최종 확인하세요. 이 도구로 초안 단계에서 분량을 관리하면 마감 직전에 문장을 급하게 잘라내는 일을 줄일 수 있습니다.</p>
+    <h3>바이트 제한 시스템이라면</h3>
+    <p>일부 오래된 채용·행정 시스템은 글자수가 아니라 바이트로 제한을 겁니다. 이때 널리 쓰인 관행이 <b>한글·전각 문자 2byte, 영문·숫자·공백 1byte</b> 계산법입니다. 예를 들어 "안녕hello"는 한글 2자(4byte) + 영문 5자(5byte) = 9byte입니다. 같은 글이라도 UTF-8 기준(한글 1자 = 3byte)으로 재면 훨씬 크게 나오므로, 제한이 바이트라면 시스템이 어떤 방식인지 확인이 필요합니다. 이 도구는 두 값을 병기하므로 어느 쪽 기준이든 바로 확인할 수 있습니다.</p>
+    <h3>원고지 매수 환산</h3>
+    <p>과제나 백일장에서 "원고지 10매 내외" 같은 분량 지시를 받았다면, 통상 <b>공백 포함 200자 = 원고지 1매</b>로 환산합니다. 공백 포함 2,000자면 약 10매 분량입니다. 실제 원고지에 옮기면 문단 들여쓰기와 줄바꿈 때문에 매수가 조금 늘어나는 경향이 있으므로 근사치로 참고하세요.</p>
+    <p class="note">본 도구의 집계는 참고용 근사치입니다. 실제 제출 시스템의 글자수 계산 방식(줄바꿈 처리, 특수문자 처리 등)에 따라 수치가 다를 수 있으므로 최종 제출 전 해당 시스템에서 반드시 확인하세요.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details><summary>자기소개서 글자수는 공백 포함인가요, 제외인가요?</summary><p>대부분의 채용 시스템(잡코리아, 사람인, 각 기업 자체 채용 페이지 등)은 공백 포함 기준으로 글자수를 셉니다. 다만 일부 공공기관이나 대학 입학 서류는 공백 제외 기준을 쓰기도 하므로, 모집 요강에 별도 표기가 없다면 공백 포함으로 보고 준비하되 제출 전 해당 시스템에서 반드시 다시 확인하는 것이 안전합니다.</p></details>
+      <details><summary>바이트(byte) 기준 제한은 어떻게 계산하나요?</summary><p>과거 자기소개서 시스템에서 널리 쓰인 관행은 한글·전각 문자를 2바이트, 영문·숫자·공백을 1바이트로 세는 방식입니다. 반면 최신 웹 시스템은 UTF-8 인코딩 기준(한글 1자당 3바이트)을 쓰는 경우가 많습니다. 이 도구는 두 기준을 모두 표시하므로, 지원하는 시스템이 어느 기준인지 확인한 뒤 해당 값을 참고하면 됩니다.</p></details>
+      <details><summary>입력한 글이 서버에 저장되나요?</summary><p>아니요. 모든 집계는 브라우저 안의 자바스크립트로만 처리되며, 입력한 글은 서버로 전송되거나 저장되지 않습니다. 자기소개서처럼 민감한 글도 안심하고 붙여넣어 확인할 수 있습니다.</p></details>
+      <details><summary>원고지 매수는 어떻게 환산하나요?</summary><p>일반적으로 200자 원고지 1매는 공백 포함 200자로 환산합니다. 예를 들어 공백 포함 1,000자라면 원고지 약 5매 분량입니다. 실제 원고지에 옮겨 쓰면 문단 시작 들여쓰기와 줄바꿈 때문에 매수가 조금 더 늘어날 수 있으므로 근사치로 참고하세요.</p></details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+      <a class="tool-card" href="/tools/dutch"><div class="ico">🍻</div><b>더치페이 계산기</b><span>회식비 N빵, 1인당 부담금</span></a>
+      <a class="tool-card" href="/tools/age"><div class="ico">🎂</div><b>만 나이 계산기</b><span>만 나이 통일법 기준 정확한 나이</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var txt = document.getElementById("txt");
+  var clearBtn = document.getElementById("clearBtn");
+  var rMain = document.getElementById("rMain");
+  var rNoSpace = document.getElementById("rNoSpace");
+  var rWords = document.getElementById("rWords");
+  var rLines = document.getElementById("rLines");
+  var rBytesUtf8 = document.getElementById("rBytesUtf8");
+  var rBytes2 = document.getElementById("rBytes2");
+  var rPages = document.getElementById("rPages");
+
+  function bytes2(t) {
+    // 옛 자소서 시스템 관행: 한글·전각(코드 128 이상) 2byte, 영문·숫자·공백 1byte
+    var b = 0;
+    for (var i = 0; i < t.length; i++) {
+      b += t.charCodeAt(i) > 127 ? 2 : 1;
+    }
+    return b;
+  }
+
+  function update() {
+    var t = txt.value;
+    var withSpace = t.length;
+    var noSpace = t.replace(/\s/g, "").length;
+    var words = t.split(/\s+/).filter(function (w) { return w.length > 0; }).length;
+    var lines = t.length === 0 ? 0 : t.split(/\n/).length;
+    var utf8 = new Blob([t]).size;
+    var b2 = bytes2(t);
+    var pages = withSpace === 0 ? 0 : Math.ceil(withSpace / 200);
+
+    // 실시간 집계이므로 countUp 대신 즉시 갱신
+    rMain.textContent = CM.fmt(withSpace) + "자";
+    rNoSpace.textContent = CM.fmt(noSpace) + "자";
+    rWords.textContent = CM.fmt(words) + "개";
+    rLines.textContent = CM.fmt(lines) + "줄";
+    rBytesUtf8.textContent = CM.fmt(utf8) + "byte";
+    rBytes2.textContent = CM.fmt(b2) + "byte";
+    rPages.textContent = CM.fmt(pages) + "매";
+  }
+
+  txt.addEventListener("input", update);
+  clearBtn.addEventListener("click", function () {
+    txt.value = "";
+    update();
+    txt.focus();
+  });
+
+  update();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부가세 계산기 - 부가가치세 10% 계산, 공급가액·합계금액</title>
+<meta name="description" content="공급가액에 부가세 10%를 더하거나, 부가세 포함 합계금액에서 공급가액과 부가세를 역산합니다. 세금계산서 발행 전 금액 확인에 유용한 무료 부가가치세 계산기.">
+<link rel="canonical" href="https://calcmoa.site/tools/vat">
+<meta property="og:type" content="website">
+<meta property="og:title" content="부가세 계산기 - 부가가치세 10% 계산, 공급가액·합계금액">
+<meta property="og:description" content="공급가액에 부가세 10%를 더하거나, 부가세 포함 합계금액에서 공급가액과 부가세를 역산합니다. 세금계산서 발행 전 금액 확인에 유용한 무료 부가가치세 계산기.">
+<meta property="og:url" content="https://calcmoa.site/tools/vat">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"부가세 계산기","url":"https://calcmoa.site/tools/vat","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"합계금액에서 공급가액을 구할 때 왜 1.1로 나누나요?","acceptedAnswer":{"@type":"Answer","text":"합계금액은 공급가액에 부가세 10%를 더한 값, 즉 공급가액의 1.1배이기 때문입니다. 거꾸로 공급가액 = 합계 ÷ 1.1이 되고, 이는 합계 × 10/11과 같습니다. 부가세는 합계의 11분의 1에 해당합니다."}},
+  {"@type":"Question","name":"부가세는 항상 10%인가요?","acceptedAnswer":{"@type":"Answer","text":"일반과세 기준 부가가치세율은 10%입니다. 다만 수출 등 영세율(0%)이 적용되는 거래와 면세 재화·용역(기초 생활필수품, 의료·교육 등)은 부가세가 붙지 않습니다. 이 계산기는 일반과세 10%를 기준으로 계산합니다."}},
+  {"@type":"Question","name":"간이과세자도 이 계산기를 그대로 쓰면 되나요?","acceptedAnswer":{"@type":"Answer","text":"간이과세자는 공급대가에 업종별 부가가치율을 곱해 세액을 계산하므로 업종에 따라 실제 납부세액이 달라집니다. 이 계산기는 일반과세자의 10% 세율 기준이므로, 간이과세자의 정확한 납부세액은 국세청 홈택스 또는 세무 전문가를 통해 확인하세요."}},
+  {"@type":"Question","name":"계산서를 발행할 때 1원 단위가 안 맞으면 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"합계에서 역산하면 공급가액과 부가세에 소수점이 생길 수 있습니다. 실무에서는 공급가액을 원 단위로 반올림(또는 절사)한 뒤 부가세를 합계에서 공급가액을 뺀 값으로 맞추는 방식이 흔히 쓰입니다. 이 계산기도 공급가액을 반올림하고 부가세 = 합계 − 공급가액으로 계산해 합계가 정확히 일치하도록 처리합니다."}},
+  {"@type":"Question","name":"부가세는 누가 부담하고 누가 납부하나요?","acceptedAnswer":{"@type":"Answer","text":"부가가치세는 최종 소비자가 부담하는 세금이지만, 실제 신고·납부는 사업자가 합니다. 사업자는 판매 시 받은 매출세액에서 매입 시 부담한 매입세액을 공제한 차액을 부가세 신고 기간에 납부합니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-money">돈·급여</a><span class="sep">›</span>
+    <span>부가세 계산기</span>
+  </nav>
+
+  <h1>부가세 계산기</h1>
+  <p class="lead">공급가액에 부가세 10%를 더하거나, 부가세 포함 합계금액에서 공급가액과 부가세를 역산합니다. 세금계산서 발행 전 금액 확인에 활용하세요.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label>계산 기준</label>
+      <div class="seg" id="modeSeg">
+        <button type="button" class="on" data-mode="supply">공급가액 기준</button>
+        <button type="button" data-mode="total">합계금액 기준 (부가세 포함)</button>
+      </div>
+    </div>
+    <div class="field" id="fAmount">
+      <label for="amount" id="amountLabel">공급가액 (원)</label>
+      <input type="text" inputmode="numeric" id="amount" placeholder="예: 1000000">
+      <div class="hint" id="amountHint">부가세를 제외한 금액을 입력하세요.</div>
+      <div class="field-error">금액을 숫자로 입력해 주세요.</div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label" id="rLabel">합계금액 (부가세 포함)</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>공급가액</span><b id="rSupply"></b></div>
+        <div class="row"><span>부가세 (10%)</span><b id="rVat"></b></div>
+        <div class="row"><span>합계금액</span><b id="rTotal"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">전체 내역 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>계산 기준을 선택합니다. <b>공급가액 기준</b>은 세금을 붙이기 전 금액에서 출발하고, <b>합계금액 기준</b>은 부가세가 이미 포함된 결제 금액에서 역산합니다.</li>
+      <li>금액을 원 단위 숫자로 입력합니다. 콤마는 넣어도 되고 생략해도 됩니다.</li>
+      <li><b>계산하기</b> 버튼을 누르면 공급가액·부가세·합계금액이 한 번에 표시됩니다.</li>
+      <li><b>전체 내역 복사</b> 버튼으로 세 값을 복사해 견적서나 메신저에 붙여넣을 수 있습니다.</li>
+    </ol>
+
+    <h2>부가세 계산 원리</h2>
+    <p>부가가치세(VAT)는 재화나 용역이 거래되는 단계마다 발생하는 부가가치에 매기는 세금으로, 일반과세 기준 세율은 <b>10%</b>입니다. 사업자 간 거래 금액은 보통 세금을 붙이기 전의 <b>공급가액</b>과, 공급가액의 10%인 <b>부가세(세액)</b>, 둘을 합한 <b>합계금액(공급대가)</b>으로 구분해 표기합니다.</p>
+    <table>
+      <thead><tr><th>계산 기준</th><th>공식</th><th>예시 (100만원)</th></tr></thead>
+      <tbody>
+        <tr><td>공급가액 → 부가세</td><td>부가세 = 공급가액 × 10%</td><td>1,000,000원 × 10% = 100,000원</td></tr>
+        <tr><td>공급가액 → 합계</td><td>합계 = 공급가액 × 1.1</td><td>1,000,000원 × 1.1 = 1,100,000원</td></tr>
+        <tr><td>합계 → 공급가액</td><td>공급가액 = 합계 ÷ 1.1</td><td>1,100,000원 ÷ 1.1 = 1,000,000원</td></tr>
+        <tr><td>합계 → 부가세</td><td>부가세 = 합계 − 공급가액 (= 합계 × 1/11)</td><td>1,100,000원 − 1,000,000원 = 100,000원</td></tr>
+      </tbody>
+    </table>
+    <p>합계금액에서 공급가액을 구할 때 1.1로 나누는 이유는 간단합니다. 합계 = 공급가액 + 공급가액 × 0.1 = 공급가액 × 1.1이기 때문입니다. 이를 뒤집으면 공급가액 = 합계 ÷ 1.1 = 합계 × 10/11이고, 부가세는 합계의 <b>11분의 1</b>이 됩니다. "부가세 포함 11만원이면 부가세는 1만원"이라고 바로 암산할 수 있는 이유입니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p><b>원 단위 처리 관행:</b> 합계금액이 1.1로 딱 나누어떨어지지 않으면 공급가액에 소수점이 생깁니다. 실무에서는 공급가액을 원 단위로 반올림하거나 절사한 뒤, 부가세를 "합계 − 공급가액"으로 맞춰 세 금액의 합이 어긋나지 않게 발행하는 방식이 널리 쓰입니다. 이 계산기도 공급가액을 원 단위 반올림하고 부가세를 차액으로 계산해 <b>공급가액 + 부가세 = 합계</b>가 항상 성립하도록 처리합니다.</p>
+    <p><b>간이과세자는 다릅니다:</b> 간이과세자는 공급대가(부가세 포함 금액)에 업종별 부가가치율을 곱한 뒤 10%를 적용해 납부세액을 계산하므로, 업종에 따라 실제 세 부담이 일반과세자와 다릅니다. 이 계산기는 <b>일반과세 10% 기준</b>이므로 간이과세자의 신고·납부세액 계산에는 그대로 사용할 수 없습니다.</p>
+    <p><b>영세율과 면세:</b> 수출 재화 등에는 0% 세율(영세율)이 적용되고, 가공되지 않은 식료품·의료보건 용역·교육 용역 등은 면세 대상이라 부가세가 아예 붙지 않습니다. 견적 단계에서 거래가 과세 대상인지 먼저 확인하는 것이 좋습니다.</p>
+    <p class="note">본 계산기는 2026년 기준 일반과세 세율 10%를 적용한 참고용 도구입니다. 실제 신고·납부세액은 매입세액 공제, 과세 유형 등에 따라 달라지므로 국세청 홈택스 또는 세무 전문가의 확인을 권장합니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details><summary>합계금액에서 공급가액을 구할 때 왜 1.1로 나누나요?</summary><p>합계금액은 공급가액에 부가세 10%를 더한 값, 즉 공급가액의 1.1배이기 때문입니다. 거꾸로 공급가액 = 합계 ÷ 1.1이 되고, 이는 합계 × 10/11과 같습니다. 부가세는 합계의 11분의 1에 해당합니다.</p></details>
+      <details><summary>부가세는 항상 10%인가요?</summary><p>일반과세 기준 부가가치세율은 10%입니다. 다만 수출 등 영세율(0%)이 적용되는 거래와 면세 재화·용역(기초 생활필수품, 의료·교육 등)은 부가세가 붙지 않습니다. 이 계산기는 일반과세 10%를 기준으로 계산합니다.</p></details>
+      <details><summary>간이과세자도 이 계산기를 그대로 쓰면 되나요?</summary><p>간이과세자는 공급대가에 업종별 부가가치율을 곱해 세액을 계산하므로 업종에 따라 실제 납부세액이 달라집니다. 이 계산기는 일반과세자의 10% 세율 기준이므로, 간이과세자의 정확한 납부세액은 국세청 홈택스 또는 세무 전문가를 통해 확인하세요.</p></details>
+      <details><summary>계산서를 발행할 때 1원 단위가 안 맞으면 어떻게 하나요?</summary><p>합계에서 역산하면 공급가액과 부가세에 소수점이 생길 수 있습니다. 실무에서는 공급가액을 원 단위로 반올림(또는 절사)한 뒤 부가세를 합계에서 공급가액을 뺀 값으로 맞추는 방식이 흔히 쓰입니다. 이 계산기도 공급가액을 반올림하고 부가세 = 합계 − 공급가액으로 계산해 합계가 정확히 일치하도록 처리합니다.</p></details>
+      <details><summary>부가세는 누가 부담하고 누가 납부하나요?</summary><p>부가가치세는 최종 소비자가 부담하는 세금이지만, 실제 신고·납부는 사업자가 합니다. 사업자는 판매 시 받은 매출세액에서 매입 시 부담한 매입세액을 공제한 차액을 부가세 신고 기간에 납부합니다.</p></details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+      <a class="tool-card" href="/tools/salary"><div class="ico">💰</div><b>연봉 실수령액 계산기</b><span>4대보험·세금 공제 후 월 실수령액</span></a>
+      <a class="tool-card" href="/tools/loan"><div class="ico">🏦</div><b>대출 이자 계산기</b><span>원리금균등·원금균등·만기일시</span></a>
+      <a class="tool-card" href="/tools/dutch"><div class="ico">🍻</div><b>더치페이 계산기</b><span>회식비 N빵, 1인당 부담금</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var mode = "supply";
+  var seg = $("modeSeg");
+  var fAmount = $("fAmount"), amountEl = $("amount");
+  var lastText = "";
+
+  seg.addEventListener("click", function (ev) {
+    var btn = ev.target.closest("button");
+    if (!btn) return;
+    mode = btn.getAttribute("data-mode");
+    Array.prototype.forEach.call(seg.querySelectorAll("button"), function (b) {
+      b.classList.toggle("on", b === btn);
+    });
+    if (mode === "supply") {
+      $("amountLabel").textContent = "공급가액 (원)";
+      $("amountHint").textContent = "부가세를 제외한 금액을 입력하세요.";
+    } else {
+      $("amountLabel").textContent = "합계금액 (원, 부가세 포함)";
+      $("amountHint").textContent = "부가세가 포함된 결제 금액을 입력하세요.";
+    }
+    $("result").hidden = true;
+  });
+
+  function num(el) {
+    var v = String(el.value).replace(/[,\s원]/g, "");
+    if (v === "" || !/^\d+$/.test(v)) return NaN;
+    return +v;
+  }
+
+  function calc() {
+    var amount = num(amountEl);
+    if (isNaN(amount) || amount <= 0) { CM.invalid(fAmount, true); return; }
+    CM.invalid(fAmount, false);
+
+    var supply, vat, total;
+    if (mode === "supply") {
+      supply = amount;
+      vat = Math.round(supply * 0.1);
+      total = supply + vat;
+      $("rLabel").textContent = "합계금액 (부가세 포함)";
+      CM.countUp($("rMain"), total, { suffix: "원" });
+    } else {
+      total = amount;
+      supply = Math.round(total / 1.1);
+      vat = total - supply; // 공급가액 + 부가세 = 합계 보장
+      $("rLabel").textContent = "공급가액 (부가세 제외)";
+      CM.countUp($("rMain"), supply, { suffix: "원" });
+    }
+
+    $("rSupply").textContent = CM.won(supply);
+    $("rVat").textContent = CM.won(vat);
+    $("rTotal").textContent = CM.won(total);
+    $("result").hidden = false;
+
+    lastText = "[계산모아 부가세 계산 결과]\n" +
+      "공급가액: " + CM.won(supply) + "\n" +
+      "부가세(10%): " + CM.won(vat) + "\n" +
+      "합계금액: " + CM.won(total) + "\n" +
+      "https://calcmoa.site/tools/vat";
+  }
+
+  $("calcBtn").addEventListener("click", calc);
+  amountEl.addEventListener("keydown", function (ev) {
+    if (ev.key === "Enter") { ev.preventDefault(); calc(); }
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시급 계산기 - 주휴수당 포함 월급 환산, 2026 최저시급</title>
+<meta name="description" content="2026년 최저시급 10,320원 기준 시급 계산기. 하루 근무시간과 주 근무일수를 입력하면 주휴수당을 포함한 일급·주급·예상 월급을 바로 계산합니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/hourly">
+<meta property="og:type" content="website">
+<meta property="og:title" content="시급 계산기 - 주휴수당 포함 월급 환산, 2026 최저시급">
+<meta property="og:description" content="2026년 최저시급 10,320원 기준 시급 계산기. 하루 근무시간과 주 근무일수를 입력하면 주휴수당을 포함한 일급·주급·예상 월급을 바로 계산합니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/hourly">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"시급 계산기","url":"https://calcmoa.site/tools/hourly","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"주휴수당은 누가 받을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"1주 소정근로시간이 15시간 이상이고, 그 주의 소정근로일을 개근한 근로자가 받을 수 있습니다. 아르바이트, 파트타임도 조건을 충족하면 대상이며, 주 15시간 미만으로 일하면 주휴수당이 발생하지 않습니다."}},
+  {"@type":"Question","name":"209시간은 무슨 의미인가요?","acceptedAnswer":{"@type":"Answer","text":"주 40시간 근무자의 월 유급 근로시간입니다. 주 40시간에 주휴 8시간을 더한 48시간에 한 달 평균 주수 4.345주(365일÷7일÷12개월)를 곱하면 약 209시간이 됩니다. 월급제 급여를 시급으로 환산할 때 기준이 되는 시간입니다."}},
+  {"@type":"Question","name":"2026년 최저시급으로 받는 최저 월급은 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"2026년 최저시급 10,320원에 월 209시간을 곱한 2,156,880원입니다. 주 40시간(하루 8시간, 주 5일) 근무하며 주휴수당을 포함한 금액 기준입니다."}},
+  {"@type":"Question","name":"계산된 월급이 실제 지급액과 다를 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 이 계산기는 한 달을 평균 4.345주로 환산한 세전 근사치입니다. 실제 지급액은 해당 달의 근무일수, 연장·야간·휴일근로 가산수당, 4대보험·세금 공제 여부에 따라 달라질 수 있습니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-money">돈·급여</a><span class="sep">›</span>
+    <span>시급 계산기</span>
+  </nav>
+
+  <h1>시급 계산기</h1>
+  <p class="lead">시급과 근무시간을 입력하면 주휴수당을 포함한 일급·주급·예상 월급을 2026년 최저시급 기준으로 계산합니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fWage">
+      <label for="wage">시급 (원)</label>
+      <input type="text" id="wage" inputmode="numeric" value="10320" autocomplete="off">
+      <div class="hint">2026년 최저시급 10,320원이 기본값입니다.</div>
+      <div class="field-error">시급을 1원 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fHours">
+        <label for="hours">하루 근무시간</label>
+        <input type="text" id="hours" inputmode="numeric" value="8" autocomplete="off">
+        <div class="field-error">1~24 사이 숫자로 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fDays">
+        <label for="days">주 근무일수</label>
+        <input type="text" id="days" inputmode="numeric" value="5" autocomplete="off">
+        <div class="field-error">1~7 사이 숫자로 입력해 주세요.</div>
+      </div>
+    </div>
+    <div class="field">
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+        <input type="checkbox" id="weekly" checked style="width:auto">
+        주휴수당 포함 (주 15시간 이상 근무 시)
+      </label>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">예상 월급 (세전)</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>일급</span><b id="rDay"></b></div>
+        <div class="row"><span>주급 (주휴 포함)</span><b id="rWeek"></b></div>
+        <div class="row"><span>월 주휴수당분</span><b id="rHoliday"></b></div>
+        <div class="row"><span>연 환산</span><b id="rYear"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>시급을 입력합니다. 2026년 최저시급 10,320원이 기본값으로 들어 있습니다.</li>
+      <li>하루 근무시간과 주 근무일수를 입력합니다. 하루 8시간, 주 5일이 기본입니다.</li>
+      <li>주 15시간 이상 일하고 개근하는 경우라면 주휴수당 포함에 체크한 상태로 둡니다.</li>
+      <li>계산하기 버튼을 누르면 일급, 주급, 예상 월급, 연 환산 금액이 표시됩니다.</li>
+    </ol>
+
+    <h2>시급 → 월급 계산 원리</h2>
+    <p>주급은 시급에 주 실근로시간과 주휴시간을 더한 시간을 곱해 구합니다. 주휴시간은 1주 소정근로시간이 15시간 이상일 때 발생하며, 주 소정근로시간(최대 40시간 인정)을 40으로 나눈 비율에 8시간을 곱해 계산합니다. 월급은 주급에 한 달 평균 주수 4.345주(365일÷7일÷12개월)를 곱해 환산합니다.</p>
+    <table>
+      <thead>
+        <tr><th>적용 연도</th><th>최저시급</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2024년</td><td>9,860원</td></tr>
+        <tr><td>2025년</td><td>10,030원</td></tr>
+        <tr><td>2026년</td><td>10,320원</td></tr>
+      </tbody>
+    </table>
+    <p>주 40시간 풀타임 근무자의 월 유급 근로시간이 209시간인 이유도 같은 원리입니다. 주 40시간에 주휴 8시간을 더한 48시간에 4.345주를 곱하면 약 209시간이 나오고, 여기에 2026년 최저시급 10,320원을 곱하면 최저 월급 2,156,880원이 됩니다.</p>
+    <p class="note">이 계산기는 한 달을 평균 4.345주로 보는 세전 근사치입니다. 실제 지급액은 달력상 근무일수, 가산수당, 공제 항목에 따라 달라질 수 있으며 결과는 참고용입니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>주휴수당의 조건은 두 가지입니다. 첫째, 1주 소정근로시간이 15시간 이상이어야 합니다. 둘째, 그 주의 소정근로일을 개근해야 합니다. 지각·조퇴는 개근에 영향을 주지 않지만 결근이 있으면 그 주의 주휴수당은 발생하지 않습니다. 아르바이트나 파트타임이라도 조건을 충족하면 주휴수당을 받을 권리가 있습니다.</p>
+    <p>예시로 계산해 보면, 시급 10,320원에 하루 6시간, 주 4일(주 24시간) 일하는 경우 주휴시간은 24÷40×8 = 4.8시간입니다. 주급은 10,320원 × (24 + 4.8)시간 = 297,216원이고, 월급으로 환산하면 약 1,291,474원이 됩니다. 이처럼 주 15시간 이상 근무라면 주휴수당만으로 월급이 10% 이상 늘어나므로, 아르바이트 급여를 확인할 때 반드시 포함 여부를 확인해야 합니다.</p>
+    <p>월급제 근로자의 급여가 최저임금 이상인지 확인할 때는 월급을 209시간으로 나눠 시급으로 환산해 보면 됩니다. 2026년에는 이 값이 10,320원 이상이어야 최저임금법을 충족합니다. 즉 주 40시간 근무 기준 최저 월급은 2,156,880원(209시간 × 10,320원)입니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>주휴수당은 누가 받을 수 있나요?</summary>
+        <p>1주 소정근로시간이 15시간 이상이고, 그 주의 소정근로일을 개근한 근로자가 받을 수 있습니다. 아르바이트, 파트타임도 조건을 충족하면 대상이며, 주 15시간 미만으로 일하면 주휴수당이 발생하지 않습니다.</p>
+      </details>
+      <details>
+        <summary>209시간은 무슨 의미인가요?</summary>
+        <p>주 40시간 근무자의 월 유급 근로시간입니다. 주 40시간에 주휴 8시간을 더한 48시간에 한 달 평균 주수 4.345주(365일÷7일÷12개월)를 곱하면 약 209시간이 됩니다. 월급제 급여를 시급으로 환산할 때 기준이 되는 시간입니다.</p>
+      </details>
+      <details>
+        <summary>2026년 최저시급으로 받는 최저 월급은 얼마인가요?</summary>
+        <p>2026년 최저시급 10,320원에 월 209시간을 곱한 2,156,880원입니다. 주 40시간(하루 8시간, 주 5일) 근무하며 주휴수당을 포함한 금액 기준입니다.</p>
+      </details>
+      <details>
+        <summary>계산된 월급이 실제 지급액과 다를 수 있나요?</summary>
+        <p>네. 이 계산기는 한 달을 평균 4.345주로 환산한 세전 근사치입니다. 실제 지급액은 해당 달의 근무일수, 연장·야간·휴일근로 가산수당, 4대보험·세금 공제 여부에 따라 달라질 수 있습니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/salary"><div class="ico">💰</div><b>연봉 실수령액 계산기</b><span>4대보험·세금 공제 후 월 실수령액</span></a>
+      <a class="tool-card" href="/tools/retirement"><div class="ico">💼</div><b>퇴직금 계산기</b><span>평균임금 기준 퇴직금 예상액</span></a>
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+      <a class="tool-card" href="/tools/dutch"><div class="ico">🍻</div><b>더치페이 계산기</b><span>회식비 N빵, 1인당 부담금</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  function num(el) {
+    var v = String(el.value).replace(/[^\d.]/g, "");
+    return v === "" ? NaN : Number(v);
+  }
+
+  var WEEKS_PER_MONTH = 365 / 7 / 12; /* 4.345주 */
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var wage = num($("wage"));
+    var hours = num($("hours"));
+    var days = num($("days"));
+    var withHoliday = $("weekly").checked;
+
+    var ok = true;
+    if (!(wage > 0)) { CM.invalid($("fWage"), true); ok = false; } else { CM.invalid($("fWage"), false); }
+    if (!(hours >= 1 && hours <= 24)) { CM.invalid($("fHours"), true); ok = false; } else { CM.invalid($("fHours"), false); }
+    if (!(days >= 1 && days <= 7)) { CM.invalid($("fDays"), true); ok = false; } else { CM.invalid($("fDays"), false); }
+    if (!ok) return;
+
+    var weeklyHours = hours * days;                 /* 주 실근로시간 */
+    var recognized = Math.min(weeklyHours, 40);     /* 소정근로 최대 40시간 인정 */
+    var holidayHours = 0;
+    if (withHoliday && weeklyHours >= 15) {
+      holidayHours = recognized / 40 * 8;           /* 주휴시간 */
+    }
+
+    var dailyPay = wage * hours;
+    var weeklyPay = wage * (weeklyHours + holidayHours);
+    var monthlyPay = weeklyPay * WEEKS_PER_MONTH;
+    var monthlyHoliday = wage * holidayHours * WEEKS_PER_MONTH;
+    var yearlyPay = monthlyPay * 12;
+
+    $("result").hidden = false;
+    CM.countUp($("rMain"), Math.round(monthlyPay), { suffix: "원" });
+    $("rDay").textContent = CM.won(dailyPay);
+    $("rWeek").textContent = CM.won(weeklyPay);
+    $("rHoliday").textContent = CM.won(monthlyHoliday);
+    $("rYear").textContent = CM.won(yearlyPay);
+
+    lastText = "시급 " + CM.won(wage) + " · 하루 " + hours + "시간 · 주 " + days + "일"
+      + (holidayHours > 0 ? " (주휴수당 포함)" : "") + "\n"
+      + "예상 월급: " + CM.won(monthlyPay) + "\n"
+      + "일급: " + CM.won(dailyPay) + " / 주급: " + CM.won(weeklyPay)
+      + " / 월 주휴수당분: " + CM.won(monthlyHoliday) + "\n"
+      + "연 환산: " + CM.won(yearlyPay)
+      + "\n- calcmoa.site/tools/hourly";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["wage", "hours", "days"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+</body>
+</html>

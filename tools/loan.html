@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대출 이자 계산기 - 원리금균등·원금균등·만기일시 상환</title>
+<meta name="description" content="대출 이자 계산기. 원리금균등·원금균등·만기일시 상환 방식별 월 상환액과 총 이자를 2026년 기준으로 바로 계산하세요. 주택담보대출·신용대출 이자 비교에 활용할 수 있습니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/loan">
+<meta property="og:type" content="website">
+<meta property="og:title" content="대출 이자 계산기 - 원리금균등·원금균등·만기일시 상환">
+<meta property="og:description" content="대출 이자 계산기. 원리금균등·원금균등·만기일시 상환 방식별 월 상환액과 총 이자를 2026년 기준으로 바로 계산하세요. 주택담보대출·신용대출 이자 비교에 활용할 수 있습니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/loan">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"대출 이자 계산기","url":"https://calcmoa.site/tools/loan","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"원리금균등과 원금균등 중 어떤 방식이 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"총 이자만 보면 원금균등이 가장 적습니다. 원금이 매달 같은 속도로 줄어 이자가 붙는 잔액이 빨리 감소하기 때문입니다. 다만 원금균등은 초기 상환액이 커서 초반 상환 부담이 크고, 원리금균등은 매달 같은 금액이라 자금 계획을 세우기 쉽습니다. 월 여유 자금이 충분하면 원금균등, 매달 고정 지출로 관리하고 싶다면 원리금균등이 일반적인 선택입니다."}},
+  {"@type":"Question","name":"만기일시 상환은 언제 사용하나요?","acceptedAnswer":{"@type":"Answer","text":"만기일시 상환은 대출 기간 동안 이자만 내다가 만기에 원금을 한 번에 갚는 방식으로, 전세자금대출처럼 만기에 목돈(보증금)이 돌아오는 경우나 단기 운용 자금에 주로 쓰입니다. 원금이 끝까지 줄지 않아 세 방식 중 총 이자가 가장 많습니다."}},
+  {"@type":"Question","name":"계산 결과가 은행 상환 스케줄과 조금 다른데 왜 그런가요?","acceptedAnswer":{"@type":"Answer","text":"이 계산기는 월 단위 원리금 공식을 그대로 적용한 참고용 근사치입니다. 실제 은행은 일할 계산(실제 경과 일수 기준 이자), 원 단위 절사 규칙, 상환일 날짜 차이 등을 반영하므로 수원~수백원 수준의 차이가 날 수 있습니다. 정확한 상환 스케줄은 대출 약정서와 은행 앱에서 확인하세요."}},
+  {"@type":"Question","name":"중도상환이나 금리 변동도 반영되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 이 계산기는 고정금리로 만기까지 정상 상환하는 경우를 가정하며, 중도상환(일부·전액)과 변동금리의 금리 재산정, 중도상환수수료, 거치기간은 반영하지 않습니다. 변동금리 대출이라면 현재 금리 기준의 참고값으로만 활용하세요."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-money">돈·급여</a><span class="sep">›</span>
+    <span>대출 이자 계산기</span>
+  </nav>
+
+  <h1>대출 이자 계산기</h1>
+  <p class="lead">대출금액·연이율·기간을 입력하면 원리금균등·원금균등·만기일시 상환 방식별 월 상환액과 총 이자를 바로 계산합니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fAmount">
+      <label for="amount">대출금액 (원)</label>
+      <input type="text" id="amount" inputmode="numeric" placeholder="100000000" autocomplete="off">
+      <div class="hint">원 단위로 입력하세요. 예: 1억원 → 100000000</div>
+      <div class="field-error">대출금액을 1원 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fRate">
+        <label for="rate">연이율 (%)</label>
+        <input type="number" id="rate" inputmode="decimal" step="0.01" min="0" placeholder="4.0" autocomplete="off">
+        <div class="hint">소수점 둘째 자리까지 입력 가능. 예: 4.25</div>
+        <div class="field-error">연이율을 0 이상 숫자로 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fPeriod">
+        <label for="period">대출기간</label>
+        <input type="text" id="period" inputmode="numeric" placeholder="30" autocomplete="off">
+        <div class="hint" id="periodHint">년 단위로 입력 (예: 30년 → 30)</div>
+        <div class="field-error">대출기간을 1 이상 숫자로 입력해 주세요.</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>기간 단위</label>
+      <div class="seg" id="segUnit">
+        <button type="button" class="on" data-unit="year">년</button>
+        <button type="button" data-unit="month">개월</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>상환 방식</label>
+      <div class="seg" id="segMethod">
+        <button type="button" class="on" data-method="equal-total">원리금균등</button>
+        <button type="button" data-method="equal-principal">원금균등</button>
+        <button type="button" data-method="bullet">만기일시</button>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label" id="rLabel">월 상환액</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>대출금액을 원 단위로 입력합니다. 1억원이면 100000000을 입력합니다.</li>
+      <li>연이율을 % 단위로 입력합니다. 4.25%처럼 소수점 둘째 자리까지 입력할 수 있습니다.</li>
+      <li>대출기간을 입력하고, 기간 단위(년/개월)를 선택합니다. 계산은 개월 단위로 이루어집니다.</li>
+      <li>상환 방식(원리금균등·원금균등·만기일시)을 선택하고 계산하기 버튼을 누릅니다.</li>
+      <li>월 상환액과 총 이자, 총 상환액이 표시됩니다. 결과 복사 버튼으로 내용을 복사해 비교·공유할 수 있습니다.</li>
+    </ol>
+
+    <h2>대출 이자 계산 원리</h2>
+    <p>월이율 r은 연이율을 12로 나눈 값(연이율 ÷ 100 ÷ 12), n은 총 상환 개월 수입니다. 대출 원금을 P라고 할 때 세 가지 상환 방식은 다음과 같이 계산됩니다.</p>
+    <table>
+      <thead>
+        <tr><th>상환 방식</th><th>계산 공식</th><th>특징</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>원리금균등</td><td>월 상환액 = P×r×(1+r)ⁿ ÷ ((1+r)ⁿ − 1)</td><td>매달 같은 금액을 상환. 초기에는 이자 비중이 크고 뒤로 갈수록 원금 비중이 커짐</td></tr>
+        <tr><td>원금균등</td><td>월 원금 = P÷n, k회차 이자 = (P − 원금×(k−1))×r, 총 이자 = P×r×(n+1)÷2</td><td>매달 원금은 같고 이자가 점점 줄어 상환액이 매달 감소. 첫 달이 가장 큼</td></tr>
+        <tr><td>만기일시</td><td>월 이자 = P×r, 총 이자 = P×r×n</td><td>기간 내내 이자만 내고 만기에 원금 전액 상환</td></tr>
+      </tbody>
+    </table>
+    <p>같은 조건이라면 총 이자는 <b>만기일시 &gt; 원리금균등 &gt; 원금균등</b> 순으로 큽니다. 원금이 얼마나 빨리 줄어드는지가 총 이자를 결정하기 때문입니다. 만기일시는 원금이 끝까지 그대로라 이자가 가장 많고, 원금균등은 첫 달부터 원금이 일정하게 줄어 이자가 가장 적습니다.</p>
+    <table>
+      <thead>
+        <tr><th>구분 (1억원 · 연 4% · 30년 기준)</th><th>원리금균등</th><th>원금균등</th><th>만기일시</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>첫 달 상환액</td><td>477,415원</td><td>611,111원</td><td>333,333원</td></tr>
+        <tr><td>마지막 달 상환액</td><td>477,415원</td><td>278,704원</td><td>100,333,333원 (원금+이자)</td></tr>
+        <tr><td>총 이자</td><td>약 71,869,506원</td><td>약 60,166,667원</td><td>120,000,000원</td></tr>
+      </tbody>
+    </table>
+    <p>예를 들어 1억원을 연 4% 금리로 30년(360개월) 원리금균등 상환하면 월 상환액은 약 477,415원입니다. 같은 조건에서 원금균등을 선택하면 첫 달 611,111원으로 시작해 매달 조금씩 줄어 마지막 달에는 278,704원이 되고, 총 이자는 원리금균등보다 약 1,170만원 적습니다.</p>
+    <p class="note">이 계산기는 고정금리·정상 만기 상환을 가정한 참고용 근사치입니다. 중도상환, 금리 변동, 거치기간, 중도상환수수료, 은행별 일할 계산 방식은 반영하지 않으므로 실제 상환 스케줄은 대출 약정서와 금융기관 안내를 확인하세요.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>상환 방식 선택은 "총 이자"와 "월 부담" 사이의 선택입니다. 원금균등은 총 이자가 가장 적지만 초기 상환액이 커서 대출 초반의 현금 흐름 부담이 큽니다. 반대로 원리금균등은 매달 상환액이 같아 가계 예산을 세우기 쉽고, 은행의 소득 대비 상환 능력(DSR) 심사에서도 월 상환액이 일정해 관리가 편합니다. 실제 주택담보대출에서는 원리금균등이 가장 널리 쓰입니다.</p>
+    <p>금리가 조금만 달라져도 총 이자는 크게 달라집니다. 장기 대출일수록 이 효과가 커지므로, 대출을 비교할 때는 월 상환액뿐 아니라 총 이자를 함께 확인하는 것이 좋습니다. 이 계산기에서 연이율만 바꿔가며 여러 번 계산해 보면 금리 0.1%p 차이가 만기까지 얼마의 이자 차이로 이어지는지 쉽게 확인할 수 있습니다.</p>
+    <p>여유 자금이 생기면 중도상환도 고려할 수 있습니다. 중도상환은 이자가 붙는 원금 잔액 자체를 줄이므로 남은 기간의 이자를 줄이는 효과가 있지만, 상품에 따라 중도상환수수료가 부과될 수 있으니 수수료 면제 조건(통상 일정 기간 경과 후)을 먼저 확인하는 것이 좋습니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>원리금균등과 원금균등 중 어떤 방식이 유리한가요?</summary>
+        <p>총 이자만 보면 원금균등이 가장 적습니다. 원금이 매달 같은 속도로 줄어 이자가 붙는 잔액이 빨리 감소하기 때문입니다. 다만 원금균등은 초기 상환액이 커서 초반 상환 부담이 크고, 원리금균등은 매달 같은 금액이라 자금 계획을 세우기 쉽습니다. 월 여유 자금이 충분하면 원금균등, 매달 고정 지출로 관리하고 싶다면 원리금균등이 일반적인 선택입니다.</p>
+      </details>
+      <details>
+        <summary>만기일시 상환은 언제 사용하나요?</summary>
+        <p>만기일시 상환은 대출 기간 동안 이자만 내다가 만기에 원금을 한 번에 갚는 방식으로, 전세자금대출처럼 만기에 목돈(보증금)이 돌아오는 경우나 단기 운용 자금에 주로 쓰입니다. 원금이 끝까지 줄지 않아 세 방식 중 총 이자가 가장 많습니다.</p>
+      </details>
+      <details>
+        <summary>계산 결과가 은행 상환 스케줄과 조금 다른데 왜 그런가요?</summary>
+        <p>이 계산기는 월 단위 원리금 공식을 그대로 적용한 참고용 근사치입니다. 실제 은행은 일할 계산(실제 경과 일수 기준 이자), 원 단위 절사 규칙, 상환일 날짜 차이 등을 반영하므로 수원~수백원 수준의 차이가 날 수 있습니다. 정확한 상환 스케줄은 대출 약정서와 은행 앱에서 확인하세요.</p>
+      </details>
+      <details>
+        <summary>중도상환이나 금리 변동도 반영되나요?</summary>
+        <p>아니요. 이 계산기는 고정금리로 만기까지 정상 상환하는 경우를 가정하며, 중도상환(일부·전액)과 변동금리의 금리 재산정, 중도상환수수료, 거치기간은 반영하지 않습니다. 변동금리 대출이라면 현재 금리 기준의 참고값으로만 활용하세요.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/savings"><div class="ico">🐷</div><b>적금·예금 계산기</b><span>만기 수령액과 세후 이자</span></a>
+      <a class="tool-card" href="/tools/salary"><div class="ico">💰</div><b>연봉 실수령액 계산기</b><span>4대보험·세금 공제 후 월 실수령액</span></a>
+      <a class="tool-card" href="/tools/retirement"><div class="ico">💼</div><b>퇴직금 계산기</b><span>평균임금 기준 퇴직금 예상액</span></a>
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  var unit = "year";       /* year | month */
+  var method = "equal-total"; /* equal-total | equal-principal | bullet */
+
+  function bindSeg(segEl, attr, onChange) {
+    Array.prototype.forEach.call(segEl.querySelectorAll("button"), function (btn) {
+      btn.addEventListener("click", function () {
+        Array.prototype.forEach.call(segEl.querySelectorAll("button"), function (b) {
+          b.classList.toggle("on", b === btn);
+        });
+        onChange(btn.getAttribute(attr));
+      });
+    });
+  }
+
+  bindSeg($("segUnit"), "data-unit", function (v) {
+    unit = v;
+    $("periodHint").textContent = unit === "year"
+      ? "년 단위로 입력 (예: 30년 → 30)"
+      : "개월 단위로 입력 (예: 36개월 → 36)";
+  });
+  bindSeg($("segMethod"), "data-method", function (v) { method = v; });
+
+  function intVal(el) {
+    var v = String(el.value).replace(/[^\d]/g, "");
+    return v === "" ? NaN : Number(v);
+  }
+  function floatVal(el) {
+    var v = String(el.value).trim();
+    return v === "" ? NaN : Number(v);
+  }
+
+  function row(label, value) {
+    return '<div class="row"><span>' + label + '</span><b>' + value + '</b></div>';
+  }
+
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var P = intVal($("amount"));
+    var yearRate = floatVal($("rate"));
+    var period = intVal($("period"));
+
+    var ok = true;
+    if (!(P > 0)) { CM.invalid($("fAmount"), true); ok = false; } else { CM.invalid($("fAmount"), false); }
+    if (!(yearRate >= 0) || !isFinite(yearRate)) { CM.invalid($("fRate"), true); ok = false; } else { CM.invalid($("fRate"), false); }
+    if (!(period >= 1)) { CM.invalid($("fPeriod"), true); ok = false; } else { CM.invalid($("fPeriod"), false); }
+    if (!ok) return;
+
+    var n = unit === "year" ? period * 12 : period;
+    var r = yearRate / 100 / 12;
+
+    var mainLabel, mainValue, rowsHtml, methodName, totalInterest, totalPay;
+
+    if (method === "equal-total") {
+      methodName = "원리금균등";
+      var monthly;
+      if (r === 0) {
+        monthly = P / n;
+      } else {
+        var pow = Math.pow(1 + r, n);
+        monthly = P * r * pow / (pow - 1);
+      }
+      totalInterest = monthly * n - P;
+      totalPay = P + totalInterest;
+      mainLabel = "월 상환액 (원리금균등)";
+      mainValue = Math.round(monthly);
+      rowsHtml =
+        row("상환 방식", "원리금균등 · " + CM.fmt(n) + "개월") +
+        row("대출 원금", CM.won(P)) +
+        row("총 이자", CM.won(totalInterest)) +
+        row("총 상환액", CM.won(totalPay));
+      lastText = "대출 " + CM.won(P) + " · 연 " + yearRate + "% · " + n + "개월 · 원리금균등\n"
+        + "월 상환액: " + CM.won(monthly) + "\n"
+        + "총 이자: " + CM.won(totalInterest) + " / 총 상환액: " + CM.won(totalPay);
+    } else if (method === "equal-principal") {
+      methodName = "원금균등";
+      var principal = P / n;
+      var firstPay = principal + P * r;
+      var lastPay = principal + principal * r;
+      totalInterest = P * r * (n + 1) / 2;
+      totalPay = P + totalInterest;
+      mainLabel = "첫 달 상환액 (원금균등)";
+      mainValue = Math.round(firstPay);
+      rowsHtml =
+        row("상환 방식", "원금균등 · " + CM.fmt(n) + "개월") +
+        row("대출 원금", CM.won(P)) +
+        row("매월 원금", CM.won(principal)) +
+        row("마지막 달 상환액", CM.won(lastPay)) +
+        row("총 이자", CM.won(totalInterest)) +
+        row("총 상환액", CM.won(totalPay));
+      lastText = "대출 " + CM.won(P) + " · 연 " + yearRate + "% · " + n + "개월 · 원금균등\n"
+        + "첫 달 상환액: " + CM.won(firstPay) + " / 마지막 달: " + CM.won(lastPay) + "\n"
+        + "총 이자: " + CM.won(totalInterest) + " / 총 상환액: " + CM.won(totalPay);
+    } else {
+      methodName = "만기일시";
+      var monthlyInterest = P * r;
+      totalInterest = monthlyInterest * n;
+      totalPay = P + totalInterest;
+      var finalPay = P + monthlyInterest;
+      mainLabel = "월 이자 (만기일시)";
+      mainValue = Math.round(monthlyInterest);
+      rowsHtml =
+        row("상환 방식", "만기일시 · " + CM.fmt(n) + "개월") +
+        row("대출 원금", CM.won(P)) +
+        row("만기 상환액 (원금+마지막 이자)", CM.won(finalPay)) +
+        row("총 이자", CM.won(totalInterest)) +
+        row("총 상환액", CM.won(totalPay));
+      lastText = "대출 " + CM.won(P) + " · 연 " + yearRate + "% · " + n + "개월 · 만기일시\n"
+        + "월 이자: " + CM.won(monthlyInterest) + " / 만기 상환액: " + CM.won(finalPay) + "\n"
+        + "총 이자: " + CM.won(totalInterest) + " / 총 상환액: " + CM.won(totalPay);
+    }
+
+    lastText += "\n- calcmoa.site/tools/loan";
+
+    $("result").hidden = false;
+    $("rLabel").textContent = mainLabel;
+    CM.countUp($("rMain"), mainValue, { suffix: "원" });
+    $("rRows").innerHTML = rowsHtml;
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["amount", "rate", "period"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+</body>
+</html>

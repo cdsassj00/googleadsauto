@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>퍼센트 계산기 - 백분율, 할인율, 증감률 계산</title>
+<meta name="description" content="퍼센트 계산기로 백분율, 비율, 할인율, 증감률을 한 번에 계산하세요. A의 B%, A는 B의 몇 %, 증감률, 할인가·인상가까지 4가지 모드를 무료로 제공합니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/percent">
+<meta property="og:type" content="website">
+<meta property="og:title" content="퍼센트 계산기 - 백분율, 할인율, 증감률 계산">
+<meta property="og:description" content="퍼센트 계산기로 백분율, 비율, 할인율, 증감률을 한 번에 계산하세요. A의 B%, A는 B의 몇 %, 증감률, 할인가·인상가까지 4가지 모드를 무료로 제공합니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/percent">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"퍼센트 계산기","url":"https://calcmoa.site/tools/percent","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"퍼센트(%)와 퍼센트포인트(%p)는 무엇이 다른가요?","acceptedAnswer":{"@type":"Answer","text":"퍼센트(%)는 비율 자체를, 퍼센트포인트(%p)는 두 퍼센트 값의 산술적 차이를 뜻합니다. 예를 들어 금리가 2%에서 4%로 오르면 2%p 상승한 것이고, 비율로 보면 100% 증가한 것입니다. 두 표현을 혼동하면 변화의 크기를 크게 잘못 읽을 수 있습니다."}},
+  {"@type":"Question","name":"증감률을 계산할 때 기준값은 어느 쪽인가요?","acceptedAnswer":{"@type":"Answer","text":"증감률의 기준값은 항상 변하기 전 값(A)입니다. 공식은 (변한 후 값 - 변하기 전 값) ÷ 변하기 전 값 × 100 입니다. 100에서 150이 되면 +50%이지만, 150에서 100이 되면 약 -33.33%로, 방향에 따라 증감률의 크기가 달라집니다."}},
+  {"@type":"Question","name":"50% 할인 후 50% 인상하면 원래 가격으로 돌아오나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 10,000원을 50% 할인하면 5,000원이 되고, 여기서 50% 인상하면 7,500원이 됩니다. 인상의 기준값이 원가가 아니라 할인된 가격(5,000원)이기 때문입니다. 퍼센트 계산은 항상 기준값이 무엇인지 먼저 확인해야 합니다."}},
+  {"@type":"Question","name":"결과 소수점은 몇 자리까지 표시되나요?","acceptedAnswer":{"@type":"Answer","text":"이 계산기는 결과를 소수점 둘째 자리까지 반올림해 표시하며, 정수로 딱 떨어지는 경우에는 소수점 없이 정수로 표시합니다. 표시 자릿수 때문에 아주 미세한 반올림 오차가 있을 수 있으므로 정밀 계산이 필요하면 원본 수식을 함께 확인하세요."}},
+  {"@type":"Question","name":"입력한 숫자가 저장되거나 전송되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 계산은 사용자의 브라우저 안에서 자바스크립트로만 처리되며, 입력값을 서버로 전송하거나 저장하지 않습니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-life">생활·건강</a><span class="sep">›</span>
+    <span>퍼센트 계산기</span>
+  </nav>
+
+  <h1>퍼센트 계산기</h1>
+  <p class="lead">백분율, 비율, 증감률, 할인가까지 — 헷갈리는 퍼센트 계산 4가지를 모드만 바꿔서 한 번에 해결하세요.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label>계산 모드</label>
+      <div class="seg" id="modeSeg">
+        <button type="button" class="on" data-mode="0">A의 B%는?</button>
+        <button type="button" data-mode="1">A는 B의 몇 %?</button>
+        <button type="button" data-mode="2">A→B 증감률</button>
+        <button type="button" data-mode="3">B% 할인/증가</button>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fieldA">
+        <label for="inpA" id="labelA">기준값 A</label>
+        <input type="text" inputmode="decimal" id="inpA" placeholder="예: 50000">
+        <div class="field-error" id="errA">숫자를 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fieldB">
+        <label for="inpB" id="labelB">퍼센트 B (%)</label>
+        <input type="text" inputmode="decimal" id="inpB" placeholder="예: 15">
+        <div class="field-error" id="errB">숫자를 입력해 주세요.</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label" id="rLabel">결과</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>상단 모드 버튼에서 원하는 계산 종류를 선택합니다. 모드를 바꾸면 입력란 이름이 그 계산에 맞게 자동으로 바뀝니다.</li>
+      <li>두 개의 숫자를 입력합니다. 예를 들어 "A의 B%는?" 모드라면 A에 기준값(50,000), B에 퍼센트(15)를 넣습니다.</li>
+      <li><b>계산하기</b> 버튼을 누르면 대표 결과가 크게 표시되고, 아래에 계산식과 부가 정보가 함께 나옵니다.</li>
+      <li>결과 복사 버튼을 누르면 계산 결과를 텍스트로 복사해 메신저나 메모에 붙여넣을 수 있습니다.</li>
+    </ol>
+
+    <h2>퍼센트 계산 원리</h2>
+    <p>퍼센트(percent)는 "100을 기준으로 한 비율"입니다. 네 가지 모드는 모두 아래 공식 하나씩으로 정리됩니다.</p>
+    <table>
+      <thead>
+        <tr><th>모드</th><th>공식</th><th>예시</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A의 B%는?</td><td>A × B ÷ 100</td><td>50,000의 15% = 7,500</td></tr>
+        <tr><td>A는 B의 몇 %?</td><td>A ÷ B × 100</td><td>30은 120의 25%</td></tr>
+        <tr><td>A→B 증감률</td><td>(B − A) ÷ A × 100</td><td>100 → 130 은 +30% 증가</td></tr>
+        <tr><td>B% 할인 / 증가</td><td>A × (1 − B/100) / A × (1 + B/100)</td><td>20,000의 30% 할인가 14,000 · 인상가 26,000</td></tr>
+      </tbody>
+    </table>
+    <p>모든 퍼센트 계산의 핵심은 <b>기준값(분모)이 무엇인지</b>입니다. 특히 증감률 모드에서는 변하기 전 값 A가 기준입니다. 100에서 150으로 변하면 (150−100)÷100×100 = <b>+50% 증가</b>이지만, 반대로 150에서 100으로 변하면 (100−150)÷150×100 = <b>약 −33.33% 감소</b>입니다. 같은 두 숫자라도 어느 쪽을 기준으로 삼느냐에 따라 증감률이 달라집니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <h3>퍼센트(%)와 퍼센트포인트(%p)의 차이 — 가장 많이 틀리는 부분</h3>
+    <p>뉴스에서 "금리가 2%에서 4%로 올랐다"는 소식을 두 가지로 표현할 수 있습니다.</p>
+    <table>
+      <thead>
+        <tr><th>표현</th><th>계산</th><th>의미</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2%p 상승</td><td>4% − 2% = 2%p</td><td>퍼센트 값의 단순 차이</td></tr>
+        <tr><td>100% 상승</td><td>(4−2) ÷ 2 × 100 = 100%</td><td>기존 값 대비 비율 변화</td></tr>
+      </tbody>
+    </table>
+    <p>둘 다 맞는 표현이지만 뜻이 완전히 다릅니다. 지지율, 금리, 실업률처럼 이미 퍼센트로 표시되는 값의 변화를 말할 때는 <b>퍼센트포인트(%p)</b>를 쓰는 것이 정확합니다. "지지율이 30%에서 33%로 3% 올랐다"고 쓰면 엄밀히는 틀린 표현이고, "3%p 올랐다" 또는 "10% 올랐다"가 맞습니다.</p>
+    <h3>흔한 실수: 50% 할인 후 50% 인상은 원가가 아닙니다</h3>
+    <p>10,000원짜리 상품을 50% 할인하면 5,000원입니다. 여기서 다시 50% 인상하면 5,000 × 1.5 = <b>7,500원</b>이 됩니다. 인상의 기준값이 원가(10,000원)가 아니라 할인된 가격(5,000원)으로 바뀌었기 때문입니다. 반대로 원가로 되돌리려면 5,000원에서 100% 인상해야 합니다. 연속으로 퍼센트를 적용할 때는 매번 기준값이 바뀐다는 점을 꼭 기억하세요.</p>
+    <h3>모드별 실생활 활용 예</h3>
+    <ul>
+      <li><b>A의 B%는?</b> — 식당에서 부가세 10%가 얼마인지, 연봉의 몇 %를 저축하면 얼마인지 계산할 때.</li>
+      <li><b>A는 B의 몇 %?</b> — 시험에서 80문제 중 68문제를 맞혔을 때 정답률, 목표 금액 대비 달성률을 볼 때.</li>
+      <li><b>A→B 증감률</b> — 작년 매출 대비 올해 매출 성장률, 지난달 대비 전기요금 증가율을 확인할 때.</li>
+      <li><b>B% 할인/증가</b> — 세일 가격이 얼마가 되는지, 월세가 5% 오르면 얼마를 내야 하는지 미리 볼 때.</li>
+    </ul>
+    <p class="note">이 계산기는 순수 산술 계산 도구입니다. 결과는 소수점 둘째 자리에서 반올림한 값으로, 정밀한 회계·세무 계산에는 원 단위 절사 규정 등 별도 기준이 적용될 수 있습니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>퍼센트(%)와 퍼센트포인트(%p)는 무엇이 다른가요?</summary>
+        <p>퍼센트(%)는 비율 자체를, 퍼센트포인트(%p)는 두 퍼센트 값의 산술적 차이를 뜻합니다. 예를 들어 금리가 2%에서 4%로 오르면 2%p 상승한 것이고, 비율로 보면 100% 증가한 것입니다. 두 표현을 혼동하면 변화의 크기를 크게 잘못 읽을 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>증감률을 계산할 때 기준값은 어느 쪽인가요?</summary>
+        <p>증감률의 기준값은 항상 변하기 전 값(A)입니다. 공식은 (변한 후 값 - 변하기 전 값) ÷ 변하기 전 값 × 100 입니다. 100에서 150이 되면 +50%이지만, 150에서 100이 되면 약 -33.33%로, 방향에 따라 증감률의 크기가 달라집니다.</p>
+      </details>
+      <details>
+        <summary>50% 할인 후 50% 인상하면 원래 가격으로 돌아오나요?</summary>
+        <p>아니요. 10,000원을 50% 할인하면 5,000원이 되고, 여기서 50% 인상하면 7,500원이 됩니다. 인상의 기준값이 원가가 아니라 할인된 가격(5,000원)이기 때문입니다. 퍼센트 계산은 항상 기준값이 무엇인지 먼저 확인해야 합니다.</p>
+      </details>
+      <details>
+        <summary>결과 소수점은 몇 자리까지 표시되나요?</summary>
+        <p>이 계산기는 결과를 소수점 둘째 자리까지 반올림해 표시하며, 정수로 딱 떨어지는 경우에는 소수점 없이 정수로 표시합니다. 표시 자릿수 때문에 아주 미세한 반올림 오차가 있을 수 있으므로 정밀 계산이 필요하면 원본 수식을 함께 확인하세요.</p>
+      </details>
+      <details>
+        <summary>입력한 숫자가 저장되거나 전송되나요?</summary>
+        <p>아니요. 모든 계산은 사용자의 브라우저 안에서 자바스크립트로만 처리되며, 입력값을 서버로 전송하거나 저장하지 않습니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/vat"><div class="ico">🧾</div><b>부가세 계산기</b><span>공급가액·부가세·합계 상호 변환</span></a>
+      <a class="tool-card" href="/tools/dutch"><div class="ico">🍻</div><b>더치페이 계산기</b><span>회식비 N빵, 1인당 부담금</span></a>
+      <a class="tool-card" href="/tools/savings"><div class="ico">🐷</div><b>적금·예금 계산기</b><span>만기 수령액과 세후 이자</span></a>
+      <a class="tool-card" href="/tools/bmi"><div class="ico">⚖️</div><b>BMI 계산기</b><span>체질량지수와 비만도 판정</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+/* 페이지 계산 로직 — DOMContentLoaded 이후 실행되도록 defer 특성상 아래처럼 감싼다 */
+document.addEventListener("DOMContentLoaded", function () {
+  var seg = document.getElementById("modeSeg");
+  var segBtns = seg.querySelectorAll("button");
+  var fieldA = document.getElementById("fieldA");
+  var fieldB = document.getElementById("fieldB");
+  var labelA = document.getElementById("labelA");
+  var labelB = document.getElementById("labelB");
+  var inpA = document.getElementById("inpA");
+  var inpB = document.getElementById("inpB");
+  var result = document.getElementById("result");
+  var rLabel = document.getElementById("rLabel");
+  var rMain = document.getElementById("rMain");
+  var rRows = document.getElementById("rRows");
+  var mode = 0;
+  var lastCopyText = "";
+
+  var MODES = [
+    { la: "기준값 A", lb: "퍼센트 B (%)", pa: "예: 50000", pb: "예: 15" },
+    { la: "비교할 값 A", lb: "기준값 B (전체)", pa: "예: 30", pb: "예: 120" },
+    { la: "변하기 전 값 A", lb: "변한 후 값 B", pa: "예: 100", pb: "예: 130" },
+    { la: "원래 금액 A", lb: "할인/증가율 B (%)", pa: "예: 20000", pb: "예: 30" }
+  ];
+
+  function setMode(m) {
+    mode = m;
+    segBtns.forEach(function (b) {
+      b.classList.toggle("on", Number(b.dataset.mode) === m);
+    });
+    labelA.textContent = MODES[m].la;
+    labelB.textContent = MODES[m].lb;
+    inpA.placeholder = MODES[m].pa;
+    inpB.placeholder = MODES[m].pb;
+    result.hidden = true;
+    CM.invalid(fieldA, false);
+    CM.invalid(fieldB, false);
+  }
+
+  segBtns.forEach(function (b) {
+    b.addEventListener("click", function () { setMode(Number(b.dataset.mode)); });
+  });
+
+  /* 소수 2자리 반올림, 정수로 떨어지면 정수 표시 */
+  function decimalsOf(v) {
+    var r = Math.round(v * 100) / 100;
+    if (Math.abs(r - Math.round(r)) < 1e-9) return 0;
+    if (Math.abs(r * 10 - Math.round(r * 10)) < 1e-9) return 1;
+    return 2;
+  }
+  function show(v) {
+    return CM.fmt(Math.round(v * 100) / 100, decimalsOf(v));
+  }
+  function parseNum(el) {
+    var s = String(el.value).replace(/,/g, "").trim();
+    if (s === "") return NaN;
+    return Number(s);
+  }
+  function addRow(label, value) {
+    var row = document.createElement("div");
+    row.className = "row";
+    var sp = document.createElement("span");
+    sp.textContent = label;
+    var b = document.createElement("b");
+    b.textContent = value;
+    row.appendChild(sp);
+    row.appendChild(b);
+    rRows.appendChild(row);
+  }
+
+  function calc() {
+    var a = parseNum(inpA);
+    var b = parseNum(inpB);
+    var okA = isFinite(a);
+    var okB = isFinite(b);
+    if (mode === 1 && okB && b === 0) okB = false;   /* 0으로 나누기 방지 */
+    if (mode === 2 && okA && a === 0) okA = false;   /* 기준값 0 방지 */
+    CM.invalid(fieldA, !okA);
+    CM.invalid(fieldB, !okB);
+    if (!okA || !okB) { result.hidden = true; return; }
+
+    rRows.textContent = "";
+    var d;
+    if (mode === 0) {
+      var v0 = a * b / 100;
+      rLabel.textContent = CM.fmt(a, decimalsOf(a)) + "의 " + show(b) + "%";
+      d = decimalsOf(v0);
+      CM.countUp(rMain, Math.round(v0 * 100) / 100, { decimals: d });
+      addRow("계산식", show(a) + " × " + show(b) + " ÷ 100");
+      addRow("결과", show(v0));
+      lastCopyText = show(a) + "의 " + show(b) + "% = " + show(v0);
+    } else if (mode === 1) {
+      var v1 = a / b * 100;
+      rLabel.textContent = show(a) + "는 " + show(b) + "의";
+      d = decimalsOf(v1);
+      CM.countUp(rMain, Math.round(v1 * 100) / 100, { decimals: d, suffix: "%" });
+      addRow("계산식", show(a) + " ÷ " + show(b) + " × 100");
+      addRow("결과", show(v1) + "%");
+      lastCopyText = show(a) + "는 " + show(b) + "의 " + show(v1) + "%";
+    } else if (mode === 2) {
+      var v2 = (b - a) / a * 100;
+      var dir = v2 > 0 ? "증가" : (v2 < 0 ? "감소" : "변화 없음");
+      rLabel.textContent = show(a) + " → " + show(b) + " 증감률";
+      d = decimalsOf(Math.abs(v2));
+      if (v2 === 0) {
+        rMain.textContent = "0% (변화 없음)";
+      } else {
+        CM.countUp(rMain, Math.round(Math.abs(v2) * 100) / 100, {
+          prefix: v2 > 0 ? "+" : "-", decimals: d, suffix: "% " + dir
+        });
+      }
+      addRow("계산식", "(" + show(b) + " − " + show(a) + ") ÷ " + show(a) + " × 100");
+      addRow("변화량", (b - a > 0 ? "+" : "") + show(b - a));
+      addRow("판정", dir);
+      lastCopyText = show(a) + " → " + show(b) + " : " +
+        (v2 > 0 ? "+" : (v2 < 0 ? "-" : "")) + show(Math.abs(v2)) + "% " + dir;
+    } else {
+      var sale = a * (1 - b / 100);
+      var up = a * (1 + b / 100);
+      var off = a * b / 100;
+      rLabel.textContent = show(a) + "에서 " + show(b) + "% 할인가";
+      d = decimalsOf(sale);
+      CM.countUp(rMain, Math.round(sale * 100) / 100, { decimals: d });
+      addRow("할인 금액 (" + show(b) + "%)", show(off));
+      addRow("할인가 A × (1 − " + show(b) + "/100)", show(sale));
+      addRow("인상가 A × (1 + " + show(b) + "/100)", show(up));
+      lastCopyText = show(a) + "의 " + show(b) + "% → 할인가 " + show(sale) +
+        ", 인상가 " + show(up) + " (할인 금액 " + show(off) + ")";
+    }
+    result.hidden = false;
+  }
+
+  document.getElementById("calcBtn").addEventListener("click", calc);
+  [inpA, inpB].forEach(function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); calc(); }
+    });
+  });
+  CM.bindCopy(document.getElementById("copyBtn"), function () { return lastCopyText; });
+
+  setMode(0);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>평수 계산기 - 평 제곱미터 변환 (평↔㎡)</title>
+<meta name="description" content="평수 계산기로 평과 제곱미터(㎡)를 실시간 양방향 변환하세요. 1평=3.305785㎡ 기준, 전용 59·74·84㎡ 등 아파트 국민평형 환산표까지 무료 제공합니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/area">
+<meta property="og:type" content="website">
+<meta property="og:title" content="평수 계산기 - 평 제곱미터 변환 (평↔㎡)">
+<meta property="og:description" content="평수 계산기로 평과 제곱미터(㎡)를 실시간 양방향 변환하세요. 1평=3.305785㎡ 기준, 전용 59·74·84㎡ 등 아파트 국민평형 환산표까지 무료 제공합니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/area">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"평수 계산기","url":"https://calcmoa.site/tools/area","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"1평은 정확히 몇 제곱미터인가요?","acceptedAnswer":{"@type":"Answer","text":"1평은 정확히 400/121㎡, 소수로 약 3.305785㎡입니다. 반대로 1㎡는 약 0.3025평입니다. 간단히 암산할 때는 ㎡에 0.3을 곱하면 대략의 평수를, 평에 3.3을 곱하면 대략의 ㎡를 얻을 수 있습니다."}},
+  {"@type":"Question","name":"아파트 84㎡가 왜 34평형이라고 불리나요?","acceptedAnswer":{"@type":"Answer","text":"전용면적 84㎡를 그대로 환산하면 약 25.4평이지만, 분양 시장에서 말하는 34평형은 계단·복도 등 주거공용면적을 더한 공급면적(약 110㎡ 내외)을 평으로 환산한 값입니다. 같은 집이라도 전용면적 기준이냐 공급면적 기준이냐에 따라 평수가 크게 달라집니다."}},
+  {"@type":"Question","name":"부동산 계약서에는 왜 평 대신 ㎡만 쓰나요?","acceptedAnswer":{"@type":"Answer","text":"계량에 관한 법률에 따라 대한민국의 법정계량단위는 제곱미터(㎡)이며, 거래·증명 등 공식 문서에 평을 단독 표기하는 것은 허용되지 않습니다. 다만 ㎡를 병기하면서 참고로 평을 함께 적는 것은 관행적으로 쓰이고 있습니다."}},
+  {"@type":"Question","name":"전용면적, 공급면적, 계약면적은 무엇이 다른가요?","acceptedAnswer":{"@type":"Answer","text":"전용면적은 현관 안쪽에서 우리 가족만 쓰는 공간, 공급면적은 전용면적에 계단·복도·엘리베이터홀 같은 주거공용면적을 더한 것, 계약면적은 공급면적에 주차장·관리사무소 같은 기타공용면적까지 더한 것입니다. 아파트 분양 평형은 보통 공급면적, 오피스텔 분양 평형은 계약면적을 기준으로 하는 경우가 많습니다."}},
+  {"@type":"Question","name":"입력한 값이 저장되거나 서버로 전송되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 변환은 사용자의 브라우저 안에서 자바스크립트로만 처리되며, 입력값을 서버로 전송하거나 저장하지 않습니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-life">생활·건강</a><span class="sep">›</span>
+    <span>평수 계산기</span>
+  </nav>
+
+  <h1>평수 계산기 (평 ↔ ㎡)</h1>
+  <p class="lead">평 또는 제곱미터(㎡) 어느 쪽에 입력해도 반대쪽이 실시간으로 변환됩니다. 1평 = 3.305785㎡ 기준입니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field-row">
+      <div class="field" id="fieldPy">
+        <label for="inpPy">평 (坪)</label>
+        <input type="text" inputmode="decimal" id="inpPy" placeholder="예: 25.4">
+        <div class="hint">입력하면 ㎡가 자동 계산됩니다</div>
+        <div class="field-error" id="errPy">숫자를 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fieldM2">
+        <label for="inpM2">제곱미터 (㎡)</label>
+        <input type="text" inputmode="decimal" id="inpM2" placeholder="예: 84">
+        <div class="hint">입력하면 평이 자동 계산됩니다</div>
+        <div class="field-error" id="errM2">숫자를 입력해 주세요.</div>
+      </div>
+    </div>
+
+    <div class="result" id="result">
+      <div class="label">변환 결과</div>
+      <div class="big" id="rMain">숫자를 입력해 보세요</div>
+      <div class="rows" id="rRows">
+        <div class="row"><span>자주 쓰는 환산 — 전용 59㎡</span><b id="c59"></b></div>
+        <div class="row"><span>전용 74㎡</span><b id="c74"></b></div>
+        <div class="row"><span>전용 84㎡ (국민평형)</span><b id="c84"></b></div>
+        <div class="row"><span>전용 101㎡</span><b id="c101"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>평수를 알고 ㎡가 궁금하면 왼쪽 <b>평</b> 입력란에 숫자를 입력합니다. 입력과 동시에 오른쪽 ㎡ 값이 자동으로 채워집니다.</li>
+      <li>반대로 부동산 매물의 ㎡ 면적을 평으로 바꾸고 싶으면 오른쪽 <b>㎡</b> 입력란에 입력하세요. 왼쪽 평 값이 즉시 계산됩니다.</li>
+      <li>버튼을 누를 필요 없이 입력하는 즉시 결과가 반영되며, 소수점 값도 그대로 입력할 수 있습니다.</li>
+      <li>결과 복사 버튼으로 변환 결과를 텍스트로 복사해 활용하세요.</li>
+    </ol>
+
+    <h2>평 ↔ ㎡ 변환 원리</h2>
+    <p>평(坪)은 한 변이 6자(尺, 약 1.818m)인 정사각형의 넓이에서 나온 단위입니다. 1.818m × 1.818m ≈ 3.3058㎡이며, 정확한 정의값은 <b>1평 = 400/121㎡ = 3.305785…㎡</b>입니다. 역으로 <b>1㎡ = 121/400평 = 0.3025평</b>입니다.</p>
+    <table>
+      <thead>
+        <tr><th>변환 방향</th><th>공식</th><th>예시</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>평 → ㎡</td><td>평 × 3.305785</td><td>25평 × 3.305785 ≈ 82.64㎡</td></tr>
+        <tr><td>㎡ → 평</td><td>㎡ × 0.3025</td><td>84㎡ × 0.3025 = 25.41평</td></tr>
+      </tbody>
+    </table>
+    <p>암산이 필요할 때는 ㎡ 값에 0.3을 곱하면 대략의 평수가 나옵니다(84㎡ → 약 25평). 다만 0.3025 대신 0.3을 쓰면 약 0.8% 작게 나오는 근사치라는 점을 기억하세요.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <h3>법정계량단위는 ㎡ — 평은 단독으로 쓸 수 없습니다</h3>
+    <p>계량에 관한 법률에 따라 대한민국에서 넓이의 법정계량단위는 제곱미터(㎡)입니다. 부동산 계약서, 등기부등본, 분양 공고 같은 거래·증명 목적의 문서에는 ㎡를 사용해야 하며, 평을 단독으로 표기하는 것은 허용되지 않습니다. 그래서 요즘 분양 광고는 "84㎡ 타입"처럼 ㎡로 표기하고, 소비자들이 감을 잡기 위해 평으로 환산해 보는 것입니다.</p>
+    <h3>전용면적 · 공급면적 · 계약면적의 차이</h3>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>포함 범위</th><th>주로 쓰이는 곳</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>전용면적</td><td>현관 안쪽, 우리 가족만 쓰는 공간 (거실·방·주방·욕실)</td><td>등기부등본, 청약 자격, "84㎡" 표기</td></tr>
+        <tr><td>공급면적</td><td>전용면적 + 주거공용면적 (계단, 복도, 엘리베이터홀)</td><td>아파트 분양 "평형" 표기</td></tr>
+        <tr><td>계약면적</td><td>공급면적 + 기타공용면적 (주차장, 관리사무소, 커뮤니티)</td><td>오피스텔 분양 표기</td></tr>
+      </tbody>
+    </table>
+    <h3>"국민평형 84㎡ = 34평형"이라 불리는 이유</h3>
+    <p>전용면적 84㎡를 이 계산기로 환산하면 약 25.4평입니다. 그런데 분양 시장에서는 같은 집을 "34평형"이라고 부릅니다. 이는 계단·복도 등 주거공용면적을 더한 <b>공급면적(대략 110㎡ 안팎)</b>을 평으로 환산한 값이기 때문입니다. 즉 "84㎡ = 34평형"은 서로 다른 면적 기준을 놓고 부르는 관행적 표현입니다. 매물 비교를 할 때는 반드시 어떤 면적 기준의 평수인지 확인해야 실제 체감 크기를 오해하지 않습니다. 같은 이유로 전용 59㎡(약 17.8평)는 보통 "25평형", 전용 101㎡(약 30.6평)는 "40평형" 안팎으로 불립니다.</p>
+    <p class="note">위 평형 대응(84㎡=34평형 등)은 단지마다 공용면적 비율이 달라 조금씩 차이가 나는 참고용 근사치입니다. 정확한 면적은 해당 단지의 분양 공고나 등기부등본을 확인하세요.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>1평은 정확히 몇 제곱미터인가요?</summary>
+        <p>1평은 정확히 400/121㎡, 소수로 약 3.305785㎡입니다. 반대로 1㎡는 약 0.3025평입니다. 간단히 암산할 때는 ㎡에 0.3을 곱하면 대략의 평수를, 평에 3.3을 곱하면 대략의 ㎡를 얻을 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>아파트 84㎡가 왜 34평형이라고 불리나요?</summary>
+        <p>전용면적 84㎡를 그대로 환산하면 약 25.4평이지만, 분양 시장에서 말하는 34평형은 계단·복도 등 주거공용면적을 더한 공급면적(약 110㎡ 내외)을 평으로 환산한 값입니다. 같은 집이라도 전용면적 기준이냐 공급면적 기준이냐에 따라 평수가 크게 달라집니다.</p>
+      </details>
+      <details>
+        <summary>부동산 계약서에는 왜 평 대신 ㎡만 쓰나요?</summary>
+        <p>계량에 관한 법률에 따라 대한민국의 법정계량단위는 제곱미터(㎡)이며, 거래·증명 등 공식 문서에 평을 단독 표기하는 것은 허용되지 않습니다. 다만 ㎡를 병기하면서 참고로 평을 함께 적는 것은 관행적으로 쓰이고 있습니다.</p>
+      </details>
+      <details>
+        <summary>전용면적, 공급면적, 계약면적은 무엇이 다른가요?</summary>
+        <p>전용면적은 현관 안쪽에서 우리 가족만 쓰는 공간, 공급면적은 전용면적에 계단·복도·엘리베이터홀 같은 주거공용면적을 더한 것, 계약면적은 공급면적에 주차장·관리사무소 같은 기타공용면적까지 더한 것입니다. 아파트 분양 평형은 보통 공급면적, 오피스텔 분양 평형은 계약면적을 기준으로 하는 경우가 많습니다.</p>
+      </details>
+      <details>
+        <summary>입력한 값이 저장되거나 서버로 전송되나요?</summary>
+        <p>아니요. 변환은 사용자의 브라우저 안에서 자바스크립트로만 처리되며, 입력값을 서버로 전송하거나 저장하지 않습니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+      <a class="tool-card" href="/tools/loan"><div class="ico">🏦</div><b>대출 이자 계산기</b><span>원리금균등·원금균등·만기일시</span></a>
+      <a class="tool-card" href="/tools/vat"><div class="ico">🧾</div><b>부가세 계산기</b><span>공급가액·부가세·합계 상호 변환</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+/* 페이지 계산 로직 — DOMContentLoaded 이후 실행되도록 defer 특성상 아래처럼 감싼다 */
+document.addEventListener("DOMContentLoaded", function () {
+  var PY_TO_M2 = 400 / 121;      /* 1평 = 3.305785…㎡ */
+  var M2_TO_PY = 121 / 400;      /* 1㎡ = 0.3025평 */
+
+  var inpPy = document.getElementById("inpPy");
+  var inpM2 = document.getElementById("inpM2");
+  var fieldPy = document.getElementById("fieldPy");
+  var fieldM2 = document.getElementById("fieldM2");
+  var rMain = document.getElementById("rMain");
+  var lastCopyText = "";
+
+  /* 자주 쓰는 환산 rows — 소수 1자리 계산 */
+  var COMMON = [
+    { m2: 59, el: document.getElementById("c59") },
+    { m2: 74, el: document.getElementById("c74") },
+    { m2: 84, el: document.getElementById("c84") },
+    { m2: 101, el: document.getElementById("c101") }
+  ];
+  COMMON.forEach(function (c) {
+    c.el.textContent = CM.fmt(c.m2 * M2_TO_PY, 1) + "평";
+  });
+
+  function parseNum(el) {
+    var s = String(el.value).replace(/,/g, "").trim();
+    if (s === "") return null;
+    var n = Number(s);
+    return isFinite(n) ? n : NaN;
+  }
+  /* 소수 2자리 반올림, 정수로 떨어지면 정수 표시 */
+  function show(v) {
+    var r = Math.round(v * 100) / 100;
+    var d = Math.abs(r - Math.round(r)) < 1e-9 ? 0
+      : (Math.abs(r * 10 - Math.round(r * 10)) < 1e-9 ? 1 : 2);
+    return CM.fmt(r, d);
+  }
+
+  function convert(from) {
+    var src = from === "py" ? inpPy : inpM2;
+    var dst = from === "py" ? inpM2 : inpPy;
+    var srcField = from === "py" ? fieldPy : fieldM2;
+    var v = parseNum(src);
+
+    CM.invalid(fieldPy, false);
+    CM.invalid(fieldM2, false);
+
+    if (v === null) {                 /* 비우면 반대쪽도 비움 */
+      dst.value = "";
+      rMain.textContent = "숫자를 입력해 보세요";
+      lastCopyText = "";
+      return;
+    }
+    if (isNaN(v) || v < 0) {
+      CM.invalid(srcField, true);
+      return;
+    }
+
+    var out = from === "py" ? v * PY_TO_M2 : v * M2_TO_PY;
+    dst.value = show(out).replace(/,/g, "");
+
+    if (from === "py") {
+      rMain.textContent = show(v) + "평 = " + show(out) + "㎡";
+      lastCopyText = show(v) + "평 = " + show(out) + "㎡ (1평=3.305785㎡ 기준)";
+    } else {
+      rMain.textContent = show(v) + "㎡ = " + show(out) + "평";
+      lastCopyText = show(v) + "㎡ = " + show(out) + "평 (1㎡=0.3025평 기준)";
+    }
+  }
+
+  inpPy.addEventListener("input", function () { convert("py"); });
+  inpM2.addEventListener("input", function () { convert("m2"); });
+  CM.bindCopy(document.getElementById("copyBtn"), function () { return lastCopyText; });
+});
+</script>
+</body>
+</html>

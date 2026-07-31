@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>적금 계산기 - 예금·적금 이자, 만기 수령액 계산</title>
+<meta name="description" content="적금·예금 계산기. 월 납입액 또는 예치금과 금리를 입력하면 단리·월복리 세전 이자, 이자 과세(15.4%), 만기 수령액을 2026년 기준으로 바로 계산합니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/savings">
+<meta property="og:type" content="website">
+<meta property="og:title" content="적금 계산기 - 예금·적금 이자, 만기 수령액 계산">
+<meta property="og:description" content="적금·예금 계산기. 월 납입액 또는 예치금과 금리를 입력하면 단리·월복리 세전 이자, 이자 과세(15.4%), 만기 수령액을 2026년 기준으로 바로 계산합니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/savings">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"적금·예금 계산기","url":"https://calcmoa.site/tools/savings","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"적금 이자가 광고 금리보다 훨씬 적게 나오는 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"적금 금리는 '각 납입금이 예치된 기간'에 대해 적용되기 때문입니다. 12개월 적금에서 첫 달 납입금은 12개월치 이자를 받지만 마지막 달 납입금은 1개월치 이자만 받습니다. 전체 납입액의 평균 예치기간이 약 절반이므로, 체감 수익률은 표시 금리의 절반 수준(단리 기준 약 연이율×(n+1)/24)이 됩니다. 여기에 이자소득세 15.4%까지 빠지면 실수령 이자는 더 줄어듭니다."}},
+  {"@type":"Question","name":"이자 과세 15.4%는 어떻게 구성되나요?","acceptedAnswer":{"@type":"Answer","text":"이자소득세 14%에 지방소득세 1.4%(소득세의 10%)를 더한 값입니다. 일반 예·적금 이자에는 기본적으로 15.4%가 원천징수되며, 세금우대 상품은 9.5%, 비과세 상품은 0%가 적용됩니다. 이 계산기에서 과세 방식을 선택해 세후 이자를 비교할 수 있습니다."}},
+  {"@type":"Question","name":"단리와 월복리는 얼마나 차이가 나나요?","acceptedAnswer":{"@type":"Answer","text":"단리는 원금에만 이자가 붙고, 월복리는 매달 발생한 이자에 다시 이자가 붙습니다. 기간이 짧고 금리가 낮으면 차이가 크지 않지만(월 50만원·연 4%·12개월 적금 기준 세전 약 1,600원 차이), 기간이 길어질수록 복리 효과가 기하급수적으로 커집니다. 장기 저축일수록 복리 상품이 유리합니다."}},
+  {"@type":"Question","name":"계산 결과가 은행 만기 안내 금액과 조금 다른데 왜 그런가요?","acceptedAnswer":{"@type":"Answer","text":"이 계산기는 매월 초 납입·월 단위 이자 계산을 가정한 참고용 근사치입니다. 실제 은행은 납입일 기준 일할 계산, 원 단위 절사, 상품별 이자 지급 방식(만기지급식·월지급식)을 적용하므로 수원~수백원 정도 차이가 날 수 있습니다. 정확한 금액은 상품 설명서와 은행 앱의 만기 예상 조회를 확인하세요."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-money">돈·급여</a><span class="sep">›</span>
+    <span>적금·예금 계산기</span>
+  </nav>
+
+  <h1>적금·예금 계산기</h1>
+  <p class="lead">월 납입액 또는 예치금과 금리를 입력하면 단리·월복리 이자와 이자 과세(15.4%)를 반영한 만기 수령액을 계산합니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label>상품 종류</label>
+      <div class="seg" id="segType">
+        <button type="button" class="on" data-type="savings">적금 (매월 납입)</button>
+        <button type="button" data-type="deposit">예금 (목돈 거치)</button>
+      </div>
+    </div>
+    <div class="field" id="fAmount">
+      <label for="amount" id="amountLabel">월 납입액 (원)</label>
+      <input type="text" id="amount" inputmode="numeric" placeholder="500000" autocomplete="off">
+      <div class="hint" id="amountHint">매월 초에 납입하는 금액. 예: 50만원 → 500000</div>
+      <div class="field-error">금액을 1원 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fRate">
+        <label for="rate">연이율 (%)</label>
+        <input type="number" id="rate" inputmode="decimal" step="0.01" min="0" placeholder="4.0" autocomplete="off">
+        <div class="hint">세전 약정 금리. 예: 4.25</div>
+        <div class="field-error">연이율을 0 이상 숫자로 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fMonths">
+        <label for="months">기간 (개월)</label>
+        <input type="text" id="months" inputmode="numeric" placeholder="12" autocomplete="off">
+        <div class="hint">예: 1년 → 12, 2년 → 24</div>
+        <div class="field-error">기간을 1개월 이상 숫자로 입력해 주세요.</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>이자 계산 방식</label>
+      <div class="seg" id="segInterest">
+        <button type="button" class="on" data-interest="simple">단리</button>
+        <button type="button" data-interest="compound">월복리</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>과세 방식</label>
+      <div class="seg" id="segTax">
+        <button type="button" class="on" data-tax="15.4">일반과세 15.4%</button>
+        <button type="button" data-tax="9.5">세금우대 9.5%</button>
+        <button type="button" data-tax="0">비과세 0%</button>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">만기 수령액 (세후)</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>원금 합계</span><b id="rPrincipal"></b></div>
+        <div class="row"><span>세전 이자</span><b id="rInterest"></b></div>
+        <div class="row"><span id="rTaxLabel">이자 과세 (15.4%)</span><b id="rTax"></b></div>
+        <div class="row"><span>세후 이자</span><b id="rNetInterest"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>상품 종류를 선택합니다. 매달 일정 금액을 붓는다면 적금, 목돈을 한 번에 맡긴다면 예금입니다.</li>
+      <li>월 납입액(적금) 또는 예치금(예금)을 원 단위로 입력합니다.</li>
+      <li>세전 약정 연이율(%)과 기간(개월)을 입력합니다.</li>
+      <li>이자 계산 방식(단리/월복리)과 과세 방식(일반과세 15.4% / 세금우대 9.5% / 비과세)을 선택합니다.</li>
+      <li>계산하기 버튼을 누르면 원금 합계, 세전 이자, 이자 과세액, 세후 만기 수령액이 표시됩니다.</li>
+    </ol>
+
+    <h2>적금·예금 이자 계산 원리</h2>
+    <p>연이율을 r, 기간을 n개월이라 할 때 세전 이자는 아래 공식으로 계산합니다. 적금은 매월 초 납입을 가정하므로 k번째 납입금은 (n−k+1)개월 동안 예치됩니다.</p>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>세전 이자 공식</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>적금 · 단리</td><td>월 납입액 × r/12 × n(n+1)/2</td></tr>
+        <tr><td>적금 · 월복리</td><td>월 납입액 × (((1+r/12)×((1+r/12)ⁿ − 1)) ÷ (r/12) − n)</td></tr>
+        <tr><td>예금 · 단리</td><td>예치금 × r × n/12</td></tr>
+        <tr><td>예금 · 월복리</td><td>예치금 × ((1+r/12)ⁿ − 1)</td></tr>
+      </tbody>
+    </table>
+    <p>세전 이자에서 이자 과세액을 뺀 값이 세후 이자이고, 여기에 원금 합계를 더하면 만기 수령액입니다. 일반 예·적금의 이자 과세율 15.4%는 이자소득세 14%와 지방소득세 1.4%(소득세의 10%)로 구성됩니다.</p>
+    <table>
+      <thead>
+        <tr><th>과세 방식</th><th>세율</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>일반과세</td><td>15.4%</td><td>이자소득세 14% + 지방소득세 1.4%</td></tr>
+        <tr><td>세금우대</td><td>9.5%</td><td>상호금융 조합원 예탁금 등 요건 충족 시</td></tr>
+        <tr><td>비과세</td><td>0%</td><td>비과세종합저축 등 가입 요건 충족 시</td></tr>
+      </tbody>
+    </table>
+    <p>예시로 검산해 보면, 월 50만원을 연 4% 단리 적금에 12개월 납입하는 경우 원금 합계는 6,000,000원, 세전 이자는 500,000 × 0.04/12 × 78 = 130,000원입니다. 일반과세(15.4%)를 적용하면 세금 20,020원을 뺀 세후 이자는 109,980원, 만기 수령액은 6,109,980원이 됩니다.</p>
+    <p class="note">이 계산기는 매월 초 납입·월 단위 이자 계산을 가정한 참고용 근사치입니다. 실제 은행은 납입일 기준 일할 계산과 원 단위 절사를 적용하므로 만기 안내 금액과 소액의 차이가 있을 수 있습니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>적금 이자가 "생각보다 적은" 이유는 평균 예치기간 때문입니다. 12개월 적금에서 첫 달 납입금은 12개월 동안 이자가 붙지만 마지막 달 납입금은 딱 1개월만 붙습니다. 전체 납입금의 평균 예치기간은 (12+1)/2 = 6.5개월, 즉 기간의 절반 수준이라 총 납입액 대비 체감 수익률은 표시 금리의 약 절반이 됩니다. 연 4% 12개월 적금의 세전 이자가 원금 600만원의 4%(24만원)가 아니라 13만원인 것이 바로 이 구조 때문입니다.</p>
+    <p>단리와 복리의 차이는 "이자에 이자가 붙는가"입니다. 단리는 항상 원금에만 이자가 붙고, 월복리는 매달 쌓인 이자가 다음 달 원금에 합산되어 함께 이자를 낳습니다. 위 예시(월 50만원·연 4%·12개월)에서 월복리 세전 이자는 약 131,602원으로 단리보다 약 1,600원 많은 정도지만, 기간이 3년, 5년으로 길어지고 금액이 커질수록 격차가 빠르게 벌어집니다. 같은 금리라면 복리 상품, 같은 복리라면 이자 지급 주기가 짧은 상품이 유리합니다.</p>
+    <p>목돈이 이미 있다면 같은 금리에서는 예금이 적금보다 이자가 많습니다. 예금은 전액이 처음부터 끝까지 예치되기 때문입니다. 다만 은행들은 보통 적금에 더 높은 표시 금리를 붙이므로, 이 계산기로 두 경우의 세후 이자를 직접 비교해 보고 결정하는 것이 좋습니다. 우대금리 조건(급여이체·카드실적 등)을 못 채우면 기본금리만 적용된다는 점도 함께 확인하세요.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>적금 이자가 광고 금리보다 훨씬 적게 나오는 이유는 무엇인가요?</summary>
+        <p>적금 금리는 '각 납입금이 예치된 기간'에 대해 적용되기 때문입니다. 12개월 적금에서 첫 달 납입금은 12개월치 이자를 받지만 마지막 달 납입금은 1개월치 이자만 받습니다. 전체 납입액의 평균 예치기간이 약 절반이므로, 체감 수익률은 표시 금리의 절반 수준(단리 기준 약 연이율×(n+1)/24)이 됩니다. 여기에 이자소득세 15.4%까지 빠지면 실수령 이자는 더 줄어듭니다.</p>
+      </details>
+      <details>
+        <summary>이자 과세 15.4%는 어떻게 구성되나요?</summary>
+        <p>이자소득세 14%에 지방소득세 1.4%(소득세의 10%)를 더한 값입니다. 일반 예·적금 이자에는 기본적으로 15.4%가 원천징수되며, 세금우대 상품은 9.5%, 비과세 상품은 0%가 적용됩니다. 이 계산기에서 과세 방식을 선택해 세후 이자를 비교할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>단리와 월복리는 얼마나 차이가 나나요?</summary>
+        <p>단리는 원금에만 이자가 붙고, 월복리는 매달 발생한 이자에 다시 이자가 붙습니다. 기간이 짧고 금리가 낮으면 차이가 크지 않지만(월 50만원·연 4%·12개월 적금 기준 세전 약 1,600원 차이), 기간이 길어질수록 복리 효과가 기하급수적으로 커집니다. 장기 저축일수록 복리 상품이 유리합니다.</p>
+      </details>
+      <details>
+        <summary>계산 결과가 은행 만기 안내 금액과 조금 다른데 왜 그런가요?</summary>
+        <p>이 계산기는 매월 초 납입·월 단위 이자 계산을 가정한 참고용 근사치입니다. 실제 은행은 납입일 기준 일할 계산, 원 단위 절사, 상품별 이자 지급 방식(만기지급식·월지급식)을 적용하므로 수원~수백원 정도 차이가 날 수 있습니다. 정확한 금액은 상품 설명서와 은행 앱의 만기 예상 조회를 확인하세요.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/loan"><div class="ico">🏦</div><b>대출 이자 계산기</b><span>원리금균등·원금균등·만기일시</span></a>
+      <a class="tool-card" href="/tools/salary"><div class="ico">💰</div><b>연봉 실수령액 계산기</b><span>4대보험·세금 공제 후 월 실수령액</span></a>
+      <a class="tool-card" href="/tools/retirement"><div class="ico">💼</div><b>퇴직금 계산기</b><span>평균임금 기준 퇴직금 예상액</span></a>
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  var type = "savings";     /* savings | deposit */
+  var interest = "simple";  /* simple | compound */
+  var taxRate = 15.4;       /* 15.4 | 9.5 | 0 */
+
+  function bindSeg(segEl, attr, onChange) {
+    Array.prototype.forEach.call(segEl.querySelectorAll("button"), function (btn) {
+      btn.addEventListener("click", function () {
+        Array.prototype.forEach.call(segEl.querySelectorAll("button"), function (b) {
+          b.classList.toggle("on", b === btn);
+        });
+        onChange(btn.getAttribute(attr));
+      });
+    });
+  }
+
+  bindSeg($("segType"), "data-type", function (v) {
+    type = v;
+    if (type === "savings") {
+      $("amountLabel").textContent = "월 납입액 (원)";
+      $("amountHint").textContent = "매월 초에 납입하는 금액. 예: 50만원 → 500000";
+      $("amount").placeholder = "500000";
+    } else {
+      $("amountLabel").textContent = "예치금 (원)";
+      $("amountHint").textContent = "처음에 한 번에 맡기는 목돈. 예: 1,000만원 → 10000000";
+      $("amount").placeholder = "10000000";
+    }
+  });
+  bindSeg($("segInterest"), "data-interest", function (v) { interest = v; });
+  bindSeg($("segTax"), "data-tax", function (v) { taxRate = Number(v); });
+
+  function intVal(el) {
+    var v = String(el.value).replace(/[^\d]/g, "");
+    return v === "" ? NaN : Number(v);
+  }
+  function floatVal(el) {
+    var v = String(el.value).trim();
+    return v === "" ? NaN : Number(v);
+  }
+
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var amount = intVal($("amount"));
+    var yearRate = floatVal($("rate"));
+    var n = intVal($("months"));
+
+    var ok = true;
+    if (!(amount > 0)) { CM.invalid($("fAmount"), true); ok = false; } else { CM.invalid($("fAmount"), false); }
+    if (!(yearRate >= 0) || !isFinite(yearRate)) { CM.invalid($("fRate"), true); ok = false; } else { CM.invalid($("fRate"), false); }
+    if (!(n >= 1)) { CM.invalid($("fMonths"), true); ok = false; } else { CM.invalid($("fMonths"), false); }
+    if (!ok) return;
+
+    var r = yearRate / 100;
+    var i = r / 12;
+    var principal, grossInterest;
+
+    if (type === "savings") {
+      principal = amount * n;
+      if (interest === "simple") {
+        grossInterest = amount * i * n * (n + 1) / 2;
+      } else {
+        grossInterest = i === 0
+          ? 0
+          : amount * (((1 + i) * (Math.pow(1 + i, n) - 1)) / i - n);
+      }
+    } else {
+      principal = amount;
+      if (interest === "simple") {
+        grossInterest = amount * r * n / 12;
+      } else {
+        grossInterest = amount * (Math.pow(1 + i, n) - 1);
+      }
+    }
+
+    var tax = grossInterest * taxRate / 100;
+    var netInterest = grossInterest - tax;
+    var total = principal + netInterest;
+
+    var typeName = type === "savings" ? "적금" : "예금";
+    var interestName = interest === "simple" ? "단리" : "월복리";
+    var taxName = taxRate === 15.4 ? "일반과세 15.4%" : (taxRate === 9.5 ? "세금우대 9.5%" : "비과세");
+
+    $("result").hidden = false;
+    CM.countUp($("rMain"), Math.round(total), { suffix: "원" });
+    $("rPrincipal").textContent = CM.won(principal);
+    $("rInterest").textContent = CM.won(grossInterest);
+    $("rTaxLabel").textContent = "이자 과세 (" + taxName + ")";
+    $("rTax").textContent = "-" + CM.won(tax);
+    $("rNetInterest").textContent = CM.won(netInterest);
+
+    lastText = typeName + " " + interestName + " · 연 " + yearRate + "% · " + n + "개월 · " + taxName + "\n"
+      + (type === "savings" ? "월 납입액: " : "예치금: ") + CM.won(amount) + "\n"
+      + "만기 수령액: " + CM.won(total) + "\n"
+      + "원금 합계: " + CM.won(principal) + " / 세전 이자: " + CM.won(grossInterest)
+      + " / 세금: " + CM.won(tax) + " / 세후 이자: " + CM.won(netInterest)
+      + "\n- calcmoa.site/tools/savings";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["amount", "rate", "months"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+</body>
+</html>

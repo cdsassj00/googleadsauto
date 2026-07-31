@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>퇴직금 계산기 - 평균임금 기준 퇴직금 계산 방법</title>
+<meta name="description" content="입사일·퇴사일과 최근 3개월 급여만 입력하면 1일 평균임금 기준 예상 퇴직금을 바로 계산합니다. 상여금·연차수당 반영, 근로자퇴직급여 보장법 공식 적용.">
+<link rel="canonical" href="https://calcmoa.site/tools/retirement">
+<meta property="og:type" content="website">
+<meta property="og:title" content="퇴직금 계산기 - 평균임금 기준 퇴직금 계산 방법">
+<meta property="og:description" content="입사일·퇴사일과 최근 3개월 급여만 입력하면 1일 평균임금 기준 예상 퇴직금을 바로 계산합니다. 상여금·연차수당 반영, 근로자퇴직급여 보장법 공식 적용.">
+<meta property="og:url" content="https://calcmoa.site/tools/retirement">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"퇴직금 계산기","url":"https://calcmoa.site/tools/retirement","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"1년을 채우지 못하고 퇴사하면 퇴직금을 못 받나요?","acceptedAnswer":{"@type":"Answer","text":"네. 근로자퇴직급여 보장법상 퇴직금은 계속근로기간이 1년 이상이고 4주간 평균 주 15시간 이상 근무한 근로자에게 지급됩니다. 재직기간이 1년 미만이면 법정 퇴직금 지급 대상이 아닙니다. 다만 회사 규정이나 계약으로 별도 지급을 약정한 경우는 예외입니다."}},
+  {"@type":"Question","name":"상여금과 연차수당은 왜 3/12만 반영하나요?","acceptedAnswer":{"@type":"Answer","text":"평균임금은 퇴사 전 3개월 동안 지급된 임금을 기준으로 하므로, 연 단위로 지급되는 상여금과 연차수당은 연간 총액의 12분의 3(3개월분)만 산정에 포함하는 것이 고용노동부의 산정 방식입니다. 예를 들어 연간 상여금이 400만원이면 100만원이 3개월 급여에 더해집니다."}},
+  {"@type":"Question","name":"계산된 금액이 실제 수령액과 다를 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 이 계산기는 세전 예상 퇴직금이며 퇴직소득세와 지방소득세가 공제되기 전 금액입니다. 또한 무급휴직·육아휴직 기간 제외, 통상임금이 평균임금보다 큰 경우의 보정 등 개인별 사정에 따라 실제 금액은 달라질 수 있으므로 참고용으로 활용하세요."}},
+  {"@type":"Question","name":"DC형(확정기여형) 퇴직연금인데도 이 계산이 맞나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 이 계산기는 퇴직금제도와 DB형(확정급여형)에 적합한 평균임금 방식입니다. DC형은 회사가 매년 연간 임금총액의 12분의 1 이상을 근로자 계좌에 넣고 운용 수익에 따라 수령액이 달라지므로, 실제 적립금과 운용 성과를 확인해야 합니다."}},
+  {"@type":"Question","name":"퇴직금은 언제까지 지급되어야 하나요?","acceptedAnswer":{"@type":"Answer","text":"근로자퇴직급여 보장법에 따라 사용자는 퇴직일로부터 14일 이내에 퇴직금을 지급해야 합니다. 당사자 간 합의로 지급 기일을 연장할 수 있으나, 합의 없이 지연되면 지연이자가 발생하며 고용노동부에 임금체불 진정을 제기할 수 있습니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-money">돈·급여</a><span class="sep">›</span>
+    <span>퇴직금 계산기</span>
+  </nav>
+
+  <h1>퇴직금 계산기</h1>
+  <p class="lead">입사일·퇴사일과 퇴사 전 3개월 급여 총액만 입력하면 1일 평균임금 기준 예상 퇴직금을 바로 확인할 수 있습니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field-row">
+      <div class="field" id="fStart">
+        <label for="startDate">입사일</label>
+        <input type="date" id="startDate">
+        <div class="field-error">입사일을 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fEnd">
+        <label for="endDate">퇴사일 (마지막 근무일)</label>
+        <input type="date" id="endDate">
+        <div class="hint">마지막으로 근무한 날짜를 선택하세요.</div>
+        <div class="field-error">퇴사일은 입사일 이후여야 합니다.</div>
+      </div>
+    </div>
+    <div class="field" id="fPay">
+      <label for="pay3">퇴사 전 3개월 급여 총액 (원)</label>
+      <input type="text" inputmode="numeric" id="pay3" placeholder="예: 9000000 (세전, 3개월 합계)">
+      <div class="hint">기본급·각종 수당을 포함한 세전 임금 3개월 합계입니다.</div>
+      <div class="field-error">3개월 급여 총액을 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fBonus">
+        <label for="bonus">연간 상여금 총액 (원, 선택)</label>
+        <input type="text" inputmode="numeric" id="bonus" placeholder="0">
+        <div class="field-error">숫자만 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fAnnual">
+        <label for="annual">연차수당 (원, 선택)</label>
+        <input type="text" inputmode="numeric" id="annual" placeholder="0">
+        <div class="field-error">숫자만 입력해 주세요.</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div id="okBox">
+        <div class="label">예상 퇴직금 (세전)</div>
+        <div class="big" id="rMain"></div>
+        <div class="rows">
+          <div class="row"><span>재직기간</span><b id="rPeriod"></b></div>
+          <div class="row"><span>재직일수</span><b id="rDays"></b></div>
+          <div class="row"><span>1일 평균임금</span><b id="rAvg"></b></div>
+          <div class="row"><span>30일분 평균임금</span><b id="r30"></b></div>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+        </div>
+      </div>
+      <div id="noBox" hidden>
+        <div class="label">계산 결과</div>
+        <p style="margin:6px 0 0;font-weight:700">퇴직금 지급 대상이 아닙니다(계속근로 1년 미만).</p>
+        <p class="muted" style="margin:6px 0 0;font-size:14px">법정 퇴직금은 계속근로기간 1년 이상인 경우에 발생합니다. <span id="noDays"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li><b>입사일</b>과 <b>퇴사일</b>(마지막으로 근무한 날)을 달력에서 선택합니다.</li>
+      <li><b>퇴사 전 3개월 급여 총액</b>을 세전 기준으로 입력합니다. 기본급뿐 아니라 직책수당·야근수당 등 임금에 해당하는 항목을 모두 합산합니다.</li>
+      <li>연 단위로 받은 <b>상여금</b>과 <b>연차수당</b>이 있다면 연간 총액을 입력합니다. 없으면 비워 두거나 0으로 두면 됩니다.</li>
+      <li><b>계산하기</b> 버튼을 누르면 재직일수, 1일 평균임금, 예상 퇴직금이 표시됩니다. 결과 복사 버튼으로 내역을 저장할 수 있습니다.</li>
+    </ol>
+
+    <h2>퇴직금 계산 원리</h2>
+    <p>근로자퇴직급여 보장법에 따라 퇴직금은 <b>계속근로기간 1년에 대해 30일분 이상의 평균임금</b>을 지급하도록 정해져 있습니다. 법정 공식은 다음과 같습니다.</p>
+    <table>
+      <thead><tr><th>항목</th><th>계산식</th></tr></thead>
+      <tbody>
+        <tr><td>1일 평균임금</td><td>(퇴사 전 3개월 임금 총액 + 연간 상여금 × 3/12 + 연차수당 × 3/12) ÷ 퇴사 전 3개월의 총 일수</td></tr>
+        <tr><td>퇴사 전 3개월 일수</td><td>퇴사일로부터 역산한 실제 달력 일수 (달에 따라 89~92일)</td></tr>
+        <tr><td>퇴직금</td><td>1일 평균임금 × 30일 × (재직일수 ÷ 365)</td></tr>
+      </tbody>
+    </table>
+    <p>여기서 <b>평균임금</b>은 퇴사일 이전 3개월 동안 실제로 지급된 임금 총액을 그 기간의 총 일수로 나눈 금액입니다. 반면 <b>통상임금</b>은 정기적·일률적·고정적으로 지급되는 임금(기본급, 고정수당 등)을 말합니다. 만약 평균임금이 통상임금보다 낮게 나오면 통상임금을 평균임금으로 보아 퇴직금을 계산합니다. 퇴사 직전 급여가 크게 줄어든 경우에 근로자를 보호하기 위한 장치입니다.</p>
+    <p>연간 상여금과 연차수당은 특정 달에 몰아서 지급되는 경우가 많기 때문에, 최근 3개월에 우연히 포함되었는지와 무관하게 <b>연간 총액의 12분의 3(3개월 비율)</b>만 평균임금 산정에 반영합니다. 이 계산기도 동일한 방식을 적용합니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p><b>예시 계산:</b> 2023년 8월 1일에 입사해 2026년 7월 31일에 퇴사(재직 3년)한 근로자의 3개월 급여 총액이 900만원, 연간 상여금이 240만원이라면 — 3개월 일수는 92일, 1일 평균임금은 (900만원 + 240만원 × 3/12) ÷ 92 ≈ 104,348원, 예상 퇴직금은 약 104,348원 × 30 × (1,096 ÷ 365) ≈ 940만원 수준이 됩니다.</p>
+    <p><b>퇴직연금 제도와의 차이:</b> DB형(확정급여형)은 이 계산기와 같은 평균임금 방식으로 수령액이 정해지지만, DC형(확정기여형)은 회사가 매년 연간 임금총액의 1/12 이상을 근로자 계좌에 적립하고 운용 수익에 따라 최종 수령액이 달라집니다. 본인의 제도 유형은 회사 인사팀이나 퇴직연금 사업자(은행·증권사)에서 확인할 수 있습니다.</p>
+    <p><b>세금은 별도입니다:</b> 이 계산기의 결과는 세전 금액이며, 실제 수령 시에는 근속연수공제·환산급여공제를 거쳐 계산되는 퇴직소득세와 지방소득세가 원천징수됩니다. 퇴직소득세는 근속연수가 길수록 부담이 줄어드는 구조입니다.</p>
+    <p class="note">본 결과는 2026년 기준 법정 공식에 따른 참고용 근사치입니다. 무급휴직 기간 제외, 평균임금·통상임금 비교 보정, 퇴직소득세 등은 반영되지 않으므로 정확한 금액은 회사 급여 담당자 또는 고용노동부 상담(국번 없이 1350)을 통해 확인하세요.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details><summary>1년을 채우지 못하고 퇴사하면 퇴직금을 못 받나요?</summary><p>네. 근로자퇴직급여 보장법상 퇴직금은 계속근로기간이 1년 이상이고 4주간 평균 주 15시간 이상 근무한 근로자에게 지급됩니다. 재직기간이 1년 미만이면 법정 퇴직금 지급 대상이 아닙니다. 다만 회사 규정이나 계약으로 별도 지급을 약정한 경우는 예외입니다.</p></details>
+      <details><summary>상여금과 연차수당은 왜 3/12만 반영하나요?</summary><p>평균임금은 퇴사 전 3개월 동안 지급된 임금을 기준으로 하므로, 연 단위로 지급되는 상여금과 연차수당은 연간 총액의 12분의 3(3개월분)만 산정에 포함하는 것이 고용노동부의 산정 방식입니다. 예를 들어 연간 상여금이 400만원이면 100만원이 3개월 급여에 더해집니다.</p></details>
+      <details><summary>계산된 금액이 실제 수령액과 다를 수 있나요?</summary><p>네. 이 계산기는 세전 예상 퇴직금이며 퇴직소득세와 지방소득세가 공제되기 전 금액입니다. 또한 무급휴직·육아휴직 기간 제외, 통상임금이 평균임금보다 큰 경우의 보정 등 개인별 사정에 따라 실제 금액은 달라질 수 있으므로 참고용으로 활용하세요.</p></details>
+      <details><summary>DC형(확정기여형) 퇴직연금인데도 이 계산이 맞나요?</summary><p>아니요. 이 계산기는 퇴직금제도와 DB형(확정급여형)에 적합한 평균임금 방식입니다. DC형은 회사가 매년 연간 임금총액의 12분의 1 이상을 근로자 계좌에 넣고 운용 수익에 따라 수령액이 달라지므로, 실제 적립금과 운용 성과를 확인해야 합니다.</p></details>
+      <details><summary>퇴직금은 언제까지 지급되어야 하나요?</summary><p>근로자퇴직급여 보장법에 따라 사용자는 퇴직일로부터 14일 이내에 퇴직금을 지급해야 합니다. 당사자 간 합의로 지급 기일을 연장할 수 있으나, 합의 없이 지연되면 지연이자가 발생하며 고용노동부에 임금체불 진정을 제기할 수 있습니다.</p></details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/salary"><div class="ico">💰</div><b>연봉 실수령액 계산기</b><span>4대보험·세금 공제 후 월 실수령액</span></a>
+      <a class="tool-card" href="/tools/hourly"><div class="ico">⏰</div><b>시급 계산기</b><span>주휴수당 포함 월급 환산</span></a>
+      <a class="tool-card" href="/tools/savings"><div class="ico">🐷</div><b>적금·예금 계산기</b><span>만기 수령액과 세후 이자</span></a>
+      <a class="tool-card" href="/tools/dday"><div class="ico">📅</div><b>디데이 계산기</b><span>D-day와 날짜 사이 일수 계산</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var startEl = $("startDate"), endEl = $("endDate");
+  var payEl = $("pay3"), bonusEl = $("bonus"), annualEl = $("annual");
+  var fStart = $("fStart"), fEnd = $("fEnd"), fPay = $("fPay"), fBonus = $("fBonus"), fAnnual = $("fAnnual");
+  var result = $("result"), okBox = $("okBox"), noBox = $("noBox");
+  var lastText = "";
+
+  // 퇴사일 기본값: 오늘
+  var today = new Date();
+  function iso(d) {
+    var m = ("0" + (d.getMonth() + 1)).slice(-2);
+    var dd = ("0" + d.getDate()).slice(-2);
+    return d.getFullYear() + "-" + m + "-" + dd;
+  }
+  endEl.value = iso(today);
+
+  function parseDate(v) {
+    if (!v) return null;
+    var p = v.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function num(el) {
+    var v = String(el.value).replace(/[,\s원]/g, "");
+    if (v === "") return 0;
+    if (!/^\d+$/.test(v)) return NaN;
+    return +v;
+  }
+  var DAY = 86400000;
+  function diffDays(a, b) { return Math.round((b - a) / DAY); }
+
+  // 퇴사일로부터 3개월 역산일 (말일 초과 시 말일로 보정)
+  function minus3Months(d) {
+    var y = d.getFullYear(), m = d.getMonth() - 3, day = d.getDate();
+    var lastDay = new Date(y, m + 1, 0).getDate();
+    return new Date(y, m, Math.min(day, lastDay));
+  }
+
+  $("calcBtn").addEventListener("click", function () {
+    var s = parseDate(startEl.value), e = parseDate(endEl.value);
+    var ok = true;
+
+    if (!s) { CM.invalid(fStart, true); ok = false; } else { CM.invalid(fStart, false); }
+    if (!e || (s && e < s)) { CM.invalid(fEnd, true); ok = false; } else { CM.invalid(fEnd, false); }
+
+    var pay = num(payEl);
+    if (isNaN(pay) || pay <= 0) { CM.invalid(fPay, true); ok = false; } else { CM.invalid(fPay, false); }
+    var bonus = num(bonusEl);
+    if (isNaN(bonus)) { CM.invalid(fBonus, true); ok = false; } else { CM.invalid(fBonus, false); }
+    var annual = num(annualEl);
+    if (isNaN(annual)) { CM.invalid(fAnnual, true); ok = false; } else { CM.invalid(fAnnual, false); }
+    if (!ok) return;
+
+    // 재직일수 = 퇴사일 - 입사일 + 1
+    var tenureDays = diffDays(s, e) + 1;
+
+    if (tenureDays < 365) {
+      okBox.hidden = true;
+      noBox.hidden = false;
+      $("noDays").textContent = "현재 재직일수는 " + CM.fmt(tenureDays) + "일입니다.";
+      result.hidden = false;
+      return;
+    }
+
+    // 퇴사 전 3개월 실일수 (89~92일)
+    var d3 = diffDays(minus3Months(e), e);
+
+    var base = pay + bonus * 3 / 12 + annual * 3 / 12;
+    var avgDaily = base / d3;
+    var pay30 = avgDaily * 30;
+    var severance = pay30 * tenureDays / 365;
+
+    // 재직기간 n년 m일 (일수는 퇴사일 포함 계산)
+    var eNext = new Date(e.getFullYear(), e.getMonth(), e.getDate() + 1);
+    var years = 0;
+    while (new Date(s.getFullYear() + years + 1, s.getMonth(), s.getDate()) <= eNext) {
+      years++;
+    }
+    var restDays = diffDays(new Date(s.getFullYear() + years, s.getMonth(), s.getDate()), eNext);
+    var periodTxt = years + "년 " + CM.fmt(restDays) + "일";
+
+    okBox.hidden = false;
+    noBox.hidden = true;
+    result.hidden = false;
+    CM.countUp($("rMain"), Math.round(severance), { suffix: "원" });
+    $("rPeriod").textContent = periodTxt;
+    $("rDays").textContent = CM.fmt(tenureDays) + "일 (3개월 일수 " + d3 + "일)";
+    $("rAvg").textContent = CM.won(avgDaily);
+    $("r30").textContent = CM.won(pay30);
+
+    lastText = "[계산모아 퇴직금 계산 결과]\n" +
+      "재직기간: " + periodTxt + " (총 " + CM.fmt(tenureDays) + "일)\n" +
+      "1일 평균임금: " + CM.won(avgDaily) + "\n" +
+      "30일분 평균임금: " + CM.won(pay30) + "\n" +
+      "예상 퇴직금(세전): " + CM.won(severance) + "\n" +
+      "https://calcmoa.site/tools/retirement";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+});
+</script>
+</body>
+</html>

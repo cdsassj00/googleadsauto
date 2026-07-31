@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>출산예정일 계산기 - 임신 주수 계산</title>
+<meta name="description" content="마지막 생리 시작일(LMP) 또는 수정일 기준으로 출산예정일과 현재 임신 주수를 계산합니다. 네겔레 법칙 기반, 삼분기와 주요 마일스톤 날짜까지 무료 확인.">
+<link rel="canonical" href="https://calcmoa.site/tools/pregnancy">
+<meta property="og:type" content="website">
+<meta property="og:title" content="출산예정일 계산기 - 임신 주수 계산">
+<meta property="og:description" content="마지막 생리 시작일(LMP) 또는 수정일 기준으로 출산예정일과 현재 임신 주수를 계산합니다. 네겔레 법칙 기반, 삼분기와 주요 마일스톤 날짜까지 무료 확인.">
+<meta property="og:url" content="https://calcmoa.site/tools/pregnancy">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"출산예정일 계산기","url":"https://calcmoa.site/tools/pregnancy","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"출산예정일에 정확히 아기가 태어나나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 출산예정일은 통계적 기준일일 뿐이며, 실제로 예정일 당일에 태어나는 비율은 낮은 것으로 알려져 있습니다. 대부분은 예정일 전후 2주 이내(임신 37~42주)에 분만이 이루어지며, 37주 0일부터 41주 6일 사이의 출산을 정상 범위로 봅니다."}},
+  {"@type":"Question","name":"임신 주수는 왜 관계일이 아니라 마지막 생리일부터 세나요?","acceptedAnswer":{"@type":"Answer","text":"배란일과 수정일은 정확히 알기 어려운 반면 마지막 생리 시작일은 대부분 기억할 수 있기 때문입니다. 의학적으로 마지막 생리 시작일을 임신 0주 0일로 정해 주수를 세며, 그래서 실제 수정 시점은 보통 임신 2주 무렵이 됩니다."}},
+  {"@type":"Question","name":"생리 주기가 불규칙한데 이 계산기를 써도 되나요?","acceptedAnswer":{"@type":"Answer","text":"네겔레 법칙은 28일 주기를 전제로 하므로 주기가 불규칙하면 오차가 커질 수 있습니다. 이 계산기는 주기가 28일과 다르면 그 차이만큼 예정일을 보정하지만 이는 근사치입니다. 주기가 불규칙하다면 초음파로 측정한 예정일을 기준으로 삼는 것이 가장 정확합니다."}},
+  {"@type":"Question","name":"계산 결과가 병원에서 들은 예정일과 다른데 어느 쪽이 맞나요?","acceptedAnswer":{"@type":"Answer","text":"병원에서 초음파로 태아 크기를 측정해 정한 예정일이 우선입니다. 특히 임신 초기 초음파는 정확도가 높아, 생리일 기준 계산과 차이가 나면 의료진이 초음파 기준으로 예정일을 조정하는 경우가 많습니다. 이 계산기의 결과는 참고용으로만 활용하세요."}},
+  {"@type":"Question","name":"37주 정기산(만삭)이란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"임신 37주 0일부터를 정기산(만삭)이라고 하며, 이 시기 이후의 출산은 조산으로 보지 않습니다. 반대로 37주 이전 출산은 조산, 42주 이후까지 이어지면 과숙 임신으로 분류되어 의료진의 판단에 따라 유도분만 등을 검토하게 됩니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-date">날짜·디데이</a><span class="sep">›</span>
+    <span>출산예정일 계산기</span>
+  </nav>
+
+  <h1>출산예정일 계산기</h1>
+  <p class="lead">마지막 생리 시작일 또는 수정일(배란일)만 입력하면 출산예정일과 현재 임신 주수, 삼분기, 주요 마일스톤 날짜를 한 번에 확인할 수 있습니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label>계산 기준</label>
+      <div class="seg" id="modeSeg">
+        <button type="button" class="on" data-mode="lmp">마지막 생리 시작일</button>
+        <button type="button" data-mode="conception">수정일(배란일)</button>
+      </div>
+    </div>
+    <div class="field" id="dateField">
+      <label id="dateLabel" for="baseDate">마지막 생리 시작일 (LMP)</label>
+      <input type="date" id="baseDate">
+      <div class="field-error" id="dateError">날짜를 입력해 주세요.</div>
+    </div>
+    <div class="field" id="cycleField">
+      <label for="cycleDays">평균 생리 주기 (일)</label>
+      <input type="number" id="cycleDays" value="28" min="20" max="45" inputmode="numeric">
+      <div class="hint">보통 28일입니다. 주기가 다르면 (주기−28)일만큼 예정일이 보정됩니다.</div>
+      <div class="field-error" id="cycleError">생리 주기는 20~45일 사이로 입력해 주세요.</div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">출산예정일</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>현재 임신 주수</span><b id="rWeeks"></b></div>
+        <div class="row"><span>삼분기</span><b id="rTrimester"></b></div>
+        <div class="row"><span>예정일까지</span><b id="rDday"></b></div>
+      </div>
+      <div class="rows" style="margin-top:16px">
+        <div class="row"><span>임신 12주 (1삼분기 막바지)</span><b id="mW12"></b></div>
+        <div class="row"><span>임신 16주</span><b id="mW16"></b></div>
+        <div class="row"><span>임신 20주 (중간 지점)</span><b id="mW20"></b></div>
+        <div class="row"><span>임신 28주 (3삼분기 시작)</span><b id="mW28"></b></div>
+        <div class="row"><span>임신 37주 (정기산)</span><b id="mW37"></b></div>
+        <div class="row"><span>임신 40주 (출산예정일)</span><b id="mW40"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>계산 기준을 선택합니다. 마지막 생리 시작일을 알고 있다면 <b>마지막 생리 시작일(LMP)</b> 모드를, 배란일이나 시술일 등 수정 시점을 알고 있다면 <b>수정일(배란일)</b> 모드를 선택합니다.</li>
+      <li>해당 날짜를 달력에서 선택합니다.</li>
+      <li>LMP 모드라면 평균 생리 주기를 입력합니다. 잘 모르면 기본값 28일을 그대로 두면 됩니다.</li>
+      <li><b>계산하기</b> 버튼을 누르면 출산예정일, 현재 임신 주수, 삼분기, 예정일까지 남은 일수와 주요 마일스톤 날짜가 표시됩니다.</li>
+    </ol>
+
+    <h2>출산예정일 계산 원리</h2>
+    <p>출산예정일 계산의 표준은 <b>네겔레 법칙(Naegele's rule)</b>입니다. 마지막 생리 시작일에 280일(40주)을 더해 예정일을 구하는 방식으로, "마지막 생리 시작일 + 1년 − 3개월 + 7일"이라는 암산 공식으로도 널리 알려져 있습니다. 수정일(배란일)을 기준으로 할 때는 수정일에 266일(38주)을 더합니다. 두 방식 모두 결과적으로 같은 40주 임신 기간을 가리키며, 차이는 출발점이 생리 시작일인지 수정 시점인지뿐입니다.</p>
+    <table>
+      <thead>
+        <tr><th>계산 기준</th><th>공식</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>마지막 생리 시작일 (LMP)</td><td>LMP + 280일</td><td>네겔레 법칙, 28일 주기 전제</td></tr>
+        <tr><td>수정일(배란일)</td><td>수정일 + 266일</td><td>수정 시점을 아는 경우(배란 테스트, 시술 등)</td></tr>
+        <tr><td>생리 주기 보정</td><td>예정일 + (주기 − 28)일</td><td>LMP 모드에서 주기가 28일과 다를 때 근사 보정</td></tr>
+      </tbody>
+    </table>
+    <p>임신 주수를 세는 방법도 함께 알아두면 좋습니다. 의학적으로는 <b>마지막 생리 시작일이 임신 0주 0일</b>입니다. 즉 아직 수정이 일어나기 전인 생리 첫날부터 주수를 세기 시작하므로, 실제 수정은 보통 임신 2주 무렵에 일어나는 셈입니다. "임신 n주 m일"은 마지막 생리 시작일부터 경과한 일수를 7로 나눈 몫(n주)과 나머지(m일)로 표현합니다.</p>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>기간</th><th>특징</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1삼분기</td><td>임신 13주까지</td><td>주요 기관 형성, 입덧이 흔한 시기</td></tr>
+        <tr><td>2삼분기</td><td>임신 14주 ~ 27주</td><td>비교적 안정기, 태동을 느끼기 시작</td></tr>
+        <tr><td>3삼분기</td><td>임신 28주 ~</td><td>태아 급성장, 출산 준비 시기</td></tr>
+      </tbody>
+    </table>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p><b>예정일은 "그날 태어난다"는 뜻이 아닙니다.</b> 출산예정일 당일에 실제로 분만하는 비율은 낮은 것으로 알려져 있으며, 대부분의 출산은 예정일 전후 2주 범위에서 이루어집니다. 임신 37주 0일 이후의 출산을 <b>정기산(만삭)</b>이라고 하며, 37주 이전은 조산, 42주 이후는 과숙 임신으로 분류합니다. 그래서 예정일 자체보다 "37주에 진입하는 날짜"를 함께 확인해 두는 것이 출산 준비에 실질적으로 도움이 됩니다.</p>
+    <p><b>초음파 측정 결과와 다를 수 있습니다.</b> 생리 주기가 불규칙하거나 배란이 늦은 경우, 생리일 기준 계산과 실제 태아 성장 사이에 차이가 생깁니다. 병원에서는 임신 초기 초음파로 태아의 머리엉덩길이(CRL) 등을 측정해 예정일을 정하며, 이 값이 생리일 기준과 다르면 초음파 기준으로 조정하는 것이 일반적입니다. 이 계산기의 생리 주기 보정 역시 근사치이므로, 병원에서 확정한 예정일이 있다면 그 날짜를 기준으로 삼으세요.</p>
+    <p>예시로 마지막 생리 시작일이 2026년 5월 1일이고 주기가 28일이라면 예정일은 280일 뒤인 2027년 2월 5일 무렵이 됩니다. 주기가 32일이라면 4일을 더해 2027년 2월 9일 무렵으로 보정됩니다(근사치).</p>
+    <p class="note">이 계산기의 결과는 통계적 공식에 따른 참고용 근사치이며 의학적 진단이 아닙니다. 임신 확인, 예정일 확정, 태아 상태에 관한 판단은 반드시 산부인과 전문의의 진료를 통해 받으시기 바랍니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>출산예정일에 정확히 아기가 태어나나요?</summary>
+        <p>아닙니다. 출산예정일은 통계적 기준일일 뿐이며, 실제로 예정일 당일에 태어나는 비율은 낮은 것으로 알려져 있습니다. 대부분은 예정일 전후 2주 이내(임신 37~42주)에 분만이 이루어지며, 37주 0일부터 41주 6일 사이의 출산을 정상 범위로 봅니다.</p>
+      </details>
+      <details>
+        <summary>임신 주수는 왜 관계일이 아니라 마지막 생리일부터 세나요?</summary>
+        <p>배란일과 수정일은 정확히 알기 어려운 반면 마지막 생리 시작일은 대부분 기억할 수 있기 때문입니다. 의학적으로 마지막 생리 시작일을 임신 0주 0일로 정해 주수를 세며, 그래서 실제 수정 시점은 보통 임신 2주 무렵이 됩니다.</p>
+      </details>
+      <details>
+        <summary>생리 주기가 불규칙한데 이 계산기를 써도 되나요?</summary>
+        <p>네겔레 법칙은 28일 주기를 전제로 하므로 주기가 불규칙하면 오차가 커질 수 있습니다. 이 계산기는 주기가 28일과 다르면 그 차이만큼 예정일을 보정하지만 이는 근사치입니다. 주기가 불규칙하다면 초음파로 측정한 예정일을 기준으로 삼는 것이 가장 정확합니다.</p>
+      </details>
+      <details>
+        <summary>계산 결과가 병원에서 들은 예정일과 다른데 어느 쪽이 맞나요?</summary>
+        <p>병원에서 초음파로 태아 크기를 측정해 정한 예정일이 우선입니다. 특히 임신 초기 초음파는 정확도가 높아, 생리일 기준 계산과 차이가 나면 의료진이 초음파 기준으로 예정일을 조정하는 경우가 많습니다. 이 계산기의 결과는 참고용으로만 활용하세요.</p>
+      </details>
+      <details>
+        <summary>37주 정기산(만삭)이란 무엇인가요?</summary>
+        <p>임신 37주 0일부터를 정기산(만삭)이라고 하며, 이 시기 이후의 출산은 조산으로 보지 않습니다. 반대로 37주 이전 출산은 조산, 42주 이후까지 이어지면 과숙 임신으로 분류되어 의료진의 판단에 따라 유도분만 등을 검토하게 됩니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/age"><div class="ico">🎂</div><b>만 나이 계산기</b><span>만 나이 통일법 기준 정확한 나이</span></a>
+      <a class="tool-card" href="/tools/dday"><div class="ico">📅</div><b>디데이 계산기</b><span>D-day와 날짜 사이 일수 계산</span></a>
+      <a class="tool-card" href="/tools/anniversary"><div class="ico">💕</div><b>기념일 계산기</b><span>100일·1000일·주년 기념일을 한 번에</span></a>
+      <a class="tool-card" href="/tools/bmi"><div class="ico">⚖️</div><b>BMI 계산기</b><span>체질량지수와 비만도 판정</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var mode = "lmp";
+  var seg = document.getElementById("modeSeg");
+  var dateField = document.getElementById("dateField");
+  var dateLabel = document.getElementById("dateLabel");
+  var baseDate = document.getElementById("baseDate");
+  var cycleField = document.getElementById("cycleField");
+  var cycleDays = document.getElementById("cycleDays");
+  var result = document.getElementById("result");
+  var lastCopy = "";
+
+  // 오늘 날짜 기본값
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function toInput(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function fmtDate(d) { return d.getFullYear() + "." + pad(d.getMonth() + 1) + "." + pad(d.getDate()); }
+  function addDays(d, n) { var r = new Date(d.getTime()); r.setDate(r.getDate() + n); return r; }
+  function midnight(d) { return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+
+  var today = midnight(new Date());
+  baseDate.value = toInput(today);
+
+  Array.prototype.forEach.call(seg.querySelectorAll("button"), function (b) {
+    b.addEventListener("click", function () {
+      Array.prototype.forEach.call(seg.querySelectorAll("button"), function (x) { x.classList.remove("on"); });
+      b.classList.add("on");
+      mode = b.getAttribute("data-mode");
+      var isLmp = mode === "lmp";
+      dateLabel.textContent = isLmp ? "마지막 생리 시작일 (LMP)" : "수정일(배란일)";
+      cycleField.style.display = isLmp ? "" : "none";
+      result.hidden = true;
+    });
+  });
+
+  document.getElementById("calcBtn").addEventListener("click", function () {
+    var ok = true;
+
+    if (!baseDate.value) {
+      CM.invalid(dateField, true); ok = false;
+    } else {
+      CM.invalid(dateField, false);
+    }
+
+    var cycle = 28;
+    if (mode === "lmp") {
+      cycle = parseInt(cycleDays.value, 10);
+      if (isNaN(cycle) || cycle < 20 || cycle > 45) {
+        CM.invalid(cycleField, true); ok = false;
+      } else {
+        CM.invalid(cycleField, false);
+      }
+    } else {
+      CM.invalid(cycleField, false);
+    }
+    if (!ok) return;
+
+    var parts = baseDate.value.split("-");
+    var base = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+
+    var due, lmp;
+    if (mode === "lmp") {
+      lmp = base;
+      due = addDays(lmp, 280 + (cycle - 28));
+    } else {
+      due = addDays(base, 266);
+      lmp = addDays(due, -280); // 주수 계산용 환산 LMP (0주 0일 기준점)
+    }
+
+    // 현재 임신 주수: LMP부터 경과일
+    var elapsed = Math.floor((today - midnight(lmp)) / 86400000);
+    var weeksText;
+    if (elapsed < 0) {
+      weeksText = "아직 기준일 이전입니다";
+    } else {
+      weeksText = Math.floor(elapsed / 7) + "주 " + (elapsed % 7) + "일";
+    }
+
+    // 삼분기: 1(~13주), 2(14~27주), 3(28주~)
+    var w = Math.floor(elapsed / 7);
+    var tri;
+    if (elapsed < 0) tri = "-";
+    else if (w <= 13) tri = "1삼분기 (~13주)";
+    else if (w <= 27) tri = "2삼분기 (14~27주)";
+    else tri = "3삼분기 (28주~)";
+
+    var diff = Math.round((midnight(due) - today) / 86400000);
+    var ddayText = diff > 0 ? "D-" + CM.fmt(diff) : (diff === 0 ? "D-Day (오늘)" : "예정일 " + CM.fmt(-diff) + "일 지남");
+
+    document.getElementById("rMain").textContent = fmtDate(due);
+    document.getElementById("rWeeks").textContent = weeksText;
+    document.getElementById("rTrimester").textContent = tri;
+    document.getElementById("rDday").textContent = ddayText;
+
+    // 마일스톤: 임신 n주 0일 = LMP + n*7일 (보정된 예정일 기준: due - (40-n)*7)
+    var ms = { mW12: 12, mW16: 16, mW20: 20, mW28: 28, mW37: 37, mW40: 40 };
+    Object.keys(ms).forEach(function (id) {
+      var d = addDays(due, -(40 - ms[id]) * 7);
+      document.getElementById(id).textContent = fmtDate(d);
+    });
+
+    lastCopy = "출산예정일: " + fmtDate(due) +
+      " / 현재 " + weeksText +
+      " / " + tri +
+      " / " + ddayText +
+      " (계산모아 calcmoa.site)";
+
+    result.hidden = false;
+  });
+
+  CM.bindCopy(document.getElementById("copyBtn"), function () { return lastCopy; });
+});
+</script>
+</body>
+</html>

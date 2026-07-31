@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BMI 계산기 - 체질량지수, 비만도 계산</title>
+<meta name="description" content="키와 몸무게로 BMI(체질량지수)를 계산하고 대한비만학회 아시아-태평양 기준으로 저체중·정상·비만 단계를 판정합니다. 정상 체중 범위까지 무료 확인.">
+<link rel="canonical" href="https://calcmoa.site/tools/bmi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BMI 계산기 - 체질량지수, 비만도 계산">
+<meta property="og:description" content="키와 몸무게로 BMI(체질량지수)를 계산하고 대한비만학회 아시아-태평양 기준으로 저체중·정상·비만 단계를 판정합니다. 정상 체중 범위까지 무료 확인.">
+<meta property="og:url" content="https://calcmoa.site/tools/bmi">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"BMI 계산기","url":"https://calcmoa.site/tools/bmi","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"BMI 23이면 비만인가요?","acceptedAnswer":{"@type":"Answer","text":"대한비만학회 아시아-태평양 기준으로 BMI 23~24.9는 비만 전단계(과체중·위험체중)에 해당합니다. 아직 비만은 아니지만 비만 관련 질환의 위험이 높아지기 시작하는 구간이므로 식습관과 운동 습관을 점검해 보는 것이 좋습니다. 25 이상부터 1단계 비만으로 분류됩니다."}},
+  {"@type":"Question","name":"왜 해외 사이트와 판정 결과가 다른가요?","acceptedAnswer":{"@type":"Answer","text":"기준이 다르기 때문입니다. WHO 서양인 기준은 과체중 25 이상, 비만 30 이상이지만, 아시아인은 같은 BMI에서도 체지방률이 높고 당뇨병·심혈관질환 위험이 더 크다는 연구에 따라 아시아-태평양 기준은 23 이상을 비만 전단계, 25 이상을 비만으로 더 엄격하게 봅니다. 이 계산기는 한국에서 통용되는 아시아-태평양 기준을 사용합니다."}},
+  {"@type":"Question","name":"근육이 많으면 BMI가 부정확한가요?","acceptedAnswer":{"@type":"Answer","text":"그렇습니다. BMI는 체중과 키만으로 계산하므로 근육량과 체지방량을 구분하지 못합니다. 근육량이 많은 운동선수는 체지방이 적어도 BMI가 25를 넘어 비만으로 분류될 수 있습니다. 정확한 체성분 평가가 필요하면 체성분 분석(인바디 등)이나 체지방률 측정을 병행하는 것이 좋습니다."}},
+  {"@type":"Question","name":"정상 체중 범위는 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"정상 BMI 구간(18.5~22.9)에 자신의 키(m)의 제곱을 곱하면 됩니다. 예를 들어 키 170cm라면 18.5×1.7²=53.5kg부터 22.9×1.7²=66.2kg까지가 정상 체중 범위입니다. 이 계산기는 입력한 키에 맞는 범위를 자동으로 계산해 보여줍니다."}},
+  {"@type":"Question","name":"BMI 외에 함께 확인하면 좋은 지표가 있나요?","acceptedAnswer":{"@type":"Answer","text":"허리둘레가 대표적입니다. 한국에서는 성인 남성 90cm 이상, 여성 85cm 이상을 복부비만으로 봅니다. BMI가 정상이라도 복부비만이면 대사질환 위험이 높아질 수 있으므로, BMI와 허리둘레를 함께 확인하는 것이 권장됩니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-life">생활·건강</a><span class="sep">›</span>
+    <span>BMI 계산기</span>
+  </nav>
+
+  <h1>BMI 계산기 (체질량지수)</h1>
+  <p class="lead">키와 몸무게만 입력하면 BMI(체질량지수)와 대한비만학회 아시아-태평양 기준 비만도 판정, 내 키에 맞는 정상 체중 범위를 바로 확인할 수 있습니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field-row">
+      <div class="field" id="heightField">
+        <label for="heightCm">키 (cm)</label>
+        <input type="text" id="heightCm" inputmode="decimal" placeholder="예: 170">
+        <div class="field-error">키를 90~250cm 사이로 입력해 주세요.</div>
+      </div>
+      <div class="field" id="weightField">
+        <label for="weightKg">몸무게 (kg)</label>
+        <input type="text" id="weightKg" inputmode="decimal" placeholder="예: 65.5">
+        <div class="field-error">몸무게를 20~300kg 사이로 입력해 주세요.</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">나의 체질량지수</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>판정 (아시아-태평양 기준)</span><b id="rGrade"></b></div>
+        <div class="row"><span>정상 체중 범위</span><b id="rNormalRange"></b></div>
+        <div class="row"><span>정상 상한(BMI 22.9)과의 차이</span><b id="rDiff"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>키를 센티미터(cm) 단위로 입력합니다. 소수점 입력도 가능합니다(예: 172.5).</li>
+      <li>몸무게를 킬로그램(kg) 단위로 입력합니다(예: 65.5).</li>
+      <li><b>계산하기</b> 버튼을 누르면 BMI 수치와 비만도 판정, 내 키 기준 정상 체중 범위가 표시됩니다.</li>
+      <li>현재 체중이 정상 상한을 넘는다면 몇 kg 차이가 나는지도 함께 확인할 수 있습니다.</li>
+    </ol>
+
+    <h2>BMI 계산 원리</h2>
+    <p>BMI(Body Mass Index, 체질량지수)는 체중을 키의 제곱으로 나눈 값입니다. 키는 미터(m) 단위로 환산해 계산합니다.</p>
+    <p style="text-align:center"><b>BMI = 체중(kg) ÷ (키(m) × 키(m))</b></p>
+    <p>예를 들어 키 170cm, 몸무게 65kg이라면 65 ÷ (1.7 × 1.7) = 22.5가 됩니다. 이 계산기는 소수점 첫째 자리까지 표시합니다. 판정 기준은 한국에서 통용되는 <b>대한비만학회 아시아-태평양 기준(2026년 기준)</b>을 따릅니다.</p>
+    <table>
+      <thead>
+        <tr><th>BMI 구간</th><th>판정</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>18.5 미만</td><td>저체중</td></tr>
+        <tr><td>18.5 ~ 22.9</td><td>정상</td></tr>
+        <tr><td>23 ~ 24.9</td><td>비만 전단계 (과체중)</td></tr>
+        <tr><td>25 ~ 29.9</td><td>1단계 비만</td></tr>
+        <tr><td>30 ~ 34.9</td><td>2단계 비만</td></tr>
+        <tr><td>35 이상</td><td>3단계 비만 (고도비만)</td></tr>
+      </tbody>
+    </table>
+    <p>정상 체중 범위는 정상 BMI 구간을 거꾸로 적용해 구합니다. 즉 <b>18.5 × 키(m)² ~ 22.9 × 키(m)²</b>이 내 키에 맞는 정상 체중(kg) 범위입니다. 키 170cm라면 약 53.5~66.2kg이 정상 범위가 됩니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p><b>WHO 서양 기준과 다른 이유.</b> WHO의 국제(서양인) 기준은 BMI 25 이상을 과체중, 30 이상을 비만으로 봅니다. 그러나 아시아인은 같은 BMI라도 서양인보다 체지방률이 높고 당뇨병·심혈관질환 등 비만 관련 질환 위험이 더 크다는 연구 결과에 따라, 아시아-태평양 지역에는 23 이상을 비만 전단계, 25 이상을 비만으로 보는 더 엄격한 기준이 적용됩니다. 해외 사이트에서 계산했을 때 판정이 다르게 나오는 이유가 바로 이 기준 차이입니다.</p>
+    <p><b>BMI의 한계.</b> BMI는 키와 체중만 사용하므로 근육량과 체지방량을 구분하지 못합니다. 근육량이 많은 사람은 체지방이 적어도 BMI가 높게 나오고, 반대로 마른 비만(정상 BMI지만 체지방률이 높은 경우)은 걸러내지 못합니다. 또한 노인, 임산부, 성장기 어린이에게는 성인 기준을 그대로 적용하기 어렵습니다.</p>
+    <p><b>허리둘레를 함께 확인하세요.</b> 한국에서는 성인 남성 90cm 이상, 여성 85cm 이상을 복부비만으로 판정합니다. BMI가 정상이라도 허리둘레가 기준을 넘으면 대사증후군 위험이 높아질 수 있어, 대한비만학회도 BMI와 허리둘레를 병행해 평가할 것을 권장합니다. 체성분 분석(인바디 등)으로 체지방률과 근육량을 확인하면 더 정확한 평가가 가능합니다.</p>
+    <p class="note">이 계산 결과는 건강 참고용이며 의학적 진단이 아닙니다. 비만 치료나 체중 관리가 필요한지에 대한 판단은 의사 등 전문가와 상담하시기 바랍니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>BMI 23이면 비만인가요?</summary>
+        <p>대한비만학회 아시아-태평양 기준으로 BMI 23~24.9는 비만 전단계(과체중·위험체중)에 해당합니다. 아직 비만은 아니지만 비만 관련 질환의 위험이 높아지기 시작하는 구간이므로 식습관과 운동 습관을 점검해 보는 것이 좋습니다. 25 이상부터 1단계 비만으로 분류됩니다.</p>
+      </details>
+      <details>
+        <summary>왜 해외 사이트와 판정 결과가 다른가요?</summary>
+        <p>기준이 다르기 때문입니다. WHO 서양인 기준은 과체중 25 이상, 비만 30 이상이지만, 아시아인은 같은 BMI에서도 체지방률이 높고 당뇨병·심혈관질환 위험이 더 크다는 연구에 따라 아시아-태평양 기준은 23 이상을 비만 전단계, 25 이상을 비만으로 더 엄격하게 봅니다. 이 계산기는 한국에서 통용되는 아시아-태평양 기준을 사용합니다.</p>
+      </details>
+      <details>
+        <summary>근육이 많으면 BMI가 부정확한가요?</summary>
+        <p>그렇습니다. BMI는 체중과 키만으로 계산하므로 근육량과 체지방량을 구분하지 못합니다. 근육량이 많은 운동선수는 체지방이 적어도 BMI가 25를 넘어 비만으로 분류될 수 있습니다. 정확한 체성분 평가가 필요하면 체성분 분석(인바디 등)이나 체지방률 측정을 병행하는 것이 좋습니다.</p>
+      </details>
+      <details>
+        <summary>정상 체중 범위는 어떻게 계산하나요?</summary>
+        <p>정상 BMI 구간(18.5~22.9)에 자신의 키(m)의 제곱을 곱하면 됩니다. 예를 들어 키 170cm라면 18.5×1.7²=53.5kg부터 22.9×1.7²=66.2kg까지가 정상 체중 범위입니다. 이 계산기는 입력한 키에 맞는 범위를 자동으로 계산해 보여줍니다.</p>
+      </details>
+      <details>
+        <summary>BMI 외에 함께 확인하면 좋은 지표가 있나요?</summary>
+        <p>허리둘레가 대표적입니다. 한국에서는 성인 남성 90cm 이상, 여성 85cm 이상을 복부비만으로 봅니다. BMI가 정상이라도 복부비만이면 대사질환 위험이 높아질 수 있으므로, BMI와 허리둘레를 함께 확인하는 것이 권장됩니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/pregnancy"><div class="ico">👶</div><b>출산예정일 계산기</b><span>임신 주수와 출산예정일 확인</span></a>
+      <a class="tool-card" href="/tools/age"><div class="ico">🎂</div><b>만 나이 계산기</b><span>만 나이 통일법 기준 정확한 나이</span></a>
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var heightField = document.getElementById("heightField");
+  var weightField = document.getElementById("weightField");
+  var heightCm = document.getElementById("heightCm");
+  var weightKg = document.getElementById("weightKg");
+  var result = document.getElementById("result");
+  var rMain = document.getElementById("rMain");
+  var lastCopy = "";
+
+  function grade(bmi) {
+    if (bmi < 18.5) return "저체중";
+    if (bmi < 23) return "정상";
+    if (bmi < 25) return "비만 전단계 (과체중)";
+    if (bmi < 30) return "1단계 비만";
+    if (bmi < 35) return "2단계 비만";
+    return "3단계 비만 (고도비만)";
+  }
+
+  document.getElementById("calcBtn").addEventListener("click", function () {
+    var ok = true;
+    var h = parseFloat(heightCm.value.replace(/,/g, ""));
+    var w = parseFloat(weightKg.value.replace(/,/g, ""));
+
+    if (isNaN(h) || h < 90 || h > 250) { CM.invalid(heightField, true); ok = false; }
+    else { CM.invalid(heightField, false); }
+
+    if (isNaN(w) || w < 20 || w > 300) { CM.invalid(weightField, true); ok = false; }
+    else { CM.invalid(weightField, false); }
+
+    if (!ok) return;
+
+    var m = h / 100;
+    var bmi = Math.round((w / (m * m)) * 10) / 10;
+    var g = grade(bmi);
+
+    var lo = Math.round(18.5 * m * m * 10) / 10;
+    var hi = Math.round(22.9 * m * m * 10) / 10;
+    var diff = Math.round((w - hi) * 10) / 10;
+    var diffText;
+    if (diff > 0) diffText = "상한보다 " + CM.fmt(diff, 1) + "kg 많음";
+    else if (diff < 0) diffText = "상한보다 " + CM.fmt(-diff, 1) + "kg 적음";
+    else diffText = "정상 상한과 동일";
+
+    CM.countUp(rMain, bmi, { prefix: "BMI ", decimals: 1 });
+    rMain.style.color = g === "정상" ? "var(--ok)" : "var(--accent)";
+
+    var rGrade = document.getElementById("rGrade");
+    rGrade.textContent = g;
+    rGrade.style.color = g === "정상" ? "var(--ok)" : "var(--accent)";
+
+    document.getElementById("rNormalRange").textContent = CM.fmt(lo, 1) + " ~ " + CM.fmt(hi, 1) + " kg";
+    document.getElementById("rDiff").textContent = diffText;
+
+    lastCopy = "BMI " + CM.fmt(bmi, 1) + " (" + g + ")" +
+      " / 정상 체중 범위 " + CM.fmt(lo, 1) + "~" + CM.fmt(hi, 1) + "kg" +
+      " (계산모아 calcmoa.site)";
+
+    result.hidden = false;
+  });
+
+  CM.bindCopy(document.getElementById("copyBtn"), function () { return lastCopy; });
+});
+</script>
+</body>
+</html>

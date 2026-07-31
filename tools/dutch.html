@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>더치페이 계산기 - N빵 계산기, 회식비 정산</title>
+<meta name="description" content="총 금액과 인원 수만 입력하면 1인당 부담금을 바로 계산합니다. 100원·1,000원 단위 올림·내림 정산과 남는 돈까지 한눈에 확인하는 무료 N빵 더치페이 계산기입니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/dutch">
+<meta property="og:type" content="website">
+<meta property="og:title" content="더치페이 계산기 - N빵 계산기, 회식비 정산">
+<meta property="og:description" content="총 금액과 인원 수만 입력하면 1인당 부담금을 바로 계산합니다. 100원·1,000원 단위 올림·내림 정산과 남는 돈까지 한눈에 확인하는 무료 N빵 더치페이 계산기입니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/dutch">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"더치페이 계산기","url":"https://calcmoa.site/tools/dutch","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"올림 정산과 내림 정산 중 어떤 방식이 좋나요?","acceptedAnswer":{"@type":"Answer","text":"모임에서 돈을 걷는 총무 입장에서는 올림 방식이 편합니다. 각자 조금씩 더 내서 총액을 확실히 채우고, 남는 소액은 총무가 덜 내는 방식으로 자연스럽게 정리되기 때문입니다. 내림 방식은 각자 부담이 줄어드는 대신 부족분을 총무가 메워야 하므로, 총무가 한턱 내는 분위기일 때 쓰입니다. 일반적인 회식·모임 정산에는 올림 방식을 권합니다."}},
+  {"@type":"Question","name":"올림 정산 후 남는 돈은 어떻게 처리하나요?","acceptedAnswer":{"@type":"Answer","text":"정해진 규칙은 없지만 보통 세 가지 방식이 쓰입니다. 첫째, 총무가 자기 몫에서 그만큼 덜 내는 방식이 가장 흔합니다. 둘째, 다음 모임 회비로 이월하는 방법도 있습니다. 셋째, 금액이 아주 작으면(몇백 원 수준) 커피값에 보태는 식으로 처리하기도 합니다. 어떤 방식이든 정산 내역을 공유해 두면 오해가 없습니다."}},
+  {"@type":"Question","name":"절사 단위는 어떻게 고르면 되나요?","acceptedAnswer":{"@type":"Answer","text":"계좌이체나 간편송금이 일반적인 요즘은 100원 단위가 무난합니다. 1원 단위는 정확하지만 송금 금액이 지저분해지고, 1,000원 단위는 깔끔하지만 인원이 많을수록 남는 돈(또는 부족분)이 커집니다. 현금으로 걷는 자리라면 1,000원 단위가 편합니다."}},
+  {"@type":"Question","name":"카카오페이·토스 정산 기능과 뭐가 다른가요?","acceptedAnswer":{"@type":"Answer","text":"간편송금 앱의 정산 기능은 1원 단위까지 정확히 나누어 요청을 보내는 데 강점이 있고, 이 계산기는 100원·1,000원 단위로 끊어 걷을 때 1인당 금액과 남는 돈·부족분을 미리 확인하는 데 유용합니다. 이 계산기로 금액을 정한 뒤 앱으로 같은 금액을 요청하면 깔끔하게 정산할 수 있습니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-life">생활·건강</a><span class="sep">›</span>
+    <span>더치페이 계산기</span>
+  </nav>
+
+  <h1>더치페이 계산기 (N빵)</h1>
+  <p class="lead">회식비·모임비 총액과 인원 수를 입력하면 1인당 부담금을 계산합니다. 100원·1,000원 단위 올림·내림 정산과 남는 돈까지 한 번에 확인하세요.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field-row">
+      <div class="field" id="fTotal">
+        <label for="total">총 금액 (원)</label>
+        <input type="text" id="total" inputmode="numeric" placeholder="예: 158000">
+        <div class="field-error">총 금액을 1원 이상 숫자로 입력하세요.</div>
+      </div>
+      <div class="field" id="fPeople">
+        <label for="people">인원 수 (명)</label>
+        <input type="text" id="people" inputmode="numeric" placeholder="예: 7">
+        <div class="field-error">인원 수를 2명 이상 숫자로 입력하세요.</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>절사 단위</label>
+      <div class="seg" id="unitSeg">
+        <button type="button" data-unit="1">1원</button>
+        <button type="button" data-unit="10">10원</button>
+        <button type="button" data-unit="100" class="on">100원</button>
+        <button type="button" data-unit="1000">1,000원</button>
+      </div>
+      <div class="hint">선택한 단위로 1인당 금액을 올림(깔끔하게 걷기) 또는 내림했을 때의 차액을 함께 보여드립니다.</div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">1인당 부담금 — 깔끔하게 걷기 (올림)</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>정확한 1인당 금액 (절사 전)</span><b id="rExact"></b></div>
+        <div class="row"><span>올림 시 총 걷는 금액</span><b id="rCeilTotal"></b></div>
+        <div class="row"><span>올림 시 남는 돈 (총무가 덜 내기)</span><b id="rCeilOver"></b></div>
+        <div class="row"><span>내림 시 1인당 금액</span><b id="rFloorPer"></b></div>
+        <div class="row"><span>내림 시 부족분 (총무가 더 내기)</span><b id="rFloorShort"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li><b>총 금액</b>에 영수증에 찍힌 전체 금액을 입력합니다. 여러 차수를 합산해 넣어도 됩니다.</li>
+      <li><b>인원 수</b>에 나눠 낼 사람 수를 입력합니다.</li>
+      <li><b>절사 단위</b>를 선택합니다. 계좌이체 정산이라면 100원, 현금이라면 1,000원 단위가 편합니다.</li>
+      <li><b>계산하기</b>를 누르면 올림 기준 1인당 금액이 크게 표시되고, 아래에 내림 기준과 차액이 함께 나옵니다.</li>
+      <li><b>결과 복사</b> 버튼으로 "총 158,000원 ÷ 7명 = 1인당 22,600원" 형식의 문구를 복사해 단체 채팅방에 바로 붙여넣을 수 있습니다.</li>
+    </ol>
+
+    <h2>더치페이 계산 원리</h2>
+    <p>기본 공식은 단순합니다. <b>1인당 금액 = 총 금액 ÷ 인원 수</b>. 문제는 나눗셈 결과가 딱 떨어지지 않을 때입니다. 이 계산기는 선택한 절사 단위로 올림한 값과 내림한 값을 모두 계산해 차액을 보여줍니다.</p>
+    <table>
+      <thead>
+        <tr><th>방식</th><th>계산</th><th>결과</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>올림 (깔끔하게 걷기)</td><td>1인당 금액을 절사 단위로 올림</td><td>1인당 금액 × 인원 − 총액 = <b>남는 돈</b> → 총무가 그만큼 덜 냅니다</td></tr>
+        <tr><td>내림</td><td>1인당 금액을 절사 단위로 내림</td><td>총액 − 1인당 금액 × 인원 = <b>부족분</b> → 총무가 그만큼 더 냅니다</td></tr>
+      </tbody>
+    </table>
+    <p>예를 들어 회식비 158,000원을 7명이 나누면 정확히는 1인당 22,571.43원입니다. 100원 단위 올림이면 1인당 22,600원씩 걷어 총 158,200원이 모이고 200원이 남습니다. 반대로 100원 단위 내림이면 1인당 22,500원씩 걷어 총 157,500원이 되어 500원이 부족하므로, 그만큼을 총무가 채워야 합니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <h3>올림 vs 내림, 어느 쪽으로 정산할까</h3>
+    <p>돈을 걷는 총무 입장에서는 <b>올림 방식</b>이 단연 편합니다. 각자 몇십~몇백 원씩 더 내서 총액이 확실히 채워지고, 남는 소액은 총무가 자기 몫에서 덜 내는 것으로 자연스럽게 정리되기 때문입니다. 내림 방식은 참여자 부담이 조금 줄어드는 대신 부족분을 총무가 메워야 하므로, 총무가 "이번엔 내가 조금 더 낼게" 하는 분위기일 때 어울립니다. 방식이 무엇이든 정산 전에 기준을 공유해 두면 뒷말이 없습니다.</p>
+    <h3>남는 돈 처리 관행</h3>
+    <p>올림 정산 후 남는 돈은 보통 총무가 자기 부담금에서 차감하는 방식으로 처리합니다. 금액이 커지면 다음 모임 회비로 이월하거나, 몇백 원 수준의 소액이면 커피값에 보태는 경우도 흔합니다. 어느 쪽이든 "얼마가 남았고 어떻게 처리했는지" 한 줄이라도 채팅방에 남겨 두는 것이 깔끔합니다.</p>
+    <h3>간편송금으로 걷을 때 팁</h3>
+    <p>카카오페이·토스 같은 간편송금 앱의 정산(더치페이) 기능은 1원 단위까지 정확하게 나눠 송금 요청을 보내 줍니다. 다만 22,571원처럼 지저분한 금액보다는 이 계산기로 22,600원처럼 끊어진 금액을 정한 뒤 같은 금액으로 요청을 보내는 편이 받는 사람도 기억하기 좋습니다. 요청 메시지에 복사한 정산 문구를 붙여넣으면 근거까지 함께 전달됩니다.</p>
+    <h3>계산 예시</h3>
+    <p>2026년 기준 흔한 회식 상황을 예로 들면 — 1차 고깃집 132,000원, 2차 카페 26,000원, 합계 158,000원을 7명이 나누는 경우: 정확한 1인당 금액은 22,571.43원, 100원 단위 올림 시 1인당 22,600원(총 158,200원, 200원 남음), 1,000원 단위 올림 시 1인당 23,000원(총 161,000원, 3,000원 남음)입니다. 남는 돈이 커지는 게 부담스러우면 절사 단위를 낮추면 됩니다.</p>
+    <p class="note">이 계산기는 단순 나눗셈과 절사(올림·내림)만 수행하는 참고용 도구입니다. 실제 정산 금액과 방식은 모임 구성원 간 합의에 따릅니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details><summary>올림 정산과 내림 정산 중 어떤 방식이 좋나요?</summary><p>모임에서 돈을 걷는 총무 입장에서는 올림 방식이 편합니다. 각자 조금씩 더 내서 총액을 확실히 채우고, 남는 소액은 총무가 덜 내는 방식으로 자연스럽게 정리되기 때문입니다. 내림 방식은 각자 부담이 줄어드는 대신 부족분을 총무가 메워야 하므로, 총무가 한턱 내는 분위기일 때 쓰입니다. 일반적인 회식·모임 정산에는 올림 방식을 권합니다.</p></details>
+      <details><summary>올림 정산 후 남는 돈은 어떻게 처리하나요?</summary><p>정해진 규칙은 없지만 보통 세 가지 방식이 쓰입니다. 첫째, 총무가 자기 몫에서 그만큼 덜 내는 방식이 가장 흔합니다. 둘째, 다음 모임 회비로 이월하는 방법도 있습니다. 셋째, 금액이 아주 작으면(몇백 원 수준) 커피값에 보태는 식으로 처리하기도 합니다. 어떤 방식이든 정산 내역을 공유해 두면 오해가 없습니다.</p></details>
+      <details><summary>절사 단위는 어떻게 고르면 되나요?</summary><p>계좌이체나 간편송금이 일반적인 요즘은 100원 단위가 무난합니다. 1원 단위는 정확하지만 송금 금액이 지저분해지고, 1,000원 단위는 깔끔하지만 인원이 많을수록 남는 돈(또는 부족분)이 커집니다. 현금으로 걷는 자리라면 1,000원 단위가 편합니다.</p></details>
+      <details><summary>카카오페이·토스 정산 기능과 뭐가 다른가요?</summary><p>간편송금 앱의 정산 기능은 1원 단위까지 정확히 나누어 요청을 보내는 데 강점이 있고, 이 계산기는 100원·1,000원 단위로 끊어 걷을 때 1인당 금액과 남는 돈·부족분을 미리 확인하는 데 유용합니다. 이 계산기로 금액을 정한 뒤 앱으로 같은 금액을 요청하면 깔끔하게 정산할 수 있습니다.</p></details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+      <a class="tool-card" href="/tools/vat"><div class="ico">🧾</div><b>부가세 계산기</b><span>공급가액·부가세·합계 상호 변환</span></a>
+      <a class="tool-card" href="/tools/hourly"><div class="ico">⏰</div><b>시급 계산기</b><span>주휴수당 포함 월급 환산</span></a>
+      <a class="tool-card" href="/tools/charcount"><div class="ico">✏️</div><b>글자수 세기</b><span>공백 포함·제외, 자소서 글자수</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var totalEl = document.getElementById("total");
+  var peopleEl = document.getElementById("people");
+  var fTotal = document.getElementById("fTotal");
+  var fPeople = document.getElementById("fPeople");
+  var seg = document.getElementById("unitSeg");
+  var calcBtn = document.getElementById("calcBtn");
+  var result = document.getElementById("result");
+  var rMain = document.getElementById("rMain");
+  var rExact = document.getElementById("rExact");
+  var rCeilTotal = document.getElementById("rCeilTotal");
+  var rCeilOver = document.getElementById("rCeilOver");
+  var rFloorPer = document.getElementById("rFloorPer");
+  var rFloorShort = document.getElementById("rFloorShort");
+  var copyBtn = document.getElementById("copyBtn");
+
+  var unit = 100;
+  var last = null;
+
+  Array.prototype.forEach.call(seg.querySelectorAll("button"), function (b) {
+    b.addEventListener("click", function () {
+      Array.prototype.forEach.call(seg.querySelectorAll("button"), function (x) {
+        x.classList.remove("on");
+      });
+      b.classList.add("on");
+      unit = parseInt(b.getAttribute("data-unit"), 10);
+      if (!result.hidden) calc();
+    });
+  });
+
+  function num(el) {
+    return parseFloat(String(el.value).replace(/[,\s]/g, ""));
+  }
+
+  function calc() {
+    var total = num(totalEl);
+    var people = num(peopleEl);
+    var ok = true;
+
+    if (!isFinite(total) || total < 1) {
+      CM.invalid(fTotal, true);
+      ok = false;
+    } else {
+      CM.invalid(fTotal, false);
+    }
+    if (!isFinite(people) || people < 2 || people !== Math.floor(people)) {
+      CM.invalid(fPeople, true);
+      ok = false;
+    } else {
+      CM.invalid(fPeople, false);
+    }
+    if (!ok) { result.hidden = true; return; }
+
+    total = Math.round(total);
+    var exact = total / people;
+    var perCeil = Math.ceil(exact / unit) * unit;
+    var perFloor = Math.floor(exact / unit) * unit;
+    var ceilTotal = perCeil * people;
+    var ceilOver = ceilTotal - total;        // 남는 돈 (총무가 덜 냄)
+    var floorTotal = perFloor * people;
+    var floorShort = total - floorTotal;     // 부족분 (총무가 더 냄)
+
+    result.hidden = false;
+    CM.countUp(rMain, perCeil, { suffix: "원" });
+    rExact.textContent = CM.fmt(exact, exact === Math.floor(exact) ? 0 : 2) + "원";
+    rCeilTotal.textContent = CM.won(ceilTotal);
+    rCeilOver.textContent = CM.won(ceilOver);
+    rFloorPer.textContent = CM.won(perFloor);
+    rFloorShort.textContent = CM.won(floorShort);
+
+    last = { total: total, people: people, per: perCeil };
+  }
+
+  calcBtn.addEventListener("click", calc);
+  [totalEl, peopleEl].forEach(function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") calc();
+    });
+  });
+
+  CM.bindCopy(copyBtn, function () {
+    if (!last) return "";
+    return "총 " + CM.won(last.total) + " ÷ " + CM.fmt(last.people) + "명 = 1인당 " + CM.won(last.per);
+  });
+});
+</script>
+</body>
+</html>
