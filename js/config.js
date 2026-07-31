@@ -14,7 +14,7 @@ window.SITE_CONFIG = {
   contactEmail: "ss2jj1004@gmail.com",
 
   // 예: "ca-pub-1234567890123456"  (미설정 시 광고 슬롯 숨김)
-  adsenseClient: "",
+  adsenseClient: "ca-pub-5862755346780724",
 
   // 예: { top: "1234567890", mid: "2345678901", bottom: "3456789012" }
   adSlots: {},

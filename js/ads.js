@@ -8,11 +8,14 @@
 
   /* ---- Google AdSense ---- */
   if (c.adsenseClient && /^ca-pub-\d{10,}$/.test(c.adsenseClient)) {
-    var s = document.createElement("script");
-    s.async = true;
-    s.crossOrigin = "anonymous";
-    s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + c.adsenseClient;
-    document.head.appendChild(s);
+    // head 에 정적 태그가 이미 있으면 중복 로드하지 않음
+    if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
+      var s = document.createElement("script");
+      s.async = true;
+      s.crossOrigin = "anonymous";
+      s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + c.adsenseClient;
+      document.head.appendChild(s);
+    }
 
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".ad-slot").forEach(function (el) {
