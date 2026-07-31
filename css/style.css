@@ -287,3 +287,34 @@ h3 { font-size: 17px; font-weight: 700; margin: 26px 0 8px; }
 .muted { color: var(--sub); }
 .mono { font-variant-numeric: tabular-nums; }
 ::selection { background: color-mix(in srgb, var(--accent) 25%, transparent); }
+
+/* ---------- 퀴즈 (심리테스트) ---------- */
+.quiz-progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 22px; }
+.quiz-progress i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 3px; transition: width .35s cubic-bezier(.2,.7,.2,1); }
+.quiz-count { font-size: 13px; font-weight: 700; color: var(--sub); margin-bottom: 8px; }
+.quiz-q { font-size: 19px; font-weight: 800; letter-spacing: -.02em; line-height: 1.45; margin: 0 0 18px; }
+.quiz-answers { display: grid; gap: 10px; }
+.quiz-answers button {
+  text-align: left; padding: 14px 16px; font-size: 15px; font-weight: 600; font-family: inherit;
+  color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 11px;
+  cursor: pointer; transition: border-color .2s, background .2s, transform .5s var(--spring);
+}
+.quiz-answers button:hover { border-color: var(--accent); background: var(--accent-soft); }
+.quiz-answers button:active { transform: scale(.97); }
+.quiz-back { margin-top: 16px; }
+.quiz-intro { text-align: center; padding: 10px 0; }
+.quiz-intro .emoji { font-size: 44px; margin-bottom: 10px; }
+.quiz-intro p { color: var(--sub); margin: 8px 0 20px; }
+.quiz-meta { font-size: 13px; color: var(--sub); margin-bottom: 18px; }
+.result-card { text-align: center; }
+.result-card .emoji { font-size: 52px; }
+.result-card .rtitle { font-size: clamp(22px, 4.5vw, 30px); font-weight: 900; letter-spacing: -.02em; color: var(--accent); margin: 8px 0 4px; }
+.result-card .rsub { color: var(--sub); font-size: 14.5px; margin-bottom: 16px; }
+.result-card .rdesc { text-align: left; background: var(--accent-soft); border-radius: 12px; padding: 16px 18px; font-size: 15px; }
+.result-card .traits { text-align: left; margin: 14px 0 0; display: grid; gap: 8px; }
+.result-card .traits li { list-style: none; font-size: 14.5px; padding-left: 24px; position: relative; }
+.result-card .traits li::before { content: "✓"; position: absolute; left: 2px; color: var(--accent); font-weight: 900; }
+.result-card .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.result-card .pair div { background: var(--surface); border: 1px solid var(--line); border-radius: 11px; padding: 12px; font-size: 13.5px; }
+.result-card .pair b { display: block; font-size: 12px; color: var(--sub); margin-bottom: 4px; }
+@media (prefers-reduced-motion: reduce) { .quiz-progress i, .quiz-answers button { transition: none; } }

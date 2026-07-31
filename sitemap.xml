@@ -17,6 +17,12 @@
   <url><loc>https://calcmoa.site/tools/area</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calcmoa.site/tools/charcount</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calcmoa.site/tools/dutch</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://calcmoa.site/tests</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://calcmoa.site/tests/love</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calcmoa.site/tests/personality</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calcmoa.site/tests/focus</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://calcmoa.site/tests/stress</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://calcmoa.site/tests/work</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://calcmoa.site/about</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://calcmoa.site/contact</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
