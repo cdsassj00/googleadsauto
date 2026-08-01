@@ -3,13 +3,13 @@
 <channel>
   <title>계산모아</title>
   <link>https://calcmoa.site/</link>
-  <description>일상에 필요한 계산기 22종과 심리테스트 5종 - 기념일, 연봉 실수령액, 대출 이자, 전기요금, 성격 유형 테스트 등</description>
+  <description>일상에 필요한 계산기 23종과 심리테스트 5종 - 기념일, 연봉 실수령액, 대출 이자, 성격 유형 테스트 등</description>
   <language>ko</language>
   <item>
     <title>계산모아 - 기념일·디데이·연봉·대출 등 일상 계산기 모음</title>
     <link>https://calcmoa.site/</link>
     <guid isPermaLink="true">https://calcmoa.site/</guid>
-    <description>기념일 계산기, 디데이 계산기, 만 나이, 연봉 실수령액, 대출 이자, 퇴직금까지. 일상에 필요한 계산기 22종을 무료로, 가입 없이 바로 사용하세요.</description>
+    <description>기념일 계산기, 디데이 계산기, 만 나이, 연봉 실수령액, 대출 이자, 퇴직금까지. 일상에 필요한 계산기 23종을 무료로, 가입 없이 바로 사용하세요.</description>
     <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
@@ -167,6 +167,13 @@
     <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
+    <title>2026 연봉 실수령액 표 - 연봉 2,000만원~1억 월 실수령액 한눈에</title>
+    <link>https://calcmoa.site/tools/salary-table</link>
+    <guid isPermaLink="true">https://calcmoa.site/tools/salary-table</guid>
+    <description>2026년 기준 연봉별 실수령액 표. 연봉 2,000만원부터 1억원까지 100만원 단위로 4대보험·소득세를 공제한 월 실수령액을 한눈에 확인하세요.</description>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
     <title>심리테스트 모음 - 연애 유형, 성격 유형, 스트레스 테스트 | 계산모아</title>
     <link>https://calcmoa.site/tests</link>
     <guid isPermaLink="true">https://calcmoa.site/tests</guid>
@@ -212,7 +219,7 @@
     <title>소개 - 계산모아</title>
     <link>https://calcmoa.site/about</link>
     <guid isPermaLink="true">https://calcmoa.site/about</guid>
-    <description>계산모아는 기념일, 연봉, 대출, 건강 등 일상에 필요한 계산기 16종을 무료로 제공하는 사이트입니다.</description>
+    <description>계산모아는 기념일, 연봉, 대출, 건강 등 일상에 필요한 계산기 23종을 무료로 제공하는 사이트입니다.</description>
     <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
