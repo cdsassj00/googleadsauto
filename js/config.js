@@ -20,5 +20,5 @@ window.SITE_CONFIG = {
   adSlots: {},
 
   // 예: "G-XXXXXXXXXX"  (미설정 시 분석 비활성화)
-  gaId: ""
+  gaId: "G-ML5CV625Y4"
 };
