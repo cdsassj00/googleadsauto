@@ -3,182 +3,224 @@
 <channel>
   <title>계산모아</title>
   <link>https://calcmoa.site/</link>
-  <description>일상에 필요한 계산기 16종과 심리테스트 5종 - 기념일, 연봉 실수령액, 대출 이자, 성격 유형 테스트 등</description>
+  <description>일상에 필요한 계산기 22종과 심리테스트 5종 - 기념일, 연봉 실수령액, 대출 이자, 전기요금, 성격 유형 테스트 등</description>
   <language>ko</language>
   <item>
     <title>계산모아 - 기념일·디데이·연봉·대출 등 일상 계산기 모음</title>
     <link>https://calcmoa.site/</link>
     <guid isPermaLink="true">https://calcmoa.site/</guid>
-    <description>기념일 계산기, 디데이 계산기, 만 나이, 연봉 실수령액, 대출 이자, 퇴직금까지. 일상에 필요한 계산기 16종을 무료로, 가입 없이 바로 사용하세요.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <description>기념일 계산기, 디데이 계산기, 만 나이, 연봉 실수령액, 대출 이자, 퇴직금까지. 일상에 필요한 계산기 22종을 무료로, 가입 없이 바로 사용하세요.</description>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>기념일 계산기 - 100일, 200일, 1000일, 주년 디데이 계산</title>
     <link>https://calcmoa.site/tools/anniversary</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/anniversary</guid>
     <description>사귄 날을 1일로 세는 한국식 셈법으로 100일·200일·300일·500일·1000일 기념일 날짜와 디데이, 1~10주년까지 한 번에 계산합니다. 무료, 가입 없이 바로 사용하세요.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>디데이 계산기(D-day) - 날짜 계산기, 날짜 차이·더하기</title>
     <link>https://calcmoa.site/tools/dday</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/dday</guid>
     <description>목표일까지 남은 D-day, 두 날짜 사이 일수(시작일 포함/미포함), 날짜 더하기·빼기를 한 페이지에서 계산합니다. 자정 기준으로 정확하게, 무료로 바로 쓰는 날짜 계산기입니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>만 나이 계산기 - 만나이 통일법 기준 나이 계산</title>
     <link>https://calcmoa.site/tools/age</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/age</guid>
     <description>생년월일만 입력하면 만 나이·연 나이·세는 나이를 한 번에 계산합니다. 2023년 6월 28일 시행된 만 나이 통일법 기준으로 다음 생일 디데이와 총 살아온 일수까지 무료로 확인하세요.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>전역일 계산기 - 군대 전역일 조회, 복무 진행률</title>
     <link>https://calcmoa.site/tools/military</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/military</guid>
     <description>입대일과 군종만 선택하면 전역(소집해제) 예정일과 남은 복무일 D-day, 복무 진행률을 바로 계산합니다. 2026년 기준 육군·해병대 18개월, 해군 20개월, 공군·사회복무요원 21개월 반영.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>출산예정일 계산기 - 임신 주수 계산</title>
     <link>https://calcmoa.site/tools/pregnancy</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/pregnancy</guid>
     <description>마지막 생리 시작일(LMP) 또는 수정일 기준으로 출산예정일과 현재 임신 주수를 계산합니다. 네겔레 법칙 기반, 삼분기와 주요 마일스톤 날짜까지 무료 확인.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>연봉 실수령액 계산기 - 2026 월급 실수령액, 4대보험 공제</title>
     <link>https://calcmoa.site/tools/salary</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/salary</guid>
     <description>2026년 기준 연봉 실수령액 계산기. 국민연금·건강보험·장기요양·고용보험 4대보험과 근로소득세, 지방소득세를 공제한 월 실수령액을 바로 확인하세요.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>시급 계산기 - 주휴수당 포함 월급 환산, 2026 최저시급</title>
     <link>https://calcmoa.site/tools/hourly</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/hourly</guid>
     <description>2026년 최저시급 10,320원 기준 시급 계산기. 하루 근무시간과 주 근무일수를 입력하면 주휴수당을 포함한 일급·주급·예상 월급을 바로 계산합니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>대출 이자 계산기 - 원리금균등·원금균등·만기일시 상환</title>
     <link>https://calcmoa.site/tools/loan</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/loan</guid>
     <description>대출 이자 계산기. 원리금균등·원금균등·만기일시 상환 방식별 월 상환액과 총 이자를 2026년 기준으로 바로 계산하세요. 주택담보대출·신용대출 이자 비교에 활용할 수 있습니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>적금 계산기 - 예금·적금 이자, 만기 수령액 계산</title>
     <link>https://calcmoa.site/tools/savings</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/savings</guid>
     <description>적금·예금 계산기. 월 납입액 또는 예치금과 금리를 입력하면 단리·월복리 세전 이자, 이자 과세(15.4%), 만기 수령액을 2026년 기준으로 바로 계산합니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>퇴직금 계산기 - 평균임금 기준 퇴직금 계산 방법</title>
     <link>https://calcmoa.site/tools/retirement</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/retirement</guid>
     <description>입사일·퇴사일과 최근 3개월 급여만 입력하면 1일 평균임금 기준 예상 퇴직금을 바로 계산합니다. 상여금·연차수당 반영, 근로자퇴직급여 보장법 공식 적용.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>부가세 계산기 - 부가가치세 10% 계산, 공급가액·합계금액</title>
     <link>https://calcmoa.site/tools/vat</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/vat</guid>
     <description>공급가액에 부가세 10%를 더하거나, 부가세 포함 합계금액에서 공급가액과 부가세를 역산합니다. 세금계산서 발행 전 금액 확인에 유용한 무료 부가가치세 계산기.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>퍼센트 계산기 - 백분율, 할인율, 증감률 계산</title>
     <link>https://calcmoa.site/tools/percent</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/percent</guid>
     <description>퍼센트 계산기로 백분율, 비율, 할인율, 증감률을 한 번에 계산하세요. A의 B%, A는 B의 몇 %, 증감률, 할인가·인상가까지 4가지 모드를 무료로 제공합니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>BMI 계산기 - 체질량지수, 비만도 계산</title>
     <link>https://calcmoa.site/tools/bmi</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/bmi</guid>
     <description>키와 몸무게로 BMI(체질량지수)를 계산하고 대한비만학회 아시아-태평양 기준으로 저체중·정상·비만 단계를 판정합니다. 정상 체중 범위까지 무료 확인.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>평수 계산기 - 평 제곱미터 변환 (평↔㎡)</title>
     <link>https://calcmoa.site/tools/area</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/area</guid>
     <description>평수 계산기로 평과 제곱미터(㎡)를 실시간 양방향 변환하세요. 1평=3.305785㎡ 기준, 전용 59·74·84㎡ 등 아파트 국민평형 환산표까지 무료 제공합니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>글자수 세기 - 공백 포함·제외, 자소서 글자수 계산기</title>
     <link>https://calcmoa.site/tools/charcount</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/charcount</guid>
     <description>공백 포함·제외 글자수, 단어 수, 줄 수, UTF-8·한글 2바이트 기준 바이트까지 실시간 계산. 자기소개서·리포트 글자수 제한 확인에 딱 맞는 무료 글자수 세기 도구입니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>더치페이 계산기 - N빵 계산기, 회식비 정산</title>
     <link>https://calcmoa.site/tools/dutch</link>
     <guid isPermaLink="true">https://calcmoa.site/tools/dutch</guid>
     <description>총 금액과 인원 수만 입력하면 1인당 부담금을 바로 계산합니다. 100원·1,000원 단위 올림·내림 정산과 남는 돈까지 한눈에 확인하는 무료 N빵 더치페이 계산기입니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>자동차 취득세 계산기 - 차량 취득세율, 등록 비용 계산</title>
+    <link>https://calcmoa.site/tools/car-tax</link>
+    <guid isPermaLink="true">https://calcmoa.site/tools/car-tax</guid>
+    <description>자동차 취득세 계산기. 차량 가액과 차종(승용차 7%·경차 4%·승합차 5%·화물차 5%)을 선택하면 취득세와 경차·전기차 감면 적용 후 납부액을 2026년 기준으로 계산합니다.</description>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>DSR 계산기 - 총부채원리금상환비율, 대출 한도 확인</title>
+    <link>https://calcmoa.site/tools/dsr</link>
+    <guid isPermaLink="true">https://calcmoa.site/tools/dsr</guid>
+    <description>DSR 계산기. 연소득과 기존·신규 대출의 연간 원리금 상환액으로 총부채원리금상환비율(DSR)을 계산하고, 은행권 40%·2금융권 50% 규제 기준 대비 대출 여력을 확인하세요.</description>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>복리 계산기 - 복리 이자, 투자 수익 계산</title>
+    <link>https://calcmoa.site/tools/compound</link>
+    <guid isPermaLink="true">https://calcmoa.site/tools/compound</guid>
+    <description>복리 계산기. 초기 원금, 월 적립액, 연 수익률, 기간을 입력하면 연복리·월복리 만기 평가액과 총 수익, 72의 법칙에 따른 두 배 기간까지 한 번에 계산합니다.</description>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>전기요금 계산기 - 주택용 누진세 전기세 계산</title>
+    <link>https://calcmoa.site/tools/electricity</link>
+    <guid isPermaLink="true">https://calcmoa.site/tools/electricity</guid>
+    <description>주택용 전기요금 계산기. 월 사용량(kWh)과 계절을 선택하면 누진 3단계 기본요금·전력량요금, 기후환경요금, 부가세, 전력기금까지 반영한 예상 청구액을 바로 계산합니다.</description>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>자녀 키 계산기 - 예상 키 계산 (중간 부모 키 공식)</title>
+    <link>https://calcmoa.site/tools/height</link>
+    <guid isPermaLink="true">https://calcmoa.site/tools/height</guid>
+    <description>아빠 키와 엄마 키만 입력하면 중간 부모 키(MPH, Tanner) 공식으로 자녀의 예상 키와 ±5cm 예측 범위를 계산합니다. 아들·딸 기준 각각 확인, 무료로 바로 사용하세요.</description>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>환갑 계산기 - 환갑·칠순·팔순 날짜, 백일·돌 계산</title>
+    <link>https://calcmoa.site/tools/milestone</link>
+    <guid isPermaLink="true">https://calcmoa.site/tools/milestone</guid>
+    <description>생년월일만 입력하면 백일·첫돌부터 환갑(회갑)·진갑·칠순·팔순·구순·백수까지 날짜와 디데이를 한 번에 계산합니다. 세는나이 관례 기준, 무료로 바로 사용하세요.</description>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>심리테스트 모음 - 연애 유형, 성격 유형, 스트레스 테스트 | 계산모아</title>
     <link>https://calcmoa.site/tests</link>
     <guid isPermaLink="true">https://calcmoa.site/tests</guid>
     <description>연애 유형 테스트, 성격 유형 테스트, 공부 집중력, 스트레스 자가체크, 직업 성향까지. 회원가입 없이 2분 만에 해보는 무료 심리테스트 모음.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>연애 유형 테스트 - 12문항으로 알아보는 나의 연애 스타일</title>
     <link>https://calcmoa.site/tests/love</link>
     <guid isPermaLink="true">https://calcmoa.site/tests/love</guid>
     <description>표현-신중, 몰입-자율 2가지 축으로 알아보는 나의 연애 유형. 12문항 2분 완성, 가입 없이 무료로 해보는 연애 스타일 심리테스트.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>성격 유형 테스트 - 4가지 성향 축으로 보는 16가지 성격</title>
     <link>https://calcmoa.site/tests/personality</link>
     <guid isPermaLink="true">https://calcmoa.site/tests/personality</guid>
     <description>에너지·정보·판단·생활 4가지 성향 축으로 알아보는 16가지 성격 유형. 12문항 2분 완성, 가입 없이 무료로 해보는 자체 제작 성격 테스트.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>공부 집중력 테스트 - 나의 집중 스타일과 몰입 환경 찾기</title>
     <link>https://calcmoa.site/tests/focus</link>
     <guid isPermaLink="true">https://calcmoa.site/tests/focus</guid>
     <description>10문항으로 알아보는 나의 집중 스타일. 집중 지속형·스프린트형, 환경 민감형·소음 무던형 2축으로 4가지 유형과 맞춤 공부 전략, 추천 환경까지 무료로 확인하세요.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>스트레스 자가체크 테스트 - 최근 한 달 스트레스 지수</title>
     <link>https://calcmoa.site/tests/stress</link>
     <guid isPermaLink="true">https://calcmoa.site/tests/stress</guid>
     <description>최근 한 달 동안의 수면, 짜증, 압박감, 회복력을 10문항으로 점검하는 무료 스트레스 자가체크. 0~30점 지수와 4단계 결과, 단계별 관리 팁까지 확인하세요.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>직업 성향 테스트 - 나에게 맞는 일하는 방식은?</title>
     <link>https://calcmoa.site/tests/work</link>
     <guid isPermaLink="true">https://calcmoa.site/tests/work</guid>
     <description>12문항으로 알아보는 나의 일하는 방식. 메이커·애널리스트·커넥터·드라이버 4가지 직업 성향 중 나는 어디에 가까울까? 가입 없이 2분 만에 확인하세요.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>소개 - 계산모아</title>
     <link>https://calcmoa.site/about</link>
     <guid isPermaLink="true">https://calcmoa.site/about</guid>
     <description>계산모아는 기념일, 연봉, 대출, 건강 등 일상에 필요한 계산기 16종을 무료로 제공하는 사이트입니다.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
   <item>
     <title>문의 - 계산모아</title>
     <link>https://calcmoa.site/contact</link>
     <guid isPermaLink="true">https://calcmoa.site/contact</guid>
     <description>계산모아에 대한 문의, 계산기 추가 요청, 오류 제보는 이메일로 보내주세요.</description>
-    <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+    <pubDate>Sat, 01 Aug 2026 09:00:00 +0900</pubDate>
   </item>
 </channel>
 </rss>

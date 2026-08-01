@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전기요금 계산기 - 주택용 누진세 전기세 계산</title>
+<meta name="description" content="주택용 전기요금 계산기. 월 사용량(kWh)과 계절을 선택하면 누진 3단계 기본요금·전력량요금, 기후환경요금, 부가세, 전력기금까지 반영한 예상 청구액을 바로 계산합니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/electricity">
+<meta property="og:type" content="website">
+<meta property="og:title" content="전기요금 계산기 - 주택용 누진세 전기세 계산">
+<meta property="og:description" content="주택용 전기요금 계산기. 월 사용량(kWh)과 계절을 선택하면 누진 3단계 기본요금·전력량요금, 기후환경요금, 부가세, 전력기금까지 반영한 예상 청구액을 바로 계산합니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/electricity">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"전기요금 계산기 (주택용)","url":"https://calcmoa.site/tools/electricity","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"여름(7~8월)에는 왜 누진 구간이 달라지나요?","acceptedAnswer":{"@type":"Answer","text":"냉방기 사용으로 전력 사용량이 급증하는 하계(7~8월)에는 누진 구간이 완화됩니다. 1단계 상한이 200kWh에서 300kWh로, 2단계 상한이 400kWh에서 450kWh로 확대되어, 같은 사용량이라도 기타계절보다 낮은 요율 구간이 더 넓게 적용됩니다. 요율 자체는 동일하고 구간 경계만 넓어지는 방식입니다."}},
+  {"@type":"Question","name":"계산 결과가 실제 고지서 금액과 조금 다른데 왜 그런가요?","acceptedAnswer":{"@type":"Answer","text":"이 계산기는 주택용 저압, 한전 2024년 개편 이후 기준 요율을 적용한 참고용 근사치입니다. 실제 고지서에는 검침일 기준 일할 계산, 복지 할인(다자녀·대가족·생명유지장치 등), TV 수신료 합산 청구, 계약 종별(고압 아파트 등) 차이가 반영될 수 있습니다. 또한 기후환경요금과 연료비조정액은 한전 고시에 따라 분기·연 단위로 변동되므로 실제 적용 단가와 다를 수 있습니다."}},
+  {"@type":"Question","name":"우리 집 월 전기 사용량(kWh)은 어디서 확인하나요?","acceptedAnswer":{"@type":"Answer","text":"한전과 직접 계약된 주택은 한전ON(온라인·앱)에서 로그인 후 월별 사용량과 청구 내역을 확인할 수 있습니다. 아파트 등 공동주택은 관리비 고지서의 전기료 항목에 세대 사용량(kWh)이 표기됩니다. 종이 고지서에도 당월 사용량과 전년 동월 사용량이 함께 나와 있어 비교하기 좋습니다."}},
+  {"@type":"Question","name":"부가가치세와 전력산업기반기금은 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"전기요금계(기본요금+전력량요금+기후환경요금+연료비조정액)에는 부가가치세 10%(원 미만 반올림)와 전력산업기반기금 3.7%(10원 미만 절사)가 추가로 붙습니다. 최종 청구액은 이 셋을 합한 뒤 10원 미만을 절사한 금액입니다. 즉 실제 내는 돈은 전기요금계보다 약 13.7% 많다고 보면 됩니다."}},
+  {"@type":"Question","name":"누진제 때문에 사용량을 조금만 줄여도 요금이 크게 줄어들 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"구간 경계 근처라면 그렇습니다. 예를 들어 기타계절에 사용량이 400kWh를 넘으면 기본요금이 1,600원에서 7,300원으로 뛰고, 초과분에는 kWh당 307.3원의 최고 요율이 적용됩니다. 경계를 살짝 넘는 상황이라면 몇 kWh만 줄여도 기본요금 차이만큼 절감 폭이 커집니다. 이 계산기로 사용량을 바꿔 가며 구간 경계 효과를 직접 확인해 보세요."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/tests">테스트</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-life">생활·건강</a><span class="sep">›</span>
+    <span>전기요금 계산기</span>
+  </nav>
+
+  <h1>전기요금 계산기 (주택용)</h1>
+  <p class="lead">월 사용량(kWh)과 계절만 입력하면 주택용 저압 누진 3단계 요금과 부가세·전력기금까지 반영한 예상 청구액을 계산합니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fUsage">
+      <label for="usage">월 사용량 (kWh)</label>
+      <input type="text" id="usage" inputmode="numeric" placeholder="350" autocomplete="off">
+      <div class="hint">한전ON 또는 아파트 관리비 고지서의 당월 사용량. 예: 350</div>
+      <div class="field-error">사용량을 1kWh 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field">
+      <label>계절</label>
+      <div class="seg" id="segSeason">
+        <button type="button" class="on" data-season="normal">기타계절 (1~6월, 9~12월)</button>
+        <button type="button" data-season="summer">하계 (7~8월)</button>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">예상 청구액 (부가세·기금 포함)</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span id="rBaseLabel">기본요금</span><b id="rBase"></b></div>
+        <div class="row"><span>전력량요금 (구간 누적)</span><b id="rEnergy"></b></div>
+        <div class="row"><span>기후환경요금 + 연료비조정액</span><b id="rEtc"></b></div>
+        <div class="row"><span>부가가치세 (10%)</span><b id="rVat"></b></div>
+        <div class="row"><span>전력산업기반기금 (3.7%)</span><b id="rFund"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>월 전기 사용량을 kWh 단위로 입력합니다. 한전ON 앱이나 관리비 고지서에서 확인할 수 있습니다.</li>
+      <li>계절을 선택합니다. 7~8월 사용분은 하계, 그 외(1~6월, 9~12월)는 기타계절입니다.</li>
+      <li>계산하기 버튼을 누르면 기본요금, 구간별 전력량요금, 기후환경요금·연료비조정액, 부가세, 전력산업기반기금이 항목별로 표시되고 최종 예상 청구액이 계산됩니다.</li>
+    </ol>
+
+    <h2>주택용 전기요금 계산 원리</h2>
+    <p>주택용(저압) 전기요금은 누진 3단계 구조입니다. 사용량이 많을수록 높은 단가 구간이 적용되며, 기본요금은 최종적으로 도달한 구간의 것 하나만 부과됩니다. 아래 표는 한전 2024년 개편 이후 기준 요율이며, 한전 고시 변경 시 달라질 수 있습니다.</p>
+    <table>
+      <thead>
+        <tr><th>구간</th><th>기타계절 (1~6월, 9~12월)</th><th>하계 (7~8월)</th><th>기본요금</th><th>전력량요금</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1단계</td><td>200kWh 이하</td><td>300kWh 이하</td><td>910원</td><td>120.0원/kWh</td></tr>
+        <tr><td>2단계</td><td>201~400kWh</td><td>301~450kWh</td><td>1,600원</td><td>214.6원/kWh</td></tr>
+        <tr><td>3단계</td><td>400kWh 초과</td><td>450kWh 초과</td><td>7,300원</td><td>307.3원/kWh</td></tr>
+      </tbody>
+    </table>
+    <p>전력량요금은 구간별로 누적 계산합니다. 예를 들어 기타계절 350kWh라면 처음 200kWh는 120.0원, 나머지 150kWh는 214.6원이 적용됩니다. 여기에 전체 사용량에 대해 기후환경요금 9.0원/kWh와 연료비조정액 +5.0원/kWh가 더해져 전기요금계가 됩니다. 마지막으로 부가가치세 10%(원 미만 반올림)와 전력산업기반기금 3.7%(10원 미만 절사)를 더한 뒤 10원 미만을 절사한 금액이 최종 청구액입니다.</p>
+    <p>직접 검산해 보면, 기타계절 350kWh의 경우 기본요금 1,600원 + 전력량요금 56,190원(200×120.0 + 150×214.6) + 기후환경요금 3,150원 + 연료비조정액 1,750원 = 전기요금계 62,690원입니다. 부가세 6,269원과 기금 2,310원을 더해 최종 청구액은 약 71,260원이 됩니다.</p>
+    <p class="note">이 계산기는 주택용 저압, 한전 2024년 개편 이후 기준 요율을 적용한 참고용 근사치입니다. 기후환경요금·연료비조정액을 포함한 모든 단가는 한전 고시 변경 시 달라질 수 있으며, 복지 할인·TV 수신료·검침일 기준 일할 계산은 반영되지 않습니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>하계(7~8월)에 누진 구간이 완화되는 이유는 냉방 수요 때문입니다. 여름철에는 에어컨 사용으로 대부분 가정의 사용량이 크게 늘어나는데, 기타계절과 같은 구간을 적용하면 냉방 요금 부담이 지나치게 커집니다. 그래서 1단계 상한을 200→300kWh, 2단계 상한을 400→450kWh로 넓혀 같은 사용량이라도 낮은 요율이 적용되는 범위를 확대해 줍니다. 요율 자체는 동일하고 구간 경계만 이동하는 방식입니다.</p>
+    <p>사용량 확인은 한전과 직접 계약한 주택이라면 한전ON(웹·앱)에서 월별 사용량과 청구서를 조회하는 것이 가장 정확합니다. 아파트 등 공동주택은 관리사무소가 일괄 계약하는 경우가 많아 관리비 고지서의 전기료 항목에서 세대 사용량(kWh)을 확인하면 됩니다. 전년 동월 사용량과 비교해 보면 계절 요인에 따른 변화를 파악하기 쉽습니다.</p>
+    <p>절전 팁으로는 구간 경계 관리가 가장 효과적입니다. 사용량이 구간 경계(기타계절 200·400kWh, 하계 300·450kWh)를 살짝 넘는 상황이라면 몇 kWh만 줄여도 기본요금과 단가가 함께 낮아져 절감 폭이 큽니다. 에어컨은 설정 온도를 1~2도 올리고 선풍기와 함께 쓰기, 오래된 냉장고·김치냉장고 등 상시 가동 가전의 에너지 효율 등급 확인하기, 사용하지 않는 대기전력(셋톱박스·전기밥솥 보온) 차단하기가 대표적인 방법입니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>여름(7~8월)에는 왜 누진 구간이 달라지나요?</summary>
+        <p>냉방기 사용으로 전력 사용량이 급증하는 하계(7~8월)에는 누진 구간이 완화됩니다. 1단계 상한이 200kWh에서 300kWh로, 2단계 상한이 400kWh에서 450kWh로 확대되어, 같은 사용량이라도 기타계절보다 낮은 요율 구간이 더 넓게 적용됩니다. 요율 자체는 동일하고 구간 경계만 넓어지는 방식입니다.</p>
+      </details>
+      <details>
+        <summary>계산 결과가 실제 고지서 금액과 조금 다른데 왜 그런가요?</summary>
+        <p>이 계산기는 주택용 저압, 한전 2024년 개편 이후 기준 요율을 적용한 참고용 근사치입니다. 실제 고지서에는 검침일 기준 일할 계산, 복지 할인(다자녀·대가족·생명유지장치 등), TV 수신료 합산 청구, 계약 종별(고압 아파트 등) 차이가 반영될 수 있습니다. 또한 기후환경요금과 연료비조정액은 한전 고시에 따라 분기·연 단위로 변동되므로 실제 적용 단가와 다를 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>우리 집 월 전기 사용량(kWh)은 어디서 확인하나요?</summary>
+        <p>한전과 직접 계약된 주택은 한전ON(온라인·앱)에서 로그인 후 월별 사용량과 청구 내역을 확인할 수 있습니다. 아파트 등 공동주택은 관리비 고지서의 전기료 항목에 세대 사용량(kWh)이 표기됩니다. 종이 고지서에도 당월 사용량과 전년 동월 사용량이 함께 나와 있어 비교하기 좋습니다.</p>
+      </details>
+      <details>
+        <summary>부가가치세와 전력산업기반기금은 무엇인가요?</summary>
+        <p>전기요금계(기본요금+전력량요금+기후환경요금+연료비조정액)에는 부가가치세 10%(원 미만 반올림)와 전력산업기반기금 3.7%(10원 미만 절사)가 추가로 붙습니다. 최종 청구액은 이 셋을 합한 뒤 10원 미만을 절사한 금액입니다. 즉 실제 내는 돈은 전기요금계보다 약 13.7% 많다고 보면 됩니다.</p>
+      </details>
+      <details>
+        <summary>누진제 때문에 사용량을 조금만 줄여도 요금이 크게 줄어들 수 있나요?</summary>
+        <p>구간 경계 근처라면 그렇습니다. 예를 들어 기타계절에 사용량이 400kWh를 넘으면 기본요금이 1,600원에서 7,300원으로 뛰고, 초과분에는 kWh당 307.3원의 최고 요율이 적용됩니다. 경계를 살짝 넘는 상황이라면 몇 kWh만 줄여도 기본요금 차이만큼 절감 폭이 커집니다. 이 계산기로 사용량을 바꿔 가며 구간 경계 효과를 직접 확인해 보세요.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+      <a class="tool-card" href="/tools/area"><div class="ico">📐</div><b>평수 계산기</b><span>평 ↔ 제곱미터 변환</span></a>
+      <a class="tool-card" href="/tools/dutch"><div class="ico">🍻</div><b>더치페이 계산기</b><span>모임 비용 1/N 정산</span></a>
+      <a class="tool-card" href="/tools/savings"><div class="ico">🐷</div><b>적금·예금 계산기</b><span>단리·월복리 이자, 만기 수령액</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  var season = "normal"; /* normal(기타계절) | summer(하계) */
+
+  /* 요율: 한전 2024년 개편 이후 주택용 저압 기준 (고시 변경 시 달라질 수 있음) */
+  var BASE = [910, 1600, 7300];          /* 구간별 기본요금(원) */
+  var RATE = [120.0, 214.6, 307.3];      /* 구간별 전력량요금(원/kWh) */
+  var LIMIT = { normal: [200, 400], summer: [300, 450] }; /* 구간 상한 */
+  var CLIMATE = 9.0;                     /* 기후환경요금(원/kWh) */
+  var FUEL = 5.0;                        /* 연료비조정액(원/kWh) */
+
+  Array.prototype.forEach.call($("segSeason").querySelectorAll("button"), function (btn) {
+    btn.addEventListener("click", function () {
+      Array.prototype.forEach.call($("segSeason").querySelectorAll("button"), function (b) {
+        b.classList.toggle("on", b === btn);
+      });
+      season = btn.getAttribute("data-season");
+    });
+  });
+
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var v = String($("usage").value).replace(/[^\d]/g, "");
+    var kwh = v === "" ? NaN : Number(v);
+
+    if (!(kwh >= 1)) { CM.invalid($("fUsage"), true); return; }
+    CM.invalid($("fUsage"), false);
+
+    var lim = LIMIT[season];
+    var tier, energy;
+    if (kwh <= lim[0]) {
+      tier = 0;
+      energy = kwh * RATE[0];
+    } else if (kwh <= lim[1]) {
+      tier = 1;
+      energy = lim[0] * RATE[0] + (kwh - lim[0]) * RATE[1];
+    } else {
+      tier = 2;
+      energy = lim[0] * RATE[0] + (lim[1] - lim[0]) * RATE[1] + (kwh - lim[1]) * RATE[2];
+    }
+
+    var base = BASE[tier];
+    var etc = kwh * (CLIMATE + FUEL);
+    var subtotal = base + energy + etc;                    /* 전기요금계 */
+    var vat = Math.round(subtotal * 0.1);                  /* 부가세: 원 미만 반올림 */
+    var fund = Math.floor(subtotal * 0.037 / 10) * 10;     /* 기금: 10원 미만 절사 */
+    var total = Math.floor((subtotal + vat + fund) / 10) * 10; /* 청구액: 10원 미만 절사 */
+
+    var seasonName = season === "summer" ? "하계 (7~8월)" : "기타계절 (1~6월, 9~12월)";
+
+    $("result").hidden = false;
+    CM.countUp($("rMain"), total, { suffix: "원" });
+    $("rBaseLabel").textContent = "기본요금 (" + (tier + 1) + "단계 구간)";
+    $("rBase").textContent = CM.won(base);
+    $("rEnergy").textContent = CM.won(energy);
+    $("rEtc").textContent = CM.won(etc);
+    $("rVat").textContent = CM.won(vat);
+    $("rFund").textContent = CM.won(fund);
+
+    lastText = "전기요금 (주택용 저압) · " + seasonName + " · " + CM.fmt(kwh) + "kWh\n"
+      + "예상 청구액: " + CM.won(total) + "\n"
+      + "기본요금: " + CM.won(base)
+      + " / 전력량요금: " + CM.won(energy)
+      + " / 기후환경·연료비: " + CM.won(etc)
+      + " / 부가세: " + CM.won(vat)
+      + " / 전력기금: " + CM.won(fund)
+      + "\n- calcmoa.site/tools/electricity";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  $("usage").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+  });
+});
+</script>
+</body>
+</html>

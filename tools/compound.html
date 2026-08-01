@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>복리 계산기 - 복리 이자, 투자 수익 계산</title>
+<meta name="description" content="복리 계산기. 초기 원금, 월 적립액, 연 수익률, 기간을 입력하면 연복리·월복리 만기 평가액과 총 수익, 72의 법칙에 따른 두 배 기간까지 한 번에 계산합니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/compound">
+<meta property="og:type" content="website">
+<meta property="og:title" content="복리 계산기 - 복리 이자, 투자 수익 계산">
+<meta property="og:description" content="복리 계산기. 초기 원금, 월 적립액, 연 수익률, 기간을 입력하면 연복리·월복리 만기 평가액과 총 수익, 72의 법칙에 따른 두 배 기간까지 한 번에 계산합니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/compound">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"복리 계산기","url":"https://calcmoa.site/tools/compound","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"단리와 복리는 얼마나 차이가 나나요?","acceptedAnswer":{"@type":"Answer","text":"단리는 원금에만 이자가 붙고, 복리는 발생한 이자에 다시 이자가 붙습니다. 원금 1,000만원을 연 5%로 20년 운용하면 단리는 2,000만원이 되지만 연복리는 약 2,653만원(정확히는 26,532,977원)이 됩니다. 기간이 길어질수록 격차가 기하급수적으로 벌어지는 것이 복리의 핵심입니다."}},
+  {"@type":"Question","name":"72의 법칙이 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"자산이 두 배가 되는 데 걸리는 기간을 어림잡는 공식으로, 72를 연 수익률(%)로 나누면 됩니다. 연 6%면 72÷6 = 약 12년, 연 8%면 약 9년 만에 원금이 두 배가 됩니다. 정확한 값은 아니지만 수익률 4~12% 범위에서 오차가 작아 빠른 암산용으로 널리 쓰입니다."}},
+  {"@type":"Question","name":"연복리와 월복리 중 어느 쪽이 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"같은 연 수익률이라면 복리 주기가 짧은 월복리가 조금 더 유리합니다. 이자가 더 자주 원금에 합산되어 다시 수익을 낳기 때문입니다. 다만 연 수익률이 한 자릿수라면 차이는 크지 않으며, 실제 투자에서는 상품이 정한 복리 주기를 따르므로 두 방식을 모두 계산해 비교해 보는 용도로 활용하세요."}},
+  {"@type":"Question","name":"이 계산기에 세금과 수수료도 반영되나요?","acceptedAnswer":{"@type":"Answer","text":"반영되지 않습니다. 이 계산기는 세전 명목 수익 기준의 참고용 근사치입니다. 실제 투자에서는 이자·배당소득세(일반 원천징수 15.4%), 매매 수수료, 펀드 보수, 물가 상승률 등에 따라 실현 수익이 달라집니다. 예금은 적금·예금 계산기에서 과세까지 반영해 계산할 수 있습니다."}},
+  {"@type":"Question","name":"월 적립액을 넣었을 때 연복리 결과가 월복리와 다른 이유는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"연복리 모드에서는 월 적립액×12를 연 단위 적립액으로 묶어 계산하는 근사 방식을 사용하기 때문입니다. 매달 넣는 돈의 실제 흐름을 정확히 반영하려면 월 단위로 이자가 붙는 월복리 공식이 더 적합하므로, 월 적립이 있는 경우에는 월복리 모드 사용을 권장합니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/tests">테스트</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-money">돈·급여</a><span class="sep">›</span>
+    <span>복리 계산기</span>
+  </nav>
+
+  <h1>복리 계산기</h1>
+  <p class="lead">초기 원금과 월 적립액, 연 수익률, 기간을 입력하면 연복리·월복리 만기 평가액과 총 수익, 두 배가 되는 기간(72의 법칙)을 계산합니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fPrincipal">
+      <label for="principal">초기 원금 (원)</label>
+      <input type="text" id="principal" inputmode="numeric" placeholder="10000000" autocomplete="off">
+      <div class="hint">처음에 투자하는 목돈. 예: 1,000만원 → 10000000</div>
+      <div class="field-error">초기 원금을 0원 이상 숫자로 입력해 주세요. (월 적립만 할 경우 0)</div>
+    </div>
+    <div class="field" id="fMonthly">
+      <label for="monthly">월 추가 적립액 (원)</label>
+      <input type="text" id="monthly" inputmode="numeric" placeholder="0" autocomplete="off">
+      <div class="hint">매달 추가로 넣는 금액. 없으면 0 또는 빈칸</div>
+      <div class="field-error">월 적립액을 0원 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fRate">
+        <label for="rate">연 수익률 (%)</label>
+        <input type="number" id="rate" inputmode="decimal" step="0.01" min="0" placeholder="5.0" autocomplete="off">
+        <div class="hint">세전 명목 수익률. 예: 5</div>
+        <div class="field-error">연 수익률을 0 이상 숫자로 입력해 주세요.</div>
+      </div>
+      <div class="field" id="fYears">
+        <label for="years">투자 기간 (년)</label>
+        <input type="text" id="years" inputmode="numeric" placeholder="20" autocomplete="off">
+        <div class="hint">예: 10년 → 10</div>
+        <div class="field-error">기간을 1년 이상 숫자로 입력해 주세요.</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>복리 주기</label>
+      <div class="seg" id="segFreq">
+        <button type="button" class="on" data-freq="yearly">연복리</button>
+        <button type="button" data-freq="monthly">월복리</button>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">만기 평가액</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>총 투입 원금</span><b id="rInvested"></b></div>
+        <div class="row"><span>총 수익</span><b id="rProfit"></b></div>
+        <div class="row"><span>수익률 배수</span><b id="rMultiple"></b></div>
+        <div class="row"><span>두 배 되는 기간 (72의 법칙)</span><b id="rDouble"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>초기 원금을 입력합니다. 목돈 없이 매달 적립만 한다면 0을 입력해도 됩니다.</li>
+      <li>매달 추가로 넣을 금액이 있으면 월 추가 적립액에 입력합니다. 없으면 0 또는 빈칸으로 둡니다.</li>
+      <li>기대하는 연 수익률(%)과 투자 기간(년)을 입력합니다.</li>
+      <li>복리 주기를 선택합니다. 월 적립이 있다면 월복리를 권장합니다.</li>
+      <li>계산하기 버튼을 누르면 만기 평가액, 총 투입 원금, 총 수익, 수익률 배수, 72의 법칙에 따른 두 배 기간이 표시됩니다.</li>
+    </ol>
+
+    <h2>복리 계산 원리</h2>
+    <p>원금을 P, 연 수익률을 r(소수), 기간을 t년이라 할 때 이 계산기는 아래 공식을 사용합니다.</p>
+    <table>
+      <thead>
+        <tr><th>구분</th><th>공식</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>연복리 · 원금</td><td>FV = P × (1+r)<sup>t</sup></td></tr>
+        <tr><td>연복리 · 적립 (연 단위 근사)</td><td>연 적립액 A = 월 적립액 × 12, FV = A × ((1+r)<sup>t</sup> − 1) ÷ r</td></tr>
+        <tr><td>월복리 · 원금</td><td>i = r/12, n = t×12, FV = P × (1+i)<sup>n</sup></td></tr>
+        <tr><td>월복리 · 적립</td><td>FV = 월 적립액 × ((1+i)<sup>n</sup> − 1) ÷ i</td></tr>
+      </tbody>
+    </table>
+    <p>수익률이 0%인 경우에는 이자가 없으므로 만기 평가액은 투입 원금 합계와 같게 처리합니다. 연복리 모드의 월 적립 계산은 매달 넣는 돈을 연 단위로 묶어 계산하는 근사 방식이므로, 월 적립이 있는 경우에는 월복리 모드가 실제 현금 흐름에 더 가깝습니다.</p>
+    <p>단리와 복리의 차이를 직접 검산해 보면 다음과 같습니다. 원금 1,000만원을 연 5%로 20년 운용할 때, 단리는 10,000,000 × (1 + 0.05×20) = 20,000,000원이지만, 연복리는 10,000,000 × 1.05<sup>20</sup> = 26,532,977원, 약 2,653만원입니다. 같은 금리·같은 기간인데 653만원가량 차이가 나며, 기간이 30년, 40년으로 길어지면 격차는 훨씬 커집니다.</p>
+    <table>
+      <thead>
+        <tr><th>운용 방식</th><th>20년 후 평가액 (원금 1,000만·연 5%)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>단리</td><td>2,000만원</td></tr>
+        <tr><td>연복리</td><td>약 2,653만원 (26,532,977원)</td></tr>
+      </tbody>
+    </table>
+    <p class="note">이 계산기는 세금·수수료·물가 상승률을 반영하지 않은 세전 명목 수익 기준의 참고용 근사치입니다. 실제 투자 성과는 상품 구조와 과세 방식에 따라 달라집니다.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>72의 법칙은 자산이 두 배가 되는 기간을 빠르게 어림잡는 방법입니다. 72를 연 수익률(%)로 나누면 대략적인 두 배 기간(년)이 나옵니다. 연 4%면 약 18년, 연 6%면 약 12년, 연 8%면 약 9년입니다. 정확한 값은 log(2)/log(1+r)로 구해야 하지만, 수익률 4~12% 범위에서는 72의 법칙 오차가 작아 암산용으로 충분히 실용적입니다.</p>
+    <p>복리 효과의 핵심은 시간입니다. 초반에는 단리와 큰 차이가 없어 보이지만, 이자가 이자를 낳는 구조 때문에 곡선이 뒤로 갈수록 가파르게 상승합니다. 예를 들어 월 50만원을 연 6% 월복리로 적립하면 10년 후 평가액은 약 8,194만원으로 투입 원금 6,000만원 대비 2,194만원가량의 수익이 붙습니다. 같은 조건으로 20년을 이어가면 복리 효과가 훨씬 커지므로, 일찍 시작해 오래 유지하는 것이 수익률을 조금 높이는 것 못지않게 중요합니다.</p>
+    <p>또 하나 기억할 점은 수익률 배수와 총 수익의 구분입니다. 총 투입 원금 대비 만기 평가액이 몇 배인지(수익률 배수)를 보면 기간·수익률 조합의 효율을 한눈에 비교할 수 있습니다. 이 계산기로 수익률을 1%p씩 바꿔 보거나 기간을 5년 단위로 늘려 보면서, 저축·투자 계획의 민감도를 직접 확인해 보세요. 세후 실수령 기준의 예·적금 비교는 적금·예금 계산기를 함께 활용하면 좋습니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>단리와 복리는 얼마나 차이가 나나요?</summary>
+        <p>단리는 원금에만 이자가 붙고, 복리는 발생한 이자에 다시 이자가 붙습니다. 원금 1,000만원을 연 5%로 20년 운용하면 단리는 2,000만원이 되지만 연복리는 약 2,653만원(정확히는 26,532,977원)이 됩니다. 기간이 길어질수록 격차가 기하급수적으로 벌어지는 것이 복리의 핵심입니다.</p>
+      </details>
+      <details>
+        <summary>72의 법칙이 무엇인가요?</summary>
+        <p>자산이 두 배가 되는 데 걸리는 기간을 어림잡는 공식으로, 72를 연 수익률(%)로 나누면 됩니다. 연 6%면 72÷6 = 약 12년, 연 8%면 약 9년 만에 원금이 두 배가 됩니다. 정확한 값은 아니지만 수익률 4~12% 범위에서 오차가 작아 빠른 암산용으로 널리 쓰입니다.</p>
+      </details>
+      <details>
+        <summary>연복리와 월복리 중 어느 쪽이 유리한가요?</summary>
+        <p>같은 연 수익률이라면 복리 주기가 짧은 월복리가 조금 더 유리합니다. 이자가 더 자주 원금에 합산되어 다시 수익을 낳기 때문입니다. 다만 연 수익률이 한 자릿수라면 차이는 크지 않으며, 실제 투자에서는 상품이 정한 복리 주기를 따르므로 두 방식을 모두 계산해 비교해 보는 용도로 활용하세요.</p>
+      </details>
+      <details>
+        <summary>이 계산기에 세금과 수수료도 반영되나요?</summary>
+        <p>반영되지 않습니다. 이 계산기는 세전 명목 수익 기준의 참고용 근사치입니다. 실제 투자에서는 이자·배당소득세(일반 원천징수 15.4%), 매매 수수료, 펀드 보수, 물가 상승률 등에 따라 실현 수익이 달라집니다. 예금은 적금·예금 계산기에서 과세까지 반영해 계산할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>월 적립액을 넣었을 때 연복리 결과가 월복리와 다른 이유는 무엇인가요?</summary>
+        <p>연복리 모드에서는 월 적립액×12를 연 단위 적립액으로 묶어 계산하는 근사 방식을 사용하기 때문입니다. 매달 넣는 돈의 실제 흐름을 정확히 반영하려면 월 단위로 이자가 붙는 월복리 공식이 더 적합하므로, 월 적립이 있는 경우에는 월복리 모드 사용을 권장합니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/savings"><div class="ico">🐷</div><b>적금·예금 계산기</b><span>단리·월복리 이자, 만기 수령액</span></a>
+      <a class="tool-card" href="/tools/loan"><div class="ico">🏦</div><b>대출 이자 계산기</b><span>원리금균등·원금균등·만기일시</span></a>
+      <a class="tool-card" href="/tools/salary"><div class="ico">💰</div><b>연봉 실수령액 계산기</b><span>4대보험·세금 공제 후 월 실수령액</span></a>
+      <a class="tool-card" href="/tools/retirement"><div class="ico">💼</div><b>퇴직금 계산기</b><span>평균임금 기준 퇴직금 예상액</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  var freq = "yearly"; /* yearly(연복리) | monthly(월복리) */
+
+  Array.prototype.forEach.call($("segFreq").querySelectorAll("button"), function (btn) {
+    btn.addEventListener("click", function () {
+      Array.prototype.forEach.call($("segFreq").querySelectorAll("button"), function (b) {
+        b.classList.toggle("on", b === btn);
+      });
+      freq = btn.getAttribute("data-freq");
+    });
+  });
+
+  function intVal(el, allowEmptyZero) {
+    var v = String(el.value).replace(/[^\d]/g, "");
+    if (v === "") return allowEmptyZero ? 0 : NaN;
+    return Number(v);
+  }
+  function floatVal(el) {
+    var v = String(el.value).trim();
+    return v === "" ? NaN : Number(v);
+  }
+
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var P = intVal($("principal"), true);
+    var monthly = intVal($("monthly"), true);
+    var ratePct = floatVal($("rate"));
+    var t = intVal($("years"), false);
+
+    var ok = true;
+    if (!(P >= 0)) { CM.invalid($("fPrincipal"), true); ok = false; } else { CM.invalid($("fPrincipal"), false); }
+    if (!(monthly >= 0)) { CM.invalid($("fMonthly"), true); ok = false; } else { CM.invalid($("fMonthly"), false); }
+    if (!(ratePct >= 0) || !isFinite(ratePct)) { CM.invalid($("fRate"), true); ok = false; } else { CM.invalid($("fRate"), false); }
+    if (!(t >= 1)) { CM.invalid($("fYears"), true); ok = false; } else { CM.invalid($("fYears"), false); }
+    if (ok && P === 0 && monthly === 0) { CM.invalid($("fPrincipal"), true); ok = false; }
+    if (!ok) return;
+
+    var r = ratePct / 100;
+    var invested = P + monthly * 12 * t;
+    var fv;
+
+    if (r === 0) {
+      fv = invested;
+    } else if (freq === "yearly") {
+      /* 연복리: 원금 + 연 단위 적립 근사 (A = 월 적립 × 12) */
+      var A = monthly * 12;
+      fv = P * Math.pow(1 + r, t) + A * (Math.pow(1 + r, t) - 1) / r;
+    } else {
+      /* 월복리 */
+      var i = r / 12;
+      var n = t * 12;
+      fv = P * Math.pow(1 + i, n) + monthly * (Math.pow(1 + i, n) - 1) / i;
+    }
+
+    var profit = fv - invested;
+    var multiple = invested > 0 ? fv / invested : 0;
+    var doubleYears = r > 0 ? 72 / ratePct : 0;
+    var freqName = freq === "yearly" ? "연복리" : "월복리";
+
+    $("result").hidden = false;
+    CM.countUp($("rMain"), Math.round(fv), { suffix: "원" });
+    $("rInvested").textContent = CM.won(invested);
+    $("rProfit").textContent = (profit >= 0 ? "+" : "") + CM.won(profit);
+    $("rMultiple").textContent = CM.fmt(multiple, 2) + "배";
+    $("rDouble").textContent = r > 0 ? "약 " + CM.fmt(doubleYears, 1) + "년" : "-";
+
+    lastText = "복리 계산 (" + freqName + ") · 연 " + ratePct + "% · " + t + "년\n"
+      + "초기 원금: " + CM.won(P) + " / 월 적립: " + CM.won(monthly) + "\n"
+      + "만기 평가액: " + CM.won(fv) + "\n"
+      + "총 투입 원금: " + CM.won(invested)
+      + " / 총 수익: " + CM.won(profit)
+      + " / 수익률 배수: " + CM.fmt(multiple, 2) + "배"
+      + (r > 0 ? " / 두 배 기간(72의 법칙): 약 " + CM.fmt(doubleYears, 1) + "년" : "")
+      + "\n- calcmoa.site/tools/compound";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["principal", "monthly", "rate", "years"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+</body>
+</html>
