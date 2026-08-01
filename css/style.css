@@ -277,10 +277,10 @@ h3 { font-size: 17px; font-weight: 700; margin: 26px 0 8px; color: var(--ink); }
 
 /* ---------- 광고 슬롯 ---------- */
 .ad-slot { display: none; }
-.ad-slot.on {
-  display: block; margin: 22px 0; min-height: 100px;
-  text-align: center; overflow: hidden;
-}
+.ad-slot.on { display: block; margin: 22px 0; text-align: center; overflow: hidden; }
+/* 승인 전/미채움 광고는 완전히 숨김 (흰 박스 방지) */
+ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; }
+.ad-slot.on:has(> ins[data-ad-status="unfilled"]) { display: none; }
 
 /* ---------- 히어로 (홈) ---------- */
 .hero {
@@ -403,6 +403,81 @@ h3 { font-size: 17px; font-weight: 700; margin: 26px 0 8px; color: var(--ink); }
 .result-card .pair div { background: var(--surface); border: 1px solid var(--line); border-radius: 13px; padding: 12px; font-size: 13.5px; text-align: left; color: var(--body); }
 .result-card .pair b { display: block; font-size: 11.5px; color: var(--faint); margin-bottom: 4px; letter-spacing: .03em; }
 @media (prefers-reduced-motion: reduce) { .quiz-progress i, .quiz-answers button { transition: none; } }
+
+/* ---------- 3D 플로팅 계산기 (히어로 시그니처) ---------- */
+.scene {
+  width: 190px; height: 210px; margin: 0 auto 6px;
+  perspective: 900px;
+}
+.calc3d {
+  position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 14deg)) rotateY(var(--ry, -16deg));
+  will-change: transform;
+  animation: calc-bob 5.5s ease-in-out infinite alternate;
+}
+@keyframes calc-bob { from { translate: 0 -6px; } to { translate: 0 8px; } }
+.calc3d .face {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, #26262a, #161619);
+  border: 1px solid var(--line2);
+  border-radius: 26px;
+  box-shadow: 0 40px 70px rgba(0, 0, 0, .75), 0 0 40px rgba(10, 132, 255, .12);
+  padding: 16px;
+  transform: translateZ(12px);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.calc3d::before {
+  content: ""; position: absolute; inset: 0;
+  border-radius: 26px; background: #0c0c0e;
+  border: 1px solid var(--line);
+  transform: translateZ(-12px);
+}
+.calc3d .screen {
+  height: 52px; border-radius: 14px;
+  background: #0a0f16; border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 0 14px; font-weight: 800; font-size: 21px;
+  color: var(--accent); font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 14px rgba(64, 156, 255, .6);
+  overflow: hidden; white-space: nowrap;
+}
+.calc3d .keys {
+  flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+}
+.calc3d .keys i {
+  border-radius: 10px; background: #2c2c30;
+  border: 1px solid #3d3d42;
+  box-shadow: 0 2.5px 0 #0f0f11;
+}
+.calc3d .keys i.a { background: var(--accent-deep); border-color: #2f8fff; box-shadow: 0 2.5px 0 #0a4f99, 0 0 12px rgba(10,132,255,.5); }
+.calc3d .keys i.g { background: #b8860b; border-color: var(--gold); box-shadow: 0 2.5px 0 #6b4e06, 0 0 12px rgba(255,210,87,.35); }
+@media (prefers-reduced-motion: reduce) { .calc3d { animation: none; transform: rotateX(10deg) rotateY(-12deg); } }
+
+/* 히어로 파티클 캔버스 */
+.fx-canvas {
+  position: absolute; inset: 0; z-index: -1;
+  width: 100%; height: 100%; pointer-events: none;
+}
+
+/* 카운트업 스탯 스트립 */
+.stats {
+  display: flex; justify-content: center; gap: clamp(28px, 7vw, 84px);
+  padding: 26px 20px 6px; flex-wrap: wrap;
+}
+.stats .stat { text-align: center; }
+.stats .num {
+  display: block; font-size: clamp(26px, 4.5vw, 38px); font-weight: 800;
+  letter-spacing: -.03em; color: var(--ink); font-variant-numeric: tabular-nums;
+}
+.stats .num .u { color: var(--accent); font-size: .72em; font-weight: 800; }
+.stats .lbl { font-size: 12.5px; color: var(--faint); font-weight: 600; letter-spacing: .04em; }
+
+/* 3D 틸트 카드 (데스크톱 포인터 전용, fx.js) */
+@media (hover: hover) and (pointer: fine) {
+  .tool-card { transform-style: preserve-3d; }
+  .tool-card.tilting { transition: none; }
+}
 
 /* ---------- 기타 ---------- */
 .center { text-align: center; }
