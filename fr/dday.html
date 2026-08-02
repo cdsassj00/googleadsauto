@@ -178,6 +178,23 @@
     </ul>
     <p class="note">Page rédigée en 2026. Les conversions en mois et en années reposent sur des valeurs moyennes. Tous les calculs s'effectuent dans votre navigateur : aucune date saisie n'est enregistrée ni transmise.</p>
 
+    <h2>Combien de jours avant Noël, le Nouvel An… ?</h2>
+    <p>Vous cherchez le nombre de jours restant avant une date précise ? Voici les comptes à rebours les plus demandés, mis à jour automatiquement chaque jour :</p>
+    <table>
+      <thead>
+        <tr><th>Événement</th><th>Date</th><th>Jours restants</th></tr>
+      </thead>
+      <tbody id="popularDday">
+        <tr><td>Noël</td><td>25 décembre</td><td data-date="12-25">—</td></tr>
+        <tr><td>Nouvel An 2027</td><td>1er janvier 2027</td><td data-date="2027-01-01">—</td></tr>
+        <tr><td>Saint-Valentin</td><td>14 février</td><td data-date="02-14">—</td></tr>
+        <tr><td>Fête nationale</td><td>14 juillet</td><td data-date="07-14">—</td></tr>
+        <tr><td>Rentrée scolaire 2026</td><td>1er septembre 2026 (date usuelle, à confirmer selon le calendrier officiel)</td><td data-date="2026-09-01">—</td></tr>
+        <tr><td>Halloween</td><td>31 octobre</td><td data-date="10-31">—</td></tr>
+      </tbody>
+    </table>
+    <p>Pour les fêtes qui reviennent chaque année, le tableau affiche automatiquement la prochaine occurrence. Vous préparez plutôt un anniversaire ? Notre <a href="/fr/age">calculateur d'âge</a> vous indique aussi le nombre de jours avant votre prochain anniversaire.</p>
+
     <h2>Questions fréquentes</h2>
     <div class="faq">
       <details>
@@ -385,6 +402,26 @@ document.addEventListener("DOMContentLoaded", function () {
     else if (mode === "diff") { calcDiff(); }
     else { calcAdd(); }
   }
+
+  /* Comptes à rebours populaires : remplit la colonne « Jours restants » */
+  Array.prototype.forEach.call(document.querySelectorAll("#popularDday [data-date]"), function (cell) {
+    var spec = cell.getAttribute("data-date");
+    var today = todayMid();
+    var target;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(spec)) {
+      target = parseDate(spec);
+    } else {
+      /* Format MM-DD : prochaine occurrence (cette année ou la suivante) */
+      var p = spec.split("-");
+      target = new Date(today.getFullYear(), +p[0] - 1, +p[1]);
+      if (target < today) target = new Date(today.getFullYear() + 1, +p[0] - 1, +p[1]);
+    }
+    if (!target || isNaN(target.getTime())) return;
+    var d = diffDays(today, target);
+    if (d > 0) cell.textContent = "J-" + fmt(d);
+    else if (d === 0) cell.textContent = "Jour J";
+    else cell.textContent = "J+" + fmt(-d);
+  });
 
   $("calcBtn").addEventListener("click", calc);
   Array.prototype.forEach.call(document.querySelectorAll(".calc-card input"), function (el) {
