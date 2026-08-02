@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Date Calculator - Days Between Dates, Countdown &amp; Date Adder</title>
+<meta name="description" content="Free date calculator: count down the days until any event, find the number of days between two dates (inclusive or exclusive), and add or subtract days from a date. Fast, accurate, and nothing to install.">
+<link rel="canonical" href="https://calcmoa.site/en/dday">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/dday">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/dday">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/dday">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/dday">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/dday">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Date Calculator - Days Between Dates, Countdown &amp; Date Adder">
+<meta property="og:description" content="Count down to any date, find the days between two dates, or add and subtract days — one free tool, three modes, no sign-up.">
+<meta property="og:url" content="https://calcmoa.site/en/dday">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Date Calculator","url":"https://calcmoa.site/en/dday","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"en"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[
+  {"@type":"Question","name":"Does the countdown include today?","acceptedAnswer":{"@type":"Answer","text":"No. The countdown shows the number of midnights between today and the target date, so \"3 days left\" means the event is three days from now and today is not counted. On the day of the event itself the result reads \"Today is the day\"."}},
+  {"@type":"Question","name":"When should I count the start date (inclusive counting)?","acceptedAnswer":{"@type":"Answer","text":"Use exclusive counting for gaps and intervals — hotel nights, days until a deadline. Use inclusive counting when the first day itself counts as a full day, such as rental periods, medication courses, or billable workdays. Inclusive counting always gives one day more than exclusive counting."}},
+  {"@type":"Question","name":"How accurate are the month and year conversions?","acceptedAnswer":{"@type":"Answer","text":"They are approximations. The calculator divides the day count by 30.44 (the average month, 365.25 ÷ 12) and by 365.25 (the average year including leap years). Because calendar months vary from 28 to 31 days, treat these figures as estimates only."}},
+  {"@type":"Question","name":"Does the time of day affect the result?","acceptedAnswer":{"@type":"Answer","text":"No. Every date is normalized to midnight (00:00) before comparing, so only the calendar dates matter. Whether you run the calculation in the morning or at night, the answer is the same."}},
+  {"@type":"Question","name":"Can I subtract days instead of adding them?","acceptedAnswer":{"@type":"Answer","text":"Yes. In the Add/Subtract Days mode, enter a negative number to go back in time. For example, entering -30 shows the date and weekday exactly 30 days before your base date."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/en"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/en">Tools</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/en">Home</a><span class="sep">›</span>
+    <span>Date Calculator</span>
+  </nav>
+
+  <h1>Date Calculator</h1>
+  <p class="lead">Count down to an exam, wedding, or deadline, measure the exact number of days between two dates, or jump forward and backward by any number of days — all in one place.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="seg" id="modeSeg" role="tablist" aria-label="Calculation mode" style="margin-bottom:18px">
+      <button type="button" class="on" data-mode="dday">Countdown</button>
+      <button type="button" data-mode="diff">Days Between</button>
+      <button type="button" data-mode="add">Add/Subtract Days</button>
+    </div>
+
+    <div id="panel-dday">
+      <div class="field" id="fDdTarget">
+        <label for="ddTarget">Target date</label>
+        <input type="date" id="ddTarget">
+        <div class="hint">Pick the date of your exam, trip, launch, or any event you're counting down to.</div>
+        <div class="field-error">Please select a valid target date.</div>
+      </div>
+    </div>
+
+    <div id="panel-diff" hidden>
+      <div class="field-row">
+        <div class="field" id="fDfA">
+          <label for="dfA">Start date</label>
+          <input type="date" id="dfA">
+          <div class="field-error">Please select a valid start date.</div>
+        </div>
+        <div class="field" id="fDfB">
+          <label for="dfB">End date</label>
+          <input type="date" id="dfB">
+          <div class="field-error">Please select a valid end date.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="dfIncl" style="display:flex;align-items:center;gap:8px;cursor:pointer">
+          <input type="checkbox" id="dfIncl" style="width:auto"> Include the start date (inclusive counting)
+        </label>
+        <div class="hint">Checked: today through tomorrow counts as 2 days. Unchecked: 1 day.</div>
+      </div>
+    </div>
+
+    <div id="panel-add" hidden>
+      <div class="field-row">
+        <div class="field" id="fDaBase">
+          <label for="daBase">Base date</label>
+          <input type="date" id="daBase">
+          <div class="field-error">Please select a valid base date.</div>
+        </div>
+        <div class="field" id="fDaN">
+          <label for="daN">Days to add (negative to subtract)</label>
+          <input type="number" id="daN" step="1" value="100">
+          <div class="hint">e.g. 100 → 100 days later, -30 → 30 days earlier</div>
+          <div class="field-error">Enter a whole number between -1,000,000 and 1,000,000.</div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="calcBtn">Calculate</button>
+
+    <div class="result" hidden id="result" aria-live="polite">
+      <div class="label" id="rLabel">Result</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">Copy result</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>How to use</h2>
+    <ol>
+      <li>Pick a mode from the tabs at the top: <b>Countdown / Days Between / Add-Subtract Days</b>.</li>
+      <li><b>Countdown</b>: choose a target date and hit Calculate. You'll see how many days remain (or have passed), the weekday of the target, the count in weeks and days, and an approximate month conversion.</li>
+      <li><b>Days Between</b>: enter two dates and decide whether the start date should count as a day. The result shows the total days plus week, month, and year equivalents.</li>
+      <li><b>Add/Subtract Days</b>: enter a base date and a number of days (negative numbers go backward). Handy for questions like "what date is 90 days from today?" — you get the exact date and its weekday.</li>
+    </ol>
+
+    <h2>How the countdown works</h2>
+    <p>The calculator normalizes both dates to midnight, takes the difference in milliseconds, and divides by the length of one day (86,400,000 ms). Time of day is ignored entirely, so the result never changes depending on when you check it during the day.</p>
+    <table>
+      <thead>
+        <tr><th>Result</th><th>Meaning</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>7 days left</td><td>The event is one week away</td></tr>
+        <tr><td>1 day left</td><td>The event is tomorrow</td></tr>
+        <tr><td>Today is the day</td><td>The target date is today</td></tr>
+        <tr><td>1 day ago</td><td>The event was yesterday</td></tr>
+      </tbody>
+    </table>
+    <h3>Counting conventions: inclusive vs. exclusive</h3>
+    <p>The same pair of dates can honestly produce two different answers, depending on whether the first day counts. Measured as a gap, today through tomorrow is 1 day; counted inclusively — where the first day is itself a full day — it's 2 days. Neither is wrong; they answer different questions. Legal deadlines, rental agreements, and prescriptions each follow their own convention, so it's worth checking which one applies before you rely on a number.</p>
+    <table>
+      <thead>
+        <tr><th>Convention</th><th>Today → tomorrow</th><th>Typical uses</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Exclusive (start date not counted)</td><td>1 day</td><td>Date gaps, countdowns, hotel nights</td></tr>
+        <tr><td>Inclusive (start date counted)</td><td>2 days</td><td>Workdays billed, medication courses, full trip length</td></tr>
+      </tbody>
+    </table>
+    <h3>Week, month, and year conversions</h3>
+    <p>Weeks are exact: the day count divided by 7, with the remainder shown as leftover days. Months and years can't be exact because calendar months vary in length, so the calculator uses averages — one month ≈ 30.44 days (365.25 ÷ 12) and one year ≈ 365.25 days — and labels those figures as <b>approximate</b>.</p>
+
+    <h2>Good to know</h2>
+    <ul>
+      <li><b>Exam prep</b>: set your test date as the target and note the 100-, 50-, and 30-day marks to break your study plan into phases.</li>
+      <li><b>Once the date passes</b>, the countdown automatically flips to "days ago" — useful for tracking how long a project, streak, or habit has been running.</li>
+      <li><b>Contract and refund windows</b>: in Add/Subtract mode, enter the signing date plus 14 or 30 days to see exactly when a window closes — and whether that day lands on a weekend.</li>
+      <li><b>Pregnancy, visas, and billing cycles</b> all boil down to date arithmetic: due dates are typically 280 days from a start date, many visa rules cap stays at 90 days within a 180-day window, and both are one Add/Subtract calculation away.</li>
+      <li>For milestone anniversaries counted from a start date (100 days together, 1,000 days), remember that some traditions count the first day as day 1 — that's inclusive counting, one day earlier than the plain gap.</li>
+    </ul>
+    <p class="note">Month and year conversions are average-based approximations. All calculations run entirely in your browser; the dates you enter are never sent anywhere or stored.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Does the countdown include today?</summary>
+        <p>No. The countdown shows the number of midnights between today and the target date, so "3 days left" means the event is three days from now and today is not counted. On the day of the event itself the result reads "Today is the day".</p>
+      </details>
+      <details>
+        <summary>When should I count the start date (inclusive counting)?</summary>
+        <p>Use exclusive counting for gaps and intervals — hotel nights, days until a deadline. Use inclusive counting when the first day itself counts as a full day, such as rental periods, medication courses, or billable workdays. Inclusive counting always gives one day more than exclusive counting.</p>
+      </details>
+      <details>
+        <summary>How accurate are the month and year conversions?</summary>
+        <p>They are approximations. The calculator divides the day count by 30.44 (the average month, 365.25 ÷ 12) and by 365.25 (the average year including leap years). Because calendar months vary from 28 to 31 days, treat these figures as estimates only.</p>
+      </details>
+      <details>
+        <summary>Does the time of day affect the result?</summary>
+        <p>No. Every date is normalized to midnight (00:00) before comparing, so only the calendar dates matter. Whether you run the calculation in the morning or at night, the answer is the same.</p>
+      </details>
+      <details>
+        <summary>Can I subtract days instead of adding them?</summary>
+        <p>Yes. In the Add/Subtract Days mode, enter a negative number to go back in time. For example, entering -30 shows the date and weekday exactly 30 days before your base date.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/en/age"><div class="ico">🎂</div><b>Age Calculator</b><span>Exact age in years, months &amp; days</span></a>
+      <a class="tool-card" href="/en/percent"><div class="ico">％</div><b>Percentage Calculator</b><span>% of a number, increase &amp; discount</span></a>
+      <a class="tool-card" href="/en/bmi"><div class="ico">⚖️</div><b>BMI Calculator</b><span>Body mass index &amp; weight category</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — free everyday calculators<br>
+      Results are for reference only.
+    </div>
+    <nav class="links">
+      <a href="/about">About (Korean)</a>
+      <a href="/privacy">Privacy (Korean)</a>
+      <a href="/terms">Terms (Korean)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var WD = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var MO = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var MS = 86400000;
+
+  function fmt(n, decimals) {
+    return Number(n).toLocaleString("en-US", {
+      minimumFractionDigits: decimals || 0,
+      maximumFractionDigits: decimals || 0
+    });
+  }
+  function todayMid() {
+    var t = new Date();
+    return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+  }
+  function parseDate(v) {
+    if (!v) return null;
+    var p = v.split("-");
+    if (p.length !== 3) return null;
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function toInput(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+  function fmtDate(d) { return MO[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear(); }
+  function wd(d) { return "(" + WD[d.getDay()].slice(0, 3) + ")"; }
+  function diffDays(a, b) { return Math.round((b - a) / MS); }
+  function addDaysTo(d, n) { return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n); }
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function row(label, value) {
+    return '<div class="row"><span>' + esc(label) + "</span><b>" + esc(value) + "</b></div>";
+  }
+  function plural(n, word) { return fmt(n) + " " + word + (n === 1 ? "" : "s"); }
+  function weeksText(n) { return plural(Math.floor(n / 7), "week") + " " + plural(n % 7, "day"); }
+
+  ["ddTarget", "dfA", "dfB", "daBase"].forEach(function (id) {
+    $(id).value = toInput(todayMid());
+  });
+
+  var mode = "dday";
+  var segBtns = document.querySelectorAll("#modeSeg button");
+  Array.prototype.forEach.call(segBtns, function (btn) {
+    btn.addEventListener("click", function () {
+      mode = btn.getAttribute("data-mode");
+      Array.prototype.forEach.call(segBtns, function (b) {
+        b.classList.toggle("on", b === btn);
+      });
+      $("panel-dday").hidden = mode !== "dday";
+      $("panel-diff").hidden = mode !== "diff";
+      $("panel-add").hidden = mode !== "add";
+      $("result").hidden = true;
+    });
+  });
+
+  var lastCopy = "";
+  CM.bindCopy($("copyBtn"), function () { return lastCopy; });
+
+  function calcDday() {
+    var f = $("fDdTarget");
+    var t = parseDate($("ddTarget").value);
+    if (!t) { CM.invalid(f, true); return; }
+    CM.invalid(f, false);
+
+    var today = todayMid();
+    var diff = diffDays(today, t);
+    var abs = Math.abs(diff);
+    var bigText;
+    if (diff > 0) {
+      bigText = plural(diff, "day") + " left";
+    } else if (diff < 0) {
+      bigText = plural(abs, "day") + " ago";
+    } else {
+      bigText = "Today is the day";
+    }
+    $("rMain").textContent = bigText;
+    var rows = "";
+    rows += row("Target date", fmtDate(t) + " " + wd(t));
+    rows += row("Status", diff > 0 ? "Upcoming" : (diff < 0 ? "Passed" : "It's today"));
+    rows += row("In weeks", weeksText(abs));
+    rows += row("In months (approx.)", "about " + fmt(abs / 30.44, 1) + " months");
+    $("rLabel").textContent = "Countdown from today";
+    $("rRows").innerHTML = rows;
+    lastCopy = "Date Calculator (calcmoa.site)\nTarget: " + fmtDate(t) + " " + wd(t) + "\n" + bigText;
+    $("result").hidden = false;
+  }
+
+  function calcDiff() {
+    var fa = $("fDfA"), fb = $("fDfB");
+    var a = parseDate($("dfA").value), b = parseDate($("dfB").value);
+    var ok = true;
+    if (!a) { CM.invalid(fa, true); ok = false; } else { CM.invalid(fa, false); }
+    if (!b) { CM.invalid(fb, true); ok = false; } else { CM.invalid(fb, false); }
+    if (!ok) return;
+    if (a > b) { var tmp = a; a = b; b = tmp; }
+
+    var incl = $("dfIncl").checked;
+    var days = diffDays(a, b) + (incl ? 1 : 0);
+    $("rMain").textContent = plural(days, "day");
+    var rows = "";
+    rows += row("Start date", fmtDate(a) + " " + wd(a));
+    rows += row("End date", fmtDate(b) + " " + wd(b));
+    rows += row("Counting", incl ? "Start date included" : "Start date not included");
+    rows += row("In weeks", weeksText(days));
+    rows += row("In months (approx.)", "about " + fmt(days / 30.44, 1) + " months");
+    rows += row("In years (approx.)", "about " + fmt(days / 365.25, 2) + " years");
+    $("rLabel").textContent = "Days between the two dates";
+    $("rRows").innerHTML = rows;
+    lastCopy = "Days Between Dates (calcmoa.site)\n" + fmtDate(a) + " – " + fmtDate(b) +
+      (incl ? " (start date included)" : " (start date not included)") +
+      "\nTotal " + plural(days, "day") + " = " + weeksText(days);
+    $("result").hidden = false;
+  }
+
+  function calcAdd() {
+    var fb = $("fDaBase"), fn = $("fDaN");
+    var b = parseDate($("daBase").value);
+    var ok = true;
+    if (!b) { CM.invalid(fb, true); ok = false; } else { CM.invalid(fb, false); }
+    var raw = $("daN").value.trim();
+    var n = Number(raw);
+    if (raw === "" || !isFinite(n) || Math.abs(n) > 1000000) {
+      CM.invalid(fn, true); ok = false;
+    } else {
+      CM.invalid(fn, false);
+      n = Math.trunc(n);
+    }
+    if (!ok) return;
+
+    var r = addDaysTo(b, n);
+    var bigText = fmtDate(r) + " " + wd(r);
+    $("rMain").textContent = bigText;
+    var rows = "";
+    rows += row("Base date", fmtDate(b) + " " + wd(b));
+    rows += row("Offset", n >= 0 ? plural(n, "day") + " later" : plural(-n, "day") + " earlier");
+    rows += row("Result falls on", WD[r.getDay()]);
+    $("rLabel").textContent = "Resulting date";
+    $("rRows").innerHTML = rows;
+    lastCopy = "Date Adder (calcmoa.site)\n" + fmtDate(b) + " " +
+      (n >= 0 ? "+ " + plural(n, "day") : "− " + plural(-n, "day")) + " = " + bigText;
+    $("result").hidden = false;
+  }
+
+  function calc() {
+    if (mode === "dday") { calcDday(); }
+    else if (mode === "diff") { calcDiff(); }
+    else { calcAdd(); }
+  }
+
+  $("calcBtn").addEventListener("click", calc);
+  Array.prototype.forEach.call(document.querySelectorAll(".calc-card input"), function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); calc(); }
+    });
+  });
+});
+</script>
+</body>
+</html>

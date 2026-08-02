@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Percentage Calculator - % of a Number, Increase &amp; Discount</title>
+<meta name="description" content="Free percentage calculator with four modes: find X% of a number, what percent A is of B, percentage increase or decrease between two values, and sale prices after a discount or markup.">
+<link rel="canonical" href="https://calcmoa.site/en/percent">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/percent">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/percent">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/percent">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/percent">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/percent">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Percentage Calculator - % of a Number, Increase &amp; Discount">
+<meta property="og:description" content="Four percentage tools in one: X% of a number, what percent A is of B, percentage change, and discount or markup prices — free and instant.">
+<meta property="og:url" content="https://calcmoa.site/en/percent">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Percentage Calculator","url":"https://calcmoa.site/en/percent","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"en"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[
+  {"@type":"Question","name":"What's the difference between percent and percentage points?","acceptedAnswer":{"@type":"Answer","text":"Percent expresses a ratio; percentage points express the simple arithmetic difference between two percentages. If an interest rate rises from 2% to 4%, it went up 2 percentage points — but as a relative change it increased by 100%. Mixing the two up can wildly misstate the size of a change."}},
+  {"@type":"Question","name":"Which value is the base when calculating percentage change?","acceptedAnswer":{"@type":"Answer","text":"Always the original (before) value. The formula is (new − original) ÷ original × 100. Going from 100 to 150 is a +50% increase, but going from 150 back to 100 is about a −33.33% decrease — the direction matters because the base changes."}},
+  {"@type":"Question","name":"If a price drops 50% and then rises 50%, is it back to the original?","acceptedAnswer":{"@type":"Answer","text":"No. Take $100: a 50% discount brings it to $50, and a 50% increase on $50 gives $75, not $100. The increase applies to the discounted price, not the original. To get back to $100 from $50 you'd need a 100% increase. Whenever percentages are applied in sequence, the base changes at every step."}},
+  {"@type":"Question","name":"How many decimal places does the result show?","acceptedAnswer":{"@type":"Answer","text":"Results are rounded to two decimal places, and shown as whole numbers when they come out even. Because of display rounding there can be tiny differences from the raw value, so double-check the underlying formula if you need full precision."}},
+  {"@type":"Question","name":"Are the numbers I enter stored or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Everything is computed by JavaScript inside your browser. Nothing you type is transmitted to a server or saved."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/en"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/en">Tools</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/en">Home</a><span class="sep">›</span>
+    <span>Percentage Calculator</span>
+  </nav>
+
+  <h1>Percentage Calculator</h1>
+  <p class="lead">Percent of a number, "what percent is A of B", percentage increase or decrease, and discount prices — the four percentage problems everyone runs into, solved in one tool.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label>Calculation mode</label>
+      <div class="seg" id="modeSeg">
+        <button type="button" class="on" data-mode="0">B% of A</button>
+        <button type="button" data-mode="1">A is what % of B?</button>
+        <button type="button" data-mode="2">A→B % change</button>
+        <button type="button" data-mode="3">B% discount/markup</button>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fieldA">
+        <label for="inpA" id="labelA">Base value A</label>
+        <input type="text" inputmode="decimal" id="inpA" placeholder="e.g. 50000">
+        <div class="field-error" id="errA">Please enter a number.</div>
+      </div>
+      <div class="field" id="fieldB">
+        <label for="inpB" id="labelB">Percentage B (%)</label>
+        <input type="text" inputmode="decimal" id="inpB" placeholder="e.g. 15">
+        <div class="field-error" id="errB">Please enter a number.</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">Calculate</button>
+
+    <div class="result" hidden id="result">
+      <div class="label" id="rLabel">Result</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">Copy result</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>How to use</h2>
+    <ol>
+      <li>Choose the calculation you need from the mode buttons. The input labels update automatically to match.</li>
+      <li>Enter two numbers. For example, in "B% of A" mode, put the base amount (50,000) in A and the percentage (15) in B.</li>
+      <li>Press <b>Calculate</b>. The main answer appears in large type, with the formula and supporting figures listed underneath.</li>
+      <li>Use Copy result to paste the calculation into a message, spreadsheet note, or email.</li>
+    </ol>
+
+    <h2>How percentages work</h2>
+    <p>A percentage is simply a ratio out of 100 — "per cent" literally means "per hundred". Each of the four modes reduces to a single formula:</p>
+    <table>
+      <thead>
+        <tr><th>Mode</th><th>Formula</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>B% of A</td><td>A × B ÷ 100</td><td>15% of 50,000 = 7,500</td></tr>
+        <tr><td>A is what % of B?</td><td>A ÷ B × 100</td><td>30 is 25% of 120</td></tr>
+        <tr><td>A→B % change</td><td>(B − A) ÷ A × 100</td><td>100 → 130 is a +30% increase</td></tr>
+        <tr><td>B% discount / markup</td><td>A × (1 − B/100) / A × (1 + B/100)</td><td>30% off 20,000 → 14,000; marked up → 26,000</td></tr>
+      </tbody>
+    </table>
+    <p>The key to every percentage calculation is knowing <b>what the base (the denominator) is</b>. In percentage change, the base is always the original value A. Going from 100 to 150 gives (150−100)÷100×100 = <b>+50%</b>, but going from 150 down to 100 gives (100−150)÷150×100 = <b>about −33.33%</b>. Same two numbers, different base, different answer.</p>
+
+    <h2>Good to know</h2>
+    <h3>Percent vs. percentage points — the mistake everyone makes</h3>
+    <p>When the news says "the interest rate rose from 2% to 4%", there are two correct ways to describe it:</p>
+    <table>
+      <thead>
+        <tr><th>Statement</th><th>Math</th><th>What it means</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Up 2 percentage points</td><td>4% − 2% = 2 pp</td><td>The simple difference between the two rates</td></tr>
+        <tr><td>Up 100%</td><td>(4−2) ÷ 2 × 100 = 100%</td><td>The relative change from the old rate</td></tr>
+      </tbody>
+    </table>
+    <p>Both are true, but they say very different things. When a value is already a percentage — approval ratings, interest rates, unemployment — describe its change in <b>percentage points</b>. Saying an approval rating "rose 3%" when it went from 30% to 33% is technically wrong; it rose 3 percentage points, or 10%.</p>
+    <h3>Common mistake: 50% off then 50% up is not the original price</h3>
+    <p>A $100 item discounted 50% costs $50. Raise that by 50% and you get $50 × 1.5 = <b>$75</b> — not $100 — because the increase is applied to the discounted price, not the original. To return to $100, the $50 price would have to rise 100%. Whenever you chain percentages, remember that the base resets at every step. The same trap appears in "stacked" store discounts: 20% off followed by an extra 10% off is 28% off in total, not 30%.</p>
+    <h3>Real-life uses for each mode</h3>
+    <ul>
+      <li><b>B% of A</b> — figuring an 18% or 20% tip on a restaurant bill, sales tax on a purchase, or how much of your paycheck a 15% savings rate sets aside.</li>
+      <li><b>A is what % of B?</b> — your score when you got 68 out of 80 questions right, or progress toward a fundraising or savings goal.</li>
+      <li><b>A→B % change</b> — revenue growth versus last year, or how much your electricity bill jumped compared with last month.</li>
+      <li><b>B% discount/markup</b> — the checkout price during a 30%-off sale, or your new rent after a 5% increase.</li>
+    </ul>
+    <p class="note">This is a pure arithmetic tool. Results are rounded to two decimal places; formal accounting and tax work may apply their own rounding rules.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>What's the difference between percent and percentage points?</summary>
+        <p>Percent expresses a ratio; percentage points express the simple arithmetic difference between two percentages. If an interest rate rises from 2% to 4%, it went up 2 percentage points — but as a relative change it increased by 100%. Mixing the two up can wildly misstate the size of a change.</p>
+      </details>
+      <details>
+        <summary>Which value is the base when calculating percentage change?</summary>
+        <p>Always the original (before) value. The formula is (new − original) ÷ original × 100. Going from 100 to 150 is a +50% increase, but going from 150 back to 100 is about a −33.33% decrease — the direction matters because the base changes.</p>
+      </details>
+      <details>
+        <summary>If a price drops 50% and then rises 50%, is it back to the original?</summary>
+        <p>No. Take $100: a 50% discount brings it to $50, and a 50% increase on $50 gives $75, not $100. The increase applies to the discounted price, not the original. To get back to $100 from $50 you'd need a 100% increase. Whenever percentages are applied in sequence, the base changes at every step.</p>
+      </details>
+      <details>
+        <summary>How many decimal places does the result show?</summary>
+        <p>Results are rounded to two decimal places, and shown as whole numbers when they come out even. Because of display rounding there can be tiny differences from the raw value, so double-check the underlying formula if you need full precision.</p>
+      </details>
+      <details>
+        <summary>Are the numbers I enter stored or sent anywhere?</summary>
+        <p>No. Everything is computed by JavaScript inside your browser. Nothing you type is transmitted to a server or saved.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/en/compound"><div class="ico">📈</div><b>Compound Interest Calculator</b><span>Watch savings grow with compounding</span></a>
+      <a class="tool-card" href="/en/dday"><div class="ico">📅</div><b>Date Calculator</b><span>Countdowns &amp; days between dates</span></a>
+      <a class="tool-card" href="/en/bmi"><div class="ico">⚖️</div><b>BMI Calculator</b><span>Body mass index &amp; weight category</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — free everyday calculators<br>
+      Results are for reference only.
+    </div>
+    <nav class="links">
+      <a href="/about">About (Korean)</a>
+      <a href="/privacy">Privacy (Korean)</a>
+      <a href="/terms">Terms (Korean)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var seg = document.getElementById("modeSeg");
+  var segBtns = seg.querySelectorAll("button");
+  var fieldA = document.getElementById("fieldA");
+  var fieldB = document.getElementById("fieldB");
+  var labelA = document.getElementById("labelA");
+  var labelB = document.getElementById("labelB");
+  var inpA = document.getElementById("inpA");
+  var inpB = document.getElementById("inpB");
+  var result = document.getElementById("result");
+  var rLabel = document.getElementById("rLabel");
+  var rMain = document.getElementById("rMain");
+  var rRows = document.getElementById("rRows");
+  var mode = 0;
+  var lastCopyText = "";
+
+  var MODES = [
+    { la: "Base value A", lb: "Percentage B (%)", pa: "e.g. 50000", pb: "e.g. 15" },
+    { la: "Value A (the part)", lb: "Base value B (the whole)", pa: "e.g. 30", pb: "e.g. 120" },
+    { la: "Original value A", lb: "New value B", pa: "e.g. 100", pb: "e.g. 130" },
+    { la: "Original price A", lb: "Discount/markup B (%)", pa: "e.g. 20000", pb: "e.g. 30" }
+  ];
+
+  function setMode(m) {
+    mode = m;
+    segBtns.forEach(function (b) {
+      b.classList.toggle("on", Number(b.dataset.mode) === m);
+    });
+    labelA.textContent = MODES[m].la;
+    labelB.textContent = MODES[m].lb;
+    inpA.placeholder = MODES[m].pa;
+    inpB.placeholder = MODES[m].pb;
+    result.hidden = true;
+    CM.invalid(fieldA, false);
+    CM.invalid(fieldB, false);
+  }
+
+  segBtns.forEach(function (b) {
+    b.addEventListener("click", function () { setMode(Number(b.dataset.mode)); });
+  });
+
+  /* Round to 2 decimals; drop trailing decimals when the value is whole */
+  function decimalsOf(v) {
+    var r = Math.round(v * 100) / 100;
+    if (Math.abs(r - Math.round(r)) < 1e-9) return 0;
+    if (Math.abs(r * 10 - Math.round(r * 10)) < 1e-9) return 1;
+    return 2;
+  }
+  function show(v) {
+    var r = Math.round(v * 100) / 100;
+    var d = decimalsOf(v);
+    return r.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  }
+  function parseNum(el) {
+    var s = String(el.value).replace(/,/g, "").trim();
+    if (s === "") return NaN;
+    return Number(s);
+  }
+  function addRow(label, value) {
+    var row = document.createElement("div");
+    row.className = "row";
+    var sp = document.createElement("span");
+    sp.textContent = label;
+    var b = document.createElement("b");
+    b.textContent = value;
+    row.appendChild(sp);
+    row.appendChild(b);
+    rRows.appendChild(row);
+  }
+
+  function calc() {
+    var a = parseNum(inpA);
+    var b = parseNum(inpB);
+    var okA = isFinite(a);
+    var okB = isFinite(b);
+    if (mode === 1 && okB && b === 0) okB = false;   /* avoid division by zero */
+    if (mode === 2 && okA && a === 0) okA = false;   /* base value can't be zero */
+    CM.invalid(fieldA, !okA);
+    CM.invalid(fieldB, !okB);
+    if (!okA || !okB) { result.hidden = true; return; }
+
+    rRows.textContent = "";
+    if (mode === 0) {
+      var v0 = a * b / 100;
+      rLabel.textContent = show(b) + "% of " + show(a);
+      rMain.textContent = show(v0);
+      addRow("Formula", show(a) + " × " + show(b) + " ÷ 100");
+      addRow("Result", show(v0));
+      lastCopyText = show(b) + "% of " + show(a) + " = " + show(v0);
+    } else if (mode === 1) {
+      var v1 = a / b * 100;
+      rLabel.textContent = show(a) + " as a share of " + show(b);
+      rMain.textContent = show(v1) + "%";
+      addRow("Formula", show(a) + " ÷ " + show(b) + " × 100");
+      addRow("Result", show(v1) + "%");
+      lastCopyText = show(a) + " is " + show(v1) + "% of " + show(b);
+    } else if (mode === 2) {
+      var v2 = (b - a) / a * 100;
+      var dir = v2 > 0 ? "increase" : (v2 < 0 ? "decrease" : "no change");
+      rLabel.textContent = "Change from " + show(a) + " to " + show(b);
+      if (v2 === 0) {
+        rMain.textContent = "0% (no change)";
+      } else {
+        rMain.textContent = (v2 > 0 ? "+" : "-") + show(Math.abs(v2)) + "% " + dir;
+      }
+      addRow("Formula", "(" + show(b) + " − " + show(a) + ") ÷ " + show(a) + " × 100");
+      addRow("Difference", (b - a > 0 ? "+" : "") + show(b - a));
+      addRow("Direction", dir);
+      lastCopyText = show(a) + " → " + show(b) + ": " +
+        (v2 > 0 ? "+" : (v2 < 0 ? "-" : "")) + show(Math.abs(v2)) + "% " + dir;
+    } else {
+      var sale = a * (1 - b / 100);
+      var up = a * (1 + b / 100);
+      var off = a * b / 100;
+      rLabel.textContent = show(b) + "% off " + show(a);
+      rMain.textContent = show(sale);
+      addRow("Amount off (" + show(b) + "%)", show(off));
+      addRow("Discounted price A × (1 − " + show(b) + "/100)", show(sale));
+      addRow("Marked-up price A × (1 + " + show(b) + "/100)", show(up));
+      lastCopyText = show(b) + "% of " + show(a) + " → discounted " + show(sale) +
+        ", marked up " + show(up) + " (amount off " + show(off) + ")";
+    }
+    result.hidden = false;
+  }
+
+  document.getElementById("calcBtn").addEventListener("click", calc);
+  [inpA, inpB].forEach(function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); calc(); }
+    });
+  });
+  CM.bindCopy(document.getElementById("copyBtn"), function () { return lastCopyText; });
+
+  setMode(0);
+});
+</script>
+</body>
+</html>

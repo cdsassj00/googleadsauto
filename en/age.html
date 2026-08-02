@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Age Calculator - Exact Age in Years, Months &amp; Days</title>
+<meta name="description" content="Find your exact age in years, months, and days from your date of birth. Free age calculator with a next-birthday countdown, total days lived, and age on any past or future date.">
+<link rel="canonical" href="https://calcmoa.site/en/age">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/age">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/age">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/age">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/age">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/age">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Age Calculator - Exact Age in Years, Months &amp; Days">
+<meta property="og:description" content="Enter your date of birth to see your exact age in years, months, and days — plus a countdown to your next birthday and the total days you've lived.">
+<meta property="og:url" content="https://calcmoa.site/en/age">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","url":"https://calcmoa.site/en/age","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"en"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[
+  {"@type":"Question","name":"How is exact age calculated?","acceptedAnswer":{"@type":"Answer","text":"Age in years equals the reference year minus the birth year, minus one if this year's birthday hasn't arrived yet. You turn a year older on your birthday itself. The months-and-days breakdown then counts full calendar months since the last birthday, with the remaining days on top."}},
+  {"@type":"Question","name":"What if I was born on February 29?","acceptedAnswer":{"@type":"Answer","text":"In non-leap years this calculator treats March 1 as the birthday, which is the convention used in many jurisdictions (others, such as parts of the US, use February 28). Your real birthday still only comes around every four years — a favorite bit of trivia for leap-day babies."}},
+  {"@type":"Question","name":"Do all cultures count age the same way?","acceptedAnswer":{"@type":"Answer","text":"No. Most of the world uses chronological age, where you are 0 at birth and gain a year each birthday. Traditional East Asian reckoning worked differently: in Korea's old counting system you were 1 at birth and everyone aged together on New Year's Day, so a baby born in late December could be 'two years old' within days. South Korea standardized on chronological age in 2023."}},
+  {"@type":"Question","name":"Can I calculate my age on a date other than today?","acceptedAnswer":{"@type":"Answer","text":"Yes. The reference date defaults to today, but you can change it to any past or future date — useful for checking how old you were on a specific day or how old you'll be at retirement, on a form's cutoff date, or at a future event."}},
+  {"@type":"Question","name":"Is my date of birth stored anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All calculations run in JavaScript inside your browser. The dates you enter are never transmitted to a server or saved."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/en"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/en">Tools</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/en">Home</a><span class="sep">›</span>
+    <span>Age Calculator</span>
+  </nav>
+
+  <h1>Age Calculator</h1>
+  <p class="lead">Enter your date of birth to get your exact age in years, months, and days — along with a countdown to your next birthday and the total number of days you've been alive.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field-row">
+      <div class="field" id="fBirth">
+        <label for="birth">Date of birth</label>
+        <input type="date" id="birth">
+        <div class="field-error" id="eBirth">Please enter your date of birth.</div>
+      </div>
+      <div class="field" id="fBase">
+        <label for="base">Age on this date</label>
+        <input type="date" id="base">
+        <div class="hint">Defaults to today. Change it to find your age on any other date.</div>
+        <div class="field-error" id="eBase">Please enter a reference date.</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">Calculate</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">Your age on the reference date</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>Exact age</span><b id="rExact"></b></div>
+        <div class="row"><span>Next birthday</span><b id="rNext"></b></div>
+        <div class="row"><span>Days lived (birth day included)</span><b id="rDays"></b></div>
+        <div class="row"><span>In months (approx.)</span><b id="rMonths"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">Copy result</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>How to use</h2>
+    <ol>
+      <li>Pick your date of birth from the calendar or type it in.</li>
+      <li>The reference date is set to today by default. If you want your age on a different day — a job application cutoff, a wedding, a retirement date — change it there.</li>
+      <li>Press Calculate. Your age in whole years appears in large type, with the exact years-months-days breakdown, next-birthday countdown, and total days lived below it.</li>
+      <li>Use Copy result to paste the summary into a message or note.</li>
+    </ol>
+
+    <h2>How age is calculated</h2>
+    <p>Chronological age — the system used almost everywhere today — starts at 0 on the day you're born and increases by one on each birthday. The formula is simple:</p>
+    <p><b>Age = reference year − birth year</b> (subtract 1 if this year's birthday hasn't happened yet; on the birthday itself, the new age applies).</p>
+    <p>The exact breakdown goes one step further: it counts the full years, then the full calendar months since your last birthday, then the leftover days. Someone born on March 15, 2000 is, on August 2, 2026, exactly 26 years, 4 months, and 18 days old.</p>
+    <h3>How age is counted in different cultures</h3>
+    <p>It hasn't always been this simple. Under the traditional East Asian counting system — historically used in Korea, China, Japan, and Vietnam — a baby was considered 1 year old at birth, and everyone gained a year together at New Year, not on their individual birthdays. A child born in late December could be "two" within a couple of weeks. Japan moved to chronological age by law in the 1950s, and South Korea, where the old "Korean age" persisted in everyday life the longest, officially standardized on chronological age in June 2023. If a Korean friend once gave you an age one or two years higher than you expected, that's why.</p>
+    <table>
+      <thead>
+        <tr><th>System</th><th>Age at birth</th><th>When it increases</th><th>Example: born Dec 31, 2000, on Jan 2, 2001</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Chronological (international)</td><td>0</td><td>On each birthday</td><td>0 years old</td></tr>
+        <tr><td>Traditional East Asian counting</td><td>1</td><td>At New Year, all at once</td><td>2 years old</td></tr>
+      </tbody>
+    </table>
+    <h3>Leap-year birthdays</h3>
+    <p>Roughly 1 in 1,461 people is born on February 29 — a date that only exists in leap years. For every other year, a convention is needed: this calculator (like the law in most places) rolls the birthday to <b>March 1</b> in non-leap years, while a few jurisdictions use February 28 instead. Either way, leap-day babies get their "real" birthday only once every four years, which makes for excellent birthday-party math: a 24-year-old leap-day baby has had just six actual birthdays.</p>
+
+    <h2>Good to know</h2>
+    <ul>
+      <li><b>Milestone planning</b>: set the reference date to a future birthday to see the countdown, or find the exact date you turn 10,000 days old — days lived is a surprisingly fun number to track.</li>
+      <li><b>Forms and eligibility</b>: many applications ask for your age "as of" a specific date. Enter that cutoff date as the reference date instead of today.</li>
+      <li><b>Half birthdays</b>: the months-and-days breakdown makes it easy to spot when you're exactly X years and 6 months — popular for kids' celebrations.</li>
+      <li>The "in months" figure divides your days lived by the average month length (30.44 days), so it's an approximation — handy for infants, whose age is usually given in months.</li>
+    </ul>
+    <p class="note">Results are for reference only. For legal or administrative matters that hinge on an exact age, follow the definition used by the relevant authority.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How is exact age calculated?</summary>
+        <p>Age in years equals the reference year minus the birth year, minus one if this year's birthday hasn't arrived yet. You turn a year older on your birthday itself. The months-and-days breakdown then counts full calendar months since the last birthday, with the remaining days on top.</p>
+      </details>
+      <details>
+        <summary>What if I was born on February 29?</summary>
+        <p>In non-leap years this calculator treats March 1 as the birthday, which is the convention used in many jurisdictions (others, such as parts of the US, use February 28). Your real birthday still only comes around every four years — a favorite bit of trivia for leap-day babies.</p>
+      </details>
+      <details>
+        <summary>Do all cultures count age the same way?</summary>
+        <p>No. Most of the world uses chronological age, where you are 0 at birth and gain a year each birthday. Traditional East Asian reckoning worked differently: in Korea's old counting system you were 1 at birth and everyone aged together on New Year's Day, so a baby born in late December could be "two years old" within days. South Korea standardized on chronological age in 2023.</p>
+      </details>
+      <details>
+        <summary>Can I calculate my age on a date other than today?</summary>
+        <p>Yes. The reference date defaults to today, but you can change it to any past or future date — useful for checking how old you were on a specific day or how old you'll be at retirement, on a form's cutoff date, or at a future event.</p>
+      </details>
+      <details>
+        <summary>Is my date of birth stored anywhere?</summary>
+        <p>No. All calculations run in JavaScript inside your browser. The dates you enter are never transmitted to a server or saved.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/en/dday"><div class="ico">📅</div><b>Date Calculator</b><span>Countdowns &amp; days between dates</span></a>
+      <a class="tool-card" href="/en/percent"><div class="ico">％</div><b>Percentage Calculator</b><span>% of a number, increase &amp; discount</span></a>
+      <a class="tool-card" href="/en/bmi"><div class="ico">⚖️</div><b>BMI Calculator</b><span>Body mass index &amp; weight category</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — free everyday calculators<br>
+      Results are for reference only.
+    </div>
+    <nav class="links">
+      <a href="/about">About (Korean)</a>
+      <a href="/privacy">Privacy (Korean)</a>
+      <a href="/terms">Terms (Korean)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var birthEl = $("birth"), baseEl = $("base");
+  var fBirth = $("fBirth"), fBase = $("fBase");
+  var result = $("result");
+  var DAY = 86400000;
+  var MO = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  function fmt(n, decimals) {
+    return Number(n).toLocaleString("en-US", {
+      minimumFractionDigits: decimals || 0,
+      maximumFractionDigits: decimals || 0
+    });
+  }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function toISO(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function parseDate(v) {
+    var p = v.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function fmtDate(d) { return MO[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear(); }
+  function plural(n, word) { return fmt(n) + " " + word + (n === 1 ? "" : "s"); }
+
+  /* Reference date defaults to today */
+  baseEl.value = toISO(new Date());
+
+  $("calcBtn").addEventListener("click", calc);
+  [birthEl, baseEl].forEach(function (el) {
+    el.addEventListener("keydown", function (e) { if (e.key === "Enter") calc(); });
+  });
+
+  var lastText = "";
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  function calc() {
+    var ok = true;
+    if (!birthEl.value) {
+      $("eBirth").textContent = "Please enter your date of birth.";
+      CM.invalid(fBirth, true); ok = false;
+    } else {
+      CM.invalid(fBirth, false);
+    }
+    if (!baseEl.value) {
+      CM.invalid(fBase, true); ok = false;
+    } else {
+      CM.invalid(fBase, false);
+    }
+    if (!ok) { result.hidden = true; return; }
+
+    var birth = parseDate(birthEl.value);
+    var base = parseDate(baseEl.value);
+    if (birth.getTime() > base.getTime()) {
+      $("eBirth").textContent = "The date of birth can't be after the reference date.";
+      CM.invalid(fBirth, true);
+      result.hidden = true;
+      return;
+    }
+
+    var yearDiff = base.getFullYear() - birth.getFullYear();
+    /* Birthday in the reference year — Feb 29 babies roll to Mar 1 in common years via Date overflow */
+    var bdayThisYear = new Date(base.getFullYear(), birth.getMonth(), birth.getDate());
+    var years = yearDiff - (base.getTime() < bdayThisYear.getTime() ? 1 : 0);
+
+    /* Exact breakdown: full months since the last birthday, plus leftover days */
+    var months = (base.getFullYear() - birth.getFullYear()) * 12 + (base.getMonth() - birth.getMonth());
+    var anchor = new Date(birth.getFullYear(), birth.getMonth() + months, birth.getDate());
+    if (anchor.getTime() > base.getTime()) {
+      months -= 1;
+      anchor = new Date(birth.getFullYear(), birth.getMonth() + months, birth.getDate());
+    }
+    var days = Math.round((base.getTime() - anchor.getTime()) / DAY);
+    var remMonths = months - years * 12;
+
+    /* Next birthday: if this year's has passed (or is today), it's next year's */
+    var next = bdayThisYear;
+    var isBirthdayToday = base.getTime() === bdayThisYear.getTime();
+    if (next.getTime() <= base.getTime()) {
+      next = new Date(base.getFullYear() + 1, birth.getMonth(), birth.getDate());
+    }
+    var dNext = Math.round((next.getTime() - base.getTime()) / DAY);
+    var lived = Math.round((base.getTime() - birth.getTime()) / DAY) + 1; /* birth day counted */
+
+    result.hidden = false;
+    $("rMain").textContent = plural(years, "year") + " old";
+    $("rExact").textContent = plural(years, "year") + ", " + plural(remMonths, "month") + ", " + plural(days, "day");
+    $("rNext").textContent = isBirthdayToday
+      ? "Happy birthday — it's today! 🎉"
+      : "in " + plural(dNext, "day") + " (" + fmtDate(next) + ")";
+    $("rDays").textContent = plural(lived, "day");
+    $("rMonths").textContent = "about " + fmt(lived / 30.44, 1) + " months";
+
+    lastText = "[Age Calculator] Born " + fmtDate(birth) + ", as of " + fmtDate(base) +
+      " → " + plural(years, "year") + ", " + plural(remMonths, "month") + ", " + plural(days, "day") + " old; " +
+      (isBirthdayToday ? "birthday today" : "next birthday in " + plural(dNext, "day")) +
+      "; " + plural(lived, "day") + " lived (calcmoa.site)";
+  }
+});
+</script>
+</body>
+</html>
