@@ -167,6 +167,23 @@
     </ul>
     <p class="note">か月・年への換算は平均値に基づく近似値です。計算はすべてお使いのブラウザー内だけで行われ、入力した日付が送信・保存されることはありません。</p>
 
+    <h2>クリスマス・お正月まであと何日?</h2>
+    <p>「クリスマスまであと何日?」「お正月まであと何日?」と気になったときは、こちらの一覧をご覧ください。日本でよく検索される人気イベントまでの残り日数を、今日を基準に自動で表示しています。表のイベント以外の日付は、上のカウントダウンに目標日を入れればすぐに計算できます。</p>
+    <table id="popularCountdown">
+      <thead>
+        <tr><th>イベント</th><th>日付</th><th>あと何日</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ハロウィン</td><td>10月31日</td><td data-date="2026-10-31">計算中…</td></tr>
+        <tr><td>クリスマス</td><td>12月25日</td><td data-date="2026-12-25">計算中…</td></tr>
+        <tr><td>大晦日</td><td>12月31日</td><td data-date="2026-12-31">計算中…</td></tr>
+        <tr><td>お正月2027</td><td>2027年1月1日</td><td data-date="2027-01-01">計算中…</td></tr>
+        <tr><td>バレンタイン</td><td>2月14日</td><td data-date="2027-02-14">計算中…</td></tr>
+        <tr><td>ゴールデンウィーク開始</td><td>4月29日(昭和の日)</td><td data-date="2027-04-29">計算中…</td></tr>
+      </tbody>
+    </table>
+    <p>残り日数は、このページを開いた日の午前0時を基準に毎日自動で更新されます。誕生日や記念日まであと何日かを年齢と一緒に確認したい場合は、<a href="/ja/age">年齢計算</a>もあわせてご利用ください。</p>
+
     <h2>よくある質問</h2>
     <div class="faq">
       <details>
@@ -368,6 +385,16 @@ document.addEventListener("DOMContentLoaded", function () {
     else if (mode === "diff") { calcDiff(); }
     else { calcAdd(); }
   }
+
+  /* 人気イベントのカウントダウン(静的な日付をdata-date属性から読み取り) */
+  Array.prototype.forEach.call(document.querySelectorAll("#popularCountdown [data-date]"), function (el) {
+    var d = parseDate(el.getAttribute("data-date"));
+    if (!d) return;
+    var diff = diffDays(todayMid(), d);
+    if (diff > 0) { el.textContent = "あと" + fmt(diff) + "日"; }
+    else if (diff === 0) { el.textContent = "本日です"; }
+    else { el.textContent = fmt(-diff) + "日経過"; }
+  });
 
   $("calcBtn").addEventListener("click", calc);
   Array.prototype.forEach.call(document.querySelectorAll(".calc-card input"), function (el) {
