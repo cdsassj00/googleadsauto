@@ -525,3 +525,25 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; }
 /* 배너 공간 확보: 본문·헤더를 36px 아래로 */
 body { padding-top: 36px; }
 .site-header { top: 36px; }
+
+/* ---------- 언어 스위처 (헤더 🌐 드롭다운) ---------- */
+.lang { position: relative; }
+.lang summary {
+  list-style: none; cursor: pointer;
+  color: var(--sub); font-size: 15px; font-weight: 600;
+  padding: 5px 11px; border-radius: 999px;
+  transition: color .15s, background .15s;
+}
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary:hover { color: var(--ink); background: rgba(255, 255, 255, .1); }
+.lang-menu {
+  position: absolute; right: 0; top: calc(100% + 8px);
+  background: var(--surface); border: 1px solid var(--line2);
+  border-radius: 13px; padding: 6px; min-width: 132px;
+  display: grid; gap: 2px; box-shadow: var(--shadow-lift); z-index: 60;
+}
+.lang-menu a {
+  display: block; padding: 8px 12px; border-radius: 9px;
+  color: var(--body); font-size: 13.5px; font-weight: 600;
+}
+.lang-menu a:hover { background: var(--tint); color: var(--ink); }
