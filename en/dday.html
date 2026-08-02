@@ -178,6 +178,23 @@
     </ul>
     <p class="note">Month and year conversions are average-based approximations. All calculations run entirely in your browser; the dates you enter are never sent anywhere or stored.</p>
 
+    <h2>How many days until Christmas, New Year and more?</h2>
+    <p>These are some of the most-counted-down dates on the calendar. The event names and dates below are fixed; the "days left" column updates automatically every time the page loads, so it's always current. Click any date into the Countdown tab above to see the full breakdown in weeks and months.</p>
+    <table>
+      <thead>
+        <tr><th>Event</th><th>Date</th><th>Days left</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Halloween</td><td>October 31, 2026 (Saturday)</td><td><span data-date="2026-10-31">—</span></td></tr>
+        <tr><td>Thanksgiving 2026</td><td>November 26, 2026 (fourth Thursday of November)</td><td><span data-date="2026-11-26">—</span></td></tr>
+        <tr><td>Christmas Day</td><td>December 25, 2026 (Friday)</td><td><span data-date="2026-12-25">—</span></td></tr>
+        <tr><td>New Year's Day 2027</td><td>January 1, 2027 (Friday)</td><td><span data-date="2027-01-01">—</span></td></tr>
+        <tr><td>Valentine's Day</td><td>February 14, 2027 (Sunday)</td><td><span data-date="2027-02-14">—</span></td></tr>
+        <tr><td>Independence Day</td><td>July 4, 2027 (Sunday)</td><td><span data-date="2027-07-04">—</span></td></tr>
+      </tbody>
+    </table>
+    <p>Counting down to a birthday instead? The <a href="/en/age">Age Calculator</a> tells you exactly how old you'll be — in years, months, and days — when the big day arrives.</p>
+
     <h2>Frequently asked questions</h2>
     <div class="faq">
       <details>
@@ -272,6 +289,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ["ddTarget", "dfA", "dfB", "daBase"].forEach(function (id) {
     $(id).value = toInput(todayMid());
+  });
+
+  /* Fill the "Popular countdowns" table: static dates live in data-date attributes. */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-date]"), function (el) {
+    var t = parseDate(el.getAttribute("data-date"));
+    if (!t) return;
+    var d = diffDays(todayMid(), t);
+    if (d > 0) { el.textContent = plural(d, "day"); }
+    else if (d === 0) { el.textContent = "Today!"; }
+    else { el.textContent = plural(-d, "day") + " ago"; }
   });
 
   var mode = "dday";
