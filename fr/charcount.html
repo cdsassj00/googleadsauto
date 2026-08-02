@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Compteur de caractères - Lettres, mots, SMS</title>
+<meta name="description" content="Comptez en temps réel les caractères (espaces compris ou non), les mots, les lignes et le poids en octets d'un texte. Limites utiles incluses : SMS 160 caractères, X 280, méta description 155. Gratuit, sans envoi de données.">
+<link rel="canonical" href="https://calcmoa.site/fr/charcount">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/charcount">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/charcount">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/charcount">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/charcount">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/charcount">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Compteur de caractères - Lettres, mots, SMS">
+<meta property="og:description" content="Caractères avec ou sans espaces, mots, lignes, octets UTF-8 et segments SMS comptés instantanément pendant la saisie.">
+<meta property="og:url" content="https://calcmoa.site/fr/charcount">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Compteur de caractères","url":"https://calcmoa.site/fr/charcount","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"fr"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"fr","mainEntity":[
+  {"@type":"Question","name":"Les limites de caractères comptent-elles les espaces ?","acceptedAnswer":{"@type":"Answer","text":"Dans la grande majorité des cas, oui : lettres de motivation en ligne, Parcoursup, réseaux sociaux et SMS comptent les espaces. Certaines consignes académiques précisent au contraire « espaces non compris ». Ce compteur affiche les deux valeurs : vérifiez la consigne, et en l'absence de précision, partez du principe que les espaces comptent."}},
+  {"@type":"Question","name":"Pourquoi mon SMS avec accents est-il limité à 70 caractères ?","acceptedAnswer":{"@type":"Answer","text":"Un SMS standard contient 160 caractères en alphabet GSM-7, qui couvre les lettres non accentuées et quelques caractères accentués courants (é, è, à, ù…). Dès qu'un caractère hors de cet alphabet apparaît (ê, ç majuscule, œ, emoji…), le message bascule en encodage UCS-2 et la limite tombe à 70 caractères par segment. Les messages plus longs sont découpés en segments de 153 (GSM-7) ou 67 (UCS-2) caractères."}},
+  {"@type":"Question","name":"Quelle longueur pour une méta description ?","acceptedAnswer":{"@type":"Answer","text":"Environ 155 caractères espaces comprises : au-delà, Google tronque souvent le texte dans les résultats de recherche. Visez 120 à 155 caractères pour que la description reste entière et incitative."}},
+  {"@type":"Question","name":"Comment les mots sont-ils comptés ?","acceptedAnswer":{"@type":"Answer","text":"Le texte est découpé sur les espaces et les retours à la ligne ; chaque bloc non vide compte pour un mot. « L'apostrophe » compte donc pour un seul mot, comme dans le compteur de la plupart des traitements de texte. Le résultat peut différer légèrement d'un outil à l'autre selon le traitement des tirets et de la ponctuation."}},
+  {"@type":"Question","name":"Mon texte est-il envoyé à un serveur ?","acceptedAnswer":{"@type":"Answer","text":"Non. Tout le comptage est effectué en JavaScript dans votre navigateur : le texte collé n'est ni transmis ni enregistré. Vous pouvez y coller sans crainte une lettre de motivation ou tout autre texte personnel."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/fr"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/fr">Outils</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/fr">Accueil</a><span class="sep">›</span>
+    <span>Compteur de caractères</span>
+  </nav>
+
+  <h1>Compteur de caractères</h1>
+  <p class="lead">Collez votre texte : caractères (espaces compris ou non), mots, lignes, octets et segments SMS sont comptés instantanément. Idéal pour une lettre de motivation, un tweet ou une méta description.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label for="txt">Votre texte</label>
+      <textarea id="txt" rows="10" placeholder="Collez ou saisissez votre texte ici"></textarea>
+      <div class="hint">Les compteurs se mettent à jour pendant la saisie. Le texte n'est ni transmis ni enregistré.</div>
+    </div>
+    <button type="button" class="btn btn-ghost" id="clearBtn">Effacer</button>
+
+    <div class="result" id="result">
+      <div class="label">Caractères (espaces comprises)</div>
+      <div class="big" id="rMain">0</div>
+      <div class="rows">
+        <div class="row"><span>Caractères sans les espaces</span><b id="rNoSpace">0</b></div>
+        <div class="row"><span>Mots</span><b id="rWords">0</b></div>
+        <div class="row"><span>Lignes</span><b id="rLines">0</b></div>
+        <div class="row"><span>Poids en octets (UTF-8)</span><b id="rBytesUtf8">0 octet</b></div>
+        <div class="row"><span>Segments SMS (GSM-7, 160/153 car.)</span><b id="rSms">0</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>Mode d'emploi</h2>
+    <ol>
+      <li>Saisissez ou collez votre texte dans la zone ci-dessus.</li>
+      <li>Aucun bouton à presser : les caractères, mots, lignes, octets et segments SMS se mettent à jour en direct pendant la frappe.</li>
+      <li>Repérez la valeur qui correspond à votre contrainte : espaces comprises ou non, nombre de mots, octets ou segments SMS.</li>
+      <li>Pour vérifier un nouveau texte, cliquez sur <b>Effacer</b> et collez le suivant.</li>
+    </ol>
+
+    <h2>Ce que compte chaque indicateur</h2>
+    <p>Un même texte donne des chiffres différents selon la règle de comptage. Voici les conventions utilisées par cet outil :</p>
+    <table>
+      <thead>
+        <tr><th>Indicateur</th><th>Règle</th><th>Remarque</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Caractères, espaces comprises</td><td>tous les caractères, espaces et retours à la ligne inclus</td><td>règle la plus répandue (formulaires, réseaux sociaux)</td></tr>
+        <tr><td>Caractères sans les espaces</td><td>après suppression des espaces, tabulations et retours à la ligne</td><td>utilisée par certaines consignes académiques</td></tr>
+        <tr><td>Mots</td><td>blocs séparés par des espaces ou retours à la ligne</td><td>proche du compteur des traitements de texte</td></tr>
+        <tr><td>Lignes</td><td>nombre de lignes, séparées par les retours à la ligne</td><td>texte vide = 0 ligne</td></tr>
+        <tr><td>Octets (UTF-8)</td><td>poids réel du texte encodé en UTF-8</td><td>les lettres accentuées pèsent 2 octets, les emojis 4</td></tr>
+        <tr><td>Segments SMS</td><td>160 caractères pour 1 SMS, puis 153 par segment (GSM-7)</td><td>70/67 caractères si le texte sort de l'alphabet GSM</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Les limites de caractères à connaître</h2>
+    <p>Quelques plafonds courants, tous comptés espaces comprises :</p>
+    <table>
+      <thead>
+        <tr><th>Support</th><th>Limite</th><th>Remarque</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SMS (alphabet GSM-7)</td><td>160 caractères</td><td>153 par segment au-delà ; 70 si caractères spéciaux</td></tr>
+        <tr><td>Publication X (Twitter)</td><td>280 caractères</td><td>les liens comptent pour 23 caractères</td></tr>
+        <tr><td>Méta description (SEO)</td><td>≈ 155 caractères</td><td>souvent tronquée au-delà dans les résultats Google</td></tr>
+        <tr><td>Titre de page (SEO)</td><td>≈ 60 caractères</td><td>selon la largeur en pixels affichée par Google</td></tr>
+        <tr><td>Projet de formation motivé (Parcoursup)</td><td>1 500 caractères</td><td>espaces comprises</td></tr>
+        <tr><td>Légende Instagram</td><td>2 200 caractères</td><td>repliée après les premières lignes</td></tr>
+      </tbody>
+    </table>
+    <h3>Pourquoi un SMS accentué « rétrécit » à 70 caractères</h3>
+    <p>Le SMS classique utilise l'alphabet GSM-7, qui code chaque caractère sur 7 bits et autorise 160 caractères par message. Cet alphabet couvre les lettres non accentuées et quelques accents fréquents du français (é, è, à, ù, notamment) — mais pas ê, î, ô, œ ni les emojis. Dès qu'un seul caractère sort de cet alphabet, tout le message passe en UCS-2 et la limite chute à <b>70 caractères</b> (67 par segment pour un message long). C'est pour cela que certains expéditeurs professionnels écrivent « francais » sans cédille : chaque segment supplémentaire est facturé.</p>
+    <h3>Rédiger dans la limite : quelques repères</h3>
+    <p>Pour une lettre de motivation ou un dossier en ligne limité à 1 500 caractères, visez au moins 90 % de la limite : un texte trop court paraît peu travaillé, et un dépassement est tronqué ou bloqué à l'envoi. Attention également aux copier-coller depuis un traitement de texte : apostrophes typographiques, tirets longs et retours à la ligne peuvent être comptés différemment par le formulaire cible. Vérifiez toujours le compteur du système final juste avant l'envoi.</p>
+    <p class="note">Les totaux affichés sont des valeurs indicatives. Le système dans lequel vous collerez le texte peut appliquer des règles légèrement différentes (retours à la ligne, caractères spéciaux) : faites la vérification finale sur place.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq">
+      <details><summary>Les limites de caractères comptent-elles les espaces ?</summary><p>Dans la grande majorité des cas, oui : lettres de motivation en ligne, Parcoursup, réseaux sociaux et SMS comptent les espaces. Certaines consignes académiques précisent au contraire « espaces non compris ». Ce compteur affiche les deux valeurs : vérifiez la consigne, et en l'absence de précision, partez du principe que les espaces comptent.</p></details>
+      <details><summary>Pourquoi mon SMS avec accents est-il limité à 70 caractères ?</summary><p>Un SMS standard contient 160 caractères en alphabet GSM-7, qui couvre les lettres non accentuées et quelques caractères accentués courants (é, è, à, ù…). Dès qu'un caractère hors de cet alphabet apparaît (ê, ç majuscule, œ, emoji…), le message bascule en encodage UCS-2 et la limite tombe à 70 caractères par segment. Les messages plus longs sont découpés en segments de 153 (GSM-7) ou 67 (UCS-2) caractères.</p></details>
+      <details><summary>Quelle longueur pour une méta description ?</summary><p>Environ 155 caractères espaces comprises : au-delà, Google tronque souvent le texte dans les résultats de recherche. Visez 120 à 155 caractères pour que la description reste entière et incitative.</p></details>
+      <details><summary>Comment les mots sont-ils comptés ?</summary><p>Le texte est découpé sur les espaces et les retours à la ligne ; chaque bloc non vide compte pour un mot. « L'apostrophe » compte donc pour un seul mot, comme dans le compteur de la plupart des traitements de texte. Le résultat peut différer légèrement d'un outil à l'autre selon le traitement des tirets et de la ponctuation.</p></details>
+      <details><summary>Mon texte est-il envoyé à un serveur ?</summary><p>Non. Tout le comptage est effectué en JavaScript dans votre navigateur : le texte collé n'est ni transmis ni enregistré. Vous pouvez y coller sans crainte une lettre de motivation ou tout autre texte personnel.</p></details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Autres calculateurs</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/fr/percent"><div class="ico">📊</div><b>Calculateur de pourcentage</b><span>Remise, variation, part d'un total</span></a>
+      <a class="tool-card" href="/fr/dday"><div class="ico">📅</div><b>Calculateur de jours</b><span>Compte à rebours et jours entre deux dates</span></a>
+      <a class="tool-card" href="/fr/age"><div class="ico">🎂</div><b>Calculateur d'âge</b><span>Âge exact en années, mois et jours</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — des calculateurs gratuits pour la vie de tous les jours.<br>
+      Les résultats sont fournis à titre indicatif et n'ont aucune valeur juridique.
+    </div>
+    <nav class="links">
+      <a href="/about">À propos (coréen)</a>
+      <a href="/privacy">Confidentialité (coréen)</a>
+      <a href="/terms">Conditions (coréen)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var txt = document.getElementById("txt");
+  var clearBtn = document.getElementById("clearBtn");
+  var rMain = document.getElementById("rMain");
+  var rNoSpace = document.getElementById("rNoSpace");
+  var rWords = document.getElementById("rWords");
+  var rLines = document.getElementById("rLines");
+  var rBytesUtf8 = document.getElementById("rBytesUtf8");
+  var rSms = document.getElementById("rSms");
+
+  function fmt(n) { return Number(n).toLocaleString("fr-FR"); }
+
+  /* Alphabet GSM-7 de base + extension (approximation raisonnable pour le comptage SMS) */
+  var GSM = "@£$¥èéùìòÇ\nØø\rÅåΔ_ΦΓΛΩΠΨΣΘΞÆæßÉ !\"#¤%&'()*+,-./0123456789:;<=>?¡ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà";
+  var GSM_EXT = "^{}\\[~]|€";
+  function smsSegments(t) {
+    if (t.length === 0) return { seg: 0, enc: "GSM-7" };
+    var isGsm = true, units = 0;
+    for (var i = 0; i < t.length; i++) {
+      var c = t.charAt(i);
+      if (GSM.indexOf(c) > -1) { units += 1; }
+      else if (GSM_EXT.indexOf(c) > -1) { units += 2; }
+      else { isGsm = false; break; }
+    }
+    if (isGsm) {
+      return { seg: units <= 160 ? 1 : Math.ceil(units / 153), enc: "GSM-7" };
+    }
+    /* UCS-2 : compte en unités UTF-16 */
+    var n = t.length;
+    return { seg: n <= 70 ? 1 : Math.ceil(n / 67), enc: "UCS-2" };
+  }
+
+  function utf8Bytes(t) {
+    return new Blob([t]).size;
+  }
+
+  function update() {
+    var t = txt.value;
+    var withSpace = t.length;
+    var noSpace = t.replace(/\s/g, "").length;
+    var words = t.split(/\s+/).filter(function (w) { return w.length > 0; }).length;
+    var lines = t.length === 0 ? 0 : t.split(/\n/).length;
+    var utf8 = utf8Bytes(t);
+    var sms = smsSegments(t);
+
+    rMain.textContent = fmt(withSpace);
+    rNoSpace.textContent = fmt(noSpace);
+    rWords.textContent = fmt(words);
+    rLines.textContent = fmt(lines);
+    rBytesUtf8.textContent = fmt(utf8) + (utf8 > 1 ? " octets" : " octet");
+    rSms.textContent = sms.seg === 0 ? "0" : fmt(sms.seg) + " (" + sms.enc + ")";
+  }
+
+  txt.addEventListener("input", update);
+  clearBtn.addEventListener("click", function () {
+    txt.value = "";
+    update();
+    txt.focus();
+  });
+
+  update();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Calculateur d'intérêts composés - Épargne et placement</title>
+<meta name="description" content="Capital initial, versements mensuels, taux annuel et durée : calculez la valeur finale de votre épargne en intérêts composés (capitalisation annuelle ou mensuelle), le gain total et le temps de doublement selon la règle des 72.">
+<link rel="canonical" href="https://calcmoa.site/fr/compound">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/compound">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/compound">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/compound">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/compound">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/compound">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur d'intérêts composés - Épargne et placement">
+<meta property="og:description" content="Valeur finale d'un placement en intérêts composés, gain total, multiple du capital investi et règle des 72, avec versements mensuels optionnels.">
+<meta property="og:url" content="https://calcmoa.site/fr/compound">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur d'intérêts composés","url":"https://calcmoa.site/fr/compound","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"fr"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"fr","mainEntity":[
+  {"@type":"Question","name":"Quelle différence entre intérêts simples et intérêts composés ?","acceptedAnswer":{"@type":"Answer","text":"Avec les intérêts simples, seul le capital initial produit des intérêts ; avec les intérêts composés, les intérêts générés produisent eux-mêmes des intérêts. Un capital de 10 000 € placé à 5 % par an pendant 20 ans donne 20 000 € en intérêts simples, mais environ 26 533 € en intérêts composés annuels. Plus la durée s'allonge, plus l'écart se creuse de façon exponentielle."}},
+  {"@type":"Question","name":"Qu'est-ce que la règle des 72 ?","acceptedAnswer":{"@type":"Answer","text":"Une formule d'approximation pour estimer le temps nécessaire au doublement d'un capital : on divise 72 par le taux annuel en pourcentage. À 6 % par an, il faut environ 72 ÷ 6 = 12 ans ; à 8 %, environ 9 ans. La valeur exacte s'obtient avec log(2)/log(1+r), mais l'approximation reste très bonne entre 4 % et 12 %."}},
+  {"@type":"Question","name":"Capitalisation annuelle ou mensuelle : laquelle est la plus avantageuse ?","acceptedAnswer":{"@type":"Answer","text":"À taux annuel identique, la capitalisation mensuelle est légèrement plus avantageuse, car les intérêts sont plus souvent ajoutés au capital et produisent à leur tour des intérêts. La différence reste modeste pour des taux à un chiffre. En pratique, c'est le produit financier qui fixe la fréquence de capitalisation : utilisez les deux modes pour comparer."}},
+  {"@type":"Question","name":"Les impôts et les frais sont-ils pris en compte ?","acceptedAnswer":{"@type":"Answer","text":"Non. Ce calculateur donne une estimation brute, avant impôts et frais. En France, les revenus de placements sont en général soumis au prélèvement forfaitaire unique de 30 % (sauf produits exonérés comme le Livret A), et les frais de gestion ou de courtage réduisent aussi le rendement réel, tout comme l'inflation."}},
+  {"@type":"Question","name":"Pourquoi le résultat annuel diffère-t-il du résultat mensuel quand je fais des versements mensuels ?","acceptedAnswer":{"@type":"Answer","text":"En mode annuel, les versements mensuels sont regroupés en un versement annuel (mensualité × 12), ce qui est une approximation. Pour refléter fidèlement des versements effectués chaque mois, la formule mensuelle est plus adaptée : préférez la capitalisation mensuelle dès que vous renseignez un versement mensuel."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/fr"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/fr">Outils</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/fr">Accueil</a><span class="sep">›</span>
+    <span>Intérêts composés</span>
+  </nav>
+
+  <h1>Calculateur d'intérêts composés</h1>
+  <p class="lead">Capital initial, versements mensuels, taux annuel et durée : obtenez la valeur finale de votre épargne, le gain total et le temps nécessaire pour doubler votre capital (règle des 72).</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fPrincipal">
+      <label for="principal">Capital initial (€)</label>
+      <input type="text" id="principal" inputmode="numeric" placeholder="10000" autocomplete="off">
+      <div class="hint">Somme placée au départ. Ex. : 10 000 € → 10000</div>
+      <div class="field-error">Veuillez saisir un capital initial supérieur ou égal à 0 (0 si vous n'épargnez que mensuellement).</div>
+    </div>
+    <div class="field" id="fMonthly">
+      <label for="monthly">Versement mensuel (€)</label>
+      <input type="text" id="monthly" inputmode="numeric" placeholder="0" autocomplete="off">
+      <div class="hint">Montant ajouté chaque mois. Laissez vide ou 0 si aucun.</div>
+      <div class="field-error">Veuillez saisir un versement mensuel supérieur ou égal à 0.</div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fRate">
+        <label for="rate">Taux annuel (%)</label>
+        <input type="number" id="rate" inputmode="decimal" step="0.01" min="0" placeholder="5,0" autocomplete="off">
+        <div class="hint">Rendement nominal brut, avant impôts. Ex. : 5</div>
+        <div class="field-error">Veuillez saisir un taux annuel supérieur ou égal à 0.</div>
+      </div>
+      <div class="field" id="fYears">
+        <label for="years">Durée (années)</label>
+        <input type="text" id="years" inputmode="numeric" placeholder="20" autocomplete="off">
+        <div class="hint">Ex. : 10 ans → 10</div>
+        <div class="field-error">Veuillez saisir une durée d'au moins 1 an.</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Fréquence de capitalisation</label>
+      <div class="seg" id="segFreq">
+        <button type="button" class="on" data-freq="yearly">Annuelle</button>
+        <button type="button" data-freq="monthly">Mensuelle</button>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">Calculer</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">Valeur finale du placement</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>Total des sommes versées</span><b id="rInvested"></b></div>
+        <div class="row"><span>Gain total (intérêts)</span><b id="rProfit"></b></div>
+        <div class="row"><span>Multiple du capital investi</span><b id="rMultiple"></b></div>
+        <div class="row"><span>Temps de doublement (règle des 72)</span><b id="rDouble"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">Copier le résultat</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>Mode d'emploi</h2>
+    <ol>
+      <li>Saisissez le capital initial. Si vous partez de zéro et n'épargnez que mensuellement, indiquez 0.</li>
+      <li>Renseignez le versement mensuel éventuel. Laissez vide ou 0 si vous placez uniquement un capital de départ.</li>
+      <li>Indiquez le taux annuel attendu (%) et la durée du placement en années.</li>
+      <li>Choisissez la fréquence de capitalisation. Avec des versements mensuels, la capitalisation mensuelle est recommandée.</li>
+      <li>Cliquez sur <b>Calculer</b> : la valeur finale, le total versé, le gain, le multiple du capital et le temps de doublement selon la règle des 72 s'affichent.</li>
+    </ol>
+
+    <h2>Les formules utilisées</h2>
+    <p>En notant P le capital initial, r le taux annuel (en décimal) et t la durée en années, le calculateur applique les formules suivantes :</p>
+    <table>
+      <thead>
+        <tr><th>Cas</th><th>Formule</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Capitalisation annuelle · capital</td><td>VF = P × (1+r)<sup>t</sup></td></tr>
+        <tr><td>Capitalisation annuelle · versements (approx. annuelle)</td><td>versement annuel A = mensualité × 12, VF = A × ((1+r)<sup>t</sup> − 1) ÷ r</td></tr>
+        <tr><td>Capitalisation mensuelle · capital</td><td>i = r/12, n = t×12, VF = P × (1+i)<sup>n</sup></td></tr>
+        <tr><td>Capitalisation mensuelle · versements</td><td>VF = mensualité × ((1+i)<sup>n</sup> − 1) ÷ i</td></tr>
+      </tbody>
+    </table>
+    <p>Si le taux est de 0 %, il n'y a pas d'intérêts : la valeur finale est simplement la somme des versements. En mode annuel, les versements mensuels sont regroupés par année (approximation) ; dès que vous épargnez chaque mois, le mode mensuel colle mieux à la réalité des flux.</p>
+    <p>Pour mesurer l'écart entre intérêts simples et composés : 10 000 € placés à 5 % pendant 20 ans donnent 10 000 × (1 + 0,05 × 20) = 20 000 € en intérêts simples, contre 10 000 × 1,05<sup>20</sup> ≈ <b>26 533 €</b> en intérêts composés annuels. Même taux, même durée, mais environ 6 533 € d'écart — et la différence explose sur 30 ou 40 ans.</p>
+    <table>
+      <thead>
+        <tr><th>Méthode</th><th>Valeur après 20 ans (10 000 € à 5 %/an)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Intérêts simples</td><td>20 000 €</td></tr>
+        <tr><td>Intérêts composés annuels</td><td>env. 26 533 €</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Estimation brute, hors impôts, frais et inflation. En France, la plupart des revenus de placements sont soumis au prélèvement forfaitaire unique (30 %), à l'exception de livrets réglementés exonérés comme le Livret A. Le rendement réellement perçu dépend du produit et de sa fiscalité.</p>
+
+    <h2>Bon à savoir</h2>
+    <p>La <b>règle des 72</b> permet d'estimer de tête le temps de doublement d'un capital : divisez 72 par le taux annuel en pourcentage. À 4 %, comptez environ 18 ans ; à 6 %, environ 12 ans ; à 8 %, environ 9 ans. La valeur exacte se calcule avec log(2)/log(1+r), mais entre 4 % et 12 % l'approximation est largement suffisante pour un calcul mental rapide.</p>
+    <p>Le vrai moteur des intérêts composés, c'est le <b>temps</b>. Au début, la courbe ressemble à celle des intérêts simples ; mais comme les intérêts produisent eux-mêmes des intérêts, elle s'accélère nettement avec les années. Par exemple, 300 € versés chaque mois à 6 % en capitalisation mensuelle donnent environ 49 164 € au bout de 10 ans, pour 36 000 € versés — soit plus de 13 000 € de gain. Sur 20 ans, l'effet est démultiplié : commencer tôt et tenir dans la durée compte autant que gagner un point de rendement.</p>
+    <p>Distinguez enfin le <b>gain total</b> du <b>multiple du capital investi</b> : ce dernier (valeur finale ÷ total versé) permet de comparer d'un coup d'œil l'efficacité de différents couples durée/taux. Amusez-vous à faire varier le taux d'un point ou la durée de cinq ans pour visualiser la sensibilité de votre plan d'épargne.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq">
+      <details>
+        <summary>Quelle différence entre intérêts simples et intérêts composés ?</summary>
+        <p>Avec les intérêts simples, seul le capital initial produit des intérêts ; avec les intérêts composés, les intérêts générés produisent eux-mêmes des intérêts. Un capital de 10 000 € placé à 5 % par an pendant 20 ans donne 20 000 € en intérêts simples, mais environ 26 533 € en intérêts composés annuels. Plus la durée s'allonge, plus l'écart se creuse de façon exponentielle.</p>
+      </details>
+      <details>
+        <summary>Qu'est-ce que la règle des 72 ?</summary>
+        <p>Une formule d'approximation pour estimer le temps nécessaire au doublement d'un capital : on divise 72 par le taux annuel en pourcentage. À 6 % par an, il faut environ 72 ÷ 6 = 12 ans ; à 8 %, environ 9 ans. La valeur exacte s'obtient avec log(2)/log(1+r), mais l'approximation reste très bonne entre 4 % et 12 %.</p>
+      </details>
+      <details>
+        <summary>Capitalisation annuelle ou mensuelle : laquelle est la plus avantageuse ?</summary>
+        <p>À taux annuel identique, la capitalisation mensuelle est légèrement plus avantageuse, car les intérêts sont plus souvent ajoutés au capital et produisent à leur tour des intérêts. La différence reste modeste pour des taux à un chiffre. En pratique, c'est le produit financier qui fixe la fréquence de capitalisation : utilisez les deux modes pour comparer.</p>
+      </details>
+      <details>
+        <summary>Les impôts et les frais sont-ils pris en compte ?</summary>
+        <p>Non. Ce calculateur donne une estimation brute, avant impôts et frais. En France, les revenus de placements sont en général soumis au prélèvement forfaitaire unique de 30 % (sauf produits exonérés comme le Livret A), et les frais de gestion ou de courtage réduisent aussi le rendement réel, tout comme l'inflation.</p>
+      </details>
+      <details>
+        <summary>Pourquoi le résultat annuel diffère-t-il du résultat mensuel quand je fais des versements mensuels ?</summary>
+        <p>En mode annuel, les versements mensuels sont regroupés en un versement annuel (mensualité × 12), ce qui est une approximation. Pour refléter fidèlement des versements effectués chaque mois, la formule mensuelle est plus adaptée : préférez la capitalisation mensuelle dès que vous renseignez un versement mensuel.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Autres calculateurs</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/fr/percent"><div class="ico">📊</div><b>Calculateur de pourcentage</b><span>Remise, variation, part d'un total</span></a>
+      <a class="tool-card" href="/fr/dday"><div class="ico">📅</div><b>Calculateur de jours</b><span>Compte à rebours et jours entre deux dates</span></a>
+      <a class="tool-card" href="/fr/age"><div class="ico">🎂</div><b>Calculateur d'âge</b><span>Âge exact en années, mois et jours</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — des calculateurs gratuits pour la vie de tous les jours.<br>
+      Les résultats sont fournis à titre indicatif et n'ont aucune valeur juridique.
+    </div>
+    <nav class="links">
+      <a href="/about">À propos (coréen)</a>
+      <a href="/privacy">Confidentialité (coréen)</a>
+      <a href="/terms">Conditions (coréen)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  var freq = "yearly"; /* yearly (annuelle) | monthly (mensuelle) */
+
+  Array.prototype.forEach.call($("segFreq").querySelectorAll("button"), function (btn) {
+    btn.addEventListener("click", function () {
+      Array.prototype.forEach.call($("segFreq").querySelectorAll("button"), function (b) {
+        b.classList.toggle("on", b === btn);
+      });
+      freq = btn.getAttribute("data-freq");
+    });
+  });
+
+  function fmt(n, d) {
+    return Number(n).toLocaleString("fr-FR", { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
+  }
+  function euros(n) { return fmt(Math.round(n)) + " €"; }
+  function intVal(el, allowEmptyZero) {
+    var v = String(el.value).replace(/[^\d]/g, "");
+    if (v === "") return allowEmptyZero ? 0 : NaN;
+    return Number(v);
+  }
+  /* Taux : accepte virgule ou point */
+  function floatVal(el) {
+    var v = String(el.value).trim().replace(",", ".");
+    return v === "" ? NaN : Number(v);
+  }
+
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var P = intVal($("principal"), true);
+    var monthly = intVal($("monthly"), true);
+    var ratePct = floatVal($("rate"));
+    var t = intVal($("years"), false);
+
+    var ok = true;
+    if (!(P >= 0)) { CM.invalid($("fPrincipal"), true); ok = false; } else { CM.invalid($("fPrincipal"), false); }
+    if (!(monthly >= 0)) { CM.invalid($("fMonthly"), true); ok = false; } else { CM.invalid($("fMonthly"), false); }
+    if (!(ratePct >= 0) || !isFinite(ratePct)) { CM.invalid($("fRate"), true); ok = false; } else { CM.invalid($("fRate"), false); }
+    if (!(t >= 1)) { CM.invalid($("fYears"), true); ok = false; } else { CM.invalid($("fYears"), false); }
+    if (ok && P === 0 && monthly === 0) { CM.invalid($("fPrincipal"), true); ok = false; }
+    if (!ok) return;
+
+    var r = ratePct / 100;
+    var invested = P + monthly * 12 * t;
+    var fv;
+
+    if (r === 0) {
+      fv = invested;
+    } else if (freq === "yearly") {
+      /* Capitalisation annuelle : capital + versements regroupés par an (A = mensualité × 12) */
+      var A = monthly * 12;
+      fv = P * Math.pow(1 + r, t) + A * (Math.pow(1 + r, t) - 1) / r;
+    } else {
+      /* Capitalisation mensuelle */
+      var i = r / 12;
+      var n = t * 12;
+      fv = P * Math.pow(1 + i, n) + monthly * (Math.pow(1 + i, n) - 1) / i;
+    }
+
+    var profit = fv - invested;
+    var multiple = invested > 0 ? fv / invested : 0;
+    var doubleYears = r > 0 ? 72 / ratePct : 0;
+    var freqName = freq === "yearly" ? "capitalisation annuelle" : "capitalisation mensuelle";
+
+    $("result").hidden = false;
+    $("rMain").textContent = euros(fv);
+    $("rInvested").textContent = euros(invested);
+    $("rProfit").textContent = (profit >= 0 ? "+" : "") + euros(profit);
+    $("rMultiple").textContent = "× " + fmt(multiple, 2);
+    $("rDouble").textContent = r > 0 ? "env. " + fmt(doubleYears, 1) + " ans" : "-";
+
+    lastText = "Intérêts composés (" + freqName + ") · " + fmt(ratePct, 2) + " %/an · " + t + " ans\n"
+      + "Capital initial : " + euros(P) + " / versement mensuel : " + euros(monthly) + "\n"
+      + "Valeur finale : " + euros(fv) + "\n"
+      + "Total versé : " + euros(invested)
+      + " / gain : " + euros(profit)
+      + " / multiple : × " + fmt(multiple, 2)
+      + (r > 0 ? " / doublement (règle des 72) : env. " + fmt(doubleYears, 1) + " ans" : "")
+      + "\n- calcmoa.site/fr/compound";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["principal", "monthly", "rate", "years"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Calculateur de pourcentage - Remise, variation, part</title>
+<meta name="description" content="Calculez un pourcentage d'une valeur, la part que représente un nombre, un taux de variation ou un prix après remise. Quatre modes réunis dans un seul calculateur de pourcentage gratuit, idéal pour les soldes.">
+<link rel="canonical" href="https://calcmoa.site/fr/percent">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/percent">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/percent">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/percent">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/percent">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/percent">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur de pourcentage - Remise, variation, part">
+<meta property="og:description" content="B % de A, part d'un total, taux de variation, prix après remise ou augmentation : quatre calculs de pourcentage sur une seule page, gratuitement.">
+<meta property="og:url" content="https://calcmoa.site/fr/percent">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur de pourcentage","url":"https://calcmoa.site/fr/percent","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"fr"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"fr","mainEntity":[
+  {"@type":"Question","name":"Quelle est la différence entre pourcentage (%) et point de pourcentage ?","acceptedAnswer":{"@type":"Answer","text":"Le pourcentage exprime une proportion, tandis que le point de pourcentage mesure l'écart arithmétique entre deux pourcentages. Si un taux passe de 2 % à 4 %, il augmente de 2 points de pourcentage, mais de 100 % en valeur relative. Confondre les deux fausse complètement la lecture d'une évolution."}},
+  {"@type":"Question","name":"Quelle valeur sert de référence pour un taux de variation ?","acceptedAnswer":{"@type":"Answer","text":"Toujours la valeur de départ (A). La formule est (valeur d'arrivée − valeur de départ) ÷ valeur de départ × 100. Passer de 100 à 150 fait +50 %, mais revenir de 150 à 100 fait environ −33,33 % : le sens du changement modifie l'ampleur du taux."}},
+  {"@type":"Question","name":"Une remise de 50 % suivie d'une hausse de 50 % ramène-t-elle au prix initial ?","acceptedAnswer":{"@type":"Answer","text":"Non. Un article à 100 € remisé de 50 % passe à 50 € ; une hausse de 50 % appliquée ensuite donne 75 €, car la hausse se calcule sur le prix remisé et non sur le prix d'origine. En cascade de pourcentages, la base de calcul change à chaque étape."}},
+  {"@type":"Question","name":"Combien de décimales sont affichées ?","acceptedAnswer":{"@type":"Answer","text":"Les résultats sont arrondis à deux décimales et affichés sans décimale lorsqu'ils tombent juste. De très légers écarts d'arrondi sont possibles : pour un calcul comptable de précision, vérifiez avec la formule d'origine."}},
+  {"@type":"Question","name":"Les valeurs saisies sont-elles enregistrées ou transmises ?","acceptedAnswer":{"@type":"Answer","text":"Non. Tous les calculs sont effectués en JavaScript dans votre navigateur ; rien n'est envoyé à un serveur ni conservé."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/fr"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/fr">Outils</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/fr">Accueil</a><span class="sep">›</span>
+    <span>Calculateur de pourcentage</span>
+  </nav>
+
+  <h1>Calculateur de pourcentage</h1>
+  <p class="lead">Part d'un total, taux de variation, prix après remise ou augmentation : quatre calculs de pourcentage qui prêtent à confusion, résolus en changeant simplement de mode.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label>Mode de calcul</label>
+      <div class="seg" id="modeSeg">
+        <button type="button" class="on" data-mode="0">B % de A</button>
+        <button type="button" data-mode="1">A, quel % de B ?</button>
+        <button type="button" data-mode="2">Variation A → B</button>
+        <button type="button" data-mode="3">Remise / hausse de B %</button>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fieldA">
+        <label for="inpA" id="labelA">Valeur de base A</label>
+        <input type="text" inputmode="decimal" id="inpA" placeholder="ex. : 250">
+        <div class="field-error" id="errA">Veuillez saisir un nombre.</div>
+      </div>
+      <div class="field" id="fieldB">
+        <label for="inpB" id="labelB">Pourcentage B (%)</label>
+        <input type="text" inputmode="decimal" id="inpB" placeholder="ex. : 15">
+        <div class="field-error" id="errB">Veuillez saisir un nombre.</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">Calculer</button>
+
+    <div class="result" hidden id="result">
+      <div class="label" id="rLabel">Résultat</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">Copier le résultat</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>Mode d'emploi</h2>
+    <ol>
+      <li>Choisissez le type de calcul avec les boutons du haut. Les intitulés des champs s'adaptent automatiquement au mode sélectionné.</li>
+      <li>Saisissez les deux nombres. En mode « B % de A », par exemple, entrez 250 dans A et 15 dans B pour obtenir 15 % de 250. La virgule et le point sont tous deux acceptés comme séparateur décimal.</li>
+      <li>Cliquez sur <b>Calculer</b> : le résultat principal s'affiche en grand, accompagné de la formule utilisée et de quelques informations complémentaires.</li>
+      <li><b>Copier le résultat</b> place un résumé en texte dans le presse-papiers, à coller où vous voulez.</li>
+    </ol>
+
+    <h2>Comment fonctionnent les quatre modes</h2>
+    <p>Un pourcentage est une proportion rapportée à 100. Chacun des quatre modes se résume à une formule :</p>
+    <table>
+      <thead>
+        <tr><th>Mode</th><th>Formule</th><th>Exemple</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>B % de A</td><td>A × B ÷ 100</td><td>15 % de 250 € = 37,50 €</td></tr>
+        <tr><td>A, quel % de B ?</td><td>A ÷ B × 100</td><td>30 représente 25 % de 120</td></tr>
+        <tr><td>Variation A → B</td><td>(B − A) ÷ A × 100</td><td>de 100 à 130 : +30 %</td></tr>
+        <tr><td>Remise / hausse de B %</td><td>A × (1 − B/100) ou A × (1 + B/100)</td><td>60 € à −30 % → 42 € ; à +30 % → 78 €</td></tr>
+      </tbody>
+    </table>
+    <p>La clé de tout calcul de pourcentage, c'est de savoir <b>quelle valeur sert de base (le dénominateur)</b>. Pour un taux de variation, la base est toujours la valeur de départ A. De 100 à 150, la variation est de (150 − 100) ÷ 100 × 100 = <b>+50 %</b> ; mais de 150 à 100, elle est de (100 − 150) ÷ 150 × 100 = <b>environ −33,33 %</b>. Mêmes nombres, taux différents : tout dépend de la base choisie.</p>
+
+    <h2>Bon à savoir</h2>
+    <h3>Pourcentage et point de pourcentage — l'erreur la plus fréquente</h3>
+    <p>Quand un taux d'intérêt passe de 2 % à 4 %, on peut décrire l'évolution de deux façons :</p>
+    <table>
+      <thead>
+        <tr><th>Formulation</th><th>Calcul</th><th>Signification</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>+2 points de pourcentage</td><td>4 % − 2 % = 2 points</td><td>écart arithmétique entre les deux taux</td></tr>
+        <tr><td>+100 %</td><td>(4 − 2) ÷ 2 × 100 = 100 %</td><td>variation relative par rapport au taux initial</td></tr>
+      </tbody>
+    </table>
+    <p>Les deux formulations sont correctes, mais elles ne disent pas la même chose. Pour un chiffre déjà exprimé en pourcentage — taux du crédit immobilier, chômage, intentions de vote — il est plus rigoureux de parler de <b>points de pourcentage</b>. Dire qu'une cote passée de 30 % à 33 % a « gagné 3 % » est, au sens strict, inexact : elle a gagné 3 points, soit 10 %.</p>
+    <h3>Piège classique : −50 % puis +50 % ne ramène pas au prix de départ</h3>
+    <p>Un manteau à 100 € soldé à −50 % coûte 50 €. Si le prix remonte ensuite de 50 %, il passe à 50 × 1,5 = <b>75 €</b>, et non 100 €, car la hausse se calcule sur le prix soldé. Pour revenir à 100 €, il faudrait une hausse de 100 %. Lorsque des pourcentages s'enchaînent, la base change à chaque étape — c'est aussi pour cela qu'une « seconde démarque de −20 % sur le prix déjà remisé » ne fait pas −50 % au total à partir de −30 %, mais −44 %.</p>
+    <h3>Exemples d'usage au quotidien</h3>
+    <ul>
+      <li><b>B % de A</b> — calculer un pourboire, la part de TVA dans un prix, ou combien représente 10 % d'épargne sur un salaire.</li>
+      <li><b>A, quel % de B ?</b> — taux de réussite (68 bonnes réponses sur 80), avancement par rapport à un objectif d'épargne.</li>
+      <li><b>Variation A → B</b> — évolution du loyer d'une année sur l'autre, hausse de la facture d'électricité par rapport au mois précédent.</li>
+      <li><b>Remise / hausse de B %</b> — vérifier le prix affiché pendant les soldes (un article à 60 € à −30 % doit coûter 42 €), estimer un loyer après une augmentation de 3,5 %.</li>
+    </ul>
+    <p class="note">Ce calculateur est un outil d'arithmétique pure. Les résultats sont arrondis à deux décimales ; les calculs comptables ou fiscaux officiels peuvent suivre des règles d'arrondi spécifiques.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq">
+      <details>
+        <summary>Quelle est la différence entre pourcentage (%) et point de pourcentage ?</summary>
+        <p>Le pourcentage exprime une proportion, tandis que le point de pourcentage mesure l'écart arithmétique entre deux pourcentages. Si un taux passe de 2 % à 4 %, il augmente de 2 points de pourcentage, mais de 100 % en valeur relative. Confondre les deux fausse complètement la lecture d'une évolution.</p>
+      </details>
+      <details>
+        <summary>Quelle valeur sert de référence pour un taux de variation ?</summary>
+        <p>Toujours la valeur de départ (A). La formule est (valeur d'arrivée − valeur de départ) ÷ valeur de départ × 100. Passer de 100 à 150 fait +50 %, mais revenir de 150 à 100 fait environ −33,33 % : le sens du changement modifie l'ampleur du taux.</p>
+      </details>
+      <details>
+        <summary>Une remise de 50 % suivie d'une hausse de 50 % ramène-t-elle au prix initial ?</summary>
+        <p>Non. Un article à 100 € remisé de 50 % passe à 50 € ; une hausse de 50 % appliquée ensuite donne 75 €, car la hausse se calcule sur le prix remisé et non sur le prix d'origine. En cascade de pourcentages, la base de calcul change à chaque étape.</p>
+      </details>
+      <details>
+        <summary>Combien de décimales sont affichées ?</summary>
+        <p>Les résultats sont arrondis à deux décimales et affichés sans décimale lorsqu'ils tombent juste. De très légers écarts d'arrondi sont possibles : pour un calcul comptable de précision, vérifiez avec la formule d'origine.</p>
+      </details>
+      <details>
+        <summary>Les valeurs saisies sont-elles enregistrées ou transmises ?</summary>
+        <p>Non. Tous les calculs sont effectués en JavaScript dans votre navigateur ; rien n'est envoyé à un serveur ni conservé.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Autres calculateurs</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/fr/compound"><div class="ico">📈</div><b>Intérêts composés</b><span>Épargne, placement et règle des 72</span></a>
+      <a class="tool-card" href="/fr/bmi"><div class="ico">⚖️</div><b>Calculateur IMC</b><span>Indice de Masse Corporelle selon l'OMS</span></a>
+      <a class="tool-card" href="/fr/charcount"><div class="ico">🔤</div><b>Compteur de caractères</b><span>Lettres, mots, SMS en temps réel</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — des calculateurs gratuits pour la vie de tous les jours.<br>
+      Les résultats sont fournis à titre indicatif et n'ont aucune valeur juridique.
+    </div>
+    <nav class="links">
+      <a href="/about">À propos (coréen)</a>
+      <a href="/privacy">Confidentialité (coréen)</a>
+      <a href="/terms">Conditions (coréen)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var seg = document.getElementById("modeSeg");
+  var segBtns = seg.querySelectorAll("button");
+  var fieldA = document.getElementById("fieldA");
+  var fieldB = document.getElementById("fieldB");
+  var labelA = document.getElementById("labelA");
+  var labelB = document.getElementById("labelB");
+  var inpA = document.getElementById("inpA");
+  var inpB = document.getElementById("inpB");
+  var result = document.getElementById("result");
+  var rLabel = document.getElementById("rLabel");
+  var rMain = document.getElementById("rMain");
+  var rRows = document.getElementById("rRows");
+  var mode = 0;
+  var lastCopyText = "";
+
+  var MODES = [
+    { la: "Valeur de base A", lb: "Pourcentage B (%)", pa: "ex. : 250", pb: "ex. : 15" },
+    { la: "Valeur à comparer A", lb: "Valeur de référence B (total)", pa: "ex. : 30", pb: "ex. : 120" },
+    { la: "Valeur de départ A", lb: "Valeur d'arrivée B", pa: "ex. : 100", pb: "ex. : 130" },
+    { la: "Prix initial A", lb: "Taux de remise / hausse B (%)", pa: "ex. : 60", pb: "ex. : 30" }
+  ];
+
+  function setMode(m) {
+    mode = m;
+    segBtns.forEach(function (b) {
+      b.classList.toggle("on", Number(b.dataset.mode) === m);
+    });
+    labelA.textContent = MODES[m].la;
+    labelB.textContent = MODES[m].lb;
+    inpA.placeholder = MODES[m].pa;
+    inpB.placeholder = MODES[m].pb;
+    result.hidden = true;
+    CM.invalid(fieldA, false);
+    CM.invalid(fieldB, false);
+  }
+
+  segBtns.forEach(function (b) {
+    b.addEventListener("click", function () { setMode(Number(b.dataset.mode)); });
+  });
+
+  /* Arrondi à 2 décimales, affiché en entier si le résultat tombe juste */
+  function decimalsOf(v) {
+    var r = Math.round(v * 100) / 100;
+    if (Math.abs(r - Math.round(r)) < 1e-9) return 0;
+    if (Math.abs(r * 10 - Math.round(r * 10)) < 1e-9) return 1;
+    return 2;
+  }
+  function fmt(n, d) {
+    return Number(n).toLocaleString("fr-FR", { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
+  }
+  function show(v) {
+    return fmt(Math.round(v * 100) / 100, decimalsOf(v));
+  }
+  /* Saisie tolérante : accepte le point comme la virgule en séparateur décimal */
+  function parseNum(el) {
+    var s = String(el.value).replace(/[\s  ]/g, "");
+    if (s === "") return NaN;
+    var hasC = s.indexOf(",") > -1, hasD = s.indexOf(".") > -1;
+    if (hasC && hasD) {
+      if (s.lastIndexOf(",") > s.lastIndexOf(".")) { s = s.replace(/\./g, "").replace(/,/g, "."); }
+      else { s = s.replace(/,/g, ""); }
+    } else if (hasC) {
+      s = (s.split(",").length === 2) ? s.replace(",", ".") : s.replace(/,/g, "");
+    }
+    return Number(s);
+  }
+  function addRow(label, value) {
+    var row = document.createElement("div");
+    row.className = "row";
+    var sp = document.createElement("span");
+    sp.textContent = label;
+    var b = document.createElement("b");
+    b.textContent = value;
+    row.appendChild(sp);
+    row.appendChild(b);
+    rRows.appendChild(row);
+  }
+
+  function calc() {
+    var a = parseNum(inpA);
+    var b = parseNum(inpB);
+    var okA = isFinite(a);
+    var okB = isFinite(b);
+    if (mode === 1 && okB && b === 0) okB = false;   /* éviter la division par zéro */
+    if (mode === 2 && okA && a === 0) okA = false;   /* base nulle interdite */
+    CM.invalid(fieldA, !okA);
+    CM.invalid(fieldB, !okB);
+    if (!okA || !okB) { result.hidden = true; return; }
+
+    rRows.textContent = "";
+    if (mode === 0) {
+      var v0 = a * b / 100;
+      rLabel.textContent = show(b) + " % de " + show(a);
+      rMain.textContent = show(v0);
+      addRow("Formule", show(a) + " × " + show(b) + " ÷ 100");
+      addRow("Résultat", show(v0));
+      lastCopyText = show(b) + " % de " + show(a) + " = " + show(v0);
+    } else if (mode === 1) {
+      var v1 = a / b * 100;
+      rLabel.textContent = show(a) + " représente, par rapport à " + show(b) + " :";
+      rMain.textContent = show(v1) + " %";
+      addRow("Formule", show(a) + " ÷ " + show(b) + " × 100");
+      addRow("Résultat", show(v1) + " %");
+      lastCopyText = show(a) + " représente " + show(v1) + " % de " + show(b);
+    } else if (mode === 2) {
+      var v2 = (b - a) / a * 100;
+      var dir = v2 > 0 ? "hausse" : (v2 < 0 ? "baisse" : "aucune variation");
+      rLabel.textContent = "Variation de " + show(a) + " à " + show(b);
+      if (v2 === 0) {
+        rMain.textContent = "0 % (aucune variation)";
+      } else {
+        rMain.textContent = (v2 > 0 ? "+" : "−") + show(Math.abs(v2)) + " % (" + dir + ")";
+      }
+      addRow("Formule", "(" + show(b) + " − " + show(a) + ") ÷ " + show(a) + " × 100");
+      addRow("Écart", (b - a > 0 ? "+" : "") + show(b - a));
+      addRow("Sens", dir);
+      lastCopyText = show(a) + " → " + show(b) + " : " +
+        (v2 > 0 ? "+" : (v2 < 0 ? "−" : "")) + show(Math.abs(v2)) + " % (" + dir + ")";
+    } else {
+      var sale = a * (1 - b / 100);
+      var up = a * (1 + b / 100);
+      var off = a * b / 100;
+      rLabel.textContent = show(a) + " après une remise de " + show(b) + " %";
+      rMain.textContent = show(sale);
+      addRow("Montant de la remise (" + show(b) + " %)", show(off));
+      addRow("Prix remisé A × (1 − " + show(b) + "/100)", show(sale));
+      addRow("Prix augmenté A × (1 + " + show(b) + "/100)", show(up));
+      lastCopyText = show(a) + " à " + show(b) + " % → prix remisé " + show(sale) +
+        ", prix augmenté " + show(up) + " (remise de " + show(off) + ")";
+    }
+    result.hidden = false;
+  }
+
+  document.getElementById("calcBtn").addEventListener("click", calc);
+  [inpA, inpB].forEach(function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); calc(); }
+    });
+  });
+  CM.bindCopy(document.getElementById("copyBtn"), function () { return lastCopyText; });
+
+  setMode(0);
+});
+</script>
+</body>
+</html>
