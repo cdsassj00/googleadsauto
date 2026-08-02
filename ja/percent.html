@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>パーセント計算 - 割合・割引・増減率</title>
+<meta name="description" content="AのB%はいくつ?AはBの何%?増減率は?割引後の価格は?——迷いがちなパーセント計算4種類をモード切り替えだけで解決。「2割=20%」の〇割〇分表記の説明つき、無料のパーセント計算機です。">
+<link rel="canonical" href="https://calcmoa.site/ja/percent">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/percent">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/percent">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/percent">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/percent">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/percent">
+<meta property="og:type" content="website">
+<meta property="og:title" content="パーセント計算 - 割合・割引・増減率">
+<meta property="og:description" content="AのB%はいくつ?AはBの何%?増減率は?割引後の価格は?——迷いがちなパーセント計算4種類をモード切り替えだけで解決できる無料計算機です。">
+<meta property="og:url" content="https://calcmoa.site/ja/percent">
+<meta property="og:site_name" content="CalcMoa(カルクモア)">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"パーセント計算","url":"https://calcmoa.site/ja/percent","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"inLanguage":"ja"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[
+  {"@type":"Question","name":"「2割引」は何%オフですか?","acceptedAnswer":{"@type":"Answer","text":"20%オフです。日本語の「割」は10%を表すので、1割=10%、2割=20%、5割=50%です。さらに細かい単位として「分」が1%、「厘」が0.1%にあたり、打率3割2分5厘は32.5%を意味します。"}},
+  {"@type":"Question","name":"パーセント(%)とポイント(%pt)は何が違いますか?","acceptedAnswer":{"@type":"Answer","text":"パーセントは割合そのもの、ポイントは2つのパーセント値の単純な差を指します。たとえば金利が2%から4%に上がった場合、「2ポイント上昇」であり、割合で見れば「100%増加」です。混同すると変化の大きさを大きく読み違えることになります。"}},
+  {"@type":"Question","name":"増減率を計算するとき、基準になるのはどちらの値ですか?","acceptedAnswer":{"@type":"Answer","text":"基準は常に「変化前の値(A)」です。計算式は(変化後の値 − 変化前の値)÷ 変化前の値 × 100 です。100から150になれば+50%ですが、150から100になれば約-33.33%と、方向によって増減率の大きさが変わります。"}},
+  {"@type":"Question","name":"50%引きのあと50%値上げすると、元の価格に戻りますか?","acceptedAnswer":{"@type":"Answer","text":"戻りません。10,000円を50%引きすると5,000円になり、そこから50%値上げすると7,500円です。値上げの基準が元の価格ではなく、割引後の価格(5,000円)に変わっているためです。パーセント計算では、まず基準となる値がどれかを確認することが大切です。"}},
+  {"@type":"Question","name":"入力した数値は保存・送信されますか?","acceptedAnswer":{"@type":"Answer","text":"いいえ。すべての計算はお使いのブラウザー内のJavaScriptだけで処理され、入力値がサーバーに送信・保存されることはありません。"}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/ja"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/ja">ツール</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/ja">ホーム</a><span class="sep">›</span>
+    <span>パーセント計算</span>
+  </nav>
+
+  <h1>パーセント計算</h1>
+  <p class="lead">割合・比率・増減率・割引後の価格まで——迷いがちなパーセント計算4種類を、モードを切り替えるだけでまとめて解決できます。</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label>計算モード</label>
+      <div class="seg" id="modeSeg">
+        <button type="button" class="on" data-mode="0">AのB%は?</button>
+        <button type="button" data-mode="1">AはBの何%?</button>
+        <button type="button" data-mode="2">A→B 増減率</button>
+        <button type="button" data-mode="3">B% 割引/値上げ</button>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fieldA">
+        <label for="inpA" id="labelA">基準の値 A</label>
+        <input type="text" inputmode="decimal" id="inpA" placeholder="例: 50000">
+        <div class="field-error" id="errA">数値を入力してください。</div>
+      </div>
+      <div class="field" id="fieldB">
+        <label for="inpB" id="labelB">パーセント B (%)</label>
+        <input type="text" inputmode="decimal" id="inpB" placeholder="例: 15">
+        <div class="field-error" id="errB">数値を入力してください。</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">計算する</button>
+
+    <div class="result" hidden id="result">
+      <div class="label" id="rLabel">結果</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">結果をコピー</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>使い方</h2>
+    <ol>
+      <li>上部のモードボタンから、計算したい種類を選びます。モードを切り替えると、入力欄の名前がその計算に合わせて自動的に変わります。</li>
+      <li>2つの数値を入力します。たとえば「AのB%は?」モードなら、Aに基準の値(50,000)、Bにパーセント(15)を入れます。</li>
+      <li><b>計算する</b>ボタンを押すと、代表的な結果が大きく表示され、その下に計算式や補足情報が並びます。</li>
+      <li>「結果をコピー」を押せば、計算結果をテキストとしてコピーして、チャットやメモに貼り付けられます。</li>
+    </ol>
+
+    <h2>パーセント計算の仕組み</h2>
+    <p>パーセント(percent)は「100を基準にした割合」です。4つのモードはそれぞれ、次の1つの式に対応しています。</p>
+    <table>
+      <thead>
+        <tr><th>モード</th><th>計算式</th><th>例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>AのB%は?</td><td>A × B ÷ 100</td><td>50,000の15% = 7,500</td></tr>
+        <tr><td>AはBの何%?</td><td>A ÷ B × 100</td><td>30は120の25%</td></tr>
+        <tr><td>A→B 増減率</td><td>(B − A) ÷ A × 100</td><td>100 → 130 は +30% 増加</td></tr>
+        <tr><td>B% 割引 / 値上げ</td><td>A × (1 − B/100) / A × (1 + B/100)</td><td>20,000の30%引き 14,000・値上げ後 26,000</td></tr>
+      </tbody>
+    </table>
+    <p>パーセント計算で一番大切なのは、<b>基準となる値(分母)がどれか</b>です。特に増減率モードでは、変化前の値Aが基準になります。100から150に変われば(150−100)÷100×100 = <b>+50%の増加</b>ですが、逆に150から100に変われば(100−150)÷150×100 = <b>約−33.33%の減少</b>です。同じ2つの数字でも、どちらを基準にするかで増減率は変わります。</p>
+
+    <h2>「〇割〇分」とパーセントの関係</h2>
+    <p>日本では「2割引」「打率3割」のように、パーセントの代わりに<b>割・分・厘</b>で割合を表すことがよくあります。対応関係は次のとおりです。</p>
+    <table>
+      <thead>
+        <tr><th>表記</th><th>意味</th><th>例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1割</td><td>10%</td><td>「1割引」= 10%オフ</td></tr>
+        <tr><td>1分</td><td>1%</td><td>打率3割2<b>分</b> = 32%</td></tr>
+        <tr><td>1厘</td><td>0.1%</td><td>打率3割2分5<b>厘</b> = 32.5%</td></tr>
+      </tbody>
+    </table>
+    <p>つまり「2割引」は20%オフ、「5割増し」は50%アップです。セール表示の「〇割引」を見たら、割の数字を10倍してB%割引モードに入れれば、支払額がすぐに計算できます。なお、仕入れや卸の世界で使う「7掛け(定価の70%)」は「3割引」と同じ意味です。</p>
+
+    <h2>知っておくと便利な情報</h2>
+    <h3>パーセント(%)とポイント(%pt)の違い — いちばん間違えやすいポイント</h3>
+    <p>ニュースの「金利が2%から4%に上がった」という変化は、2通りに表現できます。</p>
+    <table>
+      <thead>
+        <tr><th>表現</th><th>計算</th><th>意味</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2ポイント上昇</td><td>4% − 2% = 2%pt</td><td>パーセント値どうしの単純な差</td></tr>
+        <tr><td>100%上昇</td><td>(4−2) ÷ 2 × 100 = 100%</td><td>元の値に対する割合の変化</td></tr>
+      </tbody>
+    </table>
+    <p>どちらも正しい表現ですが、意味はまったく違います。支持率・金利・失業率のように、すでにパーセントで表されている値の変化を語るときは<b>ポイント(%pt)</b>を使うのが正確です。「支持率が30%から33%に3%上がった」は厳密には誤りで、「3ポイント上がった」または「10%上がった」が正しい表現です。</p>
+    <h3>よくある勘違い:50%引きのあと50%値上げしても元の価格には戻らない</h3>
+    <p>10,000円の商品を50%引きすると5,000円です。そこから50%値上げすると5,000 × 1.5 = <b>7,500円</b>になります。値上げの基準が元の価格(10,000円)ではなく、割引後の価格(5,000円)に変わっているためです。元の価格に戻すには、5,000円から100%値上げする必要があります。パーセントを連続して適用するときは、そのたびに基準が変わることを覚えておきましょう。</p>
+    <h3>モード別の実生活での使いどころ</h3>
+    <ul>
+      <li><b>AのB%は?</b> — 消費税10%がいくらになるか、給料の何%を貯金するといくらになるかを計算するとき。</li>
+      <li><b>AはBの何%?</b> — テストで80問中68問正解したときの正答率、目標金額に対する達成率を見るとき。</li>
+      <li><b>A→B 増減率</b> — 前年の売上に対する今年の伸び率、先月と比べた電気代の増加率を確認するとき。</li>
+      <li><b>B% 割引/値上げ</b> — セール価格がいくらになるか、家賃が5%上がったらいくら払うことになるかを事前に見るとき。</li>
+    </ul>
+    <p class="note">この計算機は純粋な算術計算ツールです。結果は小数第2位で四捨五入した値であり、厳密な会計・税務計算では端数処理などの別の規定が適用される場合があります。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faq">
+      <details>
+        <summary>「2割引」は何%オフですか?</summary>
+        <p>20%オフです。日本語の「割」は10%を表すので、1割=10%、2割=20%、5割=50%です。さらに細かい単位として「分」が1%、「厘」が0.1%にあたり、打率3割2分5厘は32.5%を意味します。</p>
+      </details>
+      <details>
+        <summary>パーセント(%)とポイント(%pt)は何が違いますか?</summary>
+        <p>パーセントは割合そのもの、ポイントは2つのパーセント値の単純な差を指します。たとえば金利が2%から4%に上がった場合、「2ポイント上昇」であり、割合で見れば「100%増加」です。混同すると変化の大きさを大きく読み違えることになります。</p>
+      </details>
+      <details>
+        <summary>増減率を計算するとき、基準になるのはどちらの値ですか?</summary>
+        <p>基準は常に「変化前の値(A)」です。計算式は(変化後の値 − 変化前の値)÷ 変化前の値 × 100 です。100から150になれば+50%ですが、150から100になれば約-33.33%と、方向によって増減率の大きさが変わります。</p>
+      </details>
+      <details>
+        <summary>50%引きのあと50%値上げすると、元の価格に戻りますか?</summary>
+        <p>戻りません。10,000円を50%引きすると5,000円になり、そこから50%値上げすると7,500円です。値上げの基準が元の価格ではなく、割引後の価格(5,000円)に変わっているためです。パーセント計算では、まず基準となる値がどれかを確認することが大切です。</p>
+      </details>
+      <details>
+        <summary>入力した数値は保存・送信されますか?</summary>
+        <p>いいえ。すべての計算はお使いのブラウザー内のJavaScriptだけで処理され、入力値がサーバーに送信・保存されることはありません。</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>関連ツール</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/ja/compound"><div class="ico">📈</div><b>複利計算</b><span>複利運用と積立のシミュレーション</span></a>
+      <a class="tool-card" href="/ja/bmi"><div class="ico">⚖️</div><b>BMI計算</b><span>肥満度の判定と適正体重</span></a>
+      <a class="tool-card" href="/ja/charcount"><div class="ico">✏️</div><b>文字数カウント</b><span>原稿用紙・SNSの文字数をチェック</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa(カルクモア)</b> — 暮らしに役立つ無料計算ツール集<br>
+      計算結果は参考値であり、法的効力はありません。
+    </div>
+    <nav class="links">
+      <a href="/about">About (韓国語)</a>
+      <a href="/privacy">Privacy (韓国語)</a>
+      <a href="/terms">Terms (韓国語)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var seg = document.getElementById("modeSeg");
+  var segBtns = seg.querySelectorAll("button");
+  var fieldA = document.getElementById("fieldA");
+  var fieldB = document.getElementById("fieldB");
+  var labelA = document.getElementById("labelA");
+  var labelB = document.getElementById("labelB");
+  var inpA = document.getElementById("inpA");
+  var inpB = document.getElementById("inpB");
+  var result = document.getElementById("result");
+  var rLabel = document.getElementById("rLabel");
+  var rMain = document.getElementById("rMain");
+  var rRows = document.getElementById("rRows");
+  var mode = 0;
+  var lastCopyText = "";
+
+  var MODES = [
+    { la: "基準の値 A", lb: "パーセント B (%)", pa: "例: 50000", pb: "例: 15" },
+    { la: "比べる値 A", lb: "基準の値 B (全体)", pa: "例: 30", pb: "例: 120" },
+    { la: "変化前の値 A", lb: "変化後の値 B", pa: "例: 100", pb: "例: 130" },
+    { la: "元の金額 A", lb: "割引/値上げ率 B (%)", pa: "例: 20000", pb: "例: 30" }
+  ];
+
+  function setMode(m) {
+    mode = m;
+    segBtns.forEach(function (b) {
+      b.classList.toggle("on", Number(b.dataset.mode) === m);
+    });
+    labelA.textContent = MODES[m].la;
+    labelB.textContent = MODES[m].lb;
+    inpA.placeholder = MODES[m].pa;
+    inpB.placeholder = MODES[m].pb;
+    result.hidden = true;
+    CM.invalid(fieldA, false);
+    CM.invalid(fieldB, false);
+  }
+
+  segBtns.forEach(function (b) {
+    b.addEventListener("click", function () { setMode(Number(b.dataset.mode)); });
+  });
+
+  function fmt(n, d) {
+    return Number(n).toLocaleString("ja-JP", {
+      minimumFractionDigits: d || 0,
+      maximumFractionDigits: d || 0
+    });
+  }
+  /* 小数2桁で四捨五入、整数で割り切れる場合は整数表示 */
+  function decimalsOf(v) {
+    var r = Math.round(v * 100) / 100;
+    if (Math.abs(r - Math.round(r)) < 1e-9) return 0;
+    if (Math.abs(r * 10 - Math.round(r * 10)) < 1e-9) return 1;
+    return 2;
+  }
+  function show(v) {
+    return fmt(Math.round(v * 100) / 100, decimalsOf(v));
+  }
+  /* 〇割〇分〇厘 表記 (0 < p < 100, 0.1%単位までのときだけ) */
+  function wariText(p) {
+    if (!(p > 0 && p < 100)) return "";
+    var mils = Math.round(p * 10); /* 厘単位 */
+    if (Math.abs(p * 10 - mils) > 1e-9) return "";
+    var wari = Math.floor(mils / 100);
+    var bu = Math.floor((mils % 100) / 10);
+    var rin = mils % 10;
+    var s = "";
+    if (wari > 0) s += wari + "割";
+    if (bu > 0) s += bu + "分";
+    if (rin > 0) s += rin + "厘";
+    return s;
+  }
+  function parseNum(el) {
+    var s = String(el.value).replace(/,/g, "").trim();
+    if (s === "") return NaN;
+    return Number(s);
+  }
+  function addRow(label, value) {
+    var row = document.createElement("div");
+    row.className = "row";
+    var sp = document.createElement("span");
+    sp.textContent = label;
+    var b = document.createElement("b");
+    b.textContent = value;
+    row.appendChild(sp);
+    row.appendChild(b);
+    rRows.appendChild(row);
+  }
+
+  function calc() {
+    var a = parseNum(inpA);
+    var b = parseNum(inpB);
+    var okA = isFinite(a);
+    var okB = isFinite(b);
+    if (mode === 1 && okB && b === 0) okB = false;   /* ゼロ除算の防止 */
+    if (mode === 2 && okA && a === 0) okA = false;   /* 基準値0の防止 */
+    CM.invalid(fieldA, !okA);
+    CM.invalid(fieldB, !okB);
+    if (!okA || !okB) { result.hidden = true; return; }
+
+    rRows.textContent = "";
+    if (mode === 0) {
+      var v0 = a * b / 100;
+      rLabel.textContent = show(a) + "の" + show(b) + "%";
+      rMain.textContent = show(v0);
+      addRow("計算式", show(a) + " × " + show(b) + " ÷ 100");
+      addRow("結果", show(v0));
+      lastCopyText = show(a) + "の" + show(b) + "% = " + show(v0);
+    } else if (mode === 1) {
+      var v1 = a / b * 100;
+      rLabel.textContent = show(a) + "は" + show(b) + "の";
+      rMain.textContent = show(v1) + "%";
+      addRow("計算式", show(a) + " ÷ " + show(b) + " × 100");
+      addRow("結果", show(v1) + "%");
+      var w1 = wariText(Math.round(v1 * 100) / 100);
+      if (w1) addRow("割・分・厘で表すと", w1);
+      lastCopyText = show(a) + "は" + show(b) + "の" + show(v1) + "%";
+    } else if (mode === 2) {
+      var v2 = (b - a) / a * 100;
+      var dir = v2 > 0 ? "増加" : (v2 < 0 ? "減少" : "変化なし");
+      rLabel.textContent = show(a) + " → " + show(b) + " の増減率";
+      if (v2 === 0) {
+        rMain.textContent = "0%(変化なし)";
+      } else {
+        rMain.textContent = (v2 > 0 ? "+" : "-") + show(Math.abs(v2)) + "% " + dir;
+      }
+      addRow("計算式", "(" + show(b) + " − " + show(a) + ") ÷ " + show(a) + " × 100");
+      addRow("変化量", (b - a > 0 ? "+" : "") + show(b - a));
+      addRow("判定", dir);
+      lastCopyText = show(a) + " → " + show(b) + " : " +
+        (v2 > 0 ? "+" : (v2 < 0 ? "-" : "")) + show(Math.abs(v2)) + "% " + dir;
+    } else {
+      var sale = a * (1 - b / 100);
+      var up = a * (1 + b / 100);
+      var off = a * b / 100;
+      rLabel.textContent = show(a) + "の" + show(b) + "%引き後の価格";
+      rMain.textContent = show(sale);
+      addRow("割引額(" + show(b) + "%)", show(off));
+      addRow("割引後 A × (1 − " + show(b) + "/100)", show(sale));
+      addRow("値上げ後 A × (1 + " + show(b) + "/100)", show(up));
+      var w3 = wariText(Math.round(b * 100) / 100);
+      if (w3) addRow("「割」で表すと", w3 + "引き");
+      lastCopyText = show(a) + "の" + show(b) + "% → 割引後 " + show(sale) +
+        "、値上げ後 " + show(up) + "(割引額 " + show(off) + ")";
+    }
+    result.hidden = false;
+  }
+
+  document.getElementById("calcBtn").addEventListener("click", calc);
+  [inpA, inpB].forEach(function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); calc(); }
+    });
+  });
+  CM.bindCopy(document.getElementById("copyBtn"), function () { return lastCopyText; });
+
+  setMode(0);
+});
+</script>
+</body>
+</html>

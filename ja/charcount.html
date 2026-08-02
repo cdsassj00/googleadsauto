@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>文字数カウント - 原稿用紙・SNS文字数</title>
+<meta name="description" content="貼り付けるだけで文字数(空白込み・空白なし)、行数、400字詰め原稿用紙の換算枚数、X(旧Twitter)の文字数、バイト数までリアルタイムに集計。レポート・ES・SNS投稿の文字数チェックに使える無料ツールです。">
+<link rel="canonical" href="https://calcmoa.site/ja/charcount">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/charcount">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/charcount">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/charcount">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/charcount">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/charcount">
+<meta property="og:type" content="website">
+<meta property="og:title" content="文字数カウント - 原稿用紙・SNS文字数">
+<meta property="og:description" content="貼り付けるだけで文字数、行数、400字詰め原稿用紙の換算枚数、X(旧Twitter)の文字数、バイト数までリアルタイムに集計できる無料ツールです。">
+<meta property="og:url" content="https://calcmoa.site/ja/charcount">
+<meta property="og:site_name" content="CalcMoa(カルクモア)">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"文字数カウント","url":"https://calcmoa.site/ja/charcount","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"inLanguage":"ja"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[
+  {"@type":"Question","name":"原稿用紙の換算枚数はどう計算しますか?","acceptedAnswer":{"@type":"Answer","text":"一般的な400字詰め原稿用紙1枚=400字として、空白・改行を含む文字数を400で割って切り上げた枚数を表示しています。実際に原稿用紙へ書き写すと、段落冒頭の字下げや改行の関係で枚数が少し増えることがあるため、目安としてご利用ください。"}},
+  {"@type":"Question","name":"X(旧Twitter)は日本語だと何文字まで投稿できますか?","acceptedAnswer":{"@type":"Answer","text":"Xの上限は280単位で、日本語・中国語・韓国語などの全角文字は1文字=2単位、半角の英数字・記号は1文字=1単位として数えられます。つまり日本語だけなら約140文字、半角英数字だけなら280文字まで投稿できます。このツールはこの重み付けの近似値を表示します。"}},
+  {"@type":"Question","name":"エントリーシートの自己PRは何文字書けばよいですか?","acceptedAnswer":{"@type":"Answer","text":"履歴書やエントリーシートの自己PR・志望動機は400字が定番の目安です。上限が決まっている場合は、その9割以上(400字なら360字以上)を埋めるのが一般的なマナーとされています。短すぎると熱意が伝わりにくく、上限を超えると入力できない場合があります。"}},
+  {"@type":"Question","name":"入力した文章は保存・送信されますか?","acceptedAnswer":{"@type":"Answer","text":"いいえ。すべての集計はブラウザー内のJavaScriptだけで処理され、入力した文章がサーバーに送信・保存されることはありません。エントリーシートのような大切な文章も安心して貼り付けられます。"}},
+  {"@type":"Question","name":"バイト数はどんなときに使いますか?","acceptedAnswer":{"@type":"Answer","text":"文字数ではなくデータ容量(バイト)で上限が決まっているフォームやシステムで使います。UTF-8では日本語1文字が原則3バイト、Shift_JIS換算では全角1文字が2バイト・半角1文字が1バイトです。このツールは両方の値を表示するので、対象システムの基準に合わせて確認できます。"}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/ja"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/ja">ツール</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/ja">ホーム</a><span class="sep">›</span>
+    <span>文字数カウント</span>
+  </nav>
+
+  <h1>文字数カウント</h1>
+  <p class="lead">文章を貼り付けた瞬間に、文字数(空白込み・空白なし)、行数、400字詰め原稿用紙の換算枚数、X(旧Twitter)の文字数、バイト数までリアルタイムに集計します。</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label for="txt">文章を入力</label>
+      <textarea id="txt" rows="10" placeholder="ここに文章を貼り付けてください"></textarea>
+      <div class="hint">入力と同時に下の結果がリアルタイムで更新されます。入力した文章はどこにも送信・保存されません。</div>
+    </div>
+    <button type="button" class="btn btn-ghost" id="clearBtn">クリア</button>
+
+    <div class="result" id="result">
+      <div class="label">文字数(空白・改行を含む)</div>
+      <div class="big" id="rMain">0文字</div>
+      <div class="rows">
+        <div class="row"><span>空白・改行を除いた文字数</span><b id="rNoSpace">0文字</b></div>
+        <div class="row"><span>行数</span><b id="rLines">0行</b></div>
+        <div class="row"><span>原稿用紙換算(400字詰め)</span><b id="rPages">0枚</b></div>
+        <div class="row"><span>X(旧Twitter)換算(上限280・全角=2)</span><b id="rTweet">0 / 280</b></div>
+        <div class="row"><span>バイト数(UTF-8)</span><b id="rBytesUtf8">0byte</b></div>
+        <div class="row"><span>バイト数(全角2byte換算)</span><b id="rBytes2">0byte</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>使い方</h2>
+    <ol>
+      <li>上の入力欄に、文字数を確認したい文章を直接入力するか貼り付けます。</li>
+      <li>ボタンを押す必要はありません。入力と同時に文字数・行数・原稿用紙換算・X換算・バイト数がリアルタイムで更新されます。</li>
+      <li>提出先の基準(空白を含むかどうか、文字数かバイト数か)に合った項目を確認します。</li>
+      <li>別の文章を確認するときは<b>クリア</b>ボタンで入力欄を空にして、貼り付け直してください。</li>
+    </ol>
+
+    <h2>文字数カウントの仕組み</h2>
+    <p>同じ文章でも、どの基準で数えるかによって数値が変わります。このツールが表示する各項目の基準は次のとおりです。</p>
+    <table>
+      <thead>
+        <tr><th>項目</th><th>基準</th><th>備考</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>文字数(空白・改行を含む)</td><td>スペース・改行を含めたすべての文字数</td><td>多くの入力フォームの基準</td></tr>
+        <tr><td>空白・改行を除いた文字数</td><td>スペース・改行・タブを除いた文字数</td><td>「純粋な文字だけ」を数えたいとき</td></tr>
+        <tr><td>行数</td><td>改行で区切られた行の数</td><td>空欄のときは0行</td></tr>
+        <tr><td>原稿用紙換算</td><td>400字詰め原稿用紙1枚 = 400字(空白込み)</td><td>読書感想文・小論文の分量確認に</td></tr>
+        <tr><td>X(旧Twitter)換算</td><td>全角 = 2単位、半角 = 1単位、上限280単位</td><td>日本語だけなら約140文字</td></tr>
+        <tr><td>バイト数(UTF-8)</td><td>UTF-8での実際のデータ量 — 日本語1文字 = 原則3byte</td><td>最近のWebシステムの基準</td></tr>
+        <tr><td>バイト数(全角2byte)</td><td>全角 = 2byte、半角英数字・スペース = 1byte</td><td>Shift_JIS時代の古いシステムの慣行</td></tr>
+      </tbody>
+    </table>
+    <p>「文字数(空白込み)」はJavaScriptの文字列の長さをそのまま使い、「空白なし」はすべての空白文字(スペース・タブ・改行)を取り除いた後の長さです。X換算は、Xの公式仕様(全角系の文字を2単位、半角系を1単位として上限280単位)に沿った近似値です。</p>
+
+    <h2>知っておくと便利な情報</h2>
+    <h3>原稿用紙の換算 — 読書感想文・小論文に</h3>
+    <p>学校の課題や小論文では「原稿用紙〇枚以内」という形で分量が指定されることがよくあります。日本で標準的なのは<b>400字詰め原稿用紙</b>(20字×20行)で、このツールは空白・改行込みの文字数を400で割った枚数を表示します。「原稿用紙5枚以内」なら約2,000字が上限の目安です。実際に原稿用紙へ書き写すと、段落冒頭の字下げや改行の位置によって枚数が少し増える傾向があるため、上限ぎりぎりを狙わず1割ほど余裕を持たせると安心です。</p>
+    <h3>X(旧Twitter)の文字数 — 日本語は実質140文字</h3>
+    <p>Xの投稿上限は280単位ですが、すべての文字が同じ重さで数えられるわけではありません。日本語・中国語・韓国語などの<b>全角文字は1文字=2単位</b>、半角の英数字や記号は1文字=1単位です。そのため日本語だけの投稿なら実質<b>約140文字</b>、英語だけなら280文字まで書けます。日本語と英数字が混ざった文章では、このツールのX換算(〇/280)を見れば投稿できるかどうかがすぐ分かります。URLは長さに関係なく一律23単位として数えられるなど特殊な扱いもあるため、最終確認はXの投稿画面で行ってください。</p>
+    <h3>履歴書・エントリーシートの自己PRは400字が定番</h3>
+    <p>就職活動の履歴書やエントリーシート(ES)では、自己PR・志望動機・学生時代に力を入れたこと(ガクチカ)の欄が<b>400字前後</b>で設定されるのが定番です。上限が決まっている場合は、<b>9割以上(400字なら360字以上)</b>を埋めるのが一般的なマナーとされています。短すぎると熱意が伝わりにくく、逆に上限を超えるとシステムによっては入力自体ができません。WordやGoogleドキュメントで下書きしてから貼り付けると、改行や記号の扱いの違いで文字数がずれることがあるので、提出直前に提出先のフォームで最終確認しましょう。</p>
+    <h3>バイト数制限のあるシステムでは</h3>
+    <p>一部の古い応募システムや行政のフォームでは、文字数ではなくバイト数で上限が決められています。Shift_JIS時代からの慣行では<b>全角1文字=2byte、半角英数字=1byte</b>と数えます。たとえば「こんにちはhello」は全角5文字(10byte)+半角5文字(5byte)=15byteです。同じ文章でもUTF-8基準(日本語1文字=原則3byte)で測るとずっと大きくなるので、上限がバイト数の場合はどちらの方式かの確認が必要です。このツールは両方の値を並べて表示します。</p>
+    <p class="note">本ツールの集計は参考値です。提出先システムの数え方(改行・特殊文字・絵文字の扱いなど)によって数値が変わることがあるため、最終提出前に必ず提出先の画面でご確認ください。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faq">
+      <details><summary>原稿用紙の換算枚数はどう計算しますか?</summary><p>一般的な400字詰め原稿用紙1枚=400字として、空白・改行を含む文字数を400で割って切り上げた枚数を表示しています。実際に原稿用紙へ書き写すと、段落冒頭の字下げや改行の関係で枚数が少し増えることがあるため、目安としてご利用ください。</p></details>
+      <details><summary>X(旧Twitter)は日本語だと何文字まで投稿できますか?</summary><p>Xの上限は280単位で、日本語などの全角文字は1文字=2単位、半角の英数字・記号は1文字=1単位として数えられます。つまり日本語だけなら約140文字、半角英数字だけなら280文字まで投稿できます。このツールはこの重み付けの近似値を表示します。</p></details>
+      <details><summary>エントリーシートの自己PRは何文字書けばよいですか?</summary><p>履歴書やエントリーシートの自己PR・志望動機は400字が定番の目安です。上限が決まっている場合は、その9割以上(400字なら360字以上)を埋めるのが一般的なマナーとされています。短すぎると熱意が伝わりにくく、上限を超えると入力できない場合があります。</p></details>
+      <details><summary>入力した文章は保存・送信されますか?</summary><p>いいえ。すべての集計はブラウザー内のJavaScriptだけで処理され、入力した文章がサーバーに送信・保存されることはありません。エントリーシートのような大切な文章も安心して貼り付けられます。</p></details>
+      <details><summary>バイト数はどんなときに使いますか?</summary><p>文字数ではなくデータ容量(バイト)で上限が決まっているフォームやシステムで使います。UTF-8では日本語1文字が原則3バイト、Shift_JIS換算では全角1文字が2バイト・半角1文字が1バイトです。このツールは両方の値を表示します。</p></details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>関連ツール</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/ja/percent"><div class="ico">📊</div><b>パーセント計算</b><span>割合・割引・増減率をまとめて</span></a>
+      <a class="tool-card" href="/ja/dday"><div class="ico">📅</div><b>日数計算・カウントダウン</b><span>日付の間の日数とカウントダウン</span></a>
+      <a class="tool-card" href="/ja/age"><div class="ico">🎂</div><b>年齢計算</b><span>満年齢と生まれてから何日か</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa(カルクモア)</b> — 暮らしに役立つ無料計算ツール集<br>
+      計算結果は参考値であり、法的効力はありません。
+    </div>
+    <nav class="links">
+      <a href="/about">About (韓国語)</a>
+      <a href="/privacy">Privacy (韓国語)</a>
+      <a href="/terms">Terms (韓国語)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var txt = document.getElementById("txt");
+  var clearBtn = document.getElementById("clearBtn");
+  var rMain = document.getElementById("rMain");
+  var rNoSpace = document.getElementById("rNoSpace");
+  var rLines = document.getElementById("rLines");
+  var rPages = document.getElementById("rPages");
+  var rTweet = document.getElementById("rTweet");
+  var rBytesUtf8 = document.getElementById("rBytesUtf8");
+  var rBytes2 = document.getElementById("rBytes2");
+
+  function fmt(n) { return Number(n).toLocaleString("ja-JP"); }
+
+  /* Shift_JIS時代の慣行: 全角(コード256以上)2byte、半角英数字・スペース1byte(近似) */
+  function bytes2(t) {
+    var b = 0;
+    for (var i = 0; i < t.length; i++) {
+      b += t.charCodeAt(i) > 255 ? 2 : 1;
+    }
+    return b;
+  }
+
+  /* X(旧Twitter)の重み付け近似: 半角系(U+0000〜U+10FF等)=1、それ以外の全角系=2。上限280 */
+  function tweetWeight(t) {
+    var w = 0;
+    for (var i = 0; i < t.length; i++) {
+      var cp = t.codePointAt(i);
+      if (cp > 0xFFFF) i++; /* サロゲートペア */
+      w += cp <= 0x10FF ? 1 : 2;
+    }
+    return w;
+  }
+
+  function update() {
+    var t = txt.value;
+    var withSpace = t.length;
+    var noSpace = t.replace(/\s/g, "").length;
+    var lines = t.length === 0 ? 0 : t.split(/\n/).length;
+    var pages = withSpace === 0 ? 0 : Math.ceil(withSpace / 400);
+    var tw = tweetWeight(t);
+    var utf8 = new Blob([t]).size;
+    var b2 = bytes2(t);
+
+    rMain.textContent = fmt(withSpace) + "文字";
+    rNoSpace.textContent = fmt(noSpace) + "文字";
+    rLines.textContent = fmt(lines) + "行";
+    rPages.textContent = fmt(pages) + "枚";
+    rTweet.textContent = fmt(tw) + " / 280" + (tw > 280 ? "(超過)" : "");
+    rBytesUtf8.textContent = fmt(utf8) + "byte";
+    rBytes2.textContent = fmt(b2) + "byte";
+  }
+
+  txt.addEventListener("input", update);
+  clearBtn.addEventListener("click", function () {
+    txt.value = "";
+    update();
+    txt.focus();
+  });
+
+  update();
+});
+</script>
+</body>
+</html>

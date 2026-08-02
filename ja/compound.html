@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>複利計算 - 複利運用シミュレーション</title>
+<meta name="description" content="最初の元本、毎月の積立額、想定利回り、運用期間を入力すると、年複利・月複利での最終評価額と運用益、72の法則による資産が2倍になる年数まで一度に計算できる無料の複利シミュレーターです。">
+<link rel="canonical" href="https://calcmoa.site/ja/compound">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/compound">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/compound">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/compound">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/compound">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/compound">
+<meta property="og:type" content="website">
+<meta property="og:title" content="複利計算 - 複利運用シミュレーション">
+<meta property="og:description" content="最初の元本、毎月の積立額、想定利回り、運用期間を入力すると、年複利・月複利での最終評価額と運用益、72の法則による2倍になる年数まで一度に計算できます。">
+<meta property="og:url" content="https://calcmoa.site/ja/compound">
+<meta property="og:site_name" content="CalcMoa(カルクモア)">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"複利計算","url":"https://calcmoa.site/ja/compound","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"inLanguage":"ja"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[
+  {"@type":"Question","name":"単利と複利はどれくらい差がつきますか?","acceptedAnswer":{"@type":"Answer","text":"単利は元本にだけ利息がつき、複利は発生した利息にも利息がつきます。元本100万円を年5%で20年運用すると、単利では200万円ですが、年複利では約265万円(正確には2,653,298円)になります。期間が長くなるほど差は加速度的に広がるのが複利の特徴です。"}},
+  {"@type":"Question","name":"72の法則とは何ですか?","acceptedAnswer":{"@type":"Answer","text":"資産が2倍になるまでの年数をざっくり見積もる公式で、72を年利回り(%)で割るだけです。年6%なら72÷6=約12年、年8%なら約9年で元本が2倍になります。正確な値ではありませんが、利回り4〜12%の範囲では誤差が小さく、暗算用として広く使われています。"}},
+  {"@type":"Question","name":"年複利と月複利ではどちらが有利ですか?","acceptedAnswer":{"@type":"Answer","text":"同じ年利回りなら、複利の周期が短い月複利のほうがわずかに有利です。利息がより頻繁に元本へ組み入れられ、その分がさらに利息を生むためです。ただし利回りが1桁台なら差は大きくなく、実際の商品では定められた複利周期に従うので、両方を計算して比較する目安としてご活用ください。"}},
+  {"@type":"Question","name":"この計算機に税金や手数料は反映されますか?","acceptedAnswer":{"@type":"Answer","text":"反映されません。この計算機は税引き前の名目リターンを前提にした参考値です。日本では通常、利息や運用益に約20.315%(所得税・復興特別所得税・住民税)が課税されますが、NISA口座なら運用益は非課税です。実際の手取りは商品の手数料・信託報酬・課税方式によって変わります。"}},
+  {"@type":"Question","name":"毎月の積立を入れたとき、年複利と月複利で結果が違うのはなぜですか?","acceptedAnswer":{"@type":"Answer","text":"年複利モードでは毎月の積立額×12を年単位の積立として扱う近似計算を使っているためです。毎月入金する実際のお金の流れを正確に反映するには、月ごとに利息がつく月複利の式のほうが適しているので、積立がある場合は月複利モードをおすすめします。"}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/ja"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/ja">ツール</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/ja">ホーム</a><span class="sep">›</span>
+    <span>複利計算</span>
+  </nav>
+
+  <h1>複利計算</h1>
+  <p class="lead">最初の元本と毎月の積立額、想定利回り、運用期間を入力すると、年複利・月複利での最終評価額と運用益、資産が2倍になる年数(72の法則)を計算します。</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fPrincipal">
+      <label for="principal">最初の元本 (円)</label>
+      <input type="text" id="principal" inputmode="numeric" placeholder="1000000" autocomplete="off">
+      <div class="hint">最初に投資するまとまった資金。例:100万円 → 1000000</div>
+      <div class="field-error">元本を0円以上の数値で入力してください。(積立のみの場合は0)</div>
+    </div>
+    <div class="field" id="fMonthly">
+      <label for="monthly">毎月の積立額 (円)</label>
+      <input type="text" id="monthly" inputmode="numeric" placeholder="0" autocomplete="off">
+      <div class="hint">毎月追加で積み立てる金額。ない場合は0または空欄</div>
+      <div class="field-error">積立額を0円以上の数値で入力してください。</div>
+    </div>
+    <div class="field-row">
+      <div class="field" id="fRate">
+        <label for="rate">想定利回り (年率%)</label>
+        <input type="number" id="rate" inputmode="decimal" step="0.01" min="0" placeholder="5.0" autocomplete="off">
+        <div class="hint">税引き前の名目利回り。例:5</div>
+        <div class="field-error">利回りを0以上の数値で入力してください。</div>
+      </div>
+      <div class="field" id="fYears">
+        <label for="years">運用期間 (年)</label>
+        <input type="text" id="years" inputmode="numeric" placeholder="20" autocomplete="off">
+        <div class="hint">例:10年 → 10</div>
+        <div class="field-error">期間を1年以上の数値で入力してください。</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>複利の周期</label>
+      <div class="seg" id="segFreq">
+        <button type="button" class="on" data-freq="yearly">年複利</button>
+        <button type="button" data-freq="monthly">月複利</button>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">計算する</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">最終評価額</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>投入した元本の合計</span><b id="rInvested"></b></div>
+        <div class="row"><span>運用益</span><b id="rProfit"></b></div>
+        <div class="row"><span>元本に対する倍率</span><b id="rMultiple"></b></div>
+        <div class="row"><span>2倍になる年数(72の法則)</span><b id="rDouble"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">結果をコピー</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>使い方</h2>
+    <ol>
+      <li>最初の元本を入力します。まとまった資金がなく、毎月の積立だけで運用する場合は0でかまいません。</li>
+      <li>毎月追加で積み立てる金額があれば「毎月の積立額」に入力します。つみたて投資のシミュレーションはここがポイントです。ない場合は0または空欄のままにします。</li>
+      <li>想定する利回り(年率%)と運用期間(年)を入力します。</li>
+      <li>複利の周期を選びます。毎月の積立がある場合は月複利をおすすめします。</li>
+      <li>「計算する」を押すと、最終評価額・投入元本の合計・運用益・元本に対する倍率・72の法則による2倍になる年数が表示されます。</li>
+    </ol>
+
+    <h2>複利計算の仕組み</h2>
+    <p>元本をP、年利回りをr(小数)、期間をt年とすると、この計算機は次の式を使っています。</p>
+    <table>
+      <thead>
+        <tr><th>区分</th><th>計算式</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>年複利・元本</td><td>FV = P × (1+r)<sup>t</sup></td></tr>
+        <tr><td>年複利・積立(年単位の近似)</td><td>年間積立額 A = 毎月の積立額 × 12、FV = A × ((1+r)<sup>t</sup> − 1) ÷ r</td></tr>
+        <tr><td>月複利・元本</td><td>i = r/12、n = t×12、FV = P × (1+i)<sup>n</sup></td></tr>
+        <tr><td>月複利・積立</td><td>FV = 毎月の積立額 × ((1+i)<sup>n</sup> − 1) ÷ i</td></tr>
+      </tbody>
+    </table>
+    <p>利回りが0%の場合は利息が発生しないため、最終評価額は投入した元本の合計と同じになります。年複利モードの積立計算は毎月の入金を年単位にまとめる近似方式なので、積立がある場合は月複利モードのほうが実際のお金の流れに近い結果になります。</p>
+    <p>単利と複利の差を実際に検算してみましょう。元本100万円を年5%で20年運用すると、単利では1,000,000 × (1 + 0.05×20) = 2,000,000円ですが、年複利では1,000,000 × 1.05<sup>20</sup> = 2,653,298円、約265万円です。同じ金利・同じ期間でも約65万円の差がつき、30年、40年と期間が延びれば差はさらに大きくなります。</p>
+    <table>
+      <thead>
+        <tr><th>運用方法</th><th>20年後の評価額(元本100万円・年5%)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>単利</td><td>200万円</td></tr>
+        <tr><td>年複利</td><td>約265万円(2,653,298円)</td></tr>
+      </tbody>
+    </table>
+    <p class="note">この計算機は税金・手数料・物価上昇率を反映しない、税引き前の名目リターンを前提にした参考値です。日本では通常、運用益に約20.315%が課税されます(NISA口座は非課税)。実際の成果は商品の仕組みや課税方式によって変わります。</p>
+
+    <h2>知っておくと便利な情報</h2>
+    <p><b>72の法則</b>は、資産が2倍になる年数を素早く見積もる方法です。72を年利回り(%)で割ると、おおよその「2倍になる年数」が出ます。年4%なら約18年、年6%なら約12年、年8%なら約9年です。正確にはlog(2)/log(1+r)で求めますが、利回り4〜12%の範囲では72の法則の誤差は小さく、暗算用として十分実用的です。</p>
+    <p>複利効果の核心は<b>時間</b>です。最初のうちは単利と大差ないように見えますが、利息が利息を生む構造のため、後半になるほど曲線は急角度で上昇します。たとえば毎月3万円を年5%の月複利で積み立てると、20年後の評価額は約1,233万円になり、投入元本720万円に対して500万円あまりの運用益がつきます。つみたてNISAやiDeCoのような長期の積立投資が「早く始めて長く続けること」を重視するのは、この複利効果を最大限に生かすためです。</p>
+    <p>もう1つ覚えておきたいのは、<b>運用益の額と倍率の使い分け</b>です。投入した元本の合計に対して最終評価額が何倍になったか(倍率)を見ると、期間と利回りの組み合わせの効率をひと目で比べられます。この計算機で利回りを1%刻みで変えたり、期間を5年単位で延ばしたりしながら、貯蓄・投資計画の感度を確かめてみてください。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faq">
+      <details>
+        <summary>単利と複利はどれくらい差がつきますか?</summary>
+        <p>単利は元本にだけ利息がつき、複利は発生した利息にも利息がつきます。元本100万円を年5%で20年運用すると、単利では200万円ですが、年複利では約265万円(正確には2,653,298円)になります。期間が長くなるほど差は加速度的に広がるのが複利の特徴です。</p>
+      </details>
+      <details>
+        <summary>72の法則とは何ですか?</summary>
+        <p>資産が2倍になるまでの年数をざっくり見積もる公式で、72を年利回り(%)で割るだけです。年6%なら72÷6=約12年、年8%なら約9年で元本が2倍になります。正確な値ではありませんが、利回り4〜12%の範囲では誤差が小さく、暗算用として広く使われています。</p>
+      </details>
+      <details>
+        <summary>年複利と月複利ではどちらが有利ですか?</summary>
+        <p>同じ年利回りなら、複利の周期が短い月複利のほうがわずかに有利です。利息がより頻繁に元本へ組み入れられ、その分がさらに利息を生むためです。ただし利回りが1桁台なら差は大きくなく、実際の商品では定められた複利周期に従うので、両方を計算して比較する目安としてご活用ください。</p>
+      </details>
+      <details>
+        <summary>この計算機に税金や手数料は反映されますか?</summary>
+        <p>反映されません。この計算機は税引き前の名目リターンを前提にした参考値です。日本では通常、利息や運用益に約20.315%が課税されますが、NISA口座なら運用益は非課税です。実際の手取りは商品の手数料・信託報酬・課税方式によって変わります。</p>
+      </details>
+      <details>
+        <summary>毎月の積立を入れたとき、年複利と月複利で結果が違うのはなぜですか?</summary>
+        <p>年複利モードでは毎月の積立額×12を年単位の積立として扱う近似計算を使っているためです。毎月入金する実際のお金の流れを正確に反映するには、月ごとに利息がつく月複利の式のほうが適しているので、積立がある場合は月複利モードをおすすめします。</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>関連ツール</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/ja/percent"><div class="ico">📊</div><b>パーセント計算</b><span>割合・割引・増減率をまとめて</span></a>
+      <a class="tool-card" href="/ja/dday"><div class="ico">📅</div><b>日数計算・カウントダウン</b><span>日付の間の日数とカウントダウン</span></a>
+      <a class="tool-card" href="/ja/age"><div class="ico">🎂</div><b>年齢計算</b><span>満年齢と生まれてから何日か</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa(カルクモア)</b> — 暮らしに役立つ無料計算ツール集<br>
+      計算結果は参考値であり、法的効力はありません。
+    </div>
+    <nav class="links">
+      <a href="/about">About (韓国語)</a>
+      <a href="/privacy">Privacy (韓国語)</a>
+      <a href="/terms">Terms (韓国語)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  var freq = "yearly"; /* yearly(年複利) | monthly(月複利) */
+
+  Array.prototype.forEach.call($("segFreq").querySelectorAll("button"), function (btn) {
+    btn.addEventListener("click", function () {
+      Array.prototype.forEach.call($("segFreq").querySelectorAll("button"), function (b) {
+        b.classList.toggle("on", b === btn);
+      });
+      freq = btn.getAttribute("data-freq");
+    });
+  });
+
+  function fmt(n, d) {
+    return Number(n).toLocaleString("ja-JP", {
+      minimumFractionDigits: d || 0,
+      maximumFractionDigits: d || 0
+    });
+  }
+  function yen(n) { return "¥" + fmt(Math.round(n)); }
+  function intVal(el, allowEmptyZero) {
+    var v = String(el.value).replace(/[^\d]/g, "");
+    if (v === "") return allowEmptyZero ? 0 : NaN;
+    return Number(v);
+  }
+  function floatVal(el) {
+    var v = String(el.value).trim();
+    return v === "" ? NaN : Number(v);
+  }
+
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var P = intVal($("principal"), true);
+    var monthly = intVal($("monthly"), true);
+    var ratePct = floatVal($("rate"));
+    var t = intVal($("years"), false);
+
+    var ok = true;
+    if (!(P >= 0)) { CM.invalid($("fPrincipal"), true); ok = false; } else { CM.invalid($("fPrincipal"), false); }
+    if (!(monthly >= 0)) { CM.invalid($("fMonthly"), true); ok = false; } else { CM.invalid($("fMonthly"), false); }
+    if (!(ratePct >= 0) || !isFinite(ratePct)) { CM.invalid($("fRate"), true); ok = false; } else { CM.invalid($("fRate"), false); }
+    if (!(t >= 1)) { CM.invalid($("fYears"), true); ok = false; } else { CM.invalid($("fYears"), false); }
+    if (ok && P === 0 && monthly === 0) { CM.invalid($("fPrincipal"), true); ok = false; }
+    if (!ok) return;
+
+    var r = ratePct / 100;
+    var invested = P + monthly * 12 * t;
+    var fv;
+
+    if (r === 0) {
+      fv = invested;
+    } else if (freq === "yearly") {
+      /* 年複利: 元本 + 年単位の積立近似 (A = 毎月の積立 × 12) */
+      var A = monthly * 12;
+      fv = P * Math.pow(1 + r, t) + A * (Math.pow(1 + r, t) - 1) / r;
+    } else {
+      /* 月複利 */
+      var i = r / 12;
+      var n = t * 12;
+      fv = P * Math.pow(1 + i, n) + monthly * (Math.pow(1 + i, n) - 1) / i;
+    }
+
+    var profit = fv - invested;
+    var multiple = invested > 0 ? fv / invested : 0;
+    var doubleYears = r > 0 ? 72 / ratePct : 0;
+    var freqName = freq === "yearly" ? "年複利" : "月複利";
+
+    $("result").hidden = false;
+    $("rMain").textContent = yen(fv);
+    $("rInvested").textContent = yen(invested);
+    $("rProfit").textContent = (profit >= 0 ? "+" : "") + yen(profit);
+    $("rMultiple").textContent = fmt(multiple, 2) + "倍";
+    $("rDouble").textContent = r > 0 ? "約" + fmt(doubleYears, 1) + "年" : "-";
+
+    lastText = "複利計算(" + freqName + ")・年" + ratePct + "%・" + t + "年\n"
+      + "最初の元本: " + yen(P) + " / 毎月の積立: " + yen(monthly) + "\n"
+      + "最終評価額: " + yen(fv) + "\n"
+      + "投入元本の合計: " + yen(invested)
+      + " / 運用益: " + yen(profit)
+      + " / 倍率: " + fmt(multiple, 2) + "倍"
+      + (r > 0 ? " / 2倍になる年数(72の法則): 約" + fmt(doubleYears, 1) + "年" : "")
+      + "\n- calcmoa.site/ja/compound";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["principal", "monthly", "rate", "years"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+</body>
+</html>
