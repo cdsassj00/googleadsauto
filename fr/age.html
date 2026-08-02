@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Calculateur d'âge - Âge exact en années, mois et jours</title>
+<meta name="description" content="Entrez votre date de naissance et obtenez votre âge exact en années, mois et jours, le compte à rebours avant votre prochain anniversaire et le nombre total de jours vécus. Gratuit et sans inscription.">
+<link rel="canonical" href="https://calcmoa.site/fr/age">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/age">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/age">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/age">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/age">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/age">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur d'âge - Âge exact en années, mois et jours">
+<meta property="og:description" content="Âge exact en années, mois et jours, jours restants avant le prochain anniversaire et nombre total de jours vécus, calculés à partir de la date de naissance.">
+<meta property="og:url" content="https://calcmoa.site/fr/age">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur d'âge","url":"https://calcmoa.site/fr/age","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"fr"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"fr","mainEntity":[
+  {"@type":"Question","name":"Comment l'âge exact est-il calculé ?","acceptedAnswer":{"@type":"Answer","text":"On soustrait l'année de naissance de l'année de la date de référence, puis on retire 1 si l'anniversaire n'a pas encore eu lieu cette année-là. Les mois et les jours sont ensuite comptés à partir du dernier anniversaire, ce qui donne un âge sous la forme « X ans, Y mois et Z jours »."}},
+  {"@type":"Question","name":"Que se passe-t-il pour les personnes nées un 29 février ?","acceptedAnswer":{"@type":"Answer","text":"Les années non bissextiles, ce calculateur considère le 1er mars comme date d'anniversaire, par approximation. Pour toute démarche officielle, référez-vous à l'interprétation de l'administration concernée."}},
+  {"@type":"Question","name":"Puis-je calculer mon âge à une date passée ou future ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Le champ « date de référence » est prérempli avec la date du jour, mais vous pouvez y saisir n'importe quelle date : celle d'un concours, d'un contrat ou d'un événement à venir, pour connaître votre âge exact ce jour-là."}},
+  {"@type":"Question","name":"Le nombre de jours vécus inclut-il le jour de naissance ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Le jour de naissance compte comme le premier jour : une personne née hier en est aujourd'hui à son 2e jour de vie. C'est une convention d'affichage courante pour ce type de compteur."}},
+  {"@type":"Question","name":"Ma date de naissance est-elle enregistrée quelque part ?","acceptedAnswer":{"@type":"Answer","text":"Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée saisie n'est transmise à un serveur ni conservée."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/fr"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/fr">Outils</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/fr">Accueil</a><span class="sep">›</span>
+    <span>Calculateur d'âge</span>
+  </nav>
+
+  <h1>Calculateur d'âge</h1>
+  <p class="lead">Entrez votre date de naissance : votre âge exact en années, mois et jours s'affiche, avec le compte à rebours avant votre prochain anniversaire et le nombre total de jours vécus.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field-row">
+      <div class="field" id="fBirth">
+        <label for="birth">Date de naissance</label>
+        <input type="date" id="birth">
+        <div class="field-error" id="eBirth">Veuillez saisir votre date de naissance.</div>
+      </div>
+      <div class="field" id="fBase">
+        <label for="base">Date de référence</label>
+        <input type="date" id="base">
+        <div class="hint">Par défaut : aujourd'hui. Vous pouvez aussi calculer l'âge à une autre date.</div>
+        <div class="field-error" id="eBase">Veuillez saisir une date de référence.</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">Calculer</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">Âge exact à la date de référence</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>Prochain anniversaire</span><b id="rNext"></b></div>
+        <div class="row"><span>Jours vécus (jour de naissance inclus)</span><b id="rDays"></b></div>
+        <div class="row"><span>Âge en mois (approx.)</span><b id="rMonths"></b></div>
+        <div class="row"><span>Âge en semaines (approx.)</span><b id="rWeeks"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">Copier le résultat</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>Mode d'emploi</h2>
+    <ol>
+      <li>Sélectionnez votre date de naissance dans le calendrier ou saisissez-la directement.</li>
+      <li>La date de référence est préremplie avec la date du jour. Pour connaître votre âge à une date précise — un concours, la signature d'un contrat, un départ à la retraite — remplacez-la simplement.</li>
+      <li>Cliquez sur <b>Calculer</b> : l'âge exact s'affiche en grand, suivi du compte à rebours avant le prochain anniversaire, du nombre de jours vécus et des conversions en mois et en semaines.</li>
+      <li>Le bouton <b>Copier le résultat</b> place un résumé en texte dans le presse-papiers, prêt à être collé dans un message.</li>
+    </ol>
+
+    <h2>Comment l'âge exact est calculé</h2>
+    <p>L'âge « révolu » — celui qui figure sur les documents officiels — augmente d'une unité à chaque anniversaire. Le calcul se fait en trois temps :</p>
+    <ol>
+      <li>On soustrait l'année de naissance de l'année de référence.</li>
+      <li>Si l'anniversaire n'a pas encore eu lieu dans l'année de référence, on retire 1 : le nouvel âge ne s'applique qu'à partir du jour de l'anniversaire.</li>
+      <li>Les mois et les jours restants sont comptés à partir du dernier anniversaire, ce qui donne un âge du type <b>25 ans, 10 mois et 3 jours</b>.</li>
+    </ol>
+    <table>
+      <thead>
+        <tr><th>Élément</th><th>Méthode</th><th>Exemple : né(e) le 1er septembre 2000, référence 31 juillet 2026</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Années</td><td>Année de référence − année de naissance, −1 avant l'anniversaire</td><td>2026 − 2000 − 1 = <b>25 ans</b></td></tr>
+        <tr><td>Mois et jours</td><td>Comptés depuis le dernier anniversaire</td><td>du 1er sept. 2025 au 31 juil. 2026 → <b>10 mois et 30 jours</b></td></tr>
+        <tr><td>Prochain anniversaire</td><td>Jours restants jusqu'au prochain 1er septembre</td><td><b>J-32</b></td></tr>
+      </tbody>
+    </table>
+    <p>Le nombre de jours vécus est obtenu en comptant les jours écoulés entre la naissance et la date de référence, jour de naissance inclus. Les conversions en mois (÷ 30,44) et en semaines (÷ 7) sont des approximations pratiques pour suivre l'âge d'un nourrisson ou marquer un cap symbolique comme le 10 000e jour de vie.</p>
+
+    <h2>Bon à savoir</h2>
+    <p>En France comme dans la plupart des pays, l'âge légal est l'<b>âge révolu</b> : on a 17 ans jusqu'à la veille de son 18e anniversaire, et la majorité s'acquiert le jour même de l'anniversaire. C'est cet âge qui fait foi pour voter, passer le permis de conduire ou signer un contrat. Certains pays d'Asie de l'Est ont longtemps utilisé d'autres conventions (un an à la naissance, une année de plus au Nouvel An), d'où des écarts possibles quand on compare des âges d'un pays à l'autre.</p>
+    <p>Les personnes nées un <b>29 février</b> n'ont un « vrai » anniversaire que tous les quatre ans. Ce calculateur applique une règle simple : les années non bissextiles, l'anniversaire est réputé tomber le 1er mars. C'est une approximation d'usage courant ; pour une question juridique, l'interprétation de l'administration concernée prévaut.</p>
+    <p class="note">Les résultats sont fournis à titre indicatif et n'ont aucune valeur juridique. Pour toute démarche officielle (retraite, assurance, état civil), reportez-vous aux règles de l'organisme concerné.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq">
+      <details>
+        <summary>Comment l'âge exact est-il calculé ?</summary>
+        <p>On soustrait l'année de naissance de l'année de la date de référence, puis on retire 1 si l'anniversaire n'a pas encore eu lieu cette année-là. Les mois et les jours sont ensuite comptés à partir du dernier anniversaire, ce qui donne un âge sous la forme « X ans, Y mois et Z jours ».</p>
+      </details>
+      <details>
+        <summary>Que se passe-t-il pour les personnes nées un 29 février ?</summary>
+        <p>Les années non bissextiles, ce calculateur considère le 1er mars comme date d'anniversaire, par approximation. Pour toute démarche officielle, référez-vous à l'interprétation de l'administration concernée.</p>
+      </details>
+      <details>
+        <summary>Puis-je calculer mon âge à une date passée ou future ?</summary>
+        <p>Oui. Le champ « date de référence » est prérempli avec la date du jour, mais vous pouvez y saisir n'importe quelle date : celle d'un concours, d'un contrat ou d'un événement à venir, pour connaître votre âge exact ce jour-là.</p>
+      </details>
+      <details>
+        <summary>Le nombre de jours vécus inclut-il le jour de naissance ?</summary>
+        <p>Oui. Le jour de naissance compte comme le premier jour : une personne née hier en est aujourd'hui à son 2e jour de vie. C'est une convention d'affichage courante pour ce type de compteur.</p>
+      </details>
+      <details>
+        <summary>Ma date de naissance est-elle enregistrée quelque part ?</summary>
+        <p>Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée saisie n'est transmise à un serveur ni conservée.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Autres calculateurs</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/fr/dday"><div class="ico">📅</div><b>Calculateur de jours</b><span>Compte à rebours et jours entre deux dates</span></a>
+      <a class="tool-card" href="/fr/bmi"><div class="ico">⚖️</div><b>Calculateur IMC</b><span>Indice de Masse Corporelle selon l'OMS</span></a>
+      <a class="tool-card" href="/fr/percent"><div class="ico">📊</div><b>Calculateur de pourcentage</b><span>Remise, variation, part d'un total</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — des calculateurs gratuits pour la vie de tous les jours.<br>
+      Les résultats sont fournis à titre indicatif et n'ont aucune valeur juridique.
+    </div>
+    <nav class="links">
+      <a href="/about">À propos (coréen)</a>
+      <a href="/privacy">Confidentialité (coréen)</a>
+      <a href="/terms">Conditions (coréen)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var birthEl = $("birth"), baseEl = $("base");
+  var fBirth = $("fBirth"), fBase = $("fBase");
+  var result = $("result");
+  var DAY = 86400000;
+  var MO = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+  function fmt(n, d) {
+    return Number(n).toLocaleString("fr-FR", { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
+  }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function toISO(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function parseDate(v) {
+    var p = v.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function fmtF(d) {
+    var day = d.getDate();
+    return (day === 1 ? "1er" : day) + " " + MO[d.getMonth()] + " " + d.getFullYear();
+  }
+
+  /* Date de référence par défaut : aujourd'hui */
+  baseEl.value = toISO(new Date());
+
+  $("calcBtn").addEventListener("click", calc);
+  [birthEl, baseEl].forEach(function (el) {
+    el.addEventListener("keydown", function (e) { if (e.key === "Enter") calc(); });
+  });
+
+  var lastText = "";
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  function calc() {
+    var ok = true;
+    if (!birthEl.value) {
+      $("eBirth").textContent = "Veuillez saisir votre date de naissance.";
+      CM.invalid(fBirth, true); ok = false;
+    } else {
+      CM.invalid(fBirth, false);
+    }
+    if (!baseEl.value) {
+      CM.invalid(fBase, true); ok = false;
+    } else {
+      CM.invalid(fBase, false);
+    }
+    if (!ok) { result.hidden = true; return; }
+
+    var birth = parseDate(birthEl.value);
+    var base = parseDate(baseEl.value);
+    if (birth.getTime() > base.getTime()) {
+      $("eBirth").textContent = "La date de naissance ne peut pas être postérieure à la date de référence.";
+      CM.invalid(fBirth, true);
+      result.hidden = true;
+      return;
+    }
+
+    /* Anniversaire de l'année de référence — un 29/02 devient 01/03 les années non bissextiles (approx.) */
+    var bdayThisYear = new Date(base.getFullYear(), birth.getMonth(), birth.getDate());
+    var years = base.getFullYear() - birth.getFullYear() - (base.getTime() < bdayThisYear.getTime() ? 1 : 0);
+
+    /* Mois et jours depuis le dernier anniversaire */
+    var lastBday = new Date(birth.getFullYear() + years, birth.getMonth(), birth.getDate());
+    var months = base.getMonth() - lastBday.getMonth() + (base.getFullYear() - lastBday.getFullYear()) * 12;
+    var anchor = new Date(lastBday.getFullYear(), lastBday.getMonth() + months, lastBday.getDate());
+    if (anchor.getTime() > base.getTime()) {
+      months -= 1;
+      anchor = new Date(lastBday.getFullYear(), lastBday.getMonth() + months, lastBday.getDate());
+    }
+    var days = Math.round((base.getTime() - anchor.getTime()) / DAY);
+
+    /* Prochain anniversaire */
+    var next = bdayThisYear;
+    var isBirthdayToday = base.getTime() === bdayThisYear.getTime();
+    if (next.getTime() <= base.getTime()) {
+      next = new Date(base.getFullYear() + 1, birth.getMonth(), birth.getDate());
+    }
+    var dNext = Math.round((next.getTime() - base.getTime()) / DAY);
+    var lived = Math.round((base.getTime() - birth.getTime()) / DAY) + 1; /* jour de naissance inclus */
+
+    result.hidden = false;
+    $("rMain").textContent = years + " an" + (years > 1 ? "s" : "") + ", " +
+      months + " mois et " + days + " jour" + (days > 1 ? "s" : "");
+    $("rNext").textContent = isBirthdayToday
+      ? "C'est aujourd'hui — joyeux anniversaire ! 🎉"
+      : "J-" + fmt(dNext) + " (" + fmtF(next) + ")";
+    $("rDays").textContent = fmt(lived) + " jours";
+    $("rMonths").textContent = "env. " + fmt(Math.floor((lived - 1) / 30.44)) + " mois";
+    $("rWeeks").textContent = "env. " + fmt(Math.floor((lived - 1) / 7)) + " semaines";
+
+    lastText = "[Calculateur d'âge] Naissance : " + fmtF(birth) + " / Référence : " + fmtF(base) +
+      " → " + years + " ans, " + months + " mois et " + days + " jours ; " +
+      (isBirthdayToday ? "anniversaire aujourd'hui" : "prochain anniversaire J-" + dNext) +
+      " ; " + fmt(lived) + " jours vécus (calcmoa.site)";
+  }
+});
+</script>
+</body>
+</html>

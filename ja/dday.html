@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>日数計算・カウントダウン - 日付の間の日数</title>
+<meta name="description" content="目標日まであと何日かのカウントダウン、2つの日付の間の日数(初日を含む・含まない)、日付の足し算・引き算を1ページで計算できます。無料・登録不要の日数計算ツールです。">
+<link rel="canonical" href="https://calcmoa.site/ja/dday">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/dday">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/dday">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/dday">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/dday">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/dday">
+<meta property="og:type" content="website">
+<meta property="og:title" content="日数計算・カウントダウン - 日付の間の日数">
+<meta property="og:description" content="目標日まであと何日かのカウントダウン、2つの日付の間の日数、日付の足し算・引き算を1ページで計算できます。無料・登録不要の日数計算ツールです。">
+<meta property="og:url" content="https://calcmoa.site/ja/dday">
+<meta property="og:site_name" content="CalcMoa(カルクモア)">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"日数計算・カウントダウン","url":"https://calcmoa.site/ja/dday","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"inLanguage":"ja"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[
+  {"@type":"Question","name":"「あと1日」は当日ですか、前日ですか?","acceptedAnswer":{"@type":"Answer","text":"「あと1日」は目標日の前日を指します。目標日の当日は「本日」と表示され、翌日からは「1日経過」「2日経過」と数えます。"}},
+  {"@type":"Question","name":"「初日を含める」はどんなときにチェックしますか?","acceptedAnswer":{"@type":"Answer","text":"宿泊数のように2つの日付の間隔を測るときはチェックなし(今日〜明日=1日)、勤務日数や服薬日数のように初日も1日と数えたいときはチェックあり(今日〜明日=2日)を選びます。"}},
+  {"@type":"Question","name":"か月・年への換算は正確ですか?","acceptedAnswer":{"@type":"Answer","text":"1か月を平均30.44日(365.25日÷12)、1年を平均365.25日として割った近似値です。月ごとに日数が異なるため、あくまで目安としてご利用ください。"}},
+  {"@type":"Question","name":"時刻(何時か)は計算に反映されますか?","acceptedAnswer":{"@type":"Answer","text":"いいえ。すべての計算は午前0時を基準に日付だけを比較します。朝に計算しても夜に計算しても、同じ日であれば結果は変わりません。"}},
+  {"@type":"Question","name":"日付の加算にマイナスの日数を入れるとどうなりますか?","acceptedAnswer":{"@type":"Answer","text":"基準日からその日数分だけ過去にさかのぼります。たとえば-30と入力すると、基準日の30日前の日付と曜日が表示されます。"}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/ja"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/ja">ツール</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/ja">ホーム</a><span class="sep">›</span>
+    <span>日数計算・カウントダウン</span>
+  </nav>
+
+  <h1>日数計算・カウントダウン</h1>
+  <p class="lead">試験・旅行・記念日まであと何日かのカウントダウン、2つの日付の間の日数、日付の足し算・引き算を、この1ページで計算できます。</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="seg" id="modeSeg" role="tablist" aria-label="計算モード" style="margin-bottom:18px">
+      <button type="button" class="on" data-mode="dday">カウントダウン</button>
+      <button type="button" data-mode="diff">日数の差</button>
+      <button type="button" data-mode="add">日付の加算</button>
+    </div>
+
+    <div id="panel-dday">
+      <div class="field" id="fDdTarget">
+        <label for="ddTarget">目標日</label>
+        <input type="date" id="ddTarget">
+        <div class="hint">試験日、旅行の出発日、締め切りなど、目標となる日付を選んでください。</div>
+        <div class="field-error">目標日を正しく選択してください。</div>
+      </div>
+    </div>
+
+    <div id="panel-diff" hidden>
+      <div class="field-row">
+        <div class="field" id="fDfA">
+          <label for="dfA">開始日</label>
+          <input type="date" id="dfA">
+          <div class="field-error">開始日を正しく選択してください。</div>
+        </div>
+        <div class="field" id="fDfB">
+          <label for="dfB">終了日</label>
+          <input type="date" id="dfB">
+          <div class="field-error">終了日を正しく選択してください。</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="dfIncl" style="display:flex;align-items:center;gap:8px;cursor:pointer">
+          <input type="checkbox" id="dfIncl" style="width:auto"> 初日を含める(両端入れ)
+        </label>
+        <div class="hint">チェックすると今日〜明日が2日、外すと1日として計算されます。</div>
+      </div>
+    </div>
+
+    <div id="panel-add" hidden>
+      <div class="field-row">
+        <div class="field" id="fDaBase">
+          <label for="daBase">基準日</label>
+          <input type="date" id="daBase">
+          <div class="field-error">基準日を正しく選択してください。</div>
+        </div>
+        <div class="field" id="fDaN">
+          <label for="daN">加える日数(マイナス可)</label>
+          <input type="number" id="daN" step="1" value="100">
+          <div class="hint">例:100 → 100日後、-30 → 30日前</div>
+          <div class="field-error">-1,000,000〜1,000,000の範囲の整数を入力してください。</div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="calcBtn">計算する</button>
+
+    <div class="result" hidden id="result" aria-live="polite">
+      <div class="label" id="rLabel">結果</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">結果をコピー</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>使い方</h2>
+    <ol>
+      <li>上部のタブから<b>カウントダウン / 日数の差 / 日付の加算</b>のいずれかを選びます。</li>
+      <li><b>カウントダウン</b>:目標日を選んで「計算する」を押すと、今日から目標日まであと何日か、目標日の曜日、何週間と何日か、か月換算までまとめて表示されます。</li>
+      <li><b>日数の差</b>:2つの日付を入力し、初日を含めるかどうかを選ぶと、間の日数と週・か月・年への換算が表示されます。</li>
+      <li><b>日付の加算</b>:基準日と足し引きする日数(マイナス可)を入力すると、結果の日付と曜日が表示されます。たとえば「今日から100日後は何月何日か」がすぐに分かります。</li>
+    </ol>
+
+    <h2>日数計算の仕組み</h2>
+    <p>2つの日付をどちらも午前0時にそろえたうえで、その差(ミリ秒)を1日分(86,400,000ミリ秒)で割って求めています。時刻は無視して日付だけを比較するので、朝に計算しても夜に計算しても結果は同じです。</p>
+    <h3>初日を含めるかどうかで1日変わる</h3>
+    <p>同じ2つの日付でも、初日を1日と数えるかどうかで結果が1日変わります。今日から明日までは「間隔」として見れば1日ですが、初日も含めて数えれば(両端入れ)2日です。日本の民法でも、期間の計算では原則として初日を算入しない「初日不算入の原則」が採用されています。</p>
+    <table>
+      <thead>
+        <tr><th>数え方</th><th>今日 → 明日</th><th>主な用途</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>初日を含めない</td><td>1日</td><td>日付の間隔、カウントダウン、宿泊数(〇泊)</td></tr>
+        <tr><td>初日を含める(両端入れ)</td><td>2日</td><td>勤務日数、服薬日数、旅行全体の日程(〇日間)</td></tr>
+      </tbody>
+    </table>
+    <h3>週・か月・年への換算基準</h3>
+    <p>週単位は7日で割った商と余りをそのまま表示します。か月と年は月ごとに日数が異なり正確には割り切れないため、1か月=約30.44日(365.25日÷12)、1年=約365.25日という平均値で割った<b>近似値</b>を参考として表示しています。</p>
+
+    <h2>知っておくと便利な情報</h2>
+    <ul>
+      <li><b>受験・資格試験の対策に</b>:試験日を目標日に入れて、あと100日・50日・30日の節目を確認し、勉強計画の区切りに活用できます。</li>
+      <li><b>目標日を過ぎると</b>自動的に「〇日経過」の表示に切り替わるので、プロジェクトの開始日を入れて「今日で何日目か」を数える使い方もできます。</li>
+      <li><b>クーリングオフ・返品期限の確認に</b>:日付の加算モードに基準日と8日・14日などの日数を入れれば、期限にあたる日付と曜日がすぐ分かります。期限が土日にかかるかどうかの確認にも便利です。</li>
+      <li><b>結婚記念日や推し活のカウントダウンに</b>:記念日やライブの日を目標日に入れておけば、残り日数がひと目で分かります。</li>
+      <li>生まれてから今日で何日目かを知りたい場合は、<a href="/ja/age">年齢計算</a>のほうが便利です。満年齢と合わせて総日数が表示されます。</li>
+    </ul>
+    <p class="note">か月・年への換算は平均値に基づく近似値です。計算はすべてお使いのブラウザー内だけで行われ、入力した日付が送信・保存されることはありません。</p>
+
+    <h2>よくある質問</h2>
+    <div class="faq">
+      <details>
+        <summary>「あと1日」は当日ですか、前日ですか?</summary>
+        <p>「あと1日」は目標日の前日を指します。目標日の当日は「本日」と表示され、翌日からは「1日経過」「2日経過」と数えます。</p>
+      </details>
+      <details>
+        <summary>「初日を含める」はどんなときにチェックしますか?</summary>
+        <p>宿泊数のように2つの日付の間隔を測るときはチェックなし(今日〜明日=1日)、勤務日数や服薬日数のように初日も1日と数えたいときはチェックあり(今日〜明日=2日)を選びます。</p>
+      </details>
+      <details>
+        <summary>か月・年への換算は正確ですか?</summary>
+        <p>1か月を平均30.44日(365.25日÷12)、1年を平均365.25日として割った近似値です。月ごとに日数が異なるため、あくまで目安としてご利用ください。</p>
+      </details>
+      <details>
+        <summary>時刻(何時か)は計算に反映されますか?</summary>
+        <p>いいえ。すべての計算は午前0時を基準に日付だけを比較します。朝に計算しても夜に計算しても、同じ日であれば結果は変わりません。</p>
+      </details>
+      <details>
+        <summary>日付の加算にマイナスの日数を入れるとどうなりますか?</summary>
+        <p>基準日からその日数分だけ過去にさかのぼります。たとえば-30と入力すると、基準日の30日前の日付と曜日が表示されます。</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>関連ツール</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/ja/age"><div class="ico">🎂</div><b>年齢計算</b><span>満年齢と生まれてから何日か</span></a>
+      <a class="tool-card" href="/ja/percent"><div class="ico">📊</div><b>パーセント計算</b><span>割合・割引・増減率をまとめて</span></a>
+      <a class="tool-card" href="/ja/charcount"><div class="ico">✏️</div><b>文字数カウント</b><span>原稿用紙・SNSの文字数をチェック</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa(カルクモア)</b> — 暮らしに役立つ無料計算ツール集<br>
+      計算結果は参考値であり、法的効力はありません。
+    </div>
+    <nav class="links">
+      <a href="/about">About (韓国語)</a>
+      <a href="/privacy">Privacy (韓国語)</a>
+      <a href="/terms">Terms (韓国語)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var WD = ["日", "月", "火", "水", "木", "金", "土"];
+  var MS = 86400000;
+
+  function fmt(n, d) {
+    return Number(n).toLocaleString("ja-JP", {
+      minimumFractionDigits: d || 0,
+      maximumFractionDigits: d || 0
+    });
+  }
+  function todayMid() {
+    var t = new Date();
+    return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+  }
+  function parseDate(v) {
+    if (!v) return null;
+    var p = v.split("-");
+    if (p.length !== 3) return null;
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function toInput(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+  function fmtDate(d) { return d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日"; }
+  function wd(d) { return "(" + WD[d.getDay()] + ")"; }
+  function diffDays(a, b) { return Math.round((b - a) / MS); }
+  function addDays(d, n) { return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n); }
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function row(label, value) {
+    return '<div class="row"><span>' + esc(label) + "</span><b>" + esc(value) + "</b></div>";
+  }
+  function weeksText(n) { return fmt(Math.floor(n / 7)) + "週間と" + (n % 7) + "日"; }
+
+  ["ddTarget", "dfA", "dfB", "daBase"].forEach(function (id) {
+    $(id).value = toInput(todayMid());
+  });
+
+  var mode = "dday";
+  var segBtns = document.querySelectorAll("#modeSeg button");
+  Array.prototype.forEach.call(segBtns, function (btn) {
+    btn.addEventListener("click", function () {
+      mode = btn.getAttribute("data-mode");
+      Array.prototype.forEach.call(segBtns, function (b) {
+        b.classList.toggle("on", b === btn);
+      });
+      $("panel-dday").hidden = mode !== "dday";
+      $("panel-diff").hidden = mode !== "diff";
+      $("panel-add").hidden = mode !== "add";
+      $("result").hidden = true;
+    });
+  });
+
+  var lastCopy = "";
+  CM.bindCopy($("copyBtn"), function () { return lastCopy; });
+
+  function calcDday() {
+    var f = $("fDdTarget");
+    var t = parseDate($("ddTarget").value);
+    if (!t) { CM.invalid(f, true); return; }
+    CM.invalid(f, false);
+
+    var today = todayMid();
+    var diff = diffDays(today, t);
+    var abs = Math.abs(diff);
+    var bigText;
+    if (diff > 0) {
+      bigText = "あと" + fmt(diff) + "日";
+    } else if (diff < 0) {
+      bigText = fmt(abs) + "日経過";
+    } else {
+      bigText = "本日です";
+    }
+    $("rMain").textContent = bigText;
+    var rows = "";
+    rows += row("目標日", fmtDate(t) + " " + wd(t));
+    rows += row("状態", diff > 0 ? "残り" + fmt(abs) + "日" : (diff < 0 ? fmt(abs) + "日経過" : "今日が目標日です"));
+    rows += row("週単位", weeksText(abs));
+    rows += row("か月換算(近似)", "約" + fmt(abs / 30.44, 1) + "か月");
+    $("rLabel").textContent = "今日を基準としたカウントダウン";
+    $("rRows").innerHTML = rows;
+    lastCopy = "日数計算 (calcmoa.site)\n目標日: " + fmtDate(t) + " " + wd(t) + "\n" + bigText;
+    $("result").hidden = false;
+  }
+
+  function calcDiff() {
+    var fa = $("fDfA"), fb = $("fDfB");
+    var a = parseDate($("dfA").value), b = parseDate($("dfB").value);
+    var ok = true;
+    if (!a) { CM.invalid(fa, true); ok = false; } else { CM.invalid(fa, false); }
+    if (!b) { CM.invalid(fb, true); ok = false; } else { CM.invalid(fb, false); }
+    if (!ok) return;
+    if (a > b) { var tmp = a; a = b; b = tmp; }
+
+    var incl = $("dfIncl").checked;
+    var days = diffDays(a, b) + (incl ? 1 : 0);
+    $("rMain").textContent = fmt(days) + "日";
+    var rows = "";
+    rows += row("開始日", fmtDate(a) + " " + wd(a));
+    rows += row("終了日", fmtDate(b) + " " + wd(b));
+    rows += row("数え方", incl ? "初日を含める(両端入れ)" : "初日を含めない");
+    rows += row("週単位", weeksText(days));
+    rows += row("か月換算(近似)", "約" + fmt(days / 30.44, 1) + "か月");
+    rows += row("年換算(近似)", "約" + fmt(days / 365.25, 2) + "年");
+    $("rLabel").textContent = "2つの日付の間の日数";
+    $("rRows").innerHTML = rows;
+    lastCopy = "日数の差 (calcmoa.site)\n" + fmtDate(a) + "〜 " + fmtDate(b) +
+      (incl ? "(初日を含める)" : "(初日を含めない)") + "\n合計" + fmt(days) + "日 = " + weeksText(days);
+    $("result").hidden = false;
+  }
+
+  function calcAdd() {
+    var fb = $("fDaBase"), fn = $("fDaN");
+    var b = parseDate($("daBase").value);
+    var ok = true;
+    if (!b) { CM.invalid(fb, true); ok = false; } else { CM.invalid(fb, false); }
+    var raw = $("daN").value.trim();
+    var n = Number(raw);
+    if (raw === "" || !isFinite(n) || Math.abs(n) > 1000000) {
+      CM.invalid(fn, true); ok = false;
+    } else {
+      CM.invalid(fn, false);
+      n = Math.trunc(n);
+    }
+    if (!ok) return;
+
+    var r = addDays(b, n);
+    var bigText = fmtDate(r) + " " + wd(r);
+    $("rMain").textContent = bigText;
+    var rows = "";
+    rows += row("基準日", fmtDate(b) + " " + wd(b));
+    rows += row("計算内容", n >= 0 ? fmt(n) + "日後" : fmt(-n) + "日前");
+    rows += row("結果の曜日", WD[r.getDay()] + "曜日");
+    $("rLabel").textContent = "計算された日付";
+    $("rRows").innerHTML = rows;
+    lastCopy = "日付の加算 (calcmoa.site)\n" + fmtDate(b) + "の" +
+      (n >= 0 ? fmt(n) + "日後" : fmt(-n) + "日前") + " = " + bigText;
+    $("result").hidden = false;
+  }
+
+  function calc() {
+    if (mode === "dday") { calcDday(); }
+    else if (mode === "diff") { calcDiff(); }
+    else { calcAdd(); }
+  }
+
+  $("calcBtn").addEventListener("click", calc);
+  Array.prototype.forEach.call(document.querySelectorAll(".calc-card input"), function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); calc(); }
+    });
+  });
+});
+</script>
+</body>
+</html>

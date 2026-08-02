@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Calculateur de jours - Nombre de jours entre deux dates, compte à rebours</title>
+<meta name="description" content="Calculez le nombre de jours restant avant une date, la durée entre deux dates (premier jour inclus ou non) et une date après ajout ou retrait de jours. Gratuit, précis au jour près, sans inscription.">
+<link rel="canonical" href="https://calcmoa.site/fr/dday">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/dday">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/dday">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/dday">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/dday">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/dday">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur de jours - Nombre de jours entre deux dates, compte à rebours">
+<meta property="og:description" content="Compte à rebours avant une date, durée entre deux dates, ajout ou retrait de jours : trois calculs de dates réunis sur une seule page, gratuitement.">
+<meta property="og:url" content="https://calcmoa.site/fr/dday">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur de jours","url":"https://calcmoa.site/fr/dday","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"fr"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"fr","mainEntity":[
+  {"@type":"Question","name":"J-1 correspond-il au jour même ou à la veille ?","acceptedAnswer":{"@type":"Answer","text":"J-1 correspond à la veille de la date visée. Le jour même s'écrit Jour J (J-0), puis on compte J+1, J+2 pour les jours suivants."}},
+  {"@type":"Question","name":"Quand faut-il cocher « inclure le premier jour » ?","acceptedAnswer":{"@type":"Answer","text":"Laissez la case décochée pour mesurer un intervalle, comme un nombre de nuits d'hôtel (aujourd'hui → demain = 1 jour). Cochez-la quand le premier jour compte comme un jour entier, par exemple pour des jours de travail ou la durée d'un traitement (aujourd'hui → demain = 2 jours)."}},
+  {"@type":"Question","name":"La conversion en mois et en années est-elle exacte ?","acceptedAnswer":{"@type":"Answer","text":"C'est une approximation : un mois est compté comme 30,44 jours en moyenne (365,25 ÷ 12) et une année comme 365,25 jours. Comme la longueur des mois varie, utilisez ces valeurs à titre indicatif uniquement."}},
+  {"@type":"Question","name":"L'heure de la journée est-elle prise en compte ?","acceptedAnswer":{"@type":"Answer","text":"Non. Tous les calculs comparent uniquement les dates, ramenées à minuit (00 h 00). Que vous fassiez le calcul le matin ou le soir, le résultat reste identique pour une même journée."}},
+  {"@type":"Question","name":"Que se passe-t-il si je saisis un nombre négatif dans « ajouter des jours » ?","acceptedAnswer":{"@type":"Answer","text":"Le calcul remonte dans le passé d'autant de jours. Par exemple, -30 affiche la date et le jour de la semaine situés 30 jours avant la date de référence."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/fr"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/fr">Outils</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/fr">Accueil</a><span class="sep">›</span>
+    <span>Calculateur de jours</span>
+  </nav>
+
+  <h1>Calculateur de jours</h1>
+  <p class="lead">Compte à rebours avant un examen ou un événement, nombre de jours entre deux dates, ajout ou retrait de jours : trois calculs réunis sur une seule page.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="seg" id="modeSeg" role="tablist" aria-label="Mode de calcul" style="margin-bottom:18px">
+      <button type="button" class="on" data-mode="dday">Compte à rebours</button>
+      <button type="button" data-mode="diff">Entre deux dates</button>
+      <button type="button" data-mode="add">Ajouter des jours</button>
+    </div>
+
+    <div id="panel-dday">
+      <div class="field" id="fDdTarget">
+        <label for="ddTarget">Date visée (Jour J)</label>
+        <input type="date" id="ddTarget">
+        <div class="hint">Examen, mariage, départ en vacances… choisissez la date qui vous sert d'objectif.</div>
+        <div class="field-error">Veuillez sélectionner une date valide.</div>
+      </div>
+    </div>
+
+    <div id="panel-diff" hidden>
+      <div class="field-row">
+        <div class="field" id="fDfA">
+          <label for="dfA">Date de début</label>
+          <input type="date" id="dfA">
+          <div class="field-error">Veuillez sélectionner une date de début valide.</div>
+        </div>
+        <div class="field" id="fDfB">
+          <label for="dfB">Date de fin</label>
+          <input type="date" id="dfB">
+          <div class="field-error">Veuillez sélectionner une date de fin valide.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="dfIncl" style="display:flex;align-items:center;gap:8px;cursor:pointer">
+          <input type="checkbox" id="dfIncl" style="width:auto"> Inclure le premier jour
+        </label>
+        <div class="hint">Cochée : aujourd'hui → demain = 2 jours. Décochée : 1 jour (intervalle).</div>
+      </div>
+    </div>
+
+    <div id="panel-add" hidden>
+      <div class="field-row">
+        <div class="field" id="fDaBase">
+          <label for="daBase">Date de référence</label>
+          <input type="date" id="daBase">
+          <div class="field-error">Veuillez sélectionner une date de référence valide.</div>
+        </div>
+        <div class="field" id="fDaN">
+          <label for="daN">Jours à ajouter (négatif possible)</label>
+          <input type="number" id="daN" step="1" value="100">
+          <div class="hint">Ex. : 100 → dans 100 jours, -30 → il y a 30 jours</div>
+          <div class="field-error">Veuillez saisir un entier compris entre -1 000 000 et 1 000 000.</div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="calcBtn">Calculer</button>
+
+    <div class="result" hidden id="result" aria-live="polite">
+      <div class="label" id="rLabel">Résultat</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">Copier le résultat</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>Mode d'emploi</h2>
+    <ol>
+      <li>Choisissez le mode souhaité dans les onglets : <b>Compte à rebours / Entre deux dates / Ajouter des jours</b>.</li>
+      <li><b>Compte à rebours</b> : sélectionnez la date visée. Vous obtenez J-n (jours restants) ou J+n (jours écoulés), le jour de la semaine, l'équivalent en semaines et une conversion approximative en mois.</li>
+      <li><b>Entre deux dates</b> : saisissez les deux dates et précisez si le premier jour doit être compté. Le nombre de jours s'affiche avec sa conversion en semaines, mois et années.</li>
+      <li><b>Ajouter des jours</b> : indiquez une date de référence et un nombre de jours (négatif pour remonter dans le temps). Pratique pour savoir, par exemple, quel jour tombera dans 100 jours.</li>
+    </ol>
+
+    <h2>Comment fonctionne le compte à rebours</h2>
+    <p>Le Jour J désigne la date de l'événement lui-même. Les jours qui l'entourent sont notés en fonction du nombre de jours qui les séparent de cette date :</p>
+    <table>
+      <thead>
+        <tr><th>Notation</th><th>Signification</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>J-7</td><td>7 jours avant la date visée</td></tr>
+        <tr><td>J-1</td><td>la veille</td></tr>
+        <tr><td>Jour J (J-0)</td><td>le jour même</td></tr>
+        <tr><td>J+1</td><td>le lendemain</td></tr>
+      </tbody>
+    </table>
+    <p>Le calcul ramène les deux dates à minuit (00 h 00), puis divise l'écart en millisecondes par la durée d'une journée (86 400 000 ms) avant d'arrondir. L'heure est donc ignorée : pour une même journée, le résultat ne change pas selon le moment où vous consultez la page.</p>
+    <h3>Inclure ou non le premier jour</h3>
+    <p>Pour deux mêmes dates, le résultat varie d'un jour selon que l'on compte ou non le jour de départ. D'aujourd'hui à demain, l'intervalle est de 1 jour ; mais si le premier jour compte comme un jour entier, on obtient 2 jours. C'est la différence classique entre un séjour de « 3 nuits » et de « 4 jours ».</p>
+    <table>
+      <thead>
+        <tr><th>Méthode</th><th>Aujourd'hui → demain</th><th>Usages typiques</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Premier jour non compté</td><td>1 jour</td><td>Intervalle, compte à rebours, nuits d'hôtel</td></tr>
+        <tr><td>Premier jour compté</td><td>2 jours</td><td>Jours travaillés, durée d'un traitement, durée totale d'un voyage</td></tr>
+      </tbody>
+    </table>
+    <h3>Conversion en semaines, mois et années</h3>
+    <p>Les semaines sont obtenues par division exacte par 7 (quotient et reste). Les mois et les années, dont la longueur varie, sont convertis à partir de moyennes : 1 mois ≈ 30,44 jours (365,25 ÷ 12) et 1 an ≈ 365,25 jours. Ces conversions sont des <b>approximations</b> fournies à titre indicatif.</p>
+
+    <h2>Bon à savoir</h2>
+    <ul>
+      <li><b>Préparer un examen</b> : entrez la date de l'épreuve (bac, concours, partiels) et repérez les jalons J-100, J-50 et J-30 pour découper votre plan de révision.</li>
+      <li><b>Après la date visée</b>, l'affichage passe automatiquement en J+n. Vous pouvez donc entrer la date de lancement d'un projet pour savoir depuis combien de jours il est en cours.</li>
+      <li><b>Délais de rétractation et de préavis</b> : en mode « Ajouter des jours », saisissez la date de référence et un délai (14, 30, 90 jours…) pour connaître immédiatement la date d'échéance et son jour de la semaine — utile pour vérifier si elle tombe un week-end.</li>
+      <li><b>Anniversaires de couple ou d'événement</b> : pour compter « 100 jours ensemble », pensez à cocher « inclure le premier jour » si vous considérez le premier jour comme le jour n° 1.</li>
+    </ul>
+    <p class="note">Page rédigée en 2026. Les conversions en mois et en années reposent sur des valeurs moyennes. Tous les calculs s'effectuent dans votre navigateur : aucune date saisie n'est enregistrée ni transmise.</p>
+
+    <h2>Questions fréquentes</h2>
+    <div class="faq">
+      <details>
+        <summary>J-1 correspond-il au jour même ou à la veille ?</summary>
+        <p>J-1 correspond à la veille de la date visée. Le jour même s'écrit Jour J (J-0), puis on compte J+1, J+2 pour les jours suivants.</p>
+      </details>
+      <details>
+        <summary>Quand faut-il cocher « inclure le premier jour » ?</summary>
+        <p>Laissez la case décochée pour mesurer un intervalle, comme un nombre de nuits d'hôtel (aujourd'hui → demain = 1 jour). Cochez-la quand le premier jour compte comme un jour entier, par exemple pour des jours de travail ou la durée d'un traitement (aujourd'hui → demain = 2 jours).</p>
+      </details>
+      <details>
+        <summary>La conversion en mois et en années est-elle exacte ?</summary>
+        <p>C'est une approximation : un mois est compté comme 30,44 jours en moyenne (365,25 ÷ 12) et une année comme 365,25 jours. Comme la longueur des mois varie, utilisez ces valeurs à titre indicatif uniquement.</p>
+      </details>
+      <details>
+        <summary>L'heure de la journée est-elle prise en compte ?</summary>
+        <p>Non. Tous les calculs comparent uniquement les dates, ramenées à minuit (00 h 00). Que vous fassiez le calcul le matin ou le soir, le résultat reste identique pour une même journée.</p>
+      </details>
+      <details>
+        <summary>Que se passe-t-il si je saisis un nombre négatif dans « ajouter des jours » ?</summary>
+        <p>Le calcul remonte dans le passé d'autant de jours. Par exemple, -30 affiche la date et le jour de la semaine situés 30 jours avant la date de référence.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Autres calculateurs</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/fr/age"><div class="ico">🎂</div><b>Calculateur d'âge</b><span>Âge exact en années, mois et jours</span></a>
+      <a class="tool-card" href="/fr/percent"><div class="ico">📊</div><b>Calculateur de pourcentage</b><span>Remise, variation, part d'un total</span></a>
+      <a class="tool-card" href="/fr/compound"><div class="ico">📈</div><b>Intérêts composés</b><span>Épargne, placement et règle des 72</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — des calculateurs gratuits pour la vie de tous les jours.<br>
+      Les résultats sont fournis à titre indicatif et n'ont aucune valeur juridique.
+    </div>
+    <nav class="links">
+      <a href="/about">À propos (coréen)</a>
+      <a href="/privacy">Confidentialité (coréen)</a>
+      <a href="/terms">Conditions (coréen)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var WD = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+  var MO = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+  var MS = 86400000;
+
+  function fmt(n, d) {
+    return Number(n).toLocaleString("fr-FR", { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
+  }
+  function todayMid() {
+    var t = new Date();
+    return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+  }
+  function parseDate(v) {
+    if (!v) return null;
+    var p = v.split("-");
+    if (p.length !== 3) return null;
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function toInput(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+  function fmtDate(d) {
+    var day = d.getDate();
+    return (day === 1 ? "1er" : day) + " " + MO[d.getMonth()] + " " + d.getFullYear();
+  }
+  function wd(d) { return "(" + WD[d.getDay()] + ")"; }
+  function diffDays(a, b) { return Math.round((b - a) / MS); }
+  function addDays(d, n) { return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n); }
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function row(label, value) {
+    return '<div class="row"><span>' + esc(label) + "</span><b>" + esc(value) + "</b></div>";
+  }
+  function weeksText(n) {
+    var w = Math.floor(n / 7), r = n % 7;
+    return fmt(w) + (w > 1 ? " semaines" : " semaine") + (r > 0 ? " et " + r + (r > 1 ? " jours" : " jour") : "");
+  }
+  function jours(n) { return fmt(n) + (n > 1 ? " jours" : " jour"); }
+
+  ["ddTarget", "dfA", "dfB", "daBase"].forEach(function (id) {
+    $(id).value = toInput(todayMid());
+  });
+
+  var mode = "dday";
+  var segBtns = document.querySelectorAll("#modeSeg button");
+  Array.prototype.forEach.call(segBtns, function (btn) {
+    btn.addEventListener("click", function () {
+      mode = btn.getAttribute("data-mode");
+      Array.prototype.forEach.call(segBtns, function (b) {
+        b.classList.toggle("on", b === btn);
+      });
+      $("panel-dday").hidden = mode !== "dday";
+      $("panel-diff").hidden = mode !== "diff";
+      $("panel-add").hidden = mode !== "add";
+      $("result").hidden = true;
+    });
+  });
+
+  var lastCopy = "";
+  CM.bindCopy($("copyBtn"), function () { return lastCopy; });
+
+  function calcDday() {
+    var f = $("fDdTarget");
+    var t = parseDate($("ddTarget").value);
+    if (!t) { CM.invalid(f, true); return; }
+    CM.invalid(f, false);
+
+    var today = todayMid();
+    var diff = diffDays(today, t);
+    var abs = Math.abs(diff);
+    var bigText;
+    if (diff > 0) {
+      bigText = "J-" + fmt(diff);
+    } else if (diff < 0) {
+      bigText = "J+" + fmt(abs);
+    } else {
+      bigText = "Jour J";
+    }
+    $("rMain").textContent = bigText;
+    var rows = "";
+    rows += row("Date visée", fmtDate(t) + " " + wd(t));
+    rows += row("Statut", diff > 0 ? jours(abs) + " restant" + (abs > 1 ? "s" : "") : (diff < 0 ? jours(abs) + " écoulé" + (abs > 1 ? "s" : "") : "C'est aujourd'hui !"));
+    rows += row("En semaines", weeksText(abs));
+    rows += row("En mois (approx.)", "env. " + fmt(abs / 30.44, 1) + " mois");
+    $("rLabel").textContent = "Compte à rebours depuis aujourd'hui";
+    $("rRows").innerHTML = rows;
+    lastCopy = "Calculateur de jours (calcmoa.site)\nDate visée : " + fmtDate(t) + " " + wd(t) + "\n" + bigText +
+      (diff === 0 ? "" : " (" + jours(abs) + (diff > 0 ? " restants" : " écoulés") + ")");
+    $("result").hidden = false;
+  }
+
+  function calcDiff() {
+    var fa = $("fDfA"), fb = $("fDfB");
+    var a = parseDate($("dfA").value), b = parseDate($("dfB").value);
+    var ok = true;
+    if (!a) { CM.invalid(fa, true); ok = false; } else { CM.invalid(fa, false); }
+    if (!b) { CM.invalid(fb, true); ok = false; } else { CM.invalid(fb, false); }
+    if (!ok) return;
+    if (a > b) { var tmp = a; a = b; b = tmp; }
+
+    var incl = $("dfIncl").checked;
+    var days = diffDays(a, b) + (incl ? 1 : 0);
+    $("rMain").textContent = jours(days);
+    var rows = "";
+    rows += row("Date de début", fmtDate(a) + " " + wd(a));
+    rows += row("Date de fin", fmtDate(b) + " " + wd(b));
+    rows += row("Méthode", incl ? "Premier jour compté" : "Premier jour non compté");
+    rows += row("En semaines", weeksText(days));
+    rows += row("En mois (approx.)", "env. " + fmt(days / 30.44, 1) + " mois");
+    rows += row("En années (approx.)", "env. " + fmt(days / 365.25, 2) + " an(s)");
+    $("rLabel").textContent = "Nombre de jours entre les deux dates";
+    $("rRows").innerHTML = rows;
+    lastCopy = "Jours entre deux dates (calcmoa.site)\n" + fmtDate(a) + " → " + fmtDate(b) +
+      (incl ? " (premier jour compté)" : " (premier jour non compté)") + "\nTotal : " + jours(days) + " = " + weeksText(days);
+    $("result").hidden = false;
+  }
+
+  function calcAdd() {
+    var fb = $("fDaBase"), fn = $("fDaN");
+    var b = parseDate($("daBase").value);
+    var ok = true;
+    if (!b) { CM.invalid(fb, true); ok = false; } else { CM.invalid(fb, false); }
+    var raw = $("daN").value.trim();
+    var n = Number(raw.replace(",", "."));
+    if (raw === "" || !isFinite(n) || Math.abs(n) > 1000000) {
+      CM.invalid(fn, true); ok = false;
+    } else {
+      CM.invalid(fn, false);
+      n = Math.trunc(n);
+    }
+    if (!ok) return;
+
+    var r = addDays(b, n);
+    var bigText = fmtDate(r) + " " + wd(r);
+    $("rMain").textContent = bigText;
+    var rows = "";
+    rows += row("Date de référence", fmtDate(b) + " " + wd(b));
+    rows += row("Calcul", n >= 0 ? "dans " + jours(n) : "il y a " + jours(-n));
+    rows += row("Jour de la semaine", WD[r.getDay()]);
+    $("rLabel").textContent = "Date obtenue";
+    $("rRows").innerHTML = rows;
+    lastCopy = "Ajout de jours (calcmoa.site)\n" + fmtDate(b) + " " +
+      (n >= 0 ? "+ " + jours(n) : "− " + jours(-n)) + " = " + bigText;
+    $("result").hidden = false;
+  }
+
+  function calc() {
+    if (mode === "dday") { calcDday(); }
+    else if (mode === "diff") { calcDiff(); }
+    else { calcAdd(); }
+  }
+
+  $("calcBtn").addEventListener("click", calc);
+  Array.prototype.forEach.call(document.querySelectorAll(".calc-card input"), function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); calc(); }
+    });
+  });
+});
+</script>
+</body>
+</html>

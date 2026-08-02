@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="cL2taShh7JyiayRbxVK7fHSCyr31L9doORU4iVBfNi8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862755346780724" crossorigin="anonymous"></script>
+<title>Character Counter - Letters, Words &amp; Twitter/SMS Length</title>
+<meta name="description" content="Free real-time character counter. Count characters with and without spaces, words, lines, and UTF-8 bytes as you type — and check your text against SMS 160, X (Twitter) 280, and meta description limits.">
+<link rel="canonical" href="https://calcmoa.site/en/charcount">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/charcount">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/charcount">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/charcount">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/charcount">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/charcount">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Character Counter - Letters, Words &amp; Twitter/SMS Length">
+<meta property="og:description" content="Count characters, words, lines, and UTF-8 bytes in real time — and check your text against SMS 160, X (Twitter) 280, and meta description limits.">
+<meta property="og:url" content="https://calcmoa.site/en/charcount">
+<meta property="og:site_name" content="CalcMoa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://calcmoa.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"Character Counter","url":"https://calcmoa.site/en/charcount","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"en"},
+ {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[
+  {"@type":"Question","name":"How long can a tweet (X post) be?","acceptedAnswer":{"@type":"Answer","text":"A standard post on X (formerly Twitter) is limited to 280 characters. Most letters, numbers, and punctuation count as one character each, but URLs are always counted as 23 characters regardless of their actual length, and emoji typically count as two. Premium subscribers can post much longer text, but 280 remains the limit for free accounts."}},
+  {"@type":"Question","name":"Why does my SMS get split into multiple messages?","acceptedAnswer":{"@type":"Answer","text":"A single SMS holds 160 characters when the text uses only the basic GSM-7 alphabet. If it contains even one character outside that set - an emoji, a curly quote, certain accented letters - the whole message switches to UCS-2 encoding and the limit drops to 70 characters. Longer texts are split into segments of 153 (GSM-7) or 67 (UCS-2) characters, and carriers may bill each segment separately."}},
+  {"@type":"Question","name":"How long should a meta description be?","acceptedAnswer":{"@type":"Answer","text":"Google typically truncates meta descriptions around 155 to 160 characters on desktop, and a little earlier on mobile. Aim for roughly 120 to 155 characters so your key message survives intact. Title tags are best kept to about 60 characters for the same reason."}},
+  {"@type":"Question","name":"Is my text stored or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All counting happens in JavaScript inside your browser. Nothing you type or paste is transmitted to or stored on any server, so it is safe to check confidential drafts, cover letters, or unpublished copy."}},
+  {"@type":"Question","name":"Why is the UTF-8 byte count larger than the character count?","acceptedAnswer":{"@type":"Answer","text":"UTF-8 is a variable-width encoding. Plain ASCII letters, digits, and spaces take 1 byte each, but accented Latin characters take 2 bytes, most CJK characters take 3 bytes, and emoji usually take 4. Systems that limit input by bytes - some databases and older forms - may therefore reject text that looks short in characters."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/en"><span class="mark">=</span>CalcMoa</a>
+    <nav class="site-nav">
+      <a href="/en">Tools</a>
+      <a href="/en">EN</a><a href="/ja">日本語</a><a href="/fr">FR</a><a href="/">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/en">Home</a><span class="sep">›</span>
+    <span>Character Counter</span>
+  </nav>
+
+  <h1>Character Counter</h1>
+  <p class="lead">Paste or type your text and get live counts of characters (with and without spaces), words, lines, and UTF-8 bytes — plus how much room is left in a tweet or an SMS.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field">
+      <label for="txt">Your text</label>
+      <textarea id="txt" rows="10" placeholder="Paste or type your text here"></textarea>
+      <div class="hint">Counts update as you type. Your text never leaves your browser — nothing is sent or stored.</div>
+    </div>
+    <button type="button" class="btn btn-ghost" id="clearBtn">Clear</button>
+
+    <div class="result" id="result">
+      <div class="label">Characters (including spaces)</div>
+      <div class="big" id="rMain">0</div>
+      <div class="rows">
+        <div class="row"><span>Characters (excluding spaces)</span><b id="rNoSpace">0</b></div>
+        <div class="row"><span>Words</span><b id="rWords">0</b></div>
+        <div class="row"><span>Lines</span><b id="rLines">0</b></div>
+        <div class="row"><span>Bytes (UTF-8)</span><b id="rBytesUtf8">0</b></div>
+        <div class="row"><span>Left in an X (Twitter) post — 280</span><b id="rTweet">280</b></div>
+        <div class="row"><span>Left in one SMS — 160 (GSM-7)</span><b id="rSms">160</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>How to use this counter</h2>
+    <ol>
+      <li>Type directly into the box above, or paste text you've written elsewhere.</li>
+      <li>No button needed — character, word, line, and byte counts refresh instantly as you edit.</li>
+      <li>Check the row that matches the limit you care about: characters for most platforms, bytes for systems that limit by storage size.</li>
+      <li>To check a new piece of text, hit <b>Clear</b> and paste again.</li>
+    </ol>
+
+    <h2>Common character limits</h2>
+    <p>Different platforms cut you off at very different lengths. Here are the limits people check most often:</p>
+    <table>
+      <thead>
+        <tr><th>Where</th><th>Limit</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SMS (single message)</td><td>160 characters</td><td>Drops to 70 if any non-GSM character (e.g. emoji) is used</td></tr>
+        <tr><td>X (Twitter) post</td><td>280 characters</td><td>URLs always count as 23; emoji usually count as 2</td></tr>
+        <tr><td>Meta description (SEO)</td><td>~155 characters</td><td>Google truncates around 155–160 on desktop, earlier on mobile</td></tr>
+        <tr><td>Title tag (SEO)</td><td>~60 characters</td><td>Longer titles get cut off in search results</td></tr>
+        <tr><td>Instagram caption</td><td>2,200 characters</td><td>Only the first ~125 show before "more"</td></tr>
+        <tr><td>LinkedIn post</td><td>3,000 characters</td><td>First ~210 show before "see more"</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How the counts are calculated</h2>
+    <p>The same text can produce different numbers depending on what you count. Here's what each row means:</p>
+    <table>
+      <thead>
+        <tr><th>Count</th><th>What it measures</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Characters (incl. spaces)</td><td>Every character, including spaces and line breaks</td><td>What most platforms and word processors use</td></tr>
+        <tr><td>Characters (excl. spaces)</td><td>All characters minus spaces, tabs, and line breaks</td><td>Used by some academic and publishing guidelines</td></tr>
+        <tr><td>Words</td><td>Chunks of text separated by whitespace</td><td>Matches the usual "word count" definition</td></tr>
+        <tr><td>Lines</td><td>Rows separated by line breaks</td><td>Empty input counts as 0 lines</td></tr>
+        <tr><td>Bytes (UTF-8)</td><td>Actual encoded size: ASCII = 1 byte, most other scripts 2–3, emoji 4</td><td>Relevant for databases and byte-limited forms</td></tr>
+      </tbody>
+    </table>
+    <p>Characters including spaces is simply the string length; excluding spaces removes every whitespace character (spaces, tabs, line breaks) first. Words are counted by treating any run of whitespace as a single separator. The UTF-8 byte figure is the real encoded size of your text — the same number a database or file system would see.</p>
+
+    <h2>Good to know</h2>
+    <h3>Why one SMS is sometimes 160 characters and sometimes 70</h3>
+    <p>Standard text messages use the compact GSM-7 alphabet, which fits <b>160 characters</b> into one message. The moment your text includes a character outside that set — an emoji, a curly apostrophe, certain accented letters — the entire message is re-encoded as UCS-2 and the limit falls to <b>70 characters</b>. Longer messages are split into segments of 153 (GSM-7) or 67 (UCS-2) characters each, and many carriers and SMS APIs bill per segment. If a marketing text is coming out more expensive than expected, a single stray emoji is often the culprit.</p>
+    <h3>Counting quirks on X (Twitter)</h3>
+    <p>The 280-character limit doesn't count everything equally. Any URL is counted as a flat <b>23 characters</b> no matter how long it really is, and most emoji count as <b>two</b> characters. CJK characters (Chinese, Japanese, Korean) are weighted so the effective limit is 140 for those scripts. This counter shows the plain character total, which matches typical English-language posts closely; keep a small buffer if your post is emoji-heavy.</p>
+    <h3>Writing to SEO limits</h3>
+    <p>Google doesn't enforce a hard character cap on titles and descriptions — it truncates by pixel width. In practice, keeping <b>title tags under ~60 characters</b> and <b>meta descriptions between 120 and 155 characters</b> means they almost always display in full. Front-load the important words: even a truncated snippet then still carries your message.</p>
+    <h3>When bytes matter more than characters</h3>
+    <p>Some databases, legacy forms, and APIs limit input by <b>bytes</b>, not characters. In UTF-8, plain English text is 1 byte per character, but accented letters take 2 bytes, most Chinese, Japanese, and Korean characters take 3, and emoji generally take 4. That's why "50 characters" of emoji-rich text can blow past a 100-byte field. The UTF-8 row above shows the exact encoded size, so you can verify against byte limits directly.</p>
+    <p class="note">These counts are close approximations for planning purposes. Each platform applies its own rules for line breaks, URLs, and special characters, so always confirm in the target system before final submission.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How long can a tweet (X post) be?</summary><p>A standard post on X (formerly Twitter) is limited to 280 characters. Most letters, numbers, and punctuation count as one character each, but URLs are always counted as 23 characters regardless of their actual length, and emoji typically count as two. Premium subscribers can post much longer text, but 280 remains the limit for free accounts.</p></details>
+      <details><summary>Why does my SMS get split into multiple messages?</summary><p>A single SMS holds 160 characters when the text uses only the basic GSM-7 alphabet. If it contains even one character outside that set — an emoji, a curly quote, certain accented letters — the whole message switches to UCS-2 encoding and the limit drops to 70 characters. Longer texts are split into segments of 153 (GSM-7) or 67 (UCS-2) characters, and carriers may bill each segment separately.</p></details>
+      <details><summary>How long should a meta description be?</summary><p>Google typically truncates meta descriptions around 155 to 160 characters on desktop, and a little earlier on mobile. Aim for roughly 120 to 155 characters so your key message survives intact. Title tags are best kept to about 60 characters for the same reason.</p></details>
+      <details><summary>Is my text stored or sent anywhere?</summary><p>No. All counting happens in JavaScript inside your browser. Nothing you type or paste is transmitted to or stored on any server, so it's safe to check confidential drafts, cover letters, or unpublished copy.</p></details>
+      <details><summary>Why is the UTF-8 byte count larger than the character count?</summary><p>UTF-8 is a variable-width encoding. Plain ASCII letters, digits, and spaces take 1 byte each, but accented Latin characters take 2 bytes, most CJK characters take 3 bytes, and emoji usually take 4. Systems that limit input by bytes — some databases and older forms — may therefore reject text that looks short in characters.</p></details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>Related calculators</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/en/percent"><div class="ico">📊</div><b>Percentage Calculator</b><span>Percentages, discounts &amp; change rates</span></a>
+      <a class="tool-card" href="/en/compound"><div class="ico">📈</div><b>Compound Interest Calculator</b><span>Watch your investment grow over time</span></a>
+      <a class="tool-card" href="/en/bmi"><div class="ico">⚖️</div><b>BMI Calculator</b><span>Body mass index &amp; healthy weight range</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">CalcMoa</b> — free everyday calculators<br>
+      Results are for reference only and carry no legal weight.
+    </div>
+    <nav class="links">
+      <a href="/about">About (Korean)</a>
+      <a href="/privacy">Privacy (Korean)</a>
+      <a href="/terms">Terms (Korean)</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 CalcMoa (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var txt = document.getElementById("txt");
+  var clearBtn = document.getElementById("clearBtn");
+  var rMain = document.getElementById("rMain");
+  var rNoSpace = document.getElementById("rNoSpace");
+  var rWords = document.getElementById("rWords");
+  var rLines = document.getElementById("rLines");
+  var rBytesUtf8 = document.getElementById("rBytesUtf8");
+  var rTweet = document.getElementById("rTweet");
+  var rSms = document.getElementById("rSms");
+
+  function fmt(n) { return n.toLocaleString("en-US"); }
+
+  function update() {
+    var t = txt.value;
+    var withSpace = t.length;
+    var noSpace = t.replace(/\s/g, "").length;
+    var words = t.split(/\s+/).filter(function (w) { return w.length > 0; }).length;
+    var lines = t.length === 0 ? 0 : t.split(/\n/).length;
+    var utf8 = new Blob([t]).size;
+    var tweetLeft = 280 - withSpace;
+    var smsLeft = 160 - withSpace;
+
+    rMain.textContent = fmt(withSpace);
+    rNoSpace.textContent = fmt(noSpace);
+    rWords.textContent = fmt(words);
+    rLines.textContent = fmt(lines);
+    rBytesUtf8.textContent = fmt(utf8) + " bytes";
+
+    rTweet.textContent = tweetLeft >= 0 ? fmt(tweetLeft) : fmt(-tweetLeft) + " over";
+    rTweet.style.color = tweetLeft >= 0 ? "" : "var(--accent)";
+    rSms.textContent = smsLeft >= 0 ? fmt(smsLeft) : fmt(-smsLeft) + " over";
+    rSms.style.color = smsLeft >= 0 ? "" : "var(--accent)";
+  }
+
+  txt.addEventListener("input", update);
+  clearBtn.addEventListener("click", function () {
+    txt.value = "";
+    update();
+    txt.focus();
+  });
+
+  update();
+});
+</script>
+</body>
+</html>
