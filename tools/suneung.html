@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수능 디데이 - 2027 수능 D-day 카운트다운</title>
+<meta name="description" content="2027학년도 수능은 2026년 11월 19일(목)입니다. 오늘 기준 수능까지 남은 D-day와 남은 주수, 하루 10시간 공부 시 총 공부 가능 시간을 자동으로 계산하고, 시험 시간표와 구간별 학습 전략까지 정리했습니다.">
+<link rel="canonical" href="https://calcmoa.site/tools/suneung">
+<meta property="og:type" content="website">
+<meta property="og:title" content="수능 디데이 - 2027 수능 D-day 카운트다운">
+<meta property="og:description" content="2027학년도 수능은 2026년 11월 19일(목)입니다. 오늘 기준 수능까지 남은 D-day와 남은 주수, 하루 10시간 공부 시 총 공부 가능 시간을 자동으로 계산하고, 시험 시간표와 구간별 학습 전략까지 정리했습니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/suneung">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232b5bd7'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"수능 디데이","url":"https://calcmoa.site/tools/suneung","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"2027학년도 수능은 언제인가요?","acceptedAnswer":{"@type":"Answer","text":"2027학년도 대학수학능력시험은 2026년 11월 19일 목요일에 시행됩니다. 수능은 관례적으로 11월 셋째 목요일에 치러지며, 예비소집은 하루 전인 11월 18일 수요일입니다."}},
+  {"@type":"Question","name":"수능 예비소집에는 꼭 가야 하나요?","acceptedAnswer":{"@type":"Answer","text":"네, 반드시 참석해야 합니다. 예비소집일(2026년 11월 18일 수요일)에 수험표를 배부받고 본인의 시험장 위치를 직접 확인해야 당일 혼선을 막을 수 있습니다. 시험장까지의 이동 경로와 소요 시간도 이날 미리 점검해 두는 것이 좋습니다."}},
+  {"@type":"Question","name":"수능 시험은 몇 시에 시작하고 몇 시에 끝나나요?","acceptedAnswer":{"@type":"Answer","text":"예년 기준으로 1교시 국어가 08:40에 시작하며, 제2외국어·한문 응시자는 17:45에 종료됩니다. 4교시까지만 응시하면 16:37에 끝납니다. 입실은 보통 08:10까지이며, 정확한 시간은 해당 연도 시행 공고를 확인해야 합니다."}},
+  {"@type":"Question","name":"수능 성적표는 언제 나오나요?","acceptedAnswer":{"@type":"Answer","text":"수능 성적은 통상 시험 약 3주 뒤인 12월 초에 통지됩니다. 2027학년도 수능의 정확한 성적 통지일은 한국교육과정평가원의 시행 공고에서 확인할 수 있습니다."}},
+  {"@type":"Question","name":"D-day 계산은 어떤 기준인가요?","acceptedAnswer":{"@type":"Answer","text":"오늘 날짜와 시험일을 모두 자정(00:00) 기준으로 맞춰 날짜 차이만 계산합니다. 시험일 당일은 D-day(D-0)로 표시되며, 몇 시에 접속하든 같은 날이면 결과가 동일합니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/tests">테스트</a>
+      <a href="/guide">가이드</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-date">날짜·디데이</a><span class="sep">›</span>
+    <span>수능 디데이</span>
+  </nav>
+
+  <h1>수능 디데이 (2027학년도)</h1>
+  <p class="lead">2027학년도 수능은 2026년 11월 19일(목)입니다. 페이지를 열면 오늘 기준 D-day와 남은 주수, 하루 10시간 공부 시 총 공부 가능 시간이 바로 표시됩니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fTarget">
+      <label for="targetDate">목표일 (기본값: 2027학년도 수능일)</label>
+      <input type="date" id="targetDate" value="2026-11-19">
+      <div class="hint">모의고사·다른 시험을 준비 중이면 목표일을 바꿔서 계산할 수 있습니다.</div>
+      <div class="field-error">목표일을 올바르게 선택해 주세요.</div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result" aria-live="polite">
+      <div class="label" id="rLabel">오늘 기준 수능 디데이</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows" id="rRows"></div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>페이지에 들어오면 <b>입력 없이</b> 오늘 기준 수능까지의 D-day가 자동으로 표시됩니다.</li>
+      <li>결과에는 시험일(2026.11.19 목), 남은 기간의 주수, 오늘부터 하루 10시간씩 공부한다고 가정했을 때의 총 공부 가능 시간이 함께 나옵니다.</li>
+      <li>모의고사나 다른 시험을 목표로 하려면 날짜 입력에서 목표일을 바꾸고 <b>계산하기</b>를 누르면 됩니다.</li>
+      <li>결과 복사 버튼으로 D-day를 복사해 플래너나 메신저 상태 메시지에 붙여 넣을 수 있습니다.</li>
+    </ol>
+
+    <h2>2027학년도 수능 일정과 시간표</h2>
+    <p>2027학년도 대학수학능력시험은 <b>2026년 11월 19일 목요일</b>에 시행됩니다. 수능은 관례적으로 11월 셋째 목요일에 치러지며, 하루 전인 <b>11월 18일 수요일</b>에 예비소집이 있습니다. 예비소집에서는 수험표를 받고 시험장 위치를 직접 확인하므로 반드시 참석해야 합니다.</p>
+    <p>교시별 시험 시간은 예년 기준으로 다음과 같습니다. 실제 시행 연도에 따라 세부 시간이 달라질 수 있으므로, 한국교육과정평가원의 해당 연도 시행 공고를 최종 기준으로 확인하시기 바랍니다.</p>
+    <table>
+      <thead>
+        <tr><th>교시</th><th>영역</th><th>시간 (예년 기준)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1교시</td><td>국어</td><td>08:40 ~ 10:00</td></tr>
+        <tr><td>2교시</td><td>수학</td><td>10:30 ~ 12:10</td></tr>
+        <tr><td>3교시</td><td>영어</td><td>13:10 ~ 14:20</td></tr>
+        <tr><td>4교시</td><td>한국사·탐구</td><td>14:50 ~ 16:37</td></tr>
+        <tr><td>5교시</td><td>제2외국어·한문</td><td>17:05 ~ 17:45</td></tr>
+      </tbody>
+    </table>
+    <p>D-day 계산은 오늘과 시험일을 모두 자정(00:00) 기준으로 맞춘 뒤 날짜 차이만 세는 방식입니다. 총 공부 가능 시간은 남은 일수에 하루 10시간을 곱한 단순 가정치이므로, 본인의 실제 학습 시간에 맞춰 가늠하는 참고 지표로 활용하세요.</p>
+
+    <h2>알아두면 좋은 정보 — 남은 기간별 학습 전략</h2>
+    <p>남은 기간에 따라 공부의 우선순위를 바꾸는 것이 일반적인 전략입니다. 아래는 널리 통용되는 일반론이며, 본인의 성적대와 취약 영역에 맞게 조정해야 합니다.</p>
+    <ul>
+      <li><b>D-100 구간</b>: 전 영역의 개념을 마지막으로 총정리하고, 취약 단원을 찾아 집중적으로 메우는 시기입니다. 기출문제를 영역별로 회독하며 자주 틀리는 유형을 목록으로 만들어 두면 이후 구간에서 효율이 올라갑니다.</li>
+      <li><b>D-50 구간</b>: 실전 모의고사를 실제 시험 시간표에 맞춰 풀어보는 훈련을 시작할 때입니다. 새로운 개념 공부보다는 문제 풀이 감각과 시간 배분 연습의 비중을 높입니다.</li>
+      <li><b>D-30 구간</b>: 오답 노트와 취약 유형 위주로 압축 복습합니다. 수면 시간과 기상 시간을 시험 당일 리듬(1교시 08:40 시작)에 맞춰 서서히 조정하는 것이 좋습니다.</li>
+      <li><b>D-7 구간</b>: 새 문제집을 벌리기보다 지금까지 정리한 것을 가볍게 훑고, 컨디션 관리에 집중합니다. 예비소집일 동선 확인, 준비물 점검, 수면 리듬 유지가 이 주의 핵심입니다.</li>
+    </ul>
+    <h3>수능 당일 준비물 체크리스트</h3>
+    <ul>
+      <li><b>수험표</b> — 예비소집일에 배부받은 것. 분실 시 시험 당일 시험장 관리본부에서 재발급 절차를 밟아야 하므로 전날 밤 가방에 미리 넣어 둡니다.</li>
+      <li><b>신분증</b> — 주민등록증, 청소년증, 여권 등 규정에 맞는 신분증.</li>
+      <li><b>검은색 컴퓨터용 사인펜, 흑색 연필, 지우개</b> — 필기구는 시험장에서도 지급되지만 손에 익은 것을 챙기면 안정적입니다.</li>
+      <li><b>아날로그 손목시계</b> — 통신·결제 기능이 없는 순수 아날로그 시계만 반입할 수 있습니다.</li>
+      <li><b>도시락과 물</b> — 점심시간에 먹을 소화 잘되는 음식. 평소 먹던 익숙한 메뉴가 좋습니다.</li>
+      <li><b>휴대전화 등 전자기기는 반입 금지</b> — 소지 시 부정행위 처리될 수 있으므로 아예 집에 두고 가거나 시험장 지시에 따라 제출합니다.</li>
+    </ul>
+    <p>수능 성적은 통상 시험 약 3주 뒤인 <b>12월 초</b>에 통지될 예정입니다. 성적 통지 이후에는 대학별 전형 일정이 이어지므로, 수능이 끝났다고 긴장을 완전히 풀기보다 지원 전략을 정리하는 시간으로 활용하면 좋습니다.</p>
+    <p class="note">시험 시간표·성적 통지일 등은 예년 기준이며 시행 연도에 따라 달라질 수 있습니다. 최종 일정은 한국교육과정평가원 공고를 확인하세요. 계산은 브라우저에서만 이루어지며 입력한 날짜는 저장되지 않습니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>2027학년도 수능은 언제인가요?</summary>
+        <p>2027학년도 대학수학능력시험은 2026년 11월 19일 목요일에 시행됩니다. 수능은 관례적으로 11월 셋째 목요일에 치러지며, 예비소집은 하루 전인 11월 18일 수요일입니다.</p>
+      </details>
+      <details>
+        <summary>수능 예비소집에는 꼭 가야 하나요?</summary>
+        <p>네, 반드시 참석해야 합니다. 예비소집일(2026년 11월 18일 수요일)에 수험표를 배부받고 본인의 시험장 위치를 직접 확인해야 당일 혼선을 막을 수 있습니다. 시험장까지의 이동 경로와 소요 시간도 이날 미리 점검해 두는 것이 좋습니다.</p>
+      </details>
+      <details>
+        <summary>수능 시험은 몇 시에 시작하고 몇 시에 끝나나요?</summary>
+        <p>예년 기준으로 1교시 국어가 08:40에 시작하며, 제2외국어·한문 응시자는 17:45에 종료됩니다. 4교시까지만 응시하면 16:37에 끝납니다. 입실은 보통 08:10까지이며, 정확한 시간은 해당 연도 시행 공고를 확인해야 합니다.</p>
+      </details>
+      <details>
+        <summary>수능 성적표는 언제 나오나요?</summary>
+        <p>수능 성적은 통상 시험 약 3주 뒤인 12월 초에 통지됩니다. 2027학년도 수능의 정확한 성적 통지일은 한국교육과정평가원의 시행 공고에서 확인할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>D-day 계산은 어떤 기준인가요?</summary>
+        <p>오늘 날짜와 시험일을 모두 자정(00:00) 기준으로 맞춰 날짜 차이만 계산합니다. 시험일 당일은 D-day(D-0)로 표시되며, 몇 시에 접속하든 같은 날이면 결과가 동일합니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/dday"><div class="ico">📅</div><b>디데이 계산기</b><span>날짜 차이·더하기까지 한 번에</span></a>
+      <a class="tool-card" href="/tools/age"><div class="ico">🎂</div><b>만 나이 계산기</b><span>만 나이 통일법 기준 정확한 나이</span></a>
+      <a class="tool-card" href="/tools/charcount"><div class="ico">✏️</div><b>글자수 세기</b><span>자기소개서·논술 글자수 확인</span></a>
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>비율·증감률·백분율 계산</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var WD = ["일", "월", "화", "수", "목", "금", "토"];
+  var MS = 86400000;
+  var STUDY_HOURS_PER_DAY = 10;
+
+  function todayMid() {
+    var t = new Date();
+    return new Date(t.getFullYear(), t.getMonth(), t.getDate());
+  }
+  function parseDate(v) {
+    if (!v) return null;
+    var p = v.split("-");
+    if (p.length !== 3) return null;
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function fmtDate(d) { return d.getFullYear() + "." + pad2(d.getMonth() + 1) + "." + pad2(d.getDate()); }
+  function wd(d) { return "(" + WD[d.getDay()] + ")"; }
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function row(label, value) {
+    return '<div class="row"><span>' + esc(label) + "</span><b>" + esc(value) + "</b></div>";
+  }
+
+  var lastCopy = "";
+  CM.bindCopy($("copyBtn"), function () { return lastCopy; });
+
+  function calc(animate) {
+    var f = $("fTarget");
+    var t = parseDate($("targetDate").value);
+    if (!t) { CM.invalid(f, true); return; }
+    CM.invalid(f, false);
+
+    var today = todayMid();
+    var diff = Math.round((t - today) / MS);
+    var abs = Math.abs(diff);
+    var big = $("rMain");
+    var bigText;
+    if (diff > 0) {
+      bigText = "수능까지 D-" + CM.fmt(diff);
+      if (animate) { CM.countUp(big, diff, { prefix: "수능까지 D-" }); }
+      else { big.textContent = bigText; }
+    } else if (diff < 0) {
+      bigText = "D+" + CM.fmt(abs);
+      big.textContent = bigText;
+    } else {
+      bigText = "D-day";
+      big.textContent = bigText;
+    }
+
+    var rows = "";
+    rows += row("시험일", fmtDate(t) + " " + wd(t));
+    if (diff > 0) {
+      rows += row("남은 주수", CM.fmt(Math.floor(diff / 7)) + "주 " + (diff % 7) + "일");
+      rows += row("하루 10시간 공부 시", "총 " + CM.fmt(diff * STUDY_HOURS_PER_DAY) + "시간 공부 가능");
+    } else if (diff < 0) {
+      rows += row("상태", CM.fmt(abs) + "일 지났습니다");
+    } else {
+      rows += row("상태", "오늘이 시험일입니다. 최선을 다하세요!");
+    }
+    $("rLabel").textContent = "오늘 기준 디데이";
+    $("rRows").innerHTML = rows;
+    lastCopy = "수능 디데이 (calcmoa.site)\n시험일: " + fmtDate(t) + " " + wd(t) + "\n" + bigText +
+      (diff > 0 ? " (" + CM.fmt(Math.floor(diff / 7)) + "주 " + (diff % 7) + "일 남음)" : "");
+    $("result").hidden = false;
+  }
+
+  $("calcBtn").addEventListener("click", function () { calc(true); });
+  $("targetDate").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); calc(true); }
+  });
+
+  // 페이지 로드 즉시 자동 계산 (입력 불필요)
+  calc(true);
+});
+</script>
+</body>
+</html>
