@@ -576,3 +576,8 @@ body { padding-top: 36px; }
   .lang-float a span { display: none; }
   .lang-float a img { width: 30px; height: 22.5px; }
 }
+
+/* ⚠️ 애드센스 재심사 기간 임시 조치 — 승인 후 이 블록(3줄)을 삭제하면 배너 복구됨 */
+.promo-banner { display: none !important; }
+body { padding-top: 0 !important; }
+.site-header { top: 0 !important; }
