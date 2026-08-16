@@ -93,7 +93,8 @@ async function translateBatch(env, texts, targetM2m, lang) {
         target_lang: targetM2m,
       });
       const tr = (r && r.translated_text || "").trim();
-      if (tr && !KO.test(tr)) out[t] = tr;
+      // 번역 실패(빈 결과/한국어 잔존) 문장은 원문(글로서리 적용)으로 확정해 무한 재시도 방지
+      out[t] = tr && !KO.test(tr) ? tr : applyGloss(decodeEnt(t), lang);
     } catch (e) {
       break; // AI 한도 초과 등 — 남은 문장은 다음 요청에서
     }
