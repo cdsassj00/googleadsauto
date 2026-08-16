@@ -2,6 +2,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/en", "destination": "https://calcmoa-i18n.sjshin.workers.dev/en/" },
+    { "source": "/ja", "destination": "https://calcmoa-i18n.sjshin.workers.dev/ja/" },
+    { "source": "/fr", "destination": "https://calcmoa-i18n.sjshin.workers.dev/fr/" },
     { "source": "/zh", "destination": "https://calcmoa-i18n.sjshin.workers.dev/zh/" },
     { "source": "/zh/:path*", "destination": "https://calcmoa-i18n.sjshin.workers.dev/zh/:path*" },
     { "source": "/en/:path*", "destination": "https://calcmoa-i18n.sjshin.workers.dev/en/:path*" },

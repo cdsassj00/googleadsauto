@@ -101,19 +101,17 @@ async function translateBatch(env, texts, targetM2m, lang) {
   return out;
 }
 
-// en/ja/fr에 수작업 현지화된 정적 페이지가 있는 KR 경로 → 해당 정적 경로 (중복 색인 방지)
-const STATIC_MAP = {
-  "/tools/dday": "/dday",
-  "/tools/age": "/age",
-  "/tools/percent": "/percent",
-  "/tools/bmi": "/bmi",
-  "/tools/compound": "/compound",
-  "/tools/charcount": "/charcount",
+// 과거 정적 현지화 페이지 URL(/en/dday 등) → 통일된 번역 경로로 301
+const LEGACY_MAP = {
+  "/dday": "/tools/dday",
+  "/age": "/tools/age",
+  "/percent": "/tools/percent",
+  "/bmi": "/tools/bmi",
+  "/compound": "/tools/compound",
+  "/charcount": "/tools/charcount",
 };
 function langPath(lang, path) {
-  if (path === "/") return "/" + lang;
-  if (lang !== "zh" && STATIC_MAP[path] !== undefined) return "/" + lang + STATIC_MAP[path];
-  return "/" + lang + path;
+  return "/" + lang + (path === "/" ? "" : path);
 }
 
 function rewriteHref(path, lang) {
@@ -253,9 +251,9 @@ export default {
     let rest = m[2] || "/";
     if (rest !== "/" && rest.endsWith("/")) rest = rest.slice(0, -1);
 
-    // 정적 현지화 페이지가 있으면 그쪽으로 (en/ja)
-    if (lang !== "zh" && STATIC_MAP[rest] !== undefined) {
-      return Response.redirect("https://calcmoa.site/" + lang + STATIC_MAP[rest], 301);
+    // 과거 정적 페이지 URL은 통일 경로로 301
+    if (LEGACY_MAP[rest] !== undefined) {
+      return Response.redirect("https://calcmoa.site/" + lang + LEGACY_MAP[rest], 301);
     }
 
     const oRes = await fetch(env.ORIGIN + (rest === "/" ? "/" : rest), {
