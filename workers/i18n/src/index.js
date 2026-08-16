@@ -17,7 +17,7 @@ const LANGS = {
 };
 const KO = /[가-힣]/;
 const V = "2"; // 번역 로직 변경 시 범프 → 캐시 무효화
-const MAX_AI_CALLS = 40; // 무료 플랜 서브리퀘스트 한도(50) 내 안전 상한
+const MAX_AI_CALLS = 30; // 무료 플랜 서브리퀘스트 한도(50) 내 안전 상한 (origin+DO 호출 여유분 확보)
 const BRAND = "CalcMoa"; // 브랜드명은 번역기에 넘기지 않고 고정 표기
 // m2m100이 오역하는 핵심 용어는 타깃 표현으로 사전 치환 (버전 GV — 바꾸면 해당 문장만 재번역)
 const GV = "g1";
@@ -277,7 +277,15 @@ export default {
       });
     }
 
-    const { html, complete, remaining } = await translatePage(koHtml, lang, rest, env, stub);
+    let html, complete, remaining;
+    try {
+      ({ html, complete, remaining } = await translatePage(koHtml, lang, rest, env, stub));
+    } catch (e) {
+      // 한도 초과 등 — 500 대신 원본이라도 서빙 (다음 요청에서 캐시로 수렴)
+      return new Response(koHtml, {
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "x-i18n": "error" },
+      });
+    }
     if (complete) ctx.waitUntil(stub.putPage(rest, hash, html));
     return new Response(html, {
       headers: {
