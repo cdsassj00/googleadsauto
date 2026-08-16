@@ -13,11 +13,26 @@ const LANGS = {
   en: { m2m: "english", html: "en", og: "en_US", label: "English", flag: "flag-us.png" },
   zh: { m2m: "chinese", html: "zh-CN", og: "zh_CN", label: "中文", flag: "flag-cn.png" },
   ja: { m2m: "japanese", html: "ja", og: "ja_JP", label: "日本語", flag: "flag-jp.png" },
+  fr: { m2m: "french", html: "fr", og: "fr_FR", label: "Français", flag: "flag-fr.png" },
 };
 const KO = /[가-힣]/;
 const V = "2"; // 번역 로직 변경 시 범프 → 캐시 무효화
 const MAX_AI_CALLS = 40; // 무료 플랜 서브리퀘스트 한도(50) 내 안전 상한
 const BRAND = "CalcMoa"; // 브랜드명은 번역기에 넘기지 않고 고정 표기
+// m2m100이 오역하는 핵심 용어는 타깃 표현으로 사전 치환 (버전 GV — 바꾸면 해당 문장만 재번역)
+const GV = "g1";
+const GLOSS = {
+  en: { "실수령액": "take-home pay", "만 나이": "international age", "주휴수당": "weekly holiday pay", "디데이": "D-day" },
+  zh: { "실수령액": "到手工资", "만 나이": "周岁", "주휴수당": "每周假日津贴", "디데이": "倒数日" },
+  ja: { "실수령액": "手取り額", "만 나이": "満年齢", "주휴수당": "週休手当", "디데이": "Dデー" },
+  fr: { "실수령액": "salaire net", "만 나이": "âge international", "주휴수당": "indemnité hebdomadaire", "디데이": "jour J" },
+};
+const hasGloss = (t, lang) => Object.keys(GLOSS[lang]).some((k) => t.includes(k));
+const applyGloss = (t, lang) => {
+  let s = t.replaceAll("계산모아", BRAND);
+  for (const [k, v] of Object.entries(GLOSS[lang])) s = s.replaceAll(k, v);
+  return s;
+};
 const ATTR_RE = /(content|alt|placeholder|aria-label|title|data-label)="([^"]*)"/g;
 
 const fnv = (s) => {
@@ -43,11 +58,11 @@ const escAttr = (s) => escText(s).replace(/"/g, "&quot;");
 
 export class TranslationCache extends DurableObject {
   async getPage(path, hash) {
-    const v = await this.ctx.storage.get("page" + V + ":" + path);
+    const v = await this.ctx.storage.get("page" + V + GV + ":" + path);
     return v && v.hash === hash ? v.html : null;
   }
   async putPage(path, hash, html) {
-    await this.ctx.storage.put("page" + V + ":" + path, { hash, html });
+    await this.ctx.storage.put("page" + V + GV + ":" + path, { hash, html });
   }
   async getSegs(keys) {
     const out = {};
@@ -65,7 +80,7 @@ export class TranslationCache extends DurableObject {
   }
 }
 
-async function translateBatch(env, texts, targetM2m) {
+async function translateBatch(env, texts, targetM2m, lang) {
   const out = {};
   let calls = 0;
   for (const t of texts) {
@@ -73,7 +88,7 @@ async function translateBatch(env, texts, targetM2m) {
     calls++;
     try {
       const r = await env.AI.run("@cf/meta/m2m100-1.2b", {
-        text: decodeEnt(t).replaceAll("계산모아", BRAND).replace(/\s+/g, " ").trim(),
+        text: applyGloss(decodeEnt(t), lang).replace(/\s+/g, " ").trim(),
         source_lang: "korean",
         target_lang: targetM2m,
       });
@@ -144,7 +159,7 @@ async function translatePage(koHtml, lang, path, env, stub) {
   const addUnit = (raw) => {
     const t = raw.trim();
     if (!t || !KO.test(t)) return null;
-    if (!seen.has(t)) seen.set(t, "s" + V + ":" + fnv(t));
+    if (!seen.has(t)) seen.set(t, "s" + V + (hasGloss(t, lang) ? GV : "") + ":" + fnv(t));
     return t;
   };
   for (let i = 0; i < parts.length; i++) {
@@ -166,7 +181,7 @@ async function translatePage(koHtml, lang, path, env, stub) {
   const missing = raws.filter((r) => !(seen.get(r) in cached));
   let fresh = {};
   if (missing.length) {
-    fresh = await translateBatch(env, missing, L.m2m);
+    fresh = await translateBatch(env, missing, L.m2m, lang);
     const toStore = {};
     for (const [raw, tr] of Object.entries(fresh)) toStore[seen.get(raw)] = tr;
     if (Object.keys(toStore).length) await stub.putSegs(toStore);
@@ -213,7 +228,7 @@ async function translatePage(koHtml, lang, path, env, stub) {
   const base = "https://calcmoa.site" + (path === "/" ? "" : path);
   const alt = [
     `<link rel="alternate" hreflang="ko" href="${base === "https://calcmoa.site" ? base + "/" : base}">`,
-    ...["en", "zh", "ja"].map((l) => `<link rel="alternate" hreflang="${l === "zh" ? "zh-CN" : l}" href="https://calcmoa.site${langPath(l, path)}">`),
+    ...["en", "zh", "ja", "fr"].map((l) => `<link rel="alternate" hreflang="${l === "zh" ? "zh-CN" : l}" href="https://calcmoa.site${langPath(l, path)}">`),
     `<link rel="alternate" hreflang="x-default" href="https://calcmoa.site${langPath("en", path)}">`,
   ].join("\n");
   html = html.replace("</head>", alt + "\n<meta property=\"og:locale\" content=\"" + L.og + "\">\n</head>");
@@ -232,7 +247,7 @@ async function translatePage(koHtml, lang, path, env, stub) {
 export default {
   async fetch(req, env, ctx) {
     const url = new URL(req.url);
-    const m = url.pathname.match(/^\/(en|zh|ja)(\/.*)?$/);
+    const m = url.pathname.match(/^\/(en|zh|ja|fr)(\/.*)?$/);
     if (!m) return new Response("Not found", { status: 404 });
     const lang = m[1];
     let rest = m[2] || "/";
