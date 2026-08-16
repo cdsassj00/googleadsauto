@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://calcmoa.site/sitemap.xml
+Sitemap: https://calcmoa.site/sitemap-i18n.xml

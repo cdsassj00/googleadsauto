@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/zh", "destination": "https://calcmoa-i18n.sjshin.workers.dev/zh/" },
+    { "source": "/zh/:path*", "destination": "https://calcmoa-i18n.sjshin.workers.dev/zh/:path*" },
+    { "source": "/en/:path*", "destination": "https://calcmoa-i18n.sjshin.workers.dev/en/:path*" },
+    { "source": "/ja/:path*", "destination": "https://calcmoa-i18n.sjshin.workers.dev/ja/:path*" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

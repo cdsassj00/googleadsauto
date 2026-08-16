@@ -47,3 +47,19 @@ ads.txt / robots.txt / sitemap.xml / vercel.json
 - 세율·요율(4대보험, 최저시급 등)은 **2026년 기준** — 매년 1월 갱신 필요
   (`tools/salary.html`, `tools/hourly.html` 본문 표 포함)
 - 문의 이메일은 `js/config.js`와 `contact.html`, `privacy.html`, `terms.html`에 있음
+
+## 다국어 실시간 번역 (workers/i18n)
+
+- `/en` `/zh` `/ja` 경로 중 **정적 파일이 없는 페이지**는 `vercel.json` rewrites가
+  Cloudflare Worker(`calcmoa-i18n.sjshin.workers.dev`)로 프록시한다.
+- 워커는 한국어 원본을 fetch → **Workers AI(m2m100)** 로 문장 단위 번역 →
+  **Durable Object(SQLite storage)** 에 문장/페이지 캐시 저장 (KV 미사용).
+- 요청당 AI 호출 상한(40)이 있어 첫 방문은 부분 번역일 수 있고, 반복 방문으로 수렴.
+  배포/원본 대량 수정 후에는 `node workers/i18n/warmup.mjs` (또는 `warmup.mjs zh` 처럼
+  언어 지정)로 전 페이지를 미리 번역해 캐시를 채울 것.
+- 번역 로직을 바꾸면 `src/index.js`의 `V` 상수를 올려 캐시를 무효화한 뒤
+  `npx wrangler deploy` (요구: `CLOUDFLARE_API_TOKEN`).
+- 수작업 현지화 정적 페이지(en/ja/fr의 dday·age·percent·bmi·compound·charcount)는
+  `STATIC_MAP`에 등록되어 워커가 301로 넘긴다. 새 정적 번역판을 만들면 여기에 추가.
+- 다국어 SEO: 전 KR 페이지에 hreflang(ko/en/zh-CN/ja) 상호참조,
+  번역 URL은 `sitemap-i18n.xml`(robots.txt에 등록)에 별도 수록 — GSC에 추가 제출 가능.

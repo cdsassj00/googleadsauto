@@ -1,0 +1,15 @@
+{
+  // calcmoa.site 실시간 번역 워커 — Durable Objects(SQLite) 캐시, KV 미사용
+  "name": "calcmoa-i18n",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-01",
+  "account_id": "9b4cb30e7d08c444a9e6aaba6d30f328",
+  "workers_dev": true,
+  "vars": { "ORIGIN": "https://calcmoa.site" },
+  "ai": { "binding": "AI" },
+  "durable_objects": {
+    "bindings": [{ "name": "CACHE", "class_name": "TranslationCache" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["TranslationCache"] }],
+  "observability": { "enabled": true }
+}
