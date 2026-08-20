@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에어컨 평형 계산기 - 우리집에 맞는 냉방능력(kW) 계산</title>
+<meta name="description" content="방·거실 면적(평/㎡)과 최상층·창 방향·단열 수준을 입력하면 필요한 냉방능력(kW)과 권장 에어컨 평형을 계산합니다. 18평 거실엔 몇 평형? 표준 냉방부하 기준 근거까지 제공.">
+<link rel="canonical" href="https://calcmoa.site/tools/aircon">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/aircon">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/tools/aircon">
+<link rel="alternate" hreflang="zh-CN" href="https://calcmoa.site/zh/tools/aircon">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/tools/aircon">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/tools/aircon">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/tools/aircon">
+<meta property="og:type" content="website">
+<meta property="og:title" content="에어컨 평형 계산기 - 우리집에 맞는 냉방능력(kW) 계산">
+<meta property="og:description" content="면적과 최상층·창 방향·단열 수준으로 필요한 냉방능력(kW)과 권장 에어컨 평형을 계산합니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/aircon">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"에어컨 평형 계산기","url":"https://calcmoa.site/tools/aircon","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"에어컨 '평형'과 실제 우리집 평수는 같은 건가요?","acceptedAnswer":{"@type":"Answer","text":"다릅니다. 에어컨 평형은 제조사가 표기하는 냉방 가능 면적의 관습적 표현으로, 표준 조건(중간층·보통 단열)을 가정한 수치입니다. 같은 18평 거실이라도 최상층이거나 서향 큰 창이 있으면 실제로는 더 큰 냉방능력이 필요합니다. 그래서 집 평수가 아니라 냉방능력(kW) 기준으로 고르는 것이 정확하며, 이 계산기는 조건 보정을 거친 필요 냉방능력을 먼저 구한 뒤 그에 맞는 평형을 권장합니다."}},
+  {"@type":"Question","name":"거실+주방이 트여 있으면 면적을 어떻게 넣어야 하나요?","acceptedAnswer":{"@type":"Answer","text":"냉방할 공기가 이어져 있는 공간은 전부 합산해야 합니다. 거실과 주방이 오픈형으로 트여 있다면 두 공간의 면적을 합쳐 입력하세요. 복도로 연결된 방까지 함께 시원하게 하려면 그 면적도 더해야 하며, 이 경우 실제 체감 냉방은 문 개폐 여부에 따라 달라집니다."}},
+  {"@type":"Question","name":"큰 평형을 사면 전기요금이 더 나오지 않나요?","acceptedAnswer":{"@type":"Answer","text":"요즘 인버터 에어컨은 설정 온도에 도달하면 출력을 낮춰 운전하므로, 적정 용량보다 한 단계 큰 제품이 오히려 전기를 덜 쓰는 경우가 많습니다. 용량이 부족한 에어컨은 계속 최대 출력으로 돌아 전기를 더 먹고 수명도 짧아집니다. 반대로 지나치게 큰 용량은 구매 비용이 낭비이므로, 필요 냉방능력의 100~120% 범위에서 고르는 것이 합리적입니다."}},
+  {"@type":"Question","name":"벽걸이와 스탠드(투인원) 중 뭘 골라야 하나요?","acceptedAnswer":{"@type":"Answer","text":"필요 냉방능력이 기준입니다. 대체로 벽걸이는 5~9평형(2.0~3.5kW), 스탠드는 13평형(5.0kW) 이상으로 나옵니다. 침실 등 독립된 방은 벽걸이, 거실+주방처럼 넓은 공간은 스탠드가 일반적이며, 투인원(스탠드+벽걸이 세트)은 실외기 하나로 두 공간을 커버해 설치비를 아낄 수 있습니다."}},
+  {"@type":"Question","name":"계산 결과보다 작은 평형을 이미 쓰고 있는데 시원해요. 왜죠?","acceptedAnswer":{"@type":"Answer","text":"이 계산기는 한여름 폭염(외기 33~35도)에도 실내 26도 안팎을 유지할 수 있는 용량을 기준으로 합니다. 평상시엔 작은 용량으로도 충분히 시원할 수 있지만, 폭염일에 냉방이 밀리거나 제습이 안 되는 형태로 부족함이 드러납니다. 또한 북향·저층·단열이 좋은 집은 보정치가 낮아 실제 필요 용량이 작을 수 있습니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/tests">테스트</a>
+      <a href="/guide">가이드</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-life">생활·건강</a><span class="sep">›</span>
+    <span>에어컨 평형 계산기</span>
+  </nav>
+
+  <h1>에어컨 평형 계산기</h1>
+  <p class="lead">냉방할 공간의 면적과 조건(최상층·창 방향·단열·인원)을 입력하면 필요한 냉방능력(kW)과 권장 에어컨 평형을 계산합니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fArea">
+      <label for="area">냉방할 공간 면적</label>
+      <input type="text" id="area" inputmode="decimal" placeholder="18" autocomplete="off">
+      <div class="seg" id="segUnit" style="margin-top:8px">
+        <button type="button" class="on" data-unit="py">평</button>
+        <button type="button" data-unit="m2">㎡</button>
+      </div>
+      <div class="hint">거실+주방이 트여 있으면 합산 면적을 입력하세요. 예: 18</div>
+      <div class="field-error">면적을 1 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field">
+      <label>최상층(옥탑 포함) 여부</label>
+      <div class="seg" id="segTop">
+        <button type="button" class="on" data-v="0">아니요</button>
+        <button type="button" data-v="1">최상층이에요</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>해가 강하게 드는 큰 창 (남향·서향)</label>
+      <div class="seg" id="segSun">
+        <button type="button" class="on" data-v="0">없음·보통</button>
+        <button type="button" data-v="1">있어요</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>단열 수준</label>
+      <div class="seg" id="segIns">
+        <button type="button" data-v="good">좋음 (신축·리모델링)</button>
+        <button type="button" class="on" data-v="mid">보통</button>
+        <button type="button" data-v="bad">나쁨 (구축·외풍)</button>
+      </div>
+    </div>
+    <div class="field" id="fPeople">
+      <label for="people">상주 인원</label>
+      <input type="text" id="people" inputmode="numeric" placeholder="3" autocomplete="off">
+      <div class="hint">평소 그 공간에 함께 있는 인원. 예: 3</div>
+      <div class="field-error">인원을 1명 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">권장 에어컨</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>필요 냉방능력</span><b id="rNeed"></b></div>
+        <div class="row"><span>기본 냉방부하 (면적 × 130W/㎡)</span><b id="rBase"></b></div>
+        <div class="row"><span>조건 보정</span><b id="rAdj"></b></div>
+        <div class="row"><span>권장 제품군</span><b id="rType"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>냉방할 공간의 면적을 평 또는 ㎡로 입력합니다. 거실과 주방이 트여 있으면 합산해서 넣습니다.</li>
+      <li>최상층 여부, 해가 강하게 드는 큰 창(남향·서향) 유무, 단열 수준, 상주 인원을 선택합니다.</li>
+      <li>계산하기를 누르면 필요 냉방능력(kW)과 이를 충족하는 권장 평형, 제품군(벽걸이/스탠드)이 표시됩니다.</li>
+    </ol>
+
+    <h2>계산 원리 — 냉방부하 산정</h2>
+    <p>에어컨 용량 선정의 출발점은 공간이 여름철에 받아들이는 열, 즉 냉방부하입니다. 이 계산기는 국내 주거 공간에 통용되는 표준 냉방부하 <b>약 130W/㎡</b>를 기본값으로 하고, 열 유입이 커지는 조건에 가중치를 더하는 방식을 사용합니다.</p>
+    <table>
+      <thead><tr><th>조건</th><th>보정</th><th>이유</th></tr></thead>
+      <tbody>
+        <tr><td>최상층·옥탑</td><td>+15%</td><td>지붕으로 직접 일사열이 유입</td></tr>
+        <tr><td>남향·서향 큰 창</td><td>+10%</td><td>오후 일사로 실내 온도 상승 폭이 큼</td></tr>
+        <tr><td>단열 나쁨 (구축·외풍)</td><td>+15%</td><td>외피를 통한 열 유입 증가</td></tr>
+        <tr><td>단열 좋음 (신축·리모델링)</td><td>−10%</td><td>열 유입이 적어 부하 감소</td></tr>
+        <tr><td>상주 인원 3명 초과</td><td>+100W/인</td><td>인체 발열(1인당 약 100W)</td></tr>
+      </tbody>
+    </table>
+    <p>검산 예시: 18평(59.5㎡) 거실+주방, 최상층 아님, 서향 큰 창 있음, 단열 보통, 3인 가족이라면 — 기본 부하 59.5㎡ × 130W = 7,735W에 창 보정 +10%가 붙어 약 8,509W, 즉 <b>약 8.5kW</b>가 필요 냉방능력입니다. 시판 스탠드 에어컨 기준 23평형(8.3kW)이 근접하지만 살짝 부족하므로 25평형(9.0kW)이 권장됩니다. 같은 18평이라도 조건이 표준이면 7.7kW로 20평형(7.2kW)~23평형이 적정 범위가 됩니다. 이렇게 집 평수와 에어컨 평형이 다르게 나오는 것이 정상입니다.</p>
+    <p>권장 평형은 아래 시판 제품 냉방능력 표를 기준으로, 필요 냉방능력을 충족하는 가장 작은 모델을 고릅니다.</p>
+    <table>
+      <thead><tr><th>표기 평형</th><th>냉방능력</th><th>일반 제품군</th></tr></thead>
+      <tbody>
+        <tr><td>6평형</td><td>2.3kW</td><td>벽걸이</td></tr>
+        <tr><td>7평형</td><td>2.5kW</td><td>벽걸이</td></tr>
+        <tr><td>9평형</td><td>3.5kW</td><td>벽걸이</td></tr>
+        <tr><td>11평형</td><td>4.0kW</td><td>벽걸이·이동식</td></tr>
+        <tr><td>13평형</td><td>5.0kW</td><td>스탠드</td></tr>
+        <tr><td>15~16평형</td><td>5.8~6.0kW</td><td>스탠드</td></tr>
+        <tr><td>17~18평형</td><td>6.3~6.5kW</td><td>스탠드</td></tr>
+        <tr><td>20평형</td><td>7.2kW</td><td>스탠드</td></tr>
+        <tr><td>23평형</td><td>8.3kW</td><td>스탠드</td></tr>
+        <tr><td>25평형</td><td>9.0kW</td><td>스탠드</td></tr>
+      </tbody>
+    </table>
+    <p class="note">위 보정치는 주거 공간의 일반적 조건을 단순화한 참고용 근사치입니다. 층고가 특별히 높은 공간, 상업 공간(식당·사무실), 서버·조리기구 등 발열원이 있는 공간은 전문 냉방부하 계산이 필요합니다. 제조사·모델별 냉방능력은 표기 평형과 다를 수 있으니 구매 전 스펙표의 kW 수치를 확인하세요.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>에어컨은 용량이 부족할 때 손해가 더 큽니다. 부족한 용량은 한여름 내내 최대 출력으로 돌아 전기요금이 더 나오고 실외기 수명도 짧아지는 반면, 인버터 제품은 용량이 한 단계 커도 설정 온도 도달 후 저출력 운전으로 전환되어 효율적입니다. 예산이 애매하면 작은 쪽이 아니라 큰 쪽을 고르는 것이 정석입니다.</p>
+    <p>같은 평형이라도 에너지소비효율등급과 냉방 효율(SEER)에 따라 여름 한 철 전기요금이 수만 원씩 차이 납니다. 오래 쓰는 가전인 만큼 1~2등급 제품의 가격 차이는 대개 2~3년 안에 전기요금으로 회수됩니다. 설치 환경도 중요합니다. 실외기가 직사광선을 받거나 통풍이 안 되는 실외기실에 갇혀 있으면 냉방 성능이 10% 이상 떨어질 수 있으니, 차양과 통풍 확보만으로도 체감 성능이 좋아집니다.</p>
+    <p>여름 전기요금이 걱정된다면 누진 구간도 함께 확인하세요. 에어컨 소비전력(냉방능력이 아니라 소비전력 기준, 보통 냉방능력의 1/3~1/4)에 하루 가동 시간을 곱하면 월 추가 사용량을 추정할 수 있고, <a href="/tools/electricity">전기요금 계산기</a>에 넣으면 예상 요금이 바로 나옵니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>에어컨 '평형'과 실제 우리집 평수는 같은 건가요?</summary>
+        <p>다릅니다. 에어컨 평형은 제조사가 표기하는 냉방 가능 면적의 관습적 표현으로, 표준 조건(중간층·보통 단열)을 가정한 수치입니다. 같은 18평 거실이라도 최상층이거나 서향 큰 창이 있으면 실제로는 더 큰 냉방능력이 필요합니다. 그래서 집 평수가 아니라 냉방능력(kW) 기준으로 고르는 것이 정확하며, 이 계산기는 조건 보정을 거친 필요 냉방능력을 먼저 구한 뒤 그에 맞는 평형을 권장합니다.</p>
+      </details>
+      <details>
+        <summary>거실+주방이 트여 있으면 면적을 어떻게 넣어야 하나요?</summary>
+        <p>냉방할 공기가 이어져 있는 공간은 전부 합산해야 합니다. 거실과 주방이 오픈형으로 트여 있다면 두 공간의 면적을 합쳐 입력하세요. 복도로 연결된 방까지 함께 시원하게 하려면 그 면적도 더해야 하며, 이 경우 실제 체감 냉방은 문 개폐 여부에 따라 달라집니다.</p>
+      </details>
+      <details>
+        <summary>큰 평형을 사면 전기요금이 더 나오지 않나요?</summary>
+        <p>요즘 인버터 에어컨은 설정 온도에 도달하면 출력을 낮춰 운전하므로, 적정 용량보다 한 단계 큰 제품이 오히려 전기를 덜 쓰는 경우가 많습니다. 용량이 부족한 에어컨은 계속 최대 출력으로 돌아 전기를 더 먹고 수명도 짧아집니다. 반대로 지나치게 큰 용량은 구매 비용이 낭비이므로, 필요 냉방능력의 100~120% 범위에서 고르는 것이 합리적입니다.</p>
+      </details>
+      <details>
+        <summary>벽걸이와 스탠드(투인원) 중 뭘 골라야 하나요?</summary>
+        <p>필요 냉방능력이 기준입니다. 대체로 벽걸이는 5~9평형(2.0~3.5kW), 스탠드는 13평형(5.0kW) 이상으로 나옵니다. 침실 등 독립된 방은 벽걸이, 거실+주방처럼 넓은 공간은 스탠드가 일반적이며, 투인원(스탠드+벽걸이 세트)은 실외기 하나로 두 공간을 커버해 설치비를 아낄 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>계산 결과보다 작은 평형을 이미 쓰고 있는데 시원해요. 왜죠?</summary>
+        <p>이 계산기는 한여름 폭염(외기 33~35도)에도 실내 26도 안팎을 유지할 수 있는 용량을 기준으로 합니다. 평상시엔 작은 용량으로도 충분히 시원할 수 있지만, 폭염일에 냉방이 밀리거나 제습이 안 되는 형태로 부족함이 드러납니다. 또한 북향·저층·단열이 좋은 집은 보정치가 낮아 실제 필요 용량이 작을 수 있습니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/electricity"><div class="ico">⚡</div><b>전기요금 계산기</b><span>누진 3단계 예상 청구액</span></a>
+      <a class="tool-card" href="/tools/area"><div class="ico">📐</div><b>평수 계산기</b><span>평 ↔ 제곱미터 변환</span></a>
+      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+      <a class="tool-card" href="/tools/bmi"><div class="ico">⚖️</div><b>BMI 계산기</b><span>체질량지수와 정상 범위</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  var unit = "py", top = 0, sun = 0, ins = "mid";
+  var PY = 3.3058;                 /* 1평 = 3.3058㎡ */
+  var LOAD = 130;                  /* 기본 냉방부하 W/㎡ */
+  var INS = { good: -0.10, mid: 0, bad: 0.15 };
+  /* 시판 제품 냉방능력 매핑: [표기평형, kW, 제품군] */
+  var MODELS = [
+    [6, 2.3, "벽걸이"], [7, 2.5, "벽걸이"], [9, 3.5, "벽걸이"], [11, 4.0, "벽걸이·이동식"],
+    [13, 5.0, "스탠드"], [15, 5.8, "스탠드"], [16, 6.0, "스탠드"], [17, 6.3, "스탠드"],
+    [18, 6.5, "스탠드"], [20, 7.2, "스탠드"], [23, 8.3, "스탠드"], [25, 9.0, "스탠드"]
+  ];
+
+  function bindSeg(id, fn) {
+    Array.prototype.forEach.call($(id).querySelectorAll("button"), function (btn) {
+      btn.addEventListener("click", function () {
+        Array.prototype.forEach.call($(id).querySelectorAll("button"), function (b) {
+          b.classList.toggle("on", b === btn);
+        });
+        fn(btn);
+      });
+    });
+  }
+  bindSeg("segUnit", function (b) { unit = b.getAttribute("data-unit"); });
+  bindSeg("segTop", function (b) { top = Number(b.getAttribute("data-v")); });
+  bindSeg("segSun", function (b) { sun = Number(b.getAttribute("data-v")); });
+  bindSeg("segIns", function (b) { ins = b.getAttribute("data-v"); });
+
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var a = parseFloat(String($("area").value).replace(/[^\d.]/g, ""));
+    var p = parseInt(String($("people").value).replace(/[^\d]/g, ""), 10);
+    if (!(a >= 1)) { CM.invalid($("fArea"), true); return; }
+    CM.invalid($("fArea"), false);
+    if (!(p >= 1)) { p = 3; $("people").value = "3"; }
+    CM.invalid($("fPeople"), false);
+
+    var m2 = unit === "py" ? a * PY : a;
+    var py = unit === "py" ? a : a / PY;
+    var base = m2 * LOAD;
+    var mult = 1 + (top ? 0.15 : 0) + (sun ? 0.10 : 0) + INS[ins];
+    var extra = Math.max(0, p - 3) * 100;
+    var need = base * mult + extra;          /* W */
+    var needKw = need / 1000;
+
+    var pick = null;
+    for (var i = 0; i < MODELS.length; i++) {
+      if (MODELS[i][1] >= needKw) { pick = MODELS[i]; break; }
+    }
+    var main, type;
+    if (pick) {
+      main = pick[0] + "평형 (" + pick[1].toFixed(1) + "kW)";
+      type = pick[2];
+    } else {
+      main = "25평형 이상 · 복수 설치 권장";
+      type = "스탠드 2대 또는 시스템 에어컨";
+    }
+
+    var adjParts = [];
+    if (top) adjParts.push("최상층 +15%");
+    if (sun) adjParts.push("남·서향 창 +10%");
+    if (INS[ins]) adjParts.push("단열 " + (INS[ins] > 0 ? "+15%" : "−10%"));
+    if (extra) adjParts.push("인원 +" + CM.fmt(extra) + "W");
+    var adjText = adjParts.length ? adjParts.join(", ") : "없음 (표준 조건)";
+
+    $("result").hidden = false;
+    $("rMain").textContent = main;
+    $("rNeed").textContent = needKw.toFixed(1) + " kW (" + CM.fmt(Math.round(need)) + "W)";
+    $("rBase").textContent = CM.fmt(Math.round(base)) + "W (" + m2.toFixed(1) + "㎡)";
+    $("rAdj").textContent = adjText;
+    $("rType").textContent = type;
+
+    lastText = "에어컨 평형 계산 · " + py.toFixed(1) + "평(" + m2.toFixed(1) + "㎡)\n"
+      + "필요 냉방능력: " + needKw.toFixed(1) + "kW\n"
+      + "권장: " + main + " · " + type + "\n"
+      + "보정: " + adjText
+      + "\n- calcmoa.site/tools/aircon";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["area", "people"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+<nav class="lang-float" aria-label="Language">
+  <a href="/" class="on"><img src="/img/flag-kr.png" alt="한국어" width="28" height="21" loading="lazy"><span>한국어</span></a>
+  <a href="/en"><img src="/img/flag-us.png" alt="English" width="28" height="21" loading="lazy"><span>English</span></a>
+  <a href="/zh"><img src="/img/flag-cn.png" alt="中文" width="28" height="21" loading="lazy"><span>中文</span></a>
+  <a href="/ja"><img src="/img/flag-jp.png" alt="日本語" width="28" height="21" loading="lazy"><span>日本語</span></a>
+  <a href="/fr"><img src="/img/flag-fr.png" alt="Français" width="28" height="21" loading="lazy"><span>Français</span></a>
+</nav>
+</body>
+</html>

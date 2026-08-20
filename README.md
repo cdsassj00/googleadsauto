@@ -51,7 +51,7 @@ ads.txt / robots.txt / sitemap.xml / vercel.json
 ## 다국어 실시간 번역 (workers/i18n)
 
 - `/en` `/zh` `/ja` 경로 중 **정적 파일이 없는 페이지**는 `vercel.json` rewrites가
-  Cloudflare Worker(`calcmoa-i18n.sjshin.workers.dev`)로 프록시한다.
+  Cloudflare Worker(주소는 `vercel.json` rewrites 참조)로 프록시한다.
 - 워커는 한국어 원본을 fetch → **Workers AI(m2m100)** 로 문장 단위 번역 →
   **Durable Object(SQLite storage)** 에 문장/페이지 캐시 저장 (KV 미사용).
 - 요청당 AI 호출 상한(40)이 있어 첫 방문은 부분 번역일 수 있고, 반복 방문으로 수렴.

@@ -485,47 +485,6 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; }
 .mono { font-variant-numeric: tabular-nums; }
 ::selection { background: rgba(10, 132, 255, .35); }
 
-/* ---------- CDSA 골드 프로모션 배너 ---------- */
-.promo-banner {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 36px;
-  display: flex; align-items: center; justify-content: center; gap: 9px;
-  padding: 0 14px;
-  background: linear-gradient(100deg, #7a5c16 0%, #c9a227 22%, #f3dd7f 50%, #c9a227 78%, #7a5c16 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 248, 214, .75), inset 0 -1px 0 rgba(58, 42, 6, .55), 0 1px 6px rgba(0, 0, 0, .45);
-  color: #241a02; text-decoration: none;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  font-size: 13.5px; font-weight: 700; letter-spacing: -.01em;
-  overflow: hidden; white-space: nowrap;
-}
-.promo-banner::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(105deg, transparent 25%, rgba(255, 255, 255, .5) 50%, transparent 75%);
-  transform: translateX(-100%);
-  animation: pb-sweep 3.4s ease-in-out infinite;
-}
-@keyframes pb-sweep {
-  0%   { transform: translateX(-100%); }
-  55%  { transform: translateX(100%); }
-  100% { transform: translateX(100%); }
-}
-@media (prefers-reduced-motion: reduce) { .promo-banner::after { animation: none; display: none; } }
-.promo-banner .pb-ad {
-  flex: 0 0 auto;
-  width: 20px; height: 20px; border-radius: 50%;
-  display: inline-flex; align-items: center; justify-content: center;
-  background: rgba(0, 0, 0, .55); color: #f3dd7f;
-  font-size: 9px; font-weight: 800; letter-spacing: .04em;
-}
-.promo-banner .pb-text { overflow: hidden; text-overflow: ellipsis; }
-.promo-banner .pb-text u { text-underline-offset: 2.5px; }
-.promo-banner:hover .pb-text u { text-decoration-thickness: 2px; }
-@media (max-width: 560px) { .promo-banner { font-size: 12.5px; gap: 7px; } }
-
-/* 배너 공간 확보: 본문·헤더를 36px 아래로 */
-body { padding-top: 36px; }
-.site-header { top: 36px; }
-
 /* ---------- 언어 스위처 (헤더 🌐 드롭다운) ---------- */
 .lang { position: relative; }
 .lang summary {
@@ -576,8 +535,3 @@ body { padding-top: 36px; }
   .lang-float a span { display: none; }
   .lang-float a img { width: 30px; height: 22.5px; }
 }
-
-/* ⚠️ 애드센스 재심사 기간 임시 조치 — 승인 후 이 블록(3줄)을 삭제하면 배너 복구됨 */
-.promo-banner { display: none !important; }
-body { padding-top: 0 !important; }
-.site-header { top: 0 !important; }
