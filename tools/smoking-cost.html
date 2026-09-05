@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>담배값 계산기 - 지금까지 쓴 돈과 투자했다면 얼마?</title>
+<meta name="description" content="하루 흡연량과 갑당 가격을 넣으면 기간별 담뱃값 총액과, 그 돈을 복리로 굴렸을 때의 금액을 함께 계산합니다. 금연 시 절약액도 확인하세요.">
+<link rel="canonical" href="https://calcmoa.site/tools/smoking-cost">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/smoking-cost">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/tools/smoking-cost">
+<link rel="alternate" hreflang="zh-CN" href="https://calcmoa.site/zh/tools/smoking-cost">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/tools/smoking-cost">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/tools/smoking-cost">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/tools/smoking-cost">
+<meta property="og:type" content="website">
+<meta property="og:title" content="담배값 계산기 - 그 돈을 투자했다면">
+<meta property="og:description" content="담뱃값 총액과 복리로 굴렸을 때의 기회비용을 함께 계산합니다.">
+<meta property="og:url" content="https://calcmoa.site/tools/smoking-cost">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"담배값 계산기","url":"https://calcmoa.site/tools/smoking-cost","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"복리 수익률 4%는 어떤 기준인가요?","acceptedAnswer":{"@type":"Answer","text":"장기 적립식 투자에서 흔히 가정하는 보수적인 연평균 수익률입니다. 예금 금리보다는 높고 주식시장 장기 평균보다는 낮은 수준으로, 지나치게 낙관적이지 않은 기준으로 잡은 값입니다. 계산기에서 수익률을 직접 바꿀 수 있으니 본인 기준으로 조정해 보세요. 실제 수익률은 시장 상황에 따라 달라지며 원금 손실 가능성도 있습니다."}},
+  {"@type":"Question","name":"담뱃값에서 세금이 얼마나 되나요?","acceptedAnswer":{"@type":"Answer","text":"국내 담배는 가격의 상당 부분이 제세부담금입니다. 담배소비세, 지방교육세, 개별소비세, 부가가치세, 국민건강증진부담금, 폐기물부담금 등이 붙어 4,500원짜리 한 갑 기준으로 약 74% 안팎이 세금과 부담금으로 알려져 있습니다. 실제 담배 원가와 유통마진은 나머지 부분입니다."}},
+  {"@type":"Question","name":"이미 피운 돈은 계산해서 뭐하나요?","acceptedAnswer":{"@type":"Answer","text":"과거 금액은 이미 지나간 매몰비용이라 되돌릴 수 없습니다. 이 계산기에서 더 중요한 것은 앞으로의 금액입니다. 지금 끊으면 앞으로 10년, 20년 동안 얼마가 남는지가 실제로 바꿀 수 있는 숫자이기 때문입니다. 과거는 참고용으로만 보시고 미래 절약액에 집중하시길 권합니다."}},
+  {"@type":"Question","name":"전자담배나 궐련형도 계산할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 갑당 가격 대신 한 통 또는 한 팩의 가격을 넣고, 하루 소비량을 그에 맞춰 입력하면 됩니다. 액상형이라면 한 달 평균 지출액을 30으로 나눠 하루 금액을 역산한 뒤, 가격 1과 하루 소비량에 그 값을 넣는 방식으로도 계산할 수 있습니다."}},
+  {"@type":"Question","name":"금연하면 건강 측면에서는 어떤 변화가 있나요?","acceptedAnswer":{"@type":"Answer","text":"질병관리청과 보건복지부 금연 안내에 따르면 금연 후 시간이 지나면서 혈압과 심박수 안정, 폐 기능 개선, 심혈관 질환 위험 감소 등의 변화가 단계적으로 나타납니다. 다만 구체적인 회복 속도는 흡연 기간과 개인 건강 상태에 따라 다르므로, 금연상담전화(1544-9030)나 보건소 금연클리닉의 도움을 받는 것이 좋습니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/tests">테스트</a>
+      <a href="/guide">가이드</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-life">생활·건강</a><span class="sep">›</span>
+    <span>담배값 계산기</span>
+  </nav>
+
+  <h1>담배값 계산기</h1>
+  <p class="lead">담뱃값 총액과, 그 돈을 복리로 굴렸다면 얼마가 되었을지를 함께 계산합니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fPack">
+      <label for="pack">하루 흡연량 (갑)</label>
+      <input type="text" id="pack" inputmode="decimal" placeholder="1" autocomplete="off">
+      <div class="hint">반 갑이면 0.5. 예: 1</div>
+      <div class="field-error">0보다 큰 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field" id="fPrice">
+      <label for="price">갑당 가격 (원)</label>
+      <input type="text" id="price" inputmode="numeric" placeholder="4500" autocomplete="off">
+      <div class="hint">전자담배는 한 통·한 팩 가격을 넣으세요. 예: 4500</div>
+      <div class="field-error">100원 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field" id="fYears">
+      <label for="years">기간 (년)</label>
+      <input type="text" id="years" inputmode="numeric" placeholder="10" autocomplete="off">
+      <div class="hint">지금까지 피운 기간, 또는 앞으로의 기간. 예: 10</div>
+      <div class="field-error">1년 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field" id="fRate">
+      <label for="rate">연 수익률 (%)</label>
+      <input type="text" id="rate" inputmode="decimal" placeholder="4" autocomplete="off">
+      <div class="hint">그 돈을 매달 적립식으로 굴렸다고 가정. 예: 4</div>
+      <div class="field-error">0 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">복리로 굴렸다면</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>담뱃값 원금 합계</span><b id="rPrincipal"></b></div>
+        <div class="row"><span>복리 수익 (기회비용)</span><b id="rProfit"></b></div>
+        <div class="row"><span>월 지출액</span><b id="rMonthly"></b></div>
+        <div class="row"><span>총 소비 갑 수</span><b id="rPacks"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>하루 흡연량과 갑당 가격을 입력합니다. 반 갑이면 0.5처럼 소수로 넣어도 됩니다.</li>
+      <li>기간을 넣습니다. 지금까지 피운 기간을 넣으면 과거 지출이, 앞으로의 기간을 넣으면 금연 시 절약액이 나옵니다.</li>
+      <li>연 수익률을 정하면 그 돈을 매달 적립식으로 굴렸을 때의 금액이 함께 계산됩니다.</li>
+    </ol>
+
+    <h2>계산 원리</h2>
+    <p>원금은 <b>하루 지출액 × 365 × 기간</b>입니다. 복리 부분은 하루 지출액을 월 단위로 환산해 매달 적립하는 적립식 투자로 가정하고, 월 복리(연 수익률 ÷ 12)로 계산합니다. 공식은 <b>미래가치 = 월 적립액 × [((1 + r)<sup>n</sup> − 1) ÷ r]</b>이며, r은 월 수익률, n은 총 개월 수입니다.</p>
+    <p>검산해 보면, 하루 한 갑 4,500원을 10년간 피우면 원금은 4,500 × 365 × 10 = <b>1,642만 5천원</b>입니다. 이를 월로 환산하면 월 136,875원이고, 연 4%(월 0.3333%) 복리로 120개월 적립하면 약 <b>2,015만원</b>이 됩니다. 원금 대비 373만원가량이 이자로 붙는 셈입니다.</p>
+    <p>기간을 20년으로 늘리면 차이는 훨씬 커집니다. 원금은 3,285만원이지만 복리 결과는 약 5,022만원으로, 이자만 1,737만원입니다. 복리는 시간이 길어질수록 가속되기 때문에, 같은 담뱃값이라도 젊을 때의 한 갑이 훨씬 비싼 셈입니다.</p>
+    <p class="note">투자 수익률은 가정일 뿐이며 실제 수익을 보장하지 않습니다. 원금 손실 가능성이 있는 투자상품도 있으므로 이 계산은 기회비용의 크기를 가늠하는 참고용으로만 사용하세요.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>담뱃값의 상당 부분은 세금입니다. 4,500원짜리 한 갑에는 담배소비세, 지방교육세, 개별소비세, 부가가치세, 국민건강증진부담금, 폐기물부담금 등이 붙어 대략 74% 안팎이 제세부담금으로 알려져 있습니다. 하루 한 갑이면 1년에 약 120만원을 세금으로 내는 셈이고, 10년이면 1,200만원이 넘습니다.</p>
+    <p>금연을 결심했다면 절약액을 눈에 보이게 만드는 방법이 효과적입니다. 담뱃값만큼을 매달 자동이체로 별도 적금에 넣어 두면, 참는 행위가 곧 잔고 증가로 확인됩니다. 하루 한 갑이면 월 13만원 남짓인데, 이는 웬만한 적금 납입액에 해당합니다. 실제 적금 만기 금액이 궁금하다면 <a href="/tools/savings">적금 계산기</a>로 확인할 수 있습니다.</p>
+    <p>금연의 가장 큰 이득은 물론 돈이 아니라 건강입니다. 다만 건강은 즉각적인 피드백이 없어 동기 유지가 어려운 반면, 돈은 매달 숫자로 확인됩니다. 그래서 많은 금연 프로그램이 절약액 시각화를 함께 권합니다. 도움이 필요하다면 금연상담전화 1544-9030이나 가까운 보건소 금연클리닉을 이용할 수 있습니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>복리 수익률 4%는 어떤 기준인가요?</summary>
+        <p>장기 적립식 투자에서 흔히 가정하는 보수적인 연평균 수익률입니다. 예금 금리보다는 높고 주식시장 장기 평균보다는 낮은 수준으로, 지나치게 낙관적이지 않은 기준으로 잡은 값입니다. 계산기에서 수익률을 직접 바꿀 수 있으니 본인 기준으로 조정해 보세요. 실제 수익률은 시장 상황에 따라 달라지며 원금 손실 가능성도 있습니다.</p>
+      </details>
+      <details>
+        <summary>담뱃값에서 세금이 얼마나 되나요?</summary>
+        <p>국내 담배는 가격의 상당 부분이 제세부담금입니다. 담배소비세, 지방교육세, 개별소비세, 부가가치세, 국민건강증진부담금, 폐기물부담금 등이 붙어 4,500원짜리 한 갑 기준으로 약 74% 안팎이 세금과 부담금으로 알려져 있습니다. 실제 담배 원가와 유통마진은 나머지 부분입니다.</p>
+      </details>
+      <details>
+        <summary>이미 피운 돈은 계산해서 뭐하나요?</summary>
+        <p>과거 금액은 이미 지나간 매몰비용이라 되돌릴 수 없습니다. 이 계산기에서 더 중요한 것은 앞으로의 금액입니다. 지금 끊으면 앞으로 10년, 20년 동안 얼마가 남는지가 실제로 바꿀 수 있는 숫자이기 때문입니다. 과거는 참고용으로만 보시고 미래 절약액에 집중하시길 권합니다.</p>
+      </details>
+      <details>
+        <summary>전자담배나 궐련형도 계산할 수 있나요?</summary>
+        <p>가능합니다. 갑당 가격 대신 한 통 또는 한 팩의 가격을 넣고, 하루 소비량을 그에 맞춰 입력하면 됩니다. 액상형이라면 한 달 평균 지출액을 30으로 나눠 하루 금액을 역산한 뒤, 가격 1과 하루 소비량에 그 값을 넣는 방식으로도 계산할 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>금연하면 건강 측면에서는 어떤 변화가 있나요?</summary>
+        <p>질병관리청과 보건복지부 금연 안내에 따르면 금연 후 시간이 지나면서 혈압과 심박수 안정, 폐 기능 개선, 심혈관 질환 위험 감소 등의 변화가 단계적으로 나타납니다. 다만 구체적인 회복 속도는 흡연 기간과 개인 건강 상태에 따라 다르므로, 금연상담전화(1544-9030)나 보건소 금연클리닉의 도움을 받는 것이 좋습니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/compound"><div class="ico">📈</div><b>복리 계산기</b><span>복리 이자와 장기 투자 수익</span></a>
+      <a class="tool-card" href="/tools/savings"><div class="ico">🐷</div><b>적금·예금 계산기</b><span>만기 수령액과 세후 이자</span></a>
+      <a class="tool-card" href="/tools/delivery-cost"><div class="ico">🛵</div><b>배달비 계산기</b><span>배달비만 1년에 얼마</span></a>
+      <a class="tool-card" href="/tools/bmi"><div class="ico">⚖️</div><b>BMI 계산기</b><span>체질량지수와 비만도 판정</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var pack = parseFloat(String($("pack").value).replace(/[^\d.]/g, ""));
+    var price = parseFloat(String($("price").value).replace(/[^\d.]/g, ""));
+    var years = parseInt(String($("years").value).replace(/[^\d]/g, ""), 10);
+    var rate = parseFloat(String($("rate").value).replace(/[^\d.]/g, ""));
+
+    if (!(pack > 0)) { CM.invalid($("fPack"), true); return; }
+    CM.invalid($("fPack"), false);
+    if (!(price >= 100)) { CM.invalid($("fPrice"), true); return; }
+    CM.invalid($("fPrice"), false);
+    if (!(years >= 1)) { CM.invalid($("fYears"), true); return; }
+    CM.invalid($("fYears"), false);
+    if (!(rate >= 0)) { rate = 4; $("rate").value = "4"; }
+    CM.invalid($("fRate"), false);
+
+    var daily = pack * price;
+    var principal = daily * 365 * years;
+    var monthly = daily * 365 / 12;
+    var n = years * 12;
+    var r = rate / 100 / 12;
+    var fv = r === 0 ? monthly * n : monthly * ((Math.pow(1 + r, n) - 1) / r);
+    var profit = fv - principal;
+    var packs = pack * 365 * years;
+
+    $("result").hidden = false;
+    CM.countUp($("rMain"), Math.round(fv), { suffix: "원" });
+    $("rPrincipal").textContent = CM.won(Math.round(principal));
+    $("rProfit").textContent = CM.won(Math.round(profit)) + " (연 " + rate + "%)";
+    $("rMonthly").textContent = CM.won(Math.round(monthly));
+    $("rPacks").textContent = CM.fmt(Math.round(packs)) + "갑";
+
+    lastText = "담배값 계산 · 하루 " + pack + "갑 × " + CM.won(price) + " × " + years + "년\n"
+      + "원금 합계: " + CM.won(Math.round(principal)) + "\n"
+      + "연 " + rate + "% 복리로 굴렸다면: " + CM.won(Math.round(fv)) + "\n"
+      + "기회비용(이자): " + CM.won(Math.round(profit))
+      + "\n- calcmoa.site/tools/smoking-cost";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["pack", "price", "years", "rate"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+<nav class="lang-float" aria-label="Language">
+  <a href="/" class="on"><img src="/img/flag-kr.png" alt="한국어" width="28" height="21" loading="lazy"><span>한국어</span></a>
+  <a href="/en"><img src="/img/flag-us.png" alt="English" width="28" height="21" loading="lazy"><span>English</span></a>
+  <a href="/zh"><img src="/img/flag-cn.png" alt="中文" width="28" height="21" loading="lazy"><span>中文</span></a>
+  <a href="/ja"><img src="/img/flag-jp.png" alt="日本語" width="28" height="21" loading="lazy"><span>日本語</span></a>
+  <a href="/fr"><img src="/img/flag-fr.png" alt="Français" width="28" height="21" loading="lazy"><span>Français</span></a>
+</nav>
+</body>
+</html>

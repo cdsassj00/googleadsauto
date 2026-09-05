@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부모님과 남은 만남 횟수 계산기 - 앞으로 몇 번이나 뵐 수 있을까</title>
+<meta name="description" content="부모님 연세와 1년에 뵙는 횟수를 넣으면 평생 남은 만남 횟수를 계산합니다. 기대수명 기준으로 남은 시간을 숫자로 확인해 보세요.">
+<link rel="canonical" href="https://calcmoa.site/tools/parents">
+<link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/parents">
+<link rel="alternate" hreflang="en" href="https://calcmoa.site/en/tools/parents">
+<link rel="alternate" hreflang="zh-CN" href="https://calcmoa.site/zh/tools/parents">
+<link rel="alternate" hreflang="ja" href="https://calcmoa.site/ja/tools/parents">
+<link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/tools/parents">
+<link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/tools/parents">
+<meta property="og:type" content="website">
+<meta property="og:title" content="부모님과 남은 만남 횟수 계산기">
+<meta property="og:description" content="부모님 연세와 1년에 뵙는 횟수로 계산한, 평생 남은 만남의 수.">
+<meta property="og:url" content="https://calcmoa.site/tools/parents">
+<meta property="og:site_name" content="계산모아">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/config.js"></script>
+<script src="/js/ads.js"></script>
+<script type="application/ld+json">
+[
+ {"@context":"https://schema.org","@type":"WebApplication","name":"부모님과 남은 만남 횟수 계산기","url":"https://calcmoa.site/tools/parents","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"기대수명은 어떤 기준인가요?","acceptedAnswer":{"@type":"Answer","text":"기본값은 한국인 평균 기대수명을 참고한 값으로, 남성 약 80세, 여성 약 86세를 기준으로 합니다. 다만 기대수명은 통계적 평균일 뿐이며 개인의 건강 상태, 생활습관, 의료 환경에 따라 크게 달라집니다. 계산기에서 기대수명을 직접 바꿔 입력할 수 있으니, 부모님 상황에 맞게 조정해 보세요."}},
+  {"@type":"Question","name":"이 계산이 정확한 예측인가요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 이 계산은 예측이 아니라 관점을 바꾸기 위한 도구입니다. '아직 시간이 많다'고 느끼는 막연한 감각을 구체적인 횟수로 바꿔 보여줄 뿐입니다. 실제 수명은 아무도 알 수 없으며, 이 숫자는 더 많이 만나기 위한 계기로만 사용하시길 권합니다."}},
+  {"@type":"Question","name":"함께 사는 경우에는 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"함께 산다면 만남 횟수보다 함께 보내는 시간의 질이 중요합니다. 굳이 계산한다면 하루에 실제로 대화하는 시간을 기준으로 연간 횟수를 환산해 볼 수 있습니다. 예를 들어 매일 저녁 30분씩 대화한다면 1년에 365번으로 입력하되, 결과를 시간으로 환산해 보면 또 다른 관점이 보입니다."}},
+  {"@type":"Question","name":"부모님이 두 분이면 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"두 분의 연세가 다르다면 각각 따로 계산해 보세요. 보통 더 연세가 많으신 분을 기준으로 계산하면 함께 뵐 수 있는 시간의 하한선을 알 수 있습니다. 연세 차이가 크지 않다면 평균값으로 한 번 계산해도 큰 차이는 없습니다."}},
+  {"@type":"Question","name":"결과가 생각보다 적게 나왔습니다.","acceptedAnswer":{"@type":"Answer","text":"대부분 그렇습니다. 1년에 네다섯 번 뵙는 경우가 흔한데, 남은 20년을 곱해도 100번이 채 되지 않습니다. 중요한 것은 이 숫자에 낙담하는 것이 아니라, 만남 횟수를 늘리는 쪽으로 바꿀 수 있다는 점입니다. 1년에 두 번만 더 늘려도 남은 만남은 수십 번 늘어납니다."}}
+ ]}
+]
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="/"><span class="mark">=</span>계산모아</a>
+    <nav class="site-nav">
+      <a href="/#cat-date">날짜·디데이</a>
+      <a href="/#cat-money">돈·급여</a>
+      <a href="/#cat-life">생활·건강</a>
+      <a href="/tests">테스트</a>
+      <a href="/guide">가이드</a>
+      <a href="/about">소개</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <nav class="breadcrumb">
+    <a href="/">홈</a><span class="sep">›</span>
+    <a href="/#cat-date">날짜·디데이</a><span class="sep">›</span>
+    <span>부모님 만남 횟수</span>
+  </nav>
+
+  <h1>부모님과 남은 만남 횟수 계산기</h1>
+  <p class="lead">부모님 연세와 1년에 뵙는 횟수만 넣으면, 앞으로 몇 번이나 더 뵐 수 있는지 계산합니다.</p>
+
+  <div class="ad-slot" data-ad="top"></div>
+
+  <section class="calc-card" data-reveal>
+    <div class="field" id="fAge">
+      <label for="age">부모님 현재 연세 (만 나이)</label>
+      <input type="text" id="age" inputmode="numeric" placeholder="68" autocomplete="off">
+      <div class="hint">두 분이면 연세가 더 많으신 분 기준. 예: 68</div>
+      <div class="field-error">연세를 1~110 사이 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field">
+      <label>성별 (기대수명 기준)</label>
+      <div class="seg" id="segSex">
+        <button type="button" class="on" data-v="f">여성 (약 86세)</button>
+        <button type="button" data-v="m">남성 (약 80세)</button>
+        <button type="button" data-v="c">직접 입력</button>
+      </div>
+    </div>
+    <div class="field" id="fLife" hidden>
+      <label for="life">기대수명 (세)</label>
+      <input type="text" id="life" inputmode="numeric" placeholder="85" autocomplete="off">
+      <div class="hint">부모님 건강 상태를 고려해 직접 정하셔도 됩니다.</div>
+      <div class="field-error">기대수명을 연세보다 큰 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field" id="fFreq">
+      <label for="freq">1년에 뵙는 횟수</label>
+      <input type="text" id="freq" inputmode="numeric" placeholder="4" autocomplete="off">
+      <div class="hint">명절, 생신, 휴가 등을 모두 합쳐서. 예: 4</div>
+      <div class="field-error">횟수를 1회 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field" id="fHours">
+      <label for="hours">한 번 뵐 때 함께 보내는 시간 (시간)</label>
+      <input type="text" id="hours" inputmode="decimal" placeholder="8" autocomplete="off">
+      <div class="hint">잠자는 시간 빼고, 실제로 함께 있는 시간. 예: 8</div>
+      <div class="field-error">시간을 0보다 큰 숫자로 입력해 주세요.</div>
+    </div>
+    <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
+
+    <div class="result" hidden id="result">
+      <div class="label">앞으로 남은 만남</div>
+      <div class="big" id="rMain"></div>
+      <div class="rows">
+        <div class="row"><span>남은 시간</span><b id="rYears"></b></div>
+        <div class="row"><span>함께 보낼 시간 (합계)</span><b id="rHours"></b></div>
+        <div class="row"><span>하루로 환산하면</span><b id="rDays"></b></div>
+        <div class="row"><span>1년에 2번 더 뵌다면</span><b id="rPlus"></b></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="mid"></div>
+
+  <article class="content" data-reveal>
+    <h2>사용법</h2>
+    <ol>
+      <li>부모님의 현재 만 나이를 입력합니다. 두 분이면 연세가 더 많으신 분을 기준으로 하면 함께 뵐 수 있는 시간의 하한선이 나옵니다.</li>
+      <li>성별을 고르면 한국인 평균 기대수명이 자동으로 적용됩니다. 건강 상태를 고려해 직접 입력할 수도 있습니다.</li>
+      <li>1년에 뵙는 횟수와 한 번에 함께 보내는 시간을 넣고 계산하면, 남은 만남 횟수와 총 시간이 나옵니다.</li>
+    </ol>
+
+    <h2>계산 원리</h2>
+    <p>계산 자체는 단순한 곱셈입니다. <b>(기대수명 − 현재 연세) × 1년 만남 횟수</b>가 남은 만남 횟수이고, 여기에 한 번당 함께 보내는 시간을 곱하면 앞으로 함께 보낼 총 시간이 나옵니다. 그 시간을 24로 나누면 "며칠"이라는 단위로 환산됩니다.</p>
+    <p>예를 들어 어머니가 68세, 기대수명 86세라면 남은 시간은 18년입니다. 1년에 4번 뵙는다면 남은 만남은 <b>72번</b>. 한 번에 8시간을 함께 보낸다면 총 576시간, 하루로 환산하면 <b>24일</b>입니다. 앞으로 어머니와 함께 보낼 시간이 다 합쳐서 한 달이 안 된다는 뜻입니다.</p>
+    <p>이 계산에서 가장 중요한 것은 마지막 줄, "1년에 2번 더 뵌다면"입니다. 위 예시에서 연 4회를 6회로만 늘려도 남은 만남은 72번에서 108번으로, 36번이 늘어납니다. 수명은 우리가 정할 수 없지만 빈도는 정할 수 있습니다.</p>
+    <p>기대수명 기본값은 한국인 평균을 참고한 값(여성 약 86세, 남성 약 80세)입니다. 기대수명은 통계적 평균이며 개인차가 매우 큽니다. 이 계산기는 미래를 예측하는 도구가 아니라, 막연한 감각을 숫자로 바꿔 보는 도구입니다.</p>
+    <p class="note">이 계산은 통계적 평균을 이용한 참고용이며, 특정 개인의 수명을 예측하지 않습니다. 결과에 지나치게 의미를 두기보다 만남의 빈도를 돌아보는 계기로 활용해 주세요.</p>
+
+    <h2>알아두면 좋은 정보</h2>
+    <p>사람은 남은 시간을 연 단위로 생각할 때는 여유롭게 느끼고, 횟수로 생각할 때는 절박하게 느낍니다. "앞으로 18년"과 "앞으로 72번"은 정확히 같은 시간인데도 전혀 다르게 들립니다. 심리학에서는 이를 단위 효과라고 부르는데, 같은 양이라도 어떤 단위로 표현하느냐에 따라 체감이 달라지는 현상입니다. 이 계산기가 하는 일도 결국 단위를 바꿔 보여주는 것뿐입니다.</p>
+    <p>만남의 횟수만큼 중요한 것이 만남의 밀도입니다. 명절에 하루 모여 TV만 보다 오는 8시간과, 둘이서 산책하며 대화한 2시간 중 무엇이 더 기억에 남는지는 대부분 알고 있습니다. 횟수를 늘리기 어려운 상황이라면 한 번의 방문에서 함께 무엇을 할지를 정해 두는 편이 낫습니다. 사진 정리, 옛날 이야기 녹음, 함께 요리하기처럼 기록이 남는 활동이 특히 좋습니다.</p>
+    <p>전화나 영상통화도 만남의 일종으로 넣어 계산해 보세요. 물리적 방문은 1년에 네 번뿐이어도, 주 1회 통화를 더하면 연간 접촉 횟수는 56번이 됩니다. 거리가 멀어 자주 못 뵙는 상황이라면 이쪽이 훨씬 현실적인 개선책입니다.</p>
+
+    <h2>자주 묻는 질문</h2>
+    <div class="faq">
+      <details>
+        <summary>기대수명은 어떤 기준인가요?</summary>
+        <p>기본값은 한국인 평균 기대수명을 참고한 값으로, 남성 약 80세, 여성 약 86세를 기준으로 합니다. 다만 기대수명은 통계적 평균일 뿐이며 개인의 건강 상태, 생활습관, 의료 환경에 따라 크게 달라집니다. 계산기에서 기대수명을 직접 바꿔 입력할 수 있으니, 부모님 상황에 맞게 조정해 보세요.</p>
+      </details>
+      <details>
+        <summary>이 계산이 정확한 예측인가요?</summary>
+        <p>아닙니다. 이 계산은 예측이 아니라 관점을 바꾸기 위한 도구입니다. '아직 시간이 많다'고 느끼는 막연한 감각을 구체적인 횟수로 바꿔 보여줄 뿐입니다. 실제 수명은 아무도 알 수 없으며, 이 숫자는 더 많이 만나기 위한 계기로만 사용하시길 권합니다.</p>
+      </details>
+      <details>
+        <summary>함께 사는 경우에는 어떻게 계산하나요?</summary>
+        <p>함께 산다면 만남 횟수보다 함께 보내는 시간의 질이 중요합니다. 굳이 계산한다면 하루에 실제로 대화하는 시간을 기준으로 연간 횟수를 환산해 볼 수 있습니다. 예를 들어 매일 저녁 30분씩 대화한다면 1년에 365번으로 입력하되, 결과를 시간으로 환산해 보면 또 다른 관점이 보입니다.</p>
+      </details>
+      <details>
+        <summary>부모님이 두 분이면 어떻게 하나요?</summary>
+        <p>두 분의 연세가 다르다면 각각 따로 계산해 보세요. 보통 더 연세가 많으신 분을 기준으로 계산하면 함께 뵐 수 있는 시간의 하한선을 알 수 있습니다. 연세 차이가 크지 않다면 평균값으로 한 번 계산해도 큰 차이는 없습니다.</p>
+      </details>
+      <details>
+        <summary>결과가 생각보다 적게 나왔습니다.</summary>
+        <p>대부분 그렇습니다. 1년에 네다섯 번 뵙는 경우가 흔한데, 남은 20년을 곱해도 100번이 채 되지 않습니다. 중요한 것은 이 숫자에 낙담하는 것이 아니라, 만남 횟수를 늘리는 쪽으로 바꿀 수 있다는 점입니다. 1년에 두 번만 더 늘려도 남은 만남은 수십 번 늘어납니다.</p>
+      </details>
+    </div>
+  </article>
+
+  <section data-reveal>
+    <h2>관련 계산기</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/tools/life-clock"><div class="ico">🕐</div><b>인생 시계</b><span>내 인생을 하루로 압축하면 지금 몇 시</span></a>
+      <a class="tool-card" href="/tools/milestone"><div class="ico">🎉</div><b>환갑·칠순 계산기</b><span>환갑·팔순 날짜와 백일·돌 계산</span></a>
+      <a class="tool-card" href="/tools/age"><div class="ico">🎂</div><b>만 나이 계산기</b><span>만 나이 통일법 기준 정확한 나이</span></a>
+      <a class="tool-card" href="/tools/anniversary"><div class="ico">💕</div><b>기념일 계산기</b><span>100일·1000일·주년 한 번에</span></a>
+    </div>
+  </section>
+
+  <div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="cols">
+    <div>
+      <b style="color:var(--ink)">계산모아</b> — 일상에 필요한 모든 계산기<br>
+      결과는 참고용이며 법적 효력이 없습니다.
+    </div>
+    <nav class="links">
+      <a href="/about">소개</a>
+      <a href="/contact">문의</a>
+      <a href="/privacy">개인정보처리방침</a>
+      <a href="/terms">이용약관</a>
+    </nav>
+  </div>
+  <p class="tiny">© 2026 계산모아 (calcmoa.site). All rights reserved.</p>
+</footer>
+
+<script src="/js/common.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var sex = "f";
+  var LIFE = { f: 86, m: 80 };
+
+  Array.prototype.forEach.call($("segSex").querySelectorAll("button"), function (btn) {
+    btn.addEventListener("click", function () {
+      Array.prototype.forEach.call($("segSex").querySelectorAll("button"), function (b) {
+        b.classList.toggle("on", b === btn);
+      });
+      sex = btn.getAttribute("data-v");
+      $("fLife").hidden = sex !== "c";
+    });
+  });
+
+  var lastText = "";
+
+  $("calcBtn").addEventListener("click", function () {
+    var age = parseInt(String($("age").value).replace(/[^\d]/g, ""), 10);
+    var freq = parseInt(String($("freq").value).replace(/[^\d]/g, ""), 10);
+    var hours = parseFloat(String($("hours").value).replace(/[^\d.]/g, ""));
+
+    if (!(age >= 1 && age <= 110)) { CM.invalid($("fAge"), true); return; }
+    CM.invalid($("fAge"), false);
+
+    var life = sex === "c" ? parseInt(String($("life").value).replace(/[^\d]/g, ""), 10) : LIFE[sex];
+    if (!(life > age)) { CM.invalid($("fLife"), true); return; }
+    CM.invalid($("fLife"), false);
+
+    if (!(freq >= 1)) { CM.invalid($("fFreq"), true); return; }
+    CM.invalid($("fFreq"), false);
+    if (!(hours > 0)) { hours = 8; $("hours").value = "8"; }
+    CM.invalid($("fHours"), false);
+
+    var years = life - age;
+    var meets = years * freq;
+    var totalHours = meets * hours;
+    var days = totalHours / 24;
+    var plus = years * (freq + 2);
+
+    $("result").hidden = false;
+    CM.countUp($("rMain"), meets, { suffix: "번" });
+    $("rYears").textContent = CM.fmt(years) + "년 (기대수명 " + life + "세 기준)";
+    $("rHours").textContent = CM.fmt(Math.round(totalHours)) + "시간";
+    $("rDays").textContent = days.toFixed(1) + "일";
+    $("rPlus").textContent = CM.fmt(plus) + "번 (+" + CM.fmt(plus - meets) + "번)";
+
+    lastText = "부모님과 남은 만남 · " + age + "세, 연 " + freq + "회\n"
+      + "남은 만남: " + CM.fmt(meets) + "번\n"
+      + "함께 보낼 시간: " + CM.fmt(Math.round(totalHours)) + "시간 (" + days.toFixed(1) + "일)\n"
+      + "연 2번 더 뵌다면: " + CM.fmt(plus) + "번"
+      + "\n- calcmoa.site/tools/parents";
+  });
+
+  CM.bindCopy($("copyBtn"), function () { return lastText; });
+
+  ["age", "life", "freq", "hours"].forEach(function (id) {
+    $(id).addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
+    });
+  });
+});
+</script>
+<nav class="lang-float" aria-label="Language">
+  <a href="/" class="on"><img src="/img/flag-kr.png" alt="한국어" width="28" height="21" loading="lazy"><span>한국어</span></a>
+  <a href="/en"><img src="/img/flag-us.png" alt="English" width="28" height="21" loading="lazy"><span>English</span></a>
+  <a href="/zh"><img src="/img/flag-cn.png" alt="中文" width="28" height="21" loading="lazy"><span>中文</span></a>
+  <a href="/ja"><img src="/img/flag-jp.png" alt="日本語" width="28" height="21" loading="lazy"><span>日本語</span></a>
+  <a href="/fr"><img src="/img/flag-fr.png" alt="Français" width="28" height="21" loading="lazy"><span>Français</span></a>
+</nav>
+</body>
+</html>
