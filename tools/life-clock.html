@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>인생 시계 계산기 - 내 인생을 하루로 압축하면 지금 몇 시?</title>
-<meta name="description" content="생년월일과 기대수명을 넣으면 인생을 24시간으로 압축했을 때 지금 몇 시인지 계산합니다. 남은 시간과 살아온 날짜도 함께 확인하세요.">
+<title>인생 시계 계산기 - 내 인생을 하루로 압축하면 지금 몇 시</title>
+<meta name="description" content="태어난 해와 기대수명을 넣으면 인생을 24시간으로 압축한 현재 시각이 나옵니다. 남은 시간과 지나온 비율을 한눈에 확인하세요.">
 <link rel="canonical" href="https://calcmoa.site/tools/life-clock">
 <link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/life-clock">
 <link rel="alternate" hreflang="en" href="https://calcmoa.site/en/tools/life-clock">
@@ -26,11 +26,11 @@
 [
  {"@context":"https://schema.org","@type":"WebApplication","name":"인생 시계 계산기","url":"https://calcmoa.site/tools/life-clock","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"인생 시계는 어떻게 계산되나요?","acceptedAnswer":{"@type":"Answer","text":"살아온 날수를 기대수명 전체 날수로 나눈 비율을 24시간에 곱합니다. 예를 들어 36세이고 기대수명을 84세로 잡으면 36 나누기 84는 약 0.4286이고, 여기에 24시간을 곱하면 10.29시간, 즉 오전 10시 17분이 됩니다. 자정에 태어나 자정에 마치는 하루를 상상하면 이해하기 쉽습니다."}},
-  {"@type":"Question","name":"기대수명 기본값 84세는 어디서 나온 건가요?","acceptedAnswer":{"@type":"Answer","text":"한국인 전체 평균 기대수명을 참고한 값으로, 남녀 평균이 대략 이 부근입니다. 성별에 따라 여성이 더 길고 남성이 더 짧으므로, 정확한 감을 원한다면 직접 입력란에 원하는 값을 넣으세요. 기대수명은 통계적 평균이며 개인의 건강과 생활습관에 따라 크게 달라집니다."}},
-  {"@type":"Question","name":"결과가 생각보다 이른 시간이라 놀랐습니다.","acceptedAnswer":{"@type":"Answer","text":"대부분 그렇게 느낍니다. 마흔이어도 인생 시계로는 오전 11시대이고, 쉰이어도 오후 2시대입니다. 사람들이 나이를 실제보다 늦은 시점으로 체감하는 이유는 지나온 시간은 선명하게 기억나는 반면 남은 시간은 추상적이기 때문입니다. 이 계산기는 그 비대칭을 시각적으로 뒤집어 보여줍니다."}},
-  {"@type":"Question","name":"남은 시간을 더 늘리려면 어떻게 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"기대수명 자체는 유전과 환경의 영향을 받지만, 금연, 규칙적인 운동, 적정 체중 유지, 정기 건강검진 같은 요인이 건강수명을 늘린다는 것은 잘 알려져 있습니다. 다만 이 계산기가 말하려는 것은 시간을 늘리는 방법보다, 남은 시간을 무엇에 쓸지 결정하는 일이 더 통제 가능하다는 점입니다."}},
-  {"@type":"Question","name":"살아온 날수는 왜 함께 보여주나요?","acceptedAnswer":{"@type":"Answer","text":"나이를 연 단위로 보면 뭉뚱그려지지만 날수로 보면 구체적으로 느껴지기 때문입니다. 36세는 약 13,150일이고, 남은 날은 약 17,500일입니다. '앞으로 48년'보다 '앞으로 17,500일'이 더 손에 잡히고, 하루의 무게도 다르게 느껴집니다."}}
+  {"@type":"Question","name":"인생 시계는 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"현재 나이를 기대수명으로 나눠 인생의 진행률을 구한 뒤, 그 비율을 하루 24시간에 대응시킵니다. 예를 들어 36세이고 기대수명이 84세라면 진행률은 42.9%이고, 24시간의 42.9%인 10시간 17분이 현재 시각이 됩니다. 자정에 태어나 자정에 하루가 끝나는 구조입니다."}},
+  {"@type":"Question","name":"기대수명은 몇 살로 잡아야 하나요?","acceptedAnswer":{"@type":"Answer","text":"기본값은 한국인 평균을 참고해 남성 약 80세, 여성 약 86세로 설정되어 있습니다. 다만 기대수명은 계속 늘어나고 있어 젊은 세대일수록 더 길게 잡는 것이 현실적입니다. 90세나 100세로 바꿔 계산해 보면 인생 시계가 얼마나 되감기는지 확인할 수 있습니다."}},
+  {"@type":"Question","name":"이 시계가 정확한가요?","acceptedAnswer":{"@type":"Answer","text":"정확한 예측이 아닙니다. 통계적 평균을 하루라는 익숙한 단위로 옮겨 놓은 비유입니다. 개인의 수명은 알 수 없으며, 이 계산의 목적은 남은 시간을 예측하는 것이 아니라 지금 시점을 다른 각도에서 보는 것입니다."}},
+  {"@type":"Question","name":"인생 시계가 오전이면 어떤 의미인가요?","acceptedAnswer":{"@type":"Answer","text":"평균적으로 40세는 오전 11시 안팎, 50세는 오후 2시 안팎입니다. 늦었다고 느끼는 30대 후반이 사실 아직 오전이라는 점이 이 계산기의 핵심입니다. 다만 오후라고 해서 늦은 것도 아닙니다. 하루 중 가장 생산적인 시간대가 오후인 사람도 많습니다."}},
+  {"@type":"Question","name":"남은 시간을 어떻게 활용하면 좋을까요?","acceptedAnswer":{"@type":"Answer","text":"결과에 함께 표시되는 남은 주말 횟수를 참고해 보세요. 40세이고 기대수명이 84세라면 남은 주말은 약 2,290번입니다. 큰 숫자처럼 보이지만 한 달에 네 번뿐이라는 점을 떠올리면 다르게 읽힙니다. 반복되는 일상보다 기억에 남는 일정을 몇 개 정해 두는 편이 체감 시간을 늘리는 데 도움이 됩니다."}}
  ]}
 ]
 </script>
@@ -58,7 +58,7 @@
   </nav>
 
   <h1>인생 시계 계산기</h1>
-  <p class="lead">인생 전체를 하루 24시간으로 압축하면, 지금 당신은 몇 시를 지나고 있을까요.</p>
+  <p class="lead">인생 전체를 하루 24시간으로 압축하면, 지금 당신은 몇 시일까요.</p>
 
   <div class="ad-slot" data-ad="top"></div>
 
@@ -66,34 +66,33 @@
     <div class="field" id="fBirth">
       <label for="birth">생년월일</label>
       <input type="date" id="birth">
-      <div class="hint">태어난 날을 선택하세요.</div>
-      <div class="field-error">올바른 생년월일을 선택해 주세요.</div>
+      <div class="hint">만 나이 기준으로 자동 계산됩니다.</div>
+      <div class="field-error">생년월일을 정확히 입력해 주세요.</div>
     </div>
     <div class="field">
       <label>기대수명 기준</label>
-      <div class="seg" id="segLife">
-        <button type="button" class="on" data-v="84">평균 (84세)</button>
-        <button type="button" data-v="86">여성 (86세)</button>
-        <button type="button" data-v="80">남성 (80세)</button>
-        <button type="button" data-v="c">직접</button>
+      <div class="seg" id="segSex">
+        <button type="button" class="on" data-v="f">여성 (약 86세)</button>
+        <button type="button" data-v="m">남성 (약 80세)</button>
+        <button type="button" data-v="c">직접 입력</button>
       </div>
     </div>
-    <div class="field" id="fCustom" hidden>
-      <label for="custom">기대수명 (세)</label>
-      <input type="text" id="custom" inputmode="numeric" placeholder="90" autocomplete="off">
-      <div class="hint">원하는 기준을 직접 넣어 보세요.</div>
-      <div class="field-error">현재 나이보다 큰 숫자로 입력해 주세요.</div>
+    <div class="field" id="fLife" hidden>
+      <label for="life">기대수명 (세)</label>
+      <input type="text" id="life" inputmode="numeric" placeholder="90" autocomplete="off">
+      <div class="hint">100세 시대를 가정한다면 90~100을 넣어 보세요.</div>
+      <div class="field-error">기대수명을 현재 나이보다 큰 숫자로 입력해 주세요.</div>
     </div>
     <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
 
     <div class="result" hidden id="result">
-      <div class="label">내 인생 시계</div>
+      <div class="label">인생 시계</div>
       <div class="big" id="rMain"></div>
       <div class="rows">
-        <div class="row"><span>인생 진행률</span><b id="rPct"></b></div>
-        <div class="row"><span>살아온 날</span><b id="rLived"></b></div>
-        <div class="row"><span>남은 날</span><b id="rLeft"></b></div>
-        <div class="row"><span>남은 시간 (시계 기준)</span><b id="rClockLeft"></b></div>
+        <div class="row"><span>지나온 비율</span><b id="rPct"></b></div>
+        <div class="row"><span>현재 만 나이</span><b id="rAge"></b></div>
+        <div class="row"><span>남은 시간</span><b id="rLeft"></b></div>
+        <div class="row"><span>남은 주말</span><b id="rWeekend"></b></div>
       </div>
       <div class="actions">
         <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
@@ -106,43 +105,44 @@
   <article class="content" data-reveal>
     <h2>사용법</h2>
     <ol>
-      <li>생년월일을 선택합니다.</li>
-      <li>기대수명 기준을 고릅니다. 평균 84세가 기본이며, 성별 기준이나 직접 입력도 가능합니다.</li>
-      <li>계산하면 인생을 24시간으로 압축했을 때의 현재 시각, 진행률, 살아온 날과 남은 날이 함께 나옵니다.</li>
+      <li>생년월일을 선택합니다. 만 나이는 자동으로 계산됩니다.</li>
+      <li>기대수명 기준을 고릅니다. 100세 시대를 가정하고 싶다면 직접 입력을 선택해 90이나 100을 넣어 보세요.</li>
+      <li>계산하면 인생을 24시간으로 압축한 현재 시각과 남은 시간, 남은 주말 횟수가 표시됩니다.</li>
     </ol>
 
     <h2>계산 원리</h2>
-    <p>계산은 단순한 비례식입니다. <b>(살아온 날수 ÷ 기대수명 전체 날수) × 24시간</b>이 인생 시계의 현재 시각입니다. 자정에 태어나 자정에 하루가 끝나는 구조라고 생각하면 됩니다.</p>
-    <p>예를 들어 1990년생이 2026년 기준 36세라면, 기대수명 84세 대비 진행률은 42.9%입니다. 여기에 24시간을 곱하면 10.29시간, 즉 <b>오전 10시 17분</b>이 나옵니다. 아직 점심 전입니다. 1980년생(46세)이라면 진행률 54.8%로 <b>오후 1시 8분</b>, 이제 막 오후가 시작된 시각입니다.</p>
-    <p>이 계산이 흥미로운 이유는 시간의 체감과 실제가 어긋나기 때문입니다. 마흔이 되면 "인생 반이 지났다"고들 하지만 시계로는 오전 11시 26분, 아직 오전입니다. 쉰이 되어도 오후 2시 17분으로 하루로 치면 점심을 막 마친 무렵입니다. 사람들이 실제보다 늦었다고 느끼는 이유는 지나온 시간은 구체적으로 기억나는 반면 남은 시간은 추상적으로만 존재하기 때문입니다.</p>
-    <p class="note">기대수명은 통계적 평균이며 개인의 실제 수명을 예측하지 않습니다. 이 계산기는 미래를 예언하는 도구가 아니라 시간의 단위를 바꿔 보는 도구입니다.</p>
+    <p>계산은 단순한 비례식입니다. <b>현재 나이 ÷ 기대수명 × 24시간</b>이 인생 시계의 현재 시각입니다. 태어난 순간이 자정 0시이고, 기대수명에 도달하는 순간이 다음 자정입니다.</p>
+    <p>예를 들어 1990년생이 2026년에 36세라면, 기대수명 84세 기준 진행률은 42.9%입니다. 24시간의 42.9%는 10.29시간, 즉 <b>오전 10시 17분</b>입니다. 아직 점심시간도 오지 않은 셈입니다. 같은 사람이 기대수명을 100세로 잡으면 36%가 되어 오전 8시 38분으로 되감깁니다.</p>
+    <p>나이대별로 보면 이렇습니다. 기대수명 84세 기준으로 20세는 오전 5시 43분, 30세는 오전 8시 34분, 40세는 오전 11시 26분, 50세는 오후 2시 17분, 60세는 오후 5시 9분입니다. 흔히 "인생의 반환점"이라 부르는 40대 초반이 사실 정오 직전이라는 점이 흥미롭습니다.</p>
+    <p>남은 주말 계산도 함께 제공합니다. 남은 연수에 52.14를 곱하면 남은 주 수가 나오고, 이것이 곧 남은 주말의 횟수입니다. 40세이고 기대수명이 84세라면 약 2,294번의 주말이 남아 있습니다. 큰 숫자로 보이지만, 한 달에 네 번뿐이라는 사실과 함께 놓고 보면 인상이 달라집니다.</p>
+    <p class="note">이 계산은 통계적 평균을 이용한 비유이며 개인의 수명을 예측하지 않습니다. 결과는 재미와 관점 전환을 위한 참고 자료로만 활용해 주세요.</p>
 
     <h2>알아두면 좋은 정보</h2>
-    <p>인생 시계가 알려주는 또 하나는 시간의 밀도가 균일하지 않다는 사실입니다. 심리학에서는 나이가 들수록 시간이 빠르게 느껴지는 현상을 설명할 때 상대적 비율 이론을 자주 인용합니다. 열 살에게 1년은 인생의 10분의 1이지만 쉰 살에게는 50분의 1이므로, 같은 1년도 체감 길이가 다섯 배 차이 난다는 것입니다. 인생 시계의 오전이 유난히 길게 느껴지고 오후가 순식간에 흐르는 것처럼 느껴지는 이유입니다.</p>
-    <p>남은 날수를 확인했다면 한 가지 더 해볼 만한 계산이 있습니다. 남은 날에서 잠자는 시간(하루 8시간, 즉 3분의 1)을 빼면 실제로 깨어 있는 시간이 나옵니다. 36세에 남은 날이 약 17,500일이라면 깨어 있는 날은 약 11,700일 분량입니다. 여기서 일하는 시간까지 빼면 온전히 내 것인 시간은 다시 절반 이하로 줄어듭니다.</p>
-    <p>이 계산을 부모님 기준으로 해보면 또 다른 숫자가 나옵니다. 70세인 부모님의 인생 시계는 저녁 8시입니다. 하루로 치면 저녁 식사를 마친 시각이고, 함께 보낼 수 있는 시간은 생각보다 훨씬 적게 남아 있습니다. 그 숫자가 궁금하다면 <a href="/tools/parents">부모님과 남은 만남 횟수 계산기</a>에서 구체적인 횟수로 확인할 수 있습니다.</p>
+    <p>시간이 갈수록 빨리 흐르는 것처럼 느껴지는 데는 이유가 있습니다. 다섯 살 아이에게 1년은 인생의 20%지만, 오십 살에게 1년은 2%입니다. 같은 1년이라도 인생 전체에서 차지하는 비중이 열 배 차이가 나니 체감 속도도 달라집니다. 인생 시계가 오후로 갈수록 시곗바늘이 빨라지는 것처럼 느껴지는 것은 착각이 아니라 비율의 문제입니다.</p>
+    <p>체감 시간을 늘리는 방법으로 심리학에서 자주 언급되는 것이 새로운 경험입니다. 뇌는 익숙한 일상을 압축해 기억하고 낯선 경험은 자세히 기록합니다. 매일 같은 길로 출퇴근한 한 달은 짧게 기억되지만, 처음 가 본 도시에서 보낸 사흘은 길게 남습니다. 남은 시간을 늘릴 수는 없어도 밀도는 바꿀 수 있다는 뜻입니다.</p>
+    <p>기대수명은 고정된 값이 아닙니다. 통계청 생명표에서 기대수명은 매년 조금씩 늘어 왔고, 특히 현재 젊은 세대는 지금의 평균보다 더 오래 살 가능성이 큽니다. 그래서 기대수명을 90이나 100으로 놓고 다시 계산해 보는 것도 의미가 있습니다. 시곗바늘이 두세 시간 되감기는 것을 보면, 지금이 생각보다 이른 시각이라는 사실이 실감납니다.</p>
 
     <h2>자주 묻는 질문</h2>
     <div class="faq">
       <details>
-        <summary>인생 시계는 어떻게 계산되나요?</summary>
-        <p>살아온 날수를 기대수명 전체 날수로 나눈 비율을 24시간에 곱합니다. 예를 들어 36세이고 기대수명을 84세로 잡으면 36 나누기 84는 약 0.4286이고, 여기에 24시간을 곱하면 10.29시간, 즉 오전 10시 17분이 됩니다. 자정에 태어나 자정에 마치는 하루를 상상하면 이해하기 쉽습니다.</p>
+        <summary>인생 시계는 어떻게 계산하나요?</summary>
+        <p>현재 나이를 기대수명으로 나눠 인생의 진행률을 구한 뒤, 그 비율을 하루 24시간에 대응시킵니다. 예를 들어 36세이고 기대수명이 84세라면 진행률은 42.9%이고, 24시간의 42.9%인 10시간 17분이 현재 시각이 됩니다. 자정에 태어나 자정에 하루가 끝나는 구조입니다.</p>
       </details>
       <details>
-        <summary>기대수명 기본값 84세는 어디서 나온 건가요?</summary>
-        <p>한국인 전체 평균 기대수명을 참고한 값으로, 남녀 평균이 대략 이 부근입니다. 성별에 따라 여성이 더 길고 남성이 더 짧으므로, 정확한 감을 원한다면 직접 입력란에 원하는 값을 넣으세요. 기대수명은 통계적 평균이며 개인의 건강과 생활습관에 따라 크게 달라집니다.</p>
+        <summary>기대수명은 몇 살로 잡아야 하나요?</summary>
+        <p>기본값은 한국인 평균을 참고해 남성 약 80세, 여성 약 86세로 설정되어 있습니다. 다만 기대수명은 계속 늘어나고 있어 젊은 세대일수록 더 길게 잡는 것이 현실적입니다. 90세나 100세로 바꿔 계산해 보면 인생 시계가 얼마나 되감기는지 확인할 수 있습니다.</p>
       </details>
       <details>
-        <summary>결과가 생각보다 이른 시간이라 놀랐습니다.</summary>
-        <p>대부분 그렇게 느낍니다. 마흔이어도 인생 시계로는 오전 11시대이고, 쉰이어도 오후 2시대입니다. 사람들이 나이를 실제보다 늦은 시점으로 체감하는 이유는 지나온 시간은 선명하게 기억나는 반면 남은 시간은 추상적이기 때문입니다. 이 계산기는 그 비대칭을 시각적으로 뒤집어 보여줍니다.</p>
+        <summary>이 시계가 정확한가요?</summary>
+        <p>정확한 예측이 아닙니다. 통계적 평균을 하루라는 익숙한 단위로 옮겨 놓은 비유입니다. 개인의 수명은 알 수 없으며, 이 계산의 목적은 남은 시간을 예측하는 것이 아니라 지금 시점을 다른 각도에서 보는 것입니다.</p>
       </details>
       <details>
-        <summary>남은 시간을 더 늘리려면 어떻게 해야 하나요?</summary>
-        <p>기대수명 자체는 유전과 환경의 영향을 받지만, 금연, 규칙적인 운동, 적정 체중 유지, 정기 건강검진 같은 요인이 건강수명을 늘린다는 것은 잘 알려져 있습니다. 다만 이 계산기가 말하려는 것은 시간을 늘리는 방법보다, 남은 시간을 무엇에 쓸지 결정하는 일이 더 통제 가능하다는 점입니다.</p>
+        <summary>인생 시계가 오전이면 어떤 의미인가요?</summary>
+        <p>평균적으로 40세는 오전 11시 안팎, 50세는 오후 2시 안팎입니다. 늦었다고 느끼는 30대 후반이 사실 아직 오전이라는 점이 이 계산기의 핵심입니다. 다만 오후라고 해서 늦은 것도 아닙니다. 하루 중 가장 생산적인 시간대가 오후인 사람도 많습니다.</p>
       </details>
       <details>
-        <summary>살아온 날수는 왜 함께 보여주나요?</summary>
-        <p>나이를 연 단위로 보면 뭉뚱그려지지만 날수로 보면 구체적으로 느껴지기 때문입니다. 36세는 약 13,150일이고, 남은 날은 약 17,500일입니다. '앞으로 48년'보다 '앞으로 17,500일'이 더 손에 잡히고, 하루의 무게도 다르게 느껴집니다.</p>
+        <summary>남은 시간을 어떻게 활용하면 좋을까요?</summary>
+        <p>결과에 함께 표시되는 남은 주말 횟수를 참고해 보세요. 40세이고 기대수명이 84세라면 남은 주말은 약 2,290번입니다. 큰 숫자처럼 보이지만 한 달에 네 번뿐이라는 점을 떠올리면 다르게 읽힙니다. 반복되는 일상보다 기억에 남는 일정을 몇 개 정해 두는 편이 체감 시간을 늘리는 데 도움이 됩니다.</p>
       </details>
     </div>
   </article>
@@ -150,10 +150,10 @@
   <section data-reveal>
     <h2>관련 계산기</h2>
     <div class="tool-grid">
-      <a class="tool-card" href="/tools/parents"><div class="ico">👨‍👩‍👦</div><b>부모님 만남 횟수</b><span>앞으로 몇 번이나 뵐 수 있을까</span></a>
-      <a class="tool-card" href="/tools/milestone"><div class="ico">🎉</div><b>환갑·칠순 계산기</b><span>인생 1만일 등 기념일 계산</span></a>
-      <a class="tool-card" href="/tools/age"><div class="ico">🎂</div><b>만 나이 계산기</b><span>만 나이 통일법 기준 나이</span></a>
-      <a class="tool-card" href="/tools/compound"><div class="ico">📈</div><b>복리 계산기</b><span>시간이 돈을 불리는 속도</span></a>
+      <a class="tool-card" href="/tools/parents"><div class="ico">👵</div><b>부모님 만남 횟수</b><span>앞으로 몇 번이나 더 뵐 수 있을까</span></a>
+      <a class="tool-card" href="/tools/milestone"><div class="ico">🎉</div><b>환갑·칠순 계산기</b><span>환갑·팔순과 백일·돌 계산</span></a>
+      <a class="tool-card" href="/tools/age"><div class="ico">🎂</div><b>만 나이 계산기</b><span>만 나이 통일법 기준 정확한 나이</span></a>
+      <a class="tool-card" href="/tools/compound"><div class="ico">📈</div><b>복리 계산기</b><span>시간이 만드는 돈의 차이</span></a>
     </div>
   </section>
 
@@ -180,20 +180,19 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var $ = function (id) { return document.getElementById(id); };
-  var lifeSel = "84";
-  var DAY = 86400000;
+  var sex = "f";
+  var LIFE = { f: 86, m: 80 };
+  var lastText = "";
 
-  Array.prototype.forEach.call($("segLife").querySelectorAll("button"), function (btn) {
+  Array.prototype.forEach.call($("segSex").querySelectorAll("button"), function (btn) {
     btn.addEventListener("click", function () {
-      Array.prototype.forEach.call($("segLife").querySelectorAll("button"), function (b) {
+      Array.prototype.forEach.call($("segSex").querySelectorAll("button"), function (b) {
         b.classList.toggle("on", b === btn);
       });
-      lifeSel = btn.getAttribute("data-v");
-      $("fCustom").hidden = lifeSel !== "c";
+      sex = btn.getAttribute("data-v");
+      $("fLife").hidden = sex !== "c";
     });
   });
-
-  var lastText = "";
 
   $("calcBtn").addEventListener("click", function () {
     var v = $("birth").value;
@@ -203,36 +202,35 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isNaN(b.getTime()) || b > now) { CM.invalid($("fBirth"), true); return; }
     CM.invalid($("fBirth"), false);
 
-    var life = lifeSel === "c" ? parseInt(String($("custom").value).replace(/[^\d]/g, ""), 10) : Number(lifeSel);
-    var lived = Math.floor((now - b) / DAY);
-    var totalDays = Math.round(life * 365.2425);
-    if (!(life > 0) || lived >= totalDays) { CM.invalid($("fCustom"), true); return; }
-    CM.invalid($("fCustom"), false);
+    var ageExact = (now - b) / (365.2425 * 24 * 3600 * 1000);
+    var life = sex === "c" ? parseInt(String($("life").value).replace(/[^\d]/g, ""), 10) : LIFE[sex];
+    if (!(life > ageExact)) { CM.invalid($("fLife"), true); return; }
+    CM.invalid($("fLife"), false);
 
-    var pct = lived / totalDays;
-    var hoursF = pct * 24;
-    var h = Math.floor(hoursF);
-    var m = Math.floor((hoursF - h) * 60);
-    var ampm = h < 12 ? "오전" : "오후";
-    var h12 = h % 12 === 0 ? 12 : h % 12;
-    var left = totalDays - lived;
-    var leftH = 24 - hoursF;
+    var pct = ageExact / life;
+    var totalMin = Math.round(pct * 24 * 60);
+    var hh = Math.floor(totalMin / 60);
+    var mm = totalMin % 60;
+    var ampm = hh < 12 ? "오전" : "오후";
+    var h12 = hh % 12 === 0 ? 12 : hh % 12;
+    var yearsLeft = life - ageExact;
+    var weekends = Math.round(yearsLeft * 52.14);
 
     $("result").hidden = false;
-    $("rMain").textContent = ampm + " " + h12 + "시 " + (m < 10 ? "0" + m : m) + "분";
+    $("rMain").textContent = ampm + " " + h12 + "시 " + (mm < 10 ? "0" + mm : mm) + "분";
     $("rPct").textContent = (pct * 100).toFixed(1) + "% (기대수명 " + life + "세 기준)";
-    $("rLived").textContent = CM.fmt(lived) + "일";
-    $("rLeft").textContent = CM.fmt(left) + "일 (약 " + (left / 365.2425).toFixed(1) + "년)";
-    $("rClockLeft").textContent = Math.floor(leftH) + "시간 " + Math.floor((leftH % 1) * 60) + "분 남음";
+    $("rAge").textContent = Math.floor(ageExact) + "세";
+    $("rLeft").textContent = yearsLeft.toFixed(1) + "년 (약 " + CM.fmt(Math.round(yearsLeft * 365)) + "일)";
+    $("rWeekend").textContent = CM.fmt(weekends) + "번";
 
-    lastText = "인생 시계 · 기대수명 " + life + "세 기준\n"
-      + "지금 " + ampm + " " + h12 + "시 " + (m < 10 ? "0" + m : m) + "분 (" + (pct * 100).toFixed(1) + "%)\n"
-      + "살아온 날: " + CM.fmt(lived) + "일 / 남은 날: " + CM.fmt(left) + "일"
+    lastText = "인생 시계 · " + Math.floor(ageExact) + "세, 기대수명 " + life + "세\n"
+      + "현재 시각: " + ampm + " " + h12 + "시 " + (mm < 10 ? "0" + mm : mm) + "분 (" + (pct * 100).toFixed(1) + "%)\n"
+      + "남은 시간: " + yearsLeft.toFixed(1) + "년 / 남은 주말: " + CM.fmt(weekends) + "번"
       + "\n- calcmoa.site/tools/life-clock";
   });
 
   CM.bindCopy($("copyBtn"), function () { return lastText; });
-  $("custom").addEventListener("keydown", function (e) {
+  $("life").addEventListener("keydown", function (e) {
     if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
   });
 });

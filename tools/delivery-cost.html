@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>배달비 계산기 - 1년에 배달비만 얼마나 쓸까</title>
-<meta name="description" content="배달 횟수와 배달비, 음식값을 넣으면 월간·연간 지출과 직접 요리했을 때의 차액을 계산합니다. 배달비만 따로 떼어 얼마인지 확인해 보세요.">
+<title>배달비 계산기 - 배달비만 1년에 얼마 쓰는지 계산</title>
+<meta name="description" content="배달비와 주문 횟수를 넣으면 배달비만 따로 계산한 월·연간 지출이 나옵니다. 직접 조리와 비교한 절약액, 10년 누적까지 확인하세요.">
 <link rel="canonical" href="https://calcmoa.site/tools/delivery-cost">
 <link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/delivery-cost">
 <link rel="alternate" hreflang="en" href="https://calcmoa.site/en/tools/delivery-cost">
@@ -13,8 +13,8 @@
 <link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/tools/delivery-cost">
 <link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/tools/delivery-cost">
 <meta property="og:type" content="website">
-<meta property="og:title" content="배달비 계산기 - 1년에 얼마나 쓸까">
-<meta property="og:description" content="배달비만 따로 떼어 보면 1년에 얼마인지 계산합니다.">
+<meta property="og:title" content="배달비 계산기">
+<meta property="og:description" content="음식값 말고 배달비'만' 1년에 얼마 쓰는지 계산해 봤습니다.">
 <meta property="og:url" content="https://calcmoa.site/tools/delivery-cost">
 <meta property="og:site_name" content="계산모아">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
@@ -26,11 +26,11 @@
 [
  {"@context":"https://schema.org","@type":"WebApplication","name":"배달비 계산기","url":"https://calcmoa.site/tools/delivery-cost","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"배달비만 따로 계산하는 이유가 뭔가요?","acceptedAnswer":{"@type":"Answer","text":"음식값은 어차피 먹어야 하는 돈이지만 배달비는 순수하게 이동에 대한 비용이기 때문입니다. 같은 음식을 포장으로 받으면 사라지는 금액이라, 지출 구조에서 가장 먼저 줄일 수 있는 항목입니다. 배달비만 떼어 보면 한 번에 3천원이라 작아 보여도 1년 단위로는 수십만원이 됩니다."}},
-  {"@type":"Question","name":"최소주문금액 때문에 더 시키는 것도 계산되나요?","acceptedAnswer":{"@type":"Answer","text":"이 계산기는 실제 결제한 음식값을 그대로 입력받으므로, 최소주문금액을 맞추려고 추가한 메뉴도 자연스럽게 포함됩니다. 다만 '원래 필요 없었던 추가 주문'을 따로 보고 싶다면, 평소 필요한 만큼만 주문했을 때의 금액을 넣고 실제 결제액과 비교해 보세요."}},
-  {"@type":"Question","name":"직접 요리 비용은 어떻게 잡나요?","acceptedAnswer":{"@type":"Answer","text":"기본값은 한 끼당 식재료비만 계산한 금액입니다. 집밥 한 끼 재료비를 얼마로 볼지는 메뉴와 식구 수에 따라 크게 달라지므로 직접 입력하도록 되어 있습니다. 다만 요리에 드는 시간과 설거지 같은 노동은 금액으로 환산되지 않으니, 절약액을 볼 때 그 점을 감안하세요."}},
-  {"@type":"Question","name":"포장 할인을 이용하면 얼마나 절약되나요?","acceptedAnswer":{"@type":"Answer","text":"포장 주문은 배달비가 없고 매장에 따라 별도 할인을 주기도 합니다. 배달비 3천원이 사라지는 것만으로도 주 3회 기준 연간 46만원 이상이 절약됩니다. 계산기에서 배달비를 0으로 두고 다시 계산해 보면 차이를 바로 확인할 수 있습니다."}},
-  {"@type":"Question","name":"배달앱 멤버십은 이득인가요?","acceptedAnswer":{"@type":"Answer","text":"이용 빈도에 달렸습니다. 월 구독료를 배달비 절감액으로 나눠 손익분기 횟수를 구해 보면 됩니다. 예를 들어 월 구독료가 4,000원이고 회당 배달비 3,000원이 무료가 된다면 월 2회 이상 주문할 때 이득입니다. 다만 멤버십이 주문 빈도 자체를 늘려 총지출이 커지는 경우도 흔하므로, 가입 후 실제 지출을 다시 확인해 보세요."}}
+  {"@type":"Question","name":"배달비 말고 음식값도 계산되나요?","acceptedAnswer":{"@type":"Answer","text":"음식값도 함께 입력하면 총 지출과 직접 조리 대비 절약액까지 계산됩니다. 다만 이 계산기의 목적은 평소 눈에 잘 띄지 않는 배달비를 따로 떼어 보여주는 것입니다. 음식값은 어차피 먹어야 할 돈이지만 배달비는 순수한 추가 비용이기 때문입니다."}},
+  {"@type":"Question","name":"최소주문금액 때문에 더 시키는 것도 반영되나요?","acceptedAnswer":{"@type":"Answer","text":"직접 반영되지는 않습니다. 다만 최소주문금액을 맞추려고 원래 안 시켰을 메뉴를 추가한 경우, 그 금액을 음식값에 포함해 넣으면 현실적인 결과가 나옵니다. 실제로 배달 앱 지출이 늘어나는 큰 원인 중 하나가 이 최소주문금액 맞추기입니다."}},
+  {"@type":"Question","name":"직접 조리 비용은 어떻게 잡나요?","acceptedAnswer":{"@type":"Answer","text":"기본값은 한 끼 5,000원입니다. 재료비 기준으로 집에서 간단히 해 먹을 때의 대략적인 금액입니다. 식재료를 대량으로 사서 쓰거나 반대로 밀키트를 이용한다면 실제 금액에 맞게 조정해 입력하세요."}},
+  {"@type":"Question","name":"포장 주문은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"포장은 배달비가 없으므로 배달비 칸에 0을 넣으면 됩니다. 다만 매장까지 오가는 시간이 들기 때문에, 시간을 돈으로 환산해 보고 싶다면 진짜 시급 계산기에서 본인의 시급을 구한 뒤 왕복 시간을 곱해 비교해 보세요."}},
+  {"@type":"Question","name":"배달을 끊는 게 항상 이득인가요?","acceptedAnswer":{"@type":"Answer","text":"금액만 보면 그렇지만 시간과 체력도 비용입니다. 요리와 설거지에 한 시간이 든다면, 본인의 시급이 그보다 높은 경우 배달이 합리적인 선택일 수 있습니다. 이 계산기의 목적은 배달을 끊게 만드는 것이 아니라, 무의식적으로 나가는 금액의 크기를 확인하는 것입니다."}}
  ]}
 ]
 </script>
@@ -58,33 +58,33 @@
   </nav>
 
   <h1>배달비 계산기</h1>
-  <p class="lead">배달비만 따로 떼어 보면 1년에 얼마일까요. 직접 요리했을 때와의 차액도 함께 계산합니다.</p>
+  <p class="lead">음식값 말고 배달비'만' 떼어 보면, 1년에 얼마를 쓰고 있는지 계산합니다.</p>
 
   <div class="ad-slot" data-ad="top"></div>
 
   <section class="calc-card" data-reveal>
-    <div class="field" id="fCount">
-      <label for="count">주당 배달 주문 횟수</label>
-      <input type="text" id="count" inputmode="decimal" placeholder="3" autocomplete="off">
-      <div class="hint">평균 몇 번 시키는지. 예: 3</div>
-      <div class="field-error">0보다 큰 숫자로 입력해 주세요.</div>
-    </div>
     <div class="field" id="fFee">
       <label for="fee">1회 배달비 (원)</label>
       <input type="text" id="fee" inputmode="numeric" placeholder="3000" autocomplete="off">
-      <div class="hint">배달팁·수수료 합계. 무료배달이면 0. 예: 3000</div>
-      <div class="field-error">0 이상 숫자로 입력해 주세요.</div>
+      <div class="hint">배달팁, 할증 포함. 무료배달이면 0</div>
+      <div class="field-error">배달비를 0 이상 숫자로 입력해 주세요.</div>
+    </div>
+    <div class="field" id="fTimes">
+      <label for="times">주당 주문 횟수</label>
+      <input type="text" id="times" inputmode="decimal" placeholder="3" autocomplete="off">
+      <div class="hint">2주에 한 번이면 0.5. 예: 3</div>
+      <div class="field-error">횟수를 0보다 큰 숫자로 입력해 주세요.</div>
     </div>
     <div class="field" id="fFood">
       <label for="food">1회 음식값 (원)</label>
       <input type="text" id="food" inputmode="numeric" placeholder="20000" autocomplete="off">
-      <div class="hint">배달비를 뺀 순수 음식 금액. 예: 20000</div>
-      <div class="field-error">0 이상 숫자로 입력해 주세요.</div>
+      <div class="hint">배달비 제외한 주문 금액. 예: 20000</div>
+      <div class="field-error">음식값을 0 이상 숫자로 입력해 주세요.</div>
     </div>
     <div class="field" id="fCook">
-      <label for="cook">직접 요리 시 한 끼 재료비 (원)</label>
-      <input type="text" id="cook" inputmode="numeric" placeholder="6000" autocomplete="off">
-      <div class="hint">같은 끼니를 집에서 만들 때의 재료비. 예: 6000</div>
+      <label for="cook">직접 해 먹을 때 한 끼 비용 (원)</label>
+      <input type="text" id="cook" inputmode="numeric" placeholder="5000" autocomplete="off">
+      <div class="hint">재료비 기준. 비교용이며 비워도 됩니다.</div>
       <div class="field-error">0 이상 숫자로 입력해 주세요.</div>
     </div>
     <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
@@ -93,10 +93,10 @@
       <div class="label">1년 배달비 (음식값 제외)</div>
       <div class="big" id="rMain"></div>
       <div class="rows">
-        <div class="row"><span>연간 총지출 (음식값 포함)</span><b id="rTotal"></b></div>
-        <div class="row"><span>월 평균 지출</span><b id="rMonthly"></b></div>
-        <div class="row"><span>연간 주문 횟수</span><b id="rCount"></b></div>
-        <div class="row"><span>직접 요리 대비 차액 (연)</span><b id="rDiff"></b></div>
+        <div class="row"><span>월 배달비</span><b id="rMonth"></b></div>
+        <div class="row"><span>1년 총 지출 (음식값 포함)</span><b id="rTotal"></b></div>
+        <div class="row"><span>직접 해 먹었다면 절약액 (1년)</span><b id="rSave"></b></div>
+        <div class="row"><span>10년 누적 배달비</span><b id="rTen"></b></div>
       </div>
       <div class="actions">
         <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
@@ -109,43 +109,44 @@
   <article class="content" data-reveal>
     <h2>사용법</h2>
     <ol>
-      <li>주당 평균 배달 주문 횟수를 입력합니다. 주 3회면 3, 이틀에 한 번이면 3.5 정도로 넣으면 됩니다.</li>
-      <li>1회 배달비와 음식값을 나눠서 입력합니다. 배달비에는 배달팁과 각종 수수료를 합쳐 넣으세요.</li>
-      <li>같은 끼니를 집에서 만들 때의 재료비를 넣으면 직접 요리 대비 연간 차액까지 계산됩니다.</li>
+      <li>1회 배달비와 주당 주문 횟수를 입력합니다. 2주에 한 번이면 0.5처럼 소수로 넣으면 됩니다.</li>
+      <li>1회 음식값을 넣으면 총 지출까지 함께 계산됩니다.</li>
+      <li>직접 해 먹을 때의 한 끼 비용을 넣으면 배달 대신 조리했을 때의 연간 절약액이 나옵니다.</li>
     </ol>
 
     <h2>계산 원리</h2>
-    <p>연간 주문 횟수는 <b>주당 횟수 × 52주</b>입니다. 여기에 배달비를 곱하면 순수 배달비 연간 지출이, 배달비와 음식값을 더해 곱하면 연간 총지출이 나옵니다. 직접 요리 대비 차액은 <b>(배달비 + 음식값 − 재료비) × 연간 횟수</b>로 계산합니다.</p>
-    <p>검산해 보면, 주 3회 배달에 회당 배달비 3,000원이면 연간 156회, 배달비만 <b>46만 8천원</b>입니다. 음식값 20,000원을 더하면 연간 총지출은 <b>358만 8천원</b>이고, 같은 끼니를 재료비 6,000원에 만들었다면 차액은 연간 <b>265만 2천원</b>이 됩니다.</p>
-    <p>배달비를 따로 떼어 보는 이유는 이것이 지출 구조에서 가장 먼저 줄일 수 있는 항목이기 때문입니다. 음식값은 어차피 먹어야 하는 돈이지만, 배달비는 포장으로 바꾸는 순간 그대로 사라집니다. 주 3회 중 한 번만 포장으로 바꿔도 연간 15만원 이상이 절약됩니다.</p>
-    <p class="note">배달비와 음식값은 지역·업종·시간대에 따라 크게 달라집니다. 이 계산은 입력값 기준의 단순 추정이며, 실제 지출은 배달앱 결제 내역에서 확인하는 것이 가장 정확합니다.</p>
+    <p>연간 배달비는 <b>1회 배달비 × 주당 횟수 × 52.14주</b>입니다. 52.14는 1년(365.25일)을 7로 나눈 정확한 주 수로, 단순히 52를 쓰거나 한 달을 4주로 잡을 때 생기는 오차를 줄이기 위해 사용합니다.</p>
+    <p>검산해 보면, 배달비 3,000원에 주 3회 주문이면 연간 배달비는 <b>469,260원</b>입니다. 음식값을 뺀 순수 배달비만 47만원가량입니다. 여기에 1회 음식값 20,000원을 더하면 연간 총 지출은 <b>3,597,660원</b>이 됩니다.</p>
+    <p>직접 조리와 비교하면 차이가 더 분명해집니다. 같은 조건에서 한 끼를 5,000원에 해 먹었다면 연간 782,100원이 듭니다. 배달 총 지출 359만원과의 차이는 <b>281만 5,560원</b>. 1년에 280만원이면 웬만한 해외여행 두 번 값입니다.</p>
+    <p>배달비만 10년을 누적하면 469만원이 됩니다. 음식값은 어차피 먹어야 할 돈이지만 배달비는 순수하게 추가된 비용이라는 점에서, 이 숫자가 가장 크게 다가옵니다.</p>
+    <p class="note">이 계산기는 입력한 금액을 기준으로 한 단순 참고용 도구입니다. 실제 지출은 최소주문금액 맞추기, 할증, 쿠폰 할인 등에 따라 달라집니다. 배달 앱의 결제 내역에서 실제 연간 지출을 확인해 비교해 보세요.</p>
 
     <h2>알아두면 좋은 정보</h2>
-    <p>배달 지출을 줄이는 가장 확실한 방법은 결제 내역을 한 번 뽑아 보는 것입니다. 대부분의 배달앱은 주문 내역에서 월별 결제액을 확인할 수 있는데, 실제 금액이 예상보다 크다는 반응이 흔합니다. 지출이 커지는 이유는 한 번의 금액이 작아 결정 부담이 낮고, 최소주문금액을 맞추느라 필요 이상으로 주문하게 되는 구조 때문입니다.</p>
-    <p>배달앱 멤버십은 손익분기점을 계산해 보고 결정하는 편이 낫습니다. 월 구독료를 회당 절감되는 배달비로 나누면 몇 번 이상 주문해야 이득인지 나옵니다. 다만 무료배달이 주문 빈도 자체를 끌어올려 총지출이 늘어나는 경우가 많다는 점도 함께 고려해야 합니다. 가입 후 한 달 결제액을 가입 전과 비교해 보면 판단이 쉬워집니다.</p>
-    <p>절약한 배달비를 그냥 통장에 두면 체감이 되지 않습니다. 포장으로 바꾼 날마다 3,000원씩 별도 계좌로 옮겨 두면 1년 뒤 눈에 보이는 금액이 됩니다. 이 금액이 얼마까지 불어날 수 있는지는 <a href="/tools/savings">적금 계산기</a>나 <a href="/tools/compound">복리 계산기</a>에서 확인할 수 있습니다.</p>
+    <p>배달비가 부담스러운 이유는 금액 자체보다 구조에 있습니다. 3,000원은 한 번 결제할 때 크게 느껴지지 않지만, 음식값에 묻혀서 결제되기 때문에 따로 인식되지 않습니다. 가계부를 써도 "식비"로 합산되어 배달비만 따로 집계되는 경우는 드뭅니다. 이 계산기가 배달비를 굳이 분리해 보여주는 이유가 그것입니다.</p>
+    <p>지출을 줄이고 싶다면 주문 횟수를 반으로 줄이는 것보다 배달비 자체를 없애는 쪽이 체감이 큽니다. 포장 주문은 배달비가 없고 할인까지 주는 매장이 많으며, 배달 앱의 구독형 무료배달 서비스도 월 주문 횟수가 일정 수준을 넘으면 이득입니다. 계산기에 배달비 0을 넣고 다시 계산해 보면 구독료를 낼 가치가 있는지 바로 판단할 수 있습니다.</p>
+    <p>시간도 함께 따져 볼 만합니다. 직접 요리하면 장보기, 조리, 설거지까지 한 끼에 한 시간 안팎이 듭니다. <a href="/tools/real-wage">진짜 시급 계산기</a>로 본인의 시급을 구한 뒤 그 시간을 돈으로 환산해 보면, 배달이 항상 손해는 아니라는 결론이 나올 수도 있습니다. 중요한 것은 무의식적으로 쓰던 돈을 한 번은 숫자로 확인해 보는 일입니다.</p>
 
     <h2>자주 묻는 질문</h2>
     <div class="faq">
       <details>
-        <summary>배달비만 따로 계산하는 이유가 뭔가요?</summary>
-        <p>음식값은 어차피 먹어야 하는 돈이지만 배달비는 순수하게 이동에 대한 비용이기 때문입니다. 같은 음식을 포장으로 받으면 사라지는 금액이라, 지출 구조에서 가장 먼저 줄일 수 있는 항목입니다. 배달비만 떼어 보면 한 번에 3천원이라 작아 보여도 1년 단위로는 수십만원이 됩니다.</p>
+        <summary>배달비 말고 음식값도 계산되나요?</summary>
+        <p>음식값도 함께 입력하면 총 지출과 직접 조리 대비 절약액까지 계산됩니다. 다만 이 계산기의 목적은 평소 눈에 잘 띄지 않는 배달비를 따로 떼어 보여주는 것입니다. 음식값은 어차피 먹어야 할 돈이지만 배달비는 순수한 추가 비용이기 때문입니다.</p>
       </details>
       <details>
-        <summary>최소주문금액 때문에 더 시키는 것도 계산되나요?</summary>
-        <p>이 계산기는 실제 결제한 음식값을 그대로 입력받으므로, 최소주문금액을 맞추려고 추가한 메뉴도 자연스럽게 포함됩니다. 다만 '원래 필요 없었던 추가 주문'을 따로 보고 싶다면, 평소 필요한 만큼만 주문했을 때의 금액을 넣고 실제 결제액과 비교해 보세요.</p>
+        <summary>최소주문금액 때문에 더 시키는 것도 반영되나요?</summary>
+        <p>직접 반영되지는 않습니다. 다만 최소주문금액을 맞추려고 원래 안 시켰을 메뉴를 추가한 경우, 그 금액을 음식값에 포함해 넣으면 현실적인 결과가 나옵니다. 실제로 배달 앱 지출이 늘어나는 큰 원인 중 하나가 이 최소주문금액 맞추기입니다.</p>
       </details>
       <details>
-        <summary>직접 요리 비용은 어떻게 잡나요?</summary>
-        <p>기본값은 한 끼당 식재료비만 계산한 금액입니다. 집밥 한 끼 재료비를 얼마로 볼지는 메뉴와 식구 수에 따라 크게 달라지므로 직접 입력하도록 되어 있습니다. 다만 요리에 드는 시간과 설거지 같은 노동은 금액으로 환산되지 않으니, 절약액을 볼 때 그 점을 감안하세요.</p>
+        <summary>직접 조리 비용은 어떻게 잡나요?</summary>
+        <p>기본값은 한 끼 5,000원입니다. 재료비 기준으로 집에서 간단히 해 먹을 때의 대략적인 금액입니다. 식재료를 대량으로 사서 쓰거나 반대로 밀키트를 이용한다면 실제 금액에 맞게 조정해 입력하세요.</p>
       </details>
       <details>
-        <summary>포장 할인을 이용하면 얼마나 절약되나요?</summary>
-        <p>포장 주문은 배달비가 없고 매장에 따라 별도 할인을 주기도 합니다. 배달비 3천원이 사라지는 것만으로도 주 3회 기준 연간 46만원 이상이 절약됩니다. 계산기에서 배달비를 0으로 두고 다시 계산해 보면 차이를 바로 확인할 수 있습니다.</p>
+        <summary>포장 주문은 어떻게 계산하나요?</summary>
+        <p>포장은 배달비가 없으므로 배달비 칸에 0을 넣으면 됩니다. 다만 매장까지 오가는 시간이 들기 때문에, 시간을 돈으로 환산해 보고 싶다면 진짜 시급 계산기에서 본인의 시급을 구한 뒤 왕복 시간을 곱해 비교해 보세요.</p>
       </details>
       <details>
-        <summary>배달앱 멤버십은 이득인가요?</summary>
-        <p>이용 빈도에 달렸습니다. 월 구독료를 배달비 절감액으로 나눠 손익분기 횟수를 구해 보면 됩니다. 예를 들어 월 구독료가 4,000원이고 회당 배달비 3,000원이 무료가 된다면 월 2회 이상 주문할 때 이득입니다. 다만 멤버십이 주문 빈도 자체를 늘려 총지출이 커지는 경우도 흔하므로, 가입 후 실제 지출을 다시 확인해 보세요.</p>
+        <summary>배달을 끊는 게 항상 이득인가요?</summary>
+        <p>금액만 보면 그렇지만 시간과 체력도 비용입니다. 요리와 설거지에 한 시간이 든다면, 본인의 시급이 그보다 높은 경우 배달이 합리적인 선택일 수 있습니다. 이 계산기의 목적은 배달을 끊게 만드는 것이 아니라, 무의식적으로 나가는 금액의 크기를 확인하는 것입니다.</p>
       </details>
     </div>
   </article>
@@ -153,10 +154,10 @@
   <section data-reveal>
     <h2>관련 계산기</h2>
     <div class="tool-grid">
+      <a class="tool-card" href="/tools/real-wage"><div class="ico">⏳</div><b>진짜 시급 계산기</b><span>내 시간이 실제로 얼마인지</span></a>
+      <a class="tool-card" href="/tools/smoking-cost"><div class="ico">🚭</div><b>담배값 계산기</b><span>금연하면 모이는 돈</span></a>
       <a class="tool-card" href="/tools/dutch"><div class="ico">🍻</div><b>더치페이 계산기</b><span>회식비 N빵, 1인당 부담금</span></a>
-      <a class="tool-card" href="/tools/smoking-cost"><div class="ico">🚭</div><b>담배값 계산기</b><span>그 돈을 투자했다면 얼마</span></a>
-      <a class="tool-card" href="/tools/compound"><div class="ico">📈</div><b>복리 계산기</b><span>복리 이자와 장기 투자 수익</span></a>
-      <a class="tool-card" href="/tools/percent"><div class="ico">📊</div><b>퍼센트 계산기</b><span>백분율·할인율·증감률 계산</span></a>
+      <a class="tool-card" href="/tools/compound"><div class="ico">📈</div><b>복리 계산기</b><span>아낀 돈이 불어나는 속도</span></a>
     </div>
   </section>
 
@@ -183,44 +184,50 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var $ = function (id) { return document.getElementById(id); };
+  var WEEKS = 52.14;
   var lastText = "";
 
   $("calcBtn").addEventListener("click", function () {
-    var cnt = parseFloat(String($("count").value).replace(/[^\d.]/g, ""));
     var fee = parseFloat(String($("fee").value).replace(/[^\d.]/g, ""));
+    var times = parseFloat(String($("times").value).replace(/[^\d.]/g, ""));
     var food = parseFloat(String($("food").value).replace(/[^\d.]/g, ""));
     var cook = parseFloat(String($("cook").value).replace(/[^\d.]/g, ""));
 
-    if (!(cnt > 0)) { CM.invalid($("fCount"), true); return; }
-    CM.invalid($("fCount"), false);
-    if (!(fee >= 0)) { fee = 0; $("fee").value = "0"; }
+    if (!(fee >= 0)) { CM.invalid($("fFee"), true); return; }
+    CM.invalid($("fFee"), false);
+    if (!(times > 0)) { CM.invalid($("fTimes"), true); return; }
+    CM.invalid($("fTimes"), false);
     if (!(food >= 0)) { food = 0; $("food").value = "0"; }
-    if (!(cook >= 0)) { cook = 0; $("cook").value = "0"; }
-    CM.invalid($("fFee"), false); CM.invalid($("fFood"), false); CM.invalid($("fCook"), false);
+    CM.invalid($("fFood"), false);
+    if (!(cook >= 0)) { cook = 5000; $("cook").value = "5000"; }
+    CM.invalid($("fCook"), false);
 
-    var yearCount = cnt * 52;
-    var feeYear = fee * yearCount;
-    var totalYear = (fee + food) * yearCount;
-    var monthly = totalYear / 12;
-    var diff = (fee + food - cook) * yearCount;
+    var orders = times * WEEKS;              /* 연간 주문 횟수 */
+    var feeYear = fee * orders;
+    var feeMonth = feeYear / 12;
+    var totalYear = (fee + food) * orders;
+    var cookYear = cook * orders;
+    var save = totalYear - cookYear;
 
     $("result").hidden = false;
     CM.countUp($("rMain"), Math.round(feeYear), { suffix: "원" });
-    $("rTotal").textContent = CM.won(Math.round(totalYear));
-    $("rMonthly").textContent = CM.won(Math.round(monthly));
-    $("rCount").textContent = CM.fmt(Math.round(yearCount)) + "회";
-    $("rDiff").textContent = CM.won(Math.round(diff)) + (diff > 0 ? " 더 지출" : "");
+    $("rMonth").textContent = CM.won(Math.round(feeMonth));
+    $("rTotal").textContent = CM.won(Math.round(totalYear)) + " (연 " + Math.round(orders) + "회 주문)";
+    $("rSave").textContent = save > 0
+      ? CM.won(Math.round(save)) + " 절약"
+      : CM.won(Math.round(-save)) + " 더 듦";
+    $("rTen").textContent = CM.won(Math.round(feeYear * 10));
 
-    lastText = "배달비 계산 · 주 " + cnt + "회, 배달비 " + CM.won(fee) + "\n"
-      + "1년 배달비만: " + CM.won(Math.round(feeYear)) + "\n"
-      + "연간 총지출: " + CM.won(Math.round(totalYear)) + " (월 " + CM.won(Math.round(monthly)) + ")\n"
-      + "직접 요리 대비: " + CM.won(Math.round(diff))
+    lastText = "배달비 계산 · " + CM.won(fee) + " × 주 " + times + "회\n"
+      + "1년 배달비(음식값 제외): " + CM.won(Math.round(feeYear)) + "\n"
+      + "1년 총 지출: " + CM.won(Math.round(totalYear)) + "\n"
+      + "10년 누적 배달비: " + CM.won(Math.round(feeYear * 10))
       + "\n- calcmoa.site/tools/delivery-cost";
   });
 
   CM.bindCopy($("copyBtn"), function () { return lastText; });
 
-  ["count", "fee", "food", "cook"].forEach(function (id) {
+  ["fee", "times", "food", "cook"].forEach(function (id) {
     $(id).addEventListener("keydown", function (e) {
       if (e.key === "Enter") { e.preventDefault(); $("calcBtn").click(); }
     });

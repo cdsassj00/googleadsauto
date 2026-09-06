@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>진짜 시급 계산기 - 야근·출퇴근 포함한 내 실제 시급은 얼마?</title>
-<meta name="description" content="연봉을 야근 시간과 출퇴근 시간까지 포함해 나누면 진짜 시급이 나옵니다. 명목 시급과 실질 시급을 비교하고 2026 최저시급 10,320원과 대조해 보세요.">
+<title>내 진짜 시급 계산기 - 야근·출퇴근 포함 실제 시급</title>
+<meta name="description" content="연봉을 야근 시간과 출퇴근 시간까지 포함해 나누면 진짜 시급이 나옵니다. 명목 시급과 실제 시급의 차이, 최저시급과 비교까지 한 번에 계산하세요.">
 <link rel="canonical" href="https://calcmoa.site/tools/real-wage">
 <link rel="alternate" hreflang="ko" href="https://calcmoa.site/tools/real-wage">
 <link rel="alternate" hreflang="en" href="https://calcmoa.site/en/tools/real-wage">
@@ -13,8 +13,8 @@
 <link rel="alternate" hreflang="fr" href="https://calcmoa.site/fr/tools/real-wage">
 <link rel="alternate" hreflang="x-default" href="https://calcmoa.site/en/tools/real-wage">
 <meta property="og:type" content="website">
-<meta property="og:title" content="진짜 시급 계산기 - 야근·출퇴근 포함">
-<meta property="og:description" content="연봉을 실제 쓴 시간으로 나누면 시급이 얼마나 떨어질까요.">
+<meta property="og:title" content="내 진짜 시급 계산기">
+<meta property="og:description" content="야근과 출퇴근 시간까지 넣으면 드러나는 실제 시급.">
 <meta property="og:url" content="https://calcmoa.site/tools/real-wage">
 <meta property="og:site_name" content="계산모아">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Ctext x='16' y='22' font-size='16' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'%3E%3D%3C/text%3E%3C/svg%3E">
@@ -24,13 +24,13 @@
 <script src="/js/ads.js"></script>
 <script type="application/ld+json">
 [
- {"@context":"https://schema.org","@type":"WebApplication","name":"진짜 시급 계산기","url":"https://calcmoa.site/tools/real-wage","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
+ {"@context":"https://schema.org","@type":"WebApplication","name":"내 진짜 시급 계산기","url":"https://calcmoa.site/tools/real-wage","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"inLanguage":"ko"},
  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"월 209시간은 어디서 나온 숫자인가요?","acceptedAnswer":{"@type":"Answer","text":"주 40시간 근무에 주휴시간 8시간을 더한 주 48시간을, 1년 평균 주 수(약 4.345주)로 환산한 값입니다. 40시간 + 8시간 = 48시간에 4.345를 곱하면 약 209시간이 됩니다. 월급제 근로자의 통상임금 시급을 계산할 때 쓰는 법정 기준 시간이며, 최저임금 위반 여부를 따질 때도 이 시간을 사용합니다."}},
-  {"@type":"Question","name":"출퇴근 시간을 근로시간에 넣는 게 맞나요?","acceptedAnswer":{"@type":"Answer","text":"법적으로는 출퇴근 시간은 근로시간이 아닙니다. 이 계산기가 출퇴근을 포함하는 이유는 법적 시급이 아니라 체감 시급을 보기 위해서입니다. 회사 때문에 쓰는 시간이라는 점에서 개인의 기회비용에는 분명히 포함되기 때문입니다. 법적 기준의 시급만 보고 싶다면 출퇴근 시간을 0으로 두고 계산하세요."}},
-  {"@type":"Question","name":"야근수당을 받으면 어떻게 되나요?","acceptedAnswer":{"@type":"Answer","text":"야근수당을 받는다면 연봉란에 수당을 포함한 실제 연간 총액을 입력하세요. 그러면 야근 시간이 늘어난 만큼 급여도 늘어나므로 시급 하락 폭이 작아집니다. 반대로 포괄임금제로 수당 없이 야근하는 경우라면 시급이 그대로 희석되는데, 이 계산기가 보여주려는 것이 바로 그 지점입니다."}},
-  {"@type":"Question","name":"실질 시급이 최저시급보다 낮으면 불법인가요?","acceptedAnswer":{"@type":"Answer","text":"이 계산기의 실질 시급이 최저시급보다 낮게 나와도 그 자체가 곧 위법은 아닙니다. 최저임금 위반 판단은 법정 근로시간(월 209시간 등)과 최저임금 산입 임금을 기준으로 하기 때문입니다. 다만 명목 시급, 즉 급여를 209시간으로 나눈 값이 최저시급보다 낮다면 위반 소지가 있으므로 고용노동부(1350)에 상담해 보시기 바랍니다."}},
-  {"@type":"Question","name":"연봉에 퇴직금이 포함되어 있으면요?","acceptedAnswer":{"@type":"Answer","text":"연봉에 퇴직금이 포함된 계약이라면 실제 받는 급여는 연봉의 약 12분의 13분의 1만큼 낮아집니다. 정확히 보려면 연봉을 13으로 나눈 뒤 12를 곱한 금액, 즉 연봉의 약 92.3%를 입력하세요. 예를 들어 퇴직금 포함 연봉 4,000만원이라면 약 3,692만원을 넣으면 됩니다."}}
+  {"@type":"Question","name":"왜 출퇴근 시간을 노동시간에 넣나요?","acceptedAnswer":{"@type":"Answer","text":"법적으로 출퇴근 시간은 근로시간이 아닙니다. 다만 이 계산기는 법적 근로시간이 아니라 '그 직장 때문에 쓰는 내 시간'을 보려는 도구입니다. 회사가 집에서 5분 거리였다면 쓰지 않았을 시간이므로, 직장의 실질 비용으로 보는 관점입니다. 출퇴근 시간을 빼고 보고 싶다면 0을 입력하면 됩니다."}},
+  {"@type":"Question","name":"명목 시급은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"월 급여를 법정 기준 근로시간인 209시간으로 나눈 값입니다. 209시간은 주 40시간 근무에 주휴시간을 포함해 산정한 월 소정근로시간으로, 최저임금의 월 환산액을 계산할 때도 같은 기준을 씁니다. 연봉을 12로 나눈 세전 월급을 209로 나누면 명목 시급이 나옵니다."}},
+  {"@type":"Question","name":"세후 기준으로도 계산할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"이 계산기는 세전 기준으로 계산합니다. 세후 기준으로 보고 싶다면 연봉 실수령액 계산기에서 월 실수령액을 확인한 뒤, 그 금액에 12를 곱한 값을 연봉 칸에 넣으면 됩니다. 세후로 계산하면 실제 시급은 다시 20% 안팎 더 낮아집니다."}},
+  {"@type":"Question","name":"점심시간은 어떻게 처리되나요?","acceptedAnswer":{"@type":"Answer","text":"법정 휴게시간인 점심시간은 근로시간에서 제외되며, 209시간 기준에도 이미 빠져 있습니다. 다만 회식이나 업무성 점심처럼 사실상 쉬지 못한 시간이 있다면 야근 시간에 포함해 입력하시면 더 현실적인 결과가 나옵니다."}},
+  {"@type":"Question","name":"결과가 최저시급보다 낮게 나왔습니다.","acceptedAnswer":{"@type":"Answer","text":"야근이 많고 출퇴근이 긴 경우 흔히 벌어지는 일입니다. 다만 이는 법 위반을 뜻하지 않습니다. 최저임금 위반 여부는 법정 근로시간과 세전 급여로 판단하기 때문입니다. 이 결과가 알려주는 것은 위법 여부가 아니라, 내 시간이 실제로 얼마에 팔리고 있는지입니다."}}
  ]}
 ]
 </script>
@@ -57,8 +57,8 @@
     <span>진짜 시급 계산기</span>
   </nav>
 
-  <h1>진짜 시급 계산기</h1>
-  <p class="lead">야근과 출퇴근 시간까지 넣어서 다시 나누면, 내 시급은 얼마나 떨어질까요.</p>
+  <h1>내 진짜 시급 계산기</h1>
+  <p class="lead">야근과 출퇴근 시간까지 넣고 다시 나누면, 내 시간이 실제로 얼마에 팔리고 있는지 보입니다.</p>
 
   <div class="ad-slot" data-ad="top"></div>
 
@@ -66,26 +66,26 @@
     <div class="field" id="fSalary">
       <label for="salary">연봉 (세전, 만원)</label>
       <input type="text" id="salary" inputmode="numeric" placeholder="4000" autocomplete="off">
-      <div class="hint">수당 포함 연간 총액. 만원 단위로 입력. 예: 4000</div>
+      <div class="hint">세전 연봉을 만원 단위로. 예: 4000 (4,000만원)</div>
       <div class="field-error">연봉을 100만원 이상 숫자로 입력해 주세요.</div>
     </div>
     <div class="field" id="fOt">
       <label for="ot">주당 야근 시간</label>
       <input type="text" id="ot" inputmode="decimal" placeholder="10" autocomplete="off">
-      <div class="hint">정시 퇴근 이후 남는 시간의 주간 합계. 없으면 0. 예: 10</div>
+      <div class="hint">정시 퇴근 이후 남아 있는 시간의 주간 합계. 없으면 0</div>
       <div class="field-error">0 이상 숫자로 입력해 주세요.</div>
     </div>
     <div class="field" id="fCommute">
       <label for="commute">하루 왕복 출퇴근 시간</label>
       <input type="text" id="commute" inputmode="decimal" placeholder="1.5" autocomplete="off">
-      <div class="hint">집에서 회사까지 왕복. 재택이면 0. 예: 1.5</div>
+      <div class="hint">집 → 회사 → 집. 1시간 30분이면 1.5</div>
       <div class="field-error">0 이상 숫자로 입력해 주세요.</div>
     </div>
     <div class="field" id="fDays">
-      <label for="days">월 출근 일수</label>
-      <input type="text" id="days" inputmode="numeric" placeholder="21" autocomplete="off">
-      <div class="hint">주 5일 근무 기준 보통 21~22일. 예: 21</div>
-      <div class="field-error">1일 이상 숫자로 입력해 주세요.</div>
+      <label for="days">주당 출근 일수</label>
+      <input type="text" id="days" inputmode="numeric" placeholder="5" autocomplete="off">
+      <div class="hint">재택 근무일은 빼고 세요. 예: 5</div>
+      <div class="field-error">1~7 사이 숫자로 입력해 주세요.</div>
     </div>
     <button type="button" class="btn btn-primary" id="calcBtn">계산하기</button>
 
@@ -93,10 +93,10 @@
       <div class="label">내 진짜 시급</div>
       <div class="big" id="rMain"></div>
       <div class="rows">
-        <div class="row"><span>명목 시급 (월 209시간 기준)</span><b id="rNominal"></b></div>
-        <div class="row"><span>실제 투입 시간 (월)</span><b id="rHours"></b></div>
+        <div class="row"><span>명목 시급 (209시간 기준)</span><b id="rNominal"></b></div>
+        <div class="row"><span>월 실질 투입 시간</span><b id="rHours"></b></div>
         <div class="row"><span>2026 최저시급 대비</span><b id="rMin"></b></div>
-        <div class="row"><span>시급 하락폭</span><b id="rDrop"></b></div>
+        <div class="row"><span>야근·출퇴근으로 깎인 시급</span><b id="rDrop"></b></div>
       </div>
       <div class="actions">
         <button type="button" class="btn btn-ghost copy-btn" id="copyBtn">결과 복사</button>
@@ -109,43 +109,44 @@
   <article class="content" data-reveal>
     <h2>사용법</h2>
     <ol>
-      <li>세전 연봉을 만원 단위로 입력합니다. 야근수당을 받는다면 수당까지 포함한 연간 총액을 넣어야 정확합니다.</li>
-      <li>주당 야근 시간과 하루 왕복 출퇴근 시간을 입력합니다. 재택근무라면 출퇴근은 0으로 두세요.</li>
-      <li>계산하면 법정 기준의 명목 시급과, 실제 투입 시간으로 나눈 진짜 시급이 함께 나옵니다.</li>
+      <li>세전 연봉을 만원 단위로 입력합니다. 성과급이 있다면 평균적으로 받는 금액을 포함해 넣으세요.</li>
+      <li>주당 야근 시간과 하루 왕복 출퇴근 시간, 주당 출근 일수를 입력합니다.</li>
+      <li>계산하면 명목 시급과 실제 시급이 함께 나오고, 2026년 최저시급과 비교한 결과까지 표시됩니다.</li>
     </ol>
 
     <h2>계산 원리</h2>
-    <p>명목 시급은 월 급여를 <b>월 209시간</b>으로 나눈 값입니다. 209시간은 주 40시간 근무에 주휴시간 8시간을 더한 주 48시간을 월 단위(약 4.345주)로 환산한 법정 기준 시간입니다. 급여명세서상 통상임금 시급이 바로 이 값입니다.</p>
-    <p>진짜 시급은 분모를 바꿉니다. 209시간에 <b>월 야근시간(주당 야근 × 4.345)</b>과 <b>월 출퇴근시간(하루 왕복 × 출근일수)</b>을 더한 시간으로 같은 급여를 나눕니다. 회사 때문에 쓰는 시간을 모두 포함했을 때 시간당 얼마를 받는지 보는 것입니다.</p>
-    <p>검산해 보면, 연봉 4,000만원은 월 3,333,333원입니다. 209시간으로 나누면 명목 시급 <b>15,949원</b>. 여기에 주 10시간 야근(월 43.5시간)과 하루 1.5시간 출퇴근 21일(월 31.5시간)을 더하면 월 284시간이 되고, 진짜 시급은 <b>11,737원</b>으로 떨어집니다. 2026년 최저시급 10,320원과의 차이가 1,400원 남짓입니다.</p>
-    <p class="note">출퇴근 시간은 법적으로 근로시간이 아니며, 이 계산기의 진짜 시급은 법적 개념이 아닌 체감 지표입니다. 최저임금 위반 여부는 명목 시급(급여 ÷ 209시간)을 기준으로 판단하며, 위반이 의심되면 고용노동부 상담센터(1350)에 문의하세요.</p>
+    <p>명목 시급은 <b>월 급여 ÷ 209시간</b>입니다. 209시간은 주 40시간 근무에 주휴시간을 더해 산정한 월 소정근로시간으로, 최저임금 월 환산액을 계산할 때도 쓰이는 법정 기준입니다.</p>
+    <p>진짜 시급은 분모를 바꿉니다. 209시간에 <b>야근 시간(주당 야근 × 4.345주)</b>과 <b>출퇴근 시간(하루 왕복 × 주당 출근일 × 4.345주)</b>을 더한 값으로 나눕니다. 4.345는 1년 52.14주를 12개월로 나눈 월평균 주수입니다.</p>
+    <p>예를 들어 연봉 4,000만원이면 월 세전 급여는 333만 3,333원, 명목 시급은 <b>15,949원</b>입니다. 여기에 주 10시간 야근(월 43.5시간)과 하루 왕복 1.5시간 출퇴근을 주 5일(월 32.6시간) 더하면 월 실질 투입 시간은 285.1시간이 되고, 진짜 시급은 <b>11,692원</b>으로 떨어집니다. 2026년 최저시급 10,320원과의 차이가 1,372원밖에 나지 않습니다.</p>
+    <p>같은 연봉이라도 정시 퇴근에 도보 출근인 사람과, 매일 두 시간 야근에 왕복 두 시간 통근인 사람의 시급은 두 배 가까이 차이가 납니다. 연봉만 비교하는 이직 판단이 위험한 이유가 여기 있습니다. 연봉이 500만원 올라도 야근과 통근이 늘면 실제 시급은 오히려 떨어질 수 있습니다.</p>
+    <p class="note">이 계산기는 세전 급여 기준의 참고용 도구입니다. 출퇴근 시간은 법정 근로시간이 아니며, 최저임금 위반 여부는 법정 근로시간과 세전 급여로 판단합니다. 실제 임금 관련 분쟁은 고용노동부나 노무사와 상담하세요.</p>
 
     <h2>알아두면 좋은 정보</h2>
-    <p>야근이 시급을 갉아먹는 속도는 생각보다 가파릅니다. 연봉 4,000만원 기준으로 야근이 전혀 없으면 진짜 시급은 약 13,800원이지만, 주 10시간 야근이 붙으면 11,700원대로, 주 20시간이면 10,200원대까지 떨어져 최저시급 아래로 내려갑니다. 연봉이 올라도 야근이 함께 늘면 시급은 제자리이거나 오히려 낮아집니다. 연봉협상에서 금액만 보고 업무량을 보지 않으면 손해를 보는 이유가 여기 있습니다.</p>
-    <p>출퇴근 시간의 비중도 무시할 수 없습니다. 편도 45분(왕복 1.5시간)이면 월 31.5시간, 1년이면 378시간을 길 위에서 씁니다. 잠자는 시간을 뺀 하루 16시간 기준으로 환산하면 연간 23일이 넘습니다. 이사나 재택근무로 출퇴근을 줄이는 것이 연봉 인상보다 시급 개선에 더 효과적인 경우가 많은 것도 이 때문입니다.</p>
-    <p>포괄임금제라면 이 계산이 특히 중요합니다. 포괄임금제는 야근수당을 미리 급여에 포함시킨 형태인데, 실제 야근이 약정된 시간을 넘어서면 초과분은 사실상 무급이 됩니다. 진짜 시급을 계산해 명목 시급과의 격차가 크다면, 실제 근로시간을 기록으로 남겨 두는 것이 나중에 도움이 됩니다.</p>
+    <p>이직을 고민할 때 연봉만 비교하면 손해를 보기 쉽습니다. A사가 4,000만원에 정시 퇴근, B사가 4,500만원에 주 15시간 야근이라면, 명목 연봉은 B사가 높지만 실제 시급은 A사가 높습니다. 협상 테이블에서는 연봉 액수와 함께 예상 야근 시간, 재택 가능 여부, 사무실 위치를 같은 무게로 따져야 합니다. 재택 주 2일은 통근 시간 기준으로 연봉 수백만원의 가치가 있습니다.</p>
+    <p>시간을 돈으로 환산해 보면 소비 판단도 달라집니다. 진짜 시급이 12,000원인 사람에게 12만원짜리 물건은 곧 열 시간의 노동입니다. 반대로 시간을 아껴 주는 지출, 예컨대 통근 시간을 30분 줄이는 이사나 가사를 대신해 주는 서비스는 시급으로 환산하면 훨씬 합리적인 선택일 수 있습니다.</p>
+    <p>야근 수당을 받고 있다면 이 계산에 그 금액도 연봉에 포함해야 정확합니다. 포괄임금제라 별도 수당이 없다면, 야근 시간이 늘어날수록 시급은 그대로 떨어집니다. 포괄임금제가 문제로 지적되는 이유가 정확히 이 구조 때문입니다.</p>
 
     <h2>자주 묻는 질문</h2>
     <div class="faq">
       <details>
-        <summary>월 209시간은 어디서 나온 숫자인가요?</summary>
-        <p>주 40시간 근무에 주휴시간 8시간을 더한 주 48시간을, 1년 평균 주 수(약 4.345주)로 환산한 값입니다. 40시간 + 8시간 = 48시간에 4.345를 곱하면 약 209시간이 됩니다. 월급제 근로자의 통상임금 시급을 계산할 때 쓰는 법정 기준 시간이며, 최저임금 위반 여부를 따질 때도 이 시간을 사용합니다.</p>
+        <summary>왜 출퇴근 시간을 노동시간에 넣나요?</summary>
+        <p>법적으로 출퇴근 시간은 근로시간이 아닙니다. 다만 이 계산기는 법적 근로시간이 아니라 '그 직장 때문에 쓰는 내 시간'을 보려는 도구입니다. 회사가 집에서 5분 거리였다면 쓰지 않았을 시간이므로, 직장의 실질 비용으로 보는 관점입니다. 출퇴근 시간을 빼고 보고 싶다면 0을 입력하면 됩니다.</p>
       </details>
       <details>
-        <summary>출퇴근 시간을 근로시간에 넣는 게 맞나요?</summary>
-        <p>법적으로는 출퇴근 시간은 근로시간이 아닙니다. 이 계산기가 출퇴근을 포함하는 이유는 법적 시급이 아니라 체감 시급을 보기 위해서입니다. 회사 때문에 쓰는 시간이라는 점에서 개인의 기회비용에는 분명히 포함되기 때문입니다. 법적 기준의 시급만 보고 싶다면 출퇴근 시간을 0으로 두고 계산하세요.</p>
+        <summary>명목 시급은 어떻게 계산하나요?</summary>
+        <p>월 급여를 법정 기준 근로시간인 209시간으로 나눈 값입니다. 209시간은 주 40시간 근무에 주휴시간을 포함해 산정한 월 소정근로시간으로, 최저임금의 월 환산액을 계산할 때도 같은 기준을 씁니다. 연봉을 12로 나눈 세전 월급을 209로 나누면 명목 시급이 나옵니다.</p>
       </details>
       <details>
-        <summary>야근수당을 받으면 어떻게 되나요?</summary>
-        <p>야근수당을 받는다면 연봉란에 수당을 포함한 실제 연간 총액을 입력하세요. 그러면 야근 시간이 늘어난 만큼 급여도 늘어나므로 시급 하락 폭이 작아집니다. 반대로 포괄임금제로 수당 없이 야근하는 경우라면 시급이 그대로 희석되는데, 이 계산기가 보여주려는 것이 바로 그 지점입니다.</p>
+        <summary>세후 기준으로도 계산할 수 있나요?</summary>
+        <p>이 계산기는 세전 기준으로 계산합니다. 세후 기준으로 보고 싶다면 <a href="/tools/salary">연봉 실수령액 계산기</a>에서 월 실수령액을 확인한 뒤, 그 금액에 12를 곱한 값을 연봉 칸에 넣으면 됩니다. 세후로 계산하면 실제 시급은 다시 20% 안팎 더 낮아집니다.</p>
       </details>
       <details>
-        <summary>실질 시급이 최저시급보다 낮으면 불법인가요?</summary>
-        <p>이 계산기의 실질 시급이 최저시급보다 낮게 나와도 그 자체가 곧 위법은 아닙니다. 최저임금 위반 판단은 법정 근로시간(월 209시간 등)과 최저임금 산입 임금을 기준으로 하기 때문입니다. 다만 명목 시급, 즉 급여를 209시간으로 나눈 값이 최저시급보다 낮다면 위반 소지가 있으므로 고용노동부(1350)에 상담해 보시기 바랍니다.</p>
+        <summary>점심시간은 어떻게 처리되나요?</summary>
+        <p>법정 휴게시간인 점심시간은 근로시간에서 제외되며, 209시간 기준에도 이미 빠져 있습니다. 다만 회식이나 업무성 점심처럼 사실상 쉬지 못한 시간이 있다면 야근 시간에 포함해 입력하시면 더 현실적인 결과가 나옵니다.</p>
       </details>
       <details>
-        <summary>연봉에 퇴직금이 포함되어 있으면요?</summary>
-        <p>연봉에 퇴직금이 포함된 계약이라면 실제 받는 급여는 연봉의 약 12분의 13분의 1만큼 낮아집니다. 정확히 보려면 연봉을 13으로 나눈 뒤 12를 곱한 금액, 즉 연봉의 약 92.3%를 입력하세요. 예를 들어 퇴직금 포함 연봉 4,000만원이라면 약 3,692만원을 넣으면 됩니다.</p>
+        <summary>결과가 최저시급보다 낮게 나왔습니다.</summary>
+        <p>야근이 많고 출퇴근이 긴 경우 흔히 벌어지는 일입니다. 다만 이는 법 위반을 뜻하지 않습니다. 최저임금 위반 여부는 법정 근로시간과 세전 급여로 판단하기 때문입니다. 이 결과가 알려주는 것은 위법 여부가 아니라, 내 시간이 실제로 얼마에 팔리고 있는지입니다.</p>
       </details>
     </div>
   </article>
@@ -183,45 +184,47 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var $ = function (id) { return document.getElementById(id); };
-  var LEGAL = 209;      /* 법정 월 근로시간 */
-  var WEEKS = 4.345;    /* 월평균 주 수 */
-  var MINWAGE = 10320;  /* 2026 최저시급 */
+  var STD = 209;          /* 월 소정근로시간 */
+  var WEEKS = 4.345;      /* 월평균 주수 (52.14/12) */
+  var MINWAGE = 10320;    /* 2026 최저시급 */
   var lastText = "";
 
   $("calcBtn").addEventListener("click", function () {
     var man = parseFloat(String($("salary").value).replace(/[^\d.]/g, ""));
     var ot = parseFloat(String($("ot").value).replace(/[^\d.]/g, ""));
-    var cm = parseFloat(String($("commute").value).replace(/[^\d.]/g, ""));
+    var commute = parseFloat(String($("commute").value).replace(/[^\d.]/g, ""));
     var days = parseInt(String($("days").value).replace(/[^\d]/g, ""), 10);
 
     if (!(man >= 100)) { CM.invalid($("fSalary"), true); return; }
     CM.invalid($("fSalary"), false);
     if (!(ot >= 0)) { ot = 0; $("ot").value = "0"; }
-    if (!(cm >= 0)) { cm = 0; $("commute").value = "0"; }
-    if (!(days >= 1)) { days = 21; $("days").value = "21"; }
-    CM.invalid($("fOt"), false); CM.invalid($("fCommute"), false); CM.invalid($("fDays"), false);
+    CM.invalid($("fOt"), false);
+    if (!(commute >= 0)) { commute = 0; $("commute").value = "0"; }
+    CM.invalid($("fCommute"), false);
+    if (!(days >= 1 && days <= 7)) { days = 5; $("days").value = "5"; }
+    CM.invalid($("fDays"), false);
 
     var monthly = man * 10000 / 12;
-    var nominal = monthly / LEGAL;
-    var otMonth = ot * WEEKS;
-    var cmMonth = cm * days;
-    var realHours = LEGAL + otMonth + cmMonth;
-    var real = monthly / realHours;
-    var diff = real - MINWAGE;
-    var drop = nominal - real;
-    var dropPct = (drop / nominal) * 100;
+    var nominal = monthly / STD;
+    var otH = ot * WEEKS;
+    var comH = commute * days * WEEKS;
+    var realH = STD + otH + comH;
+    var real = monthly / realH;
+    var ratio = real / MINWAGE;
 
     $("result").hidden = false;
     CM.countUp($("rMain"), Math.round(real), { suffix: "원" });
     $("rNominal").textContent = CM.won(Math.round(nominal));
-    $("rHours").textContent = realHours.toFixed(1) + "시간 (법정 209 + 야근 " + otMonth.toFixed(1) + " + 출퇴근 " + cmMonth.toFixed(1) + ")";
-    $("rMin").textContent = (diff >= 0 ? "+" : "") + CM.won(Math.round(diff)) + (diff < 0 ? " (최저시급 미만)" : "");
-    $("rDrop").textContent = "-" + CM.won(Math.round(drop)) + " (-" + dropPct.toFixed(1) + "%)";
+    $("rHours").textContent = realH.toFixed(1) + "시간 (기본 209 + 야근 " + otH.toFixed(1) + " + 출퇴근 " + comH.toFixed(1) + ")";
+    $("rMin").textContent = ratio >= 1
+      ? "최저시급의 " + (ratio * 100).toFixed(0) + "% (+" + CM.won(Math.round(real - MINWAGE)) + ")"
+      : "최저시급보다 " + CM.won(Math.round(MINWAGE - real)) + " 낮음";
+    $("rDrop").textContent = "-" + CM.won(Math.round(nominal - real)) + " (" + ((1 - real / nominal) * 100).toFixed(1) + "% 감소)";
 
-    lastText = "진짜 시급 · 연봉 " + CM.fmt(man) + "만원\n"
+    lastText = "내 진짜 시급 · 연봉 " + CM.fmt(man) + "만원\n"
       + "진짜 시급: " + CM.won(Math.round(real)) + " (명목 " + CM.won(Math.round(nominal)) + ")\n"
-      + "월 실제 투입: " + realHours.toFixed(1) + "시간\n"
-      + "2026 최저시급 대비: " + (diff >= 0 ? "+" : "") + CM.won(Math.round(diff))
+      + "월 실질 투입: " + realH.toFixed(1) + "시간\n"
+      + "2026 최저시급 10,320원 대비 " + (ratio * 100).toFixed(0) + "%"
       + "\n- calcmoa.site/tools/real-wage";
   });
 
